@@ -9,7 +9,7 @@
     </div>
   </div>
 
-  <div class="section-predict">
+  <div class="section-predict" *ngIf="isDataLoaded">
     <div class="container">
       <div class="col-md-12 offset-md-2 col-lg-12 offset-lg-2">
         <div class="row valign-wrapper">
@@ -18,84 +18,209 @@
               <h5 class="card-title">
                 Highest Scorer
               </h5>
-              <p class="card-description">
-                qweqeeeqwewq
-              </p>
-              <select>
-                <optgroup label="Team 1">
-                  <option>Hello</option>
-                  <option>Hi</option>
+
+              <select class="browser-default">
+                <!--  browser-default-->
+                <option value="" disabled selected>Choose player</option>
+                <optgroup *ngFor="let team of todaysTeams" label="{{team.name}}">
+                  <option *ngFor="let member of team.squad" value="{{member.pid}}" (click)="handleEvent($event.target.value, 'highestScorerEvent')">{{member.pname}}</option>
                 </optgroup>
               </select>
-              <div id="sliderRegular" class="slider"></div>
-
-              <p class="range-field">
-                  <input type="range" id="test5" min="0" max="100" value="25" (change)="updateRange($event)"/>
-              </p>
-              
-              <a routerLink="/matchpredict" class="btn btn-primary">Predict</a>
+              <br/>
+              <br/>
+              <div class="row">
+                <div class="col-lg-6 text-center col-md-8 ml-auto mr-auto">
+                  <div class="input-group input-lg">
+                    <span class="input-group-addon">
+                      <i class="now-ui-icons business_money-coins"></i>
+                    </span>
+                    <input type="number" pattern="\d*" class="form-control" placeholder="Enter points to assign">
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer">
+                  <div class="stats stats-left">
+                    <i class="now-ui-icons objects_spaceship"></i> 2x
+                  </div>
+                  <div class="stats stats-right">
+                    <i class="now-ui-icons media-2_sound-wave"></i> 342 
+                  </div>
+                </div>
             </div>
           </div>
 
         </div>
 
+        <!-- Wicket Taker -->
         <div class="row valign-wrapper">
-            <div class="card card-blog">
-              <div class="card-body text-center">
-                <h6 class="category text-danger">
-                  <i class="now-ui-icons media-2_sound-wave"></i>Match
-                </h6>
-                <h5 class="card-title">
-                  asdasdasd
-                  <br/> v
-                  <br/> adsadasda
-                </h5>
-                <p class="card-description">
-                  qweqeeeqwewq
-                </p>
-                <a routerLink="/matchpredict" class="btn btn-primary">Predict</a>
+          <div class="card card-blog">
+            <div class="card-body text-center">
+              <h5 class="card-title">
+                Best Bowler
+              </h5>
+
+              <select class="browser-default">
+                <!--  browser-default-->
+                <option value="" disabled selected>Choose player</option>
+                <optgroup *ngFor="let team of todaysTeams" label="{{team.name}}">
+                  <option *ngFor="let member of team.squad" value="{{member.pid}}" (click)="handleEvent($event.target.value, 'bestBowlerEvent')">{{member.pname}}</option>
+                </optgroup>
+              </select>
+              <br/>
+              <br/>
+              <div class="row">
+                <div class="col-lg-6 text-center col-md-8 ml-auto mr-auto">
+                  <div class="input-group input-lg">
+                    <span class="input-group-addon">
+                      <i class="now-ui-icons business_money-coins"></i>
+                    </span>
+                    <input type="number" pattern="\d*" class="form-control" placeholder="Enter points to assign">
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer">
+                <div class="stats stats-left">
+                  <i class="now-ui-icons objects_spaceship"></i> 2x
+                </div>
+                <div class="stats stats-right">
+                  <i class="now-ui-icons media-2_sound-wave"></i> 342
+                </div>
               </div>
             </div>
-  
           </div>
 
-        <h3 class="title">About me</h3>
-        <h5 class="description">An artist of considerable range, Ryan — the name taken by Melbourne-raised, Brooklyn-based Nick Murphy — writes,
-          performs and records all of his own music, giving it a warm, intimate feel with a solid groove structure. An artist
-          of considerable range.
-        </h5>
+        </div>
+
+        <!-- Man of the Match -->
+        <div class="row valign-wrapper">
+          <div class="card card-blog">
+            <div class="card-body text-center">
+              <h5 class="card-title">
+                Man of the Match
+              </h5>
+
+              <select class="browser-default">
+                <!--  browser-default-->
+                <option value="" disabled selected>Choose player</option>
+                <optgroup *ngFor="let team of todaysTeams" label="{{team.name}}">
+                  <option *ngFor="let member of team.squad" value="{{member.pid}}" (click)="handleEvent($event.target.value, 'momEvent')">{{member.pname}}</option>
+                </optgroup>
+              </select>
+              <br/>
+              <br/>
+              <div class="row">
+                <div class="col-lg-6 text-center col-md-8 ml-auto mr-auto">
+                  <div class="input-group input-lg">
+                    <span class="input-group-addon">
+                      <i class="now-ui-icons business_money-coins"></i>
+                    </span>
+                    <input type="number" pattern="\d*" class="form-control" placeholder="Enter points to assign">
+                  </div>
+                </div>
+              </div>
+
+              <div class="card-footer">
+                <div class="stats stats-left">
+                  <i class="now-ui-icons objects_spaceship"></i> 2x
+                </div>
+                <div class="stats stats-right">
+                  <i class="now-ui-icons media-2_sound-wave"></i> 342
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Winner Team -->
+        <div class="row valign-wrapper">
+          <div class="card card-blog">
+            <div class="card-body text-center">
+              <h5 class="card-title">
+                Winning Team
+              </h5>
+
+              <div *ngFor="let team of todaysTeams; let i = index" class="radio" style="text-align:left">
+                <input name="grpTossWinner" type="radio" id="fToss{{i+1}}" class="with-gap" value="{{team.teamid}}" (change)="handleEvent($event, 'tossWinnerEvent')"
+                />
+                <label for="fToss{{i+1}}">{{team.name}}</label>
+              </div>
+              <div class="row">
+                <div class="col-lg-6 text-center col-md-8 ml-auto mr-auto">
+                  <div class="input-group input-lg">
+                    <span class="input-group-addon">
+                      <i class="now-ui-icons business_money-coins"></i>
+                    </span>
+                    <input type="number" pattern="\d*" class="form-control" placeholder="Enter points to assign">
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer">
+                  <div class="stats stats-left">
+                    <i class="now-ui-icons objects_spaceship"></i> 2x
+                  </div>
+                  <div class="stats stats-right">
+                    <i class="now-ui-icons media-2_sound-wave"></i> 342 
+                  </div>
+                </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- 1st Innnings Score -->
+        <div class="row valign-wrapper">
+          <div class="card card-blog">
+            <div class="card-body text-center">
+              <h5 class="card-title">
+                1st Innings Score
+              </h5>
+              <div class="row">
+                <div class="col-lg-6 text-center col-md-8 ml-auto mr-auto">
+                  <div class="input-group input-lg">
+                    <span class="input-group-addon">
+                      <i class="now-ui-icons sport_user-run"></i>
+                    </span>
+                    <input type="number" pattern="\d*" class="form-control" placeholder="Enter predicted runs">
+                  </div>
+                </div>
+              </div>
+
+              <!--<p class="card-description">
+                Assign Points
+              </p>-->
+              <div class="row">
+                <div class="col-lg-6 text-center col-md-8 ml-auto mr-auto">
+                  <div class="input-group input-lg">
+                    <span class="input-group-addon">
+                      <i class="now-ui-icons business_money-coins"></i>
+                    </span>
+                    <input type="number" pattern="\d*" class="form-control" placeholder="Enter points to assign">
+                  </div>
+                </div>
+              </div>
+
+              <!--<p class="range-field">
+                    <input type="range" id="test5" min="0" max="10000" value="25" (change)="updateRange($event)"/>
+                </p>-->
+                <div class="card-footer">
+                    <div class="stats stats-left">
+                      <i class="now-ui-icons objects_spaceship"></i> 2x
+                    </div>
+                    <div class="stats stats-right">
+                      <i class="now-ui-icons media-2_sound-wave"></i> 342 
+                    </div>
+                  </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-
-
-
-
-
-
-
-
-  <div class="section section-contact-us text-center">
+  <div class=" text-center">
     <div class="container">
-      <h2 class="title">Want to work with us?</h2>
-      <p class="description">Your project is very important to us.</p>
       <div class="row">
         <div class="col-lg-6 text-center col-md-8 ml-auto mr-auto">
-          <div class="input-group input-lg">
-            <span class="input-group-addon">
-              <i class="now-ui-icons users_circle-08"></i>
-            </span>
-            <input type="text" class="form-control" placeholder="First Name...">
-          </div>
-          <div class="input-group input-lg">
-            <span class="input-group-addon">
-              <i class="now-ui-icons ui-1_email-85"></i>
-            </span>
-            <input type="text" class="form-control" placeholder="Email...">
-          </div>
-          <div class="textarea-container">
-            <textarea class="form-control" name="name" rows="4" cols="80" placeholder="Type a message..."></textarea>
-          </div>
           <div class="send-button">
             <a href="#pablo" class="btn btn-primary btn-round btn-block btn-lg">Send Message</a>
           </div>
