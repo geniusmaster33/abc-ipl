@@ -1,0 +1,436 @@
+[
+    {
+        "team1": "Mumbai Indians",
+        "team2": "Chennai Super Kings",
+        "date": "07-Apr-2018",
+        "time": "8 (PM)",
+        "venue": "Mumbai"
+    },
+    {
+        "team1": "Delhi Daredevils",
+        "team2": "Kings XI Punjab",
+        "date": "08-Apr-2018",
+        "time": "4 (PM)",
+        "venue": "Delhi"
+    },
+    {
+        "team1": "Kolkata Knight Riders",
+        "team2": "Royal Challengers Bangalore",
+        "date": "08-Apr-2018",
+        "time": "8 (PM)",
+        "venue": "Kolkata"
+    },
+    {
+        "team1": "Sunrisers Hyderabad",
+        "team2": "Rajasthan Royals",
+        "date": "9-Apr",
+        "time": "8 (PM)",
+        "venue": "Hyderabad"
+    },
+    {
+        "team1": "Chennai Super Kings",
+        "team2": "Kolkata Knight Riders",
+        "date": "10-Apr",
+        "time": "8 (PM)",
+        "venue": "Chennai"
+    },
+    {
+        "team1": "Rajasthan Royals",
+        "team2": "Delhi Daredevils",
+        "date": "11-Apr",
+        "time": "8 (PM)",
+        "venue": "Jaipur"
+    },
+    {
+        "team1": "Sunrisers Hyderabad",
+        "team2": "Mumbai Indians",
+        "date": "12-Apr",
+        "time": "8 (PM)",
+        "venue": "Hyderabad"
+    },
+    {
+        "team1": "Royal Challengers Bangalore",
+        "team2": "Kings XI Punjab",
+        "date": "13-Apr",
+        "time": "8 (PM)",
+        "venue": "Bengaluru"
+    },
+    {
+        "team1": "Mumbai Indians",
+        "team2": "Delhi Daredevils",
+        "date": "14-Apr",
+        "time": "4 (PM)",
+        "venue": "Mumbai"
+    },
+    {
+        "team1": "Kolkata Knight Riders",
+        "team2": "Sunrisers Hyderabad",
+        "date": "14-Apr",
+        "time": "8 (PM)",
+        "venue": "Kolkata"
+    },
+    {
+        "team1": "Royal Challengers Bangalore",
+        "team2": "Rajasthan Royals",
+        "date": "15-Apr",
+        "time": "4 (PM)",
+        "venue": "Bengaluru"
+    },
+    {
+        "team1": "Kings XI Punjab",
+        "team2": "Chennai Super Kings",
+        "date": "15-Apr",
+        "time": "8 (PM)",
+        "venue": "Indore"
+    },
+    {
+        "team1": "Kolkata Knight Riders",
+        "team2": "Delhi Daredevils",
+        "date": "16-Apr",
+        "time": "8 (PM)",
+        "venue": "Kolkata"
+    },
+    {
+        "team1": "Mumbai Indians",
+        "team2": "Royal Challengers Bangalore",
+        "date": "17-Apr",
+        "time": "8 (PM)",
+        "venue": "Mumbai"
+    },
+    {
+        "team1": "Rajasthan Royals",
+        "team2": "Kolkata Knight Riders",
+        "date": "18-Apr",
+        "time": "8 (PM)",
+        "venue": "Jaipur"
+    },
+    {
+        "team1": "Kings XI Punjab",
+        "team2": "Sunrisers Hyderabad",
+        "date": "19-Apr",
+        "time": "8 (PM)",
+        "venue": "Indore"
+    },
+    {
+        "team1": "Chennai Super Kings",
+        "team2": "Rajasthan Royals",
+        "date": "20-Apr",
+        "time": "8 (PM)",
+        "venue": "Chennai"
+    },
+    {
+        "team1": "Kolkata Knight Riders",
+        "team2": "Kings XI Punjab",
+        "date": "21-Apr",
+        "time": "4 (PM)",
+        "venue": "Kolkata"
+    },
+    {
+        "team1": "Delhi Daredevils",
+        "team2": "Royal Challengers Bangalore",
+        "date": "21-Apr",
+        "time": "8 (PM)",
+        "venue": "Delhi"
+    },
+    {
+        "team1": "Sunrisers Hyderabad",
+        "team2": "Chennai Super Kings",
+        "date": "22-Apr",
+        "time": "4 (PM)",
+        "venue": "Hyderabad"
+    },
+    {
+        "team1": "Rajasthan Royals",
+        "team2": "Mumbai Indians",
+        "date": "22-Apr",
+        "time": "8 (PM)",
+        "venue": "Jaipur"
+    },
+    {
+        "team1": "Kings XI Punjab",
+        "team2": "Delhi Daredevils",
+        "date": "23-Apr",
+        "time": "8 (PM)",
+        "venue": "Indore"
+    },
+    {
+        "team1": "Mumbai Indians",
+        "team2": "Sunrisers Hyderabad",
+        "date": "24-Apr",
+        "time": "8 (PM)",
+        "venue": "Mumbai"
+    },
+    {
+        "team1": "Royal Challengers Bangalore",
+        "team2": "Chennai Super Kings",
+        "date": "25-Apr",
+        "time": "8 (PM)",
+        "venue": "Bengaluru"
+    },
+    {
+        "team1": "Sunrisers Hyderabad",
+        "team2": "Kings XI Punjab",
+        "date": "26-Apr",
+        "time": "8 (PM)",
+        "venue": "Hyderabad"
+    },
+    {
+        "team1": "Delhi Daredevils",
+        "team2": "Kolkata Knight Riders",
+        "date": "27-Apr",
+        "time": "8 (PM)",
+        "venue": "Delhi"
+    },
+    {
+        "team1": "Chennai Super Kings",
+        "team2": "Mumbai Indians",
+        "date": "28-Apr",
+        "time": "8 (PM)",
+        "venue": "Chennai"
+    },
+    {
+        "team1": "Rajasthan Royals",
+        "team2": "Sunrisers Hyderabad",
+        "date": "29-Apr",
+        "time": "4 (PM)",
+        "venue": "Jaipur"
+    },
+    {
+        "team1": "Royal Challengers Bangalore",
+        "team2": "Kolkata Knight Riders",
+        "date": "29-Apr",
+        "time": "8 (PM)",
+        "venue": "Bengaluru"
+    },
+    {
+        "team1": "Chennai Super Kings",
+        "team2": "Delhi Daredevils",
+        "date": "30-Apr",
+        "time": "8 (PM)",
+        "venue": "Chennai"
+    },
+    {
+        "team1": "Royal Challengers Bangalore",
+        "team2": "Mumbai Indians",
+        "date": "01-May-2018",
+        "time": "8 (PM)",
+        "venue": "Bengaluru"
+    },
+    {
+        "team1": "Delhi Daredevils",
+        "team2": "Rajasthan Royals",
+        "date": "02-May-2018",
+        "time": "8 (PM)",
+        "venue": "Delhi"
+    },
+    {
+        "team1": "Kolkata Knight Riders",
+        "team2": "Chennai Super Kings",
+        "date": "03-May-2018",
+        "time": "8 (PM)",
+        "venue": "Kolkata"
+    },
+    {
+        "team1": "Kings XI Punjab",
+        "team2": "Mumbai Indians",
+        "date": "04-May-2018",
+        "time": "8 (PM)",
+        "venue": "Mohali"
+    },
+    {
+        "team1": "Chennai Super Kings",
+        "team2": "Royal Challengers Bangalore",
+        "date": "05-May-2018",
+        "time": "4 (PM)",
+        "venue": "Chennai"
+    },
+    {
+        "team1": "Sunrisers Hyderabad",
+        "team2": "Delhi Daredevils",
+        "date": "05-May-2018",
+        "time": "8 (PM)",
+        "venue": "Hyderabad"
+    },
+    {
+        "team1": "Mumbai Indians",
+        "team2": "Kolkata Knight Riders",
+        "date": "06-May-2018",
+        "time": "4 (PM)",
+        "venue": "Mumbai"
+    },
+    {
+        "team1": "Kings XI Punjab",
+        "team2": "Rajasthan Royals",
+        "date": "06-May-2018",
+        "time": "8 (PM)",
+        "venue": "Mohali"
+    },
+    {
+        "team1": "Sunrisers Hyderabad",
+        "team2": "Royal Challengers Bangalore",
+        "date": "07-May-2018",
+        "time": "8 (PM)",
+        "venue": "Hyderabad"
+    },
+    {
+        "team1": "Rajasthan Royals",
+        "team2": "Kings XI Punjab",
+        "date": "08-May-2018",
+        "time": "8 (PM)",
+        "venue": "Jaipur"
+    },
+    {
+        "team1": "Kolkata Knight Riders",
+        "team2": "Mumbai Indians",
+        "date": "09-May-2018",
+        "time": "8 (PM)",
+        "venue": "Kolkata"
+    },
+    {
+        "team1": "Delhi Daredevils",
+        "team2": "Sunrisers Hyderabad",
+        "date": "10-May-2018",
+        "time": "8 (PM)",
+        "venue": "Delhi"
+    },
+    {
+        "team1": "Rajasthan Royals",
+        "team2": "Chennai Super Kings",
+        "date": "11-May-2018",
+        "time": "8 (PM)",
+        "venue": "Jaipur"
+    },
+    {
+        "team1": "Kings XI Punjab",
+        "team2": "Kolkata Knight Riders",
+        "date": "12-May-2018",
+        "time": "4 (PM)",
+        "venue": "Mohali"
+    },
+    {
+        "team1": "Royal Challengers Bangalore",
+        "team2": "Delhi Daredevils",
+        "date": "12-May-2018",
+        "time": "8 (PM)",
+        "venue": "Bengaluru"
+    },
+    {
+        "team1": "Chennai Super Kings",
+        "team2": "Sunrisers Hyderabad",
+        "date": "13-May-2018",
+        "time": "4 (PM)",
+        "venue": "Chennai"
+    },
+    {
+        "team1": "Mumbai Indians",
+        "team2": "Rajasthan Royals",
+        "date": "13-May-2018",
+        "time": "8 (PM)",
+        "venue": "Mumbai"
+    },
+    {
+        "team1": "Kings XI Punjab",
+        "team2": "Royal Challengers Bangalore",
+        "date": "14-May-2018",
+        "time": "8 (PM)",
+        "venue": "Mohali"
+    },
+    {
+        "team1": "Kolkata Knight Riders",
+        "team2": "Rajasthan Royals",
+        "date": "15-May-2018",
+        "time": "8 (PM)",
+        "venue": "Kolkata"
+    },
+    {
+        "team1": "Mumbai Indians",
+        "team2": "Kings XI Punjab",
+        "date": "16-May-2018",
+        "time": "8 (PM)",
+        "venue": "Mumbai"
+    },
+    {
+        "team1": "Royal Challengers Bangalore",
+        "team2": "Sunrisers Hyderabad",
+        "date": "17-May-2018",
+        "time": "8 (PM)",
+        "venue": "Bengaluru"
+    },
+    {
+        "team1": "Delhi Daredevils",
+        "team2": "Chennai Super Kings",
+        "date": "18-May-2018",
+        "time": "8 (PM)",
+        "venue": "Delhi"
+    },
+    {
+        "team1": "Rajasthan Royals",
+        "team2": "Royal Challengers Bangalore",
+        "date": "19-May-2018",
+        "time": "4 (PM)",
+        "venue": "Jaipur"
+    },
+    {
+        "team1": "Sunrisers Hyderabad",
+        "team2": "Kolkata Knight Riders",
+        "date": "19-May-2018",
+        "time": "8 (PM)",
+        "venue": "Hyderabad"
+    },
+    {
+        "team1": "Delhi Daredevils",
+        "team2": "Mumbai Indians",
+        "date": "20-May-2018",
+        "time": "4 (PM)",
+        "venue": "Delhi"
+    },
+    {
+        "team1": "Chennai Super Kings",
+        "team2": "Kings XI Punjab",
+        "date": "20-May-2018",
+        "time": "8 (PM)",
+        "venue": "Chennai"
+    },
+    {
+        "team1": "TBD",
+        "team2": "TBD",
+        "date": "22-May-2018",
+        "time": "8 (PM)",
+        "venue": "Mumbai"
+    },
+    {
+        "team1": "TBD",
+        "team2": "TBD",
+        "date": "23-May-2018",
+        "time": "8 (PM)",
+        "venue": "TBC"
+    },
+    {
+        "team1": "TBD",
+        "team2": "TBD",
+        "date": "25-May-2018",
+        "time": "8 (PM)",
+        "venue": "TBC"
+    },
+    {
+        "team1": "TBD",
+        "team2": "TBD",
+        "date": "27-May-2018",
+        "time": "8 (PM)",
+        "venue": "Mumbai"
+    },
+    {
+        "team1": "Mumbai Indians",
+        "team2": "Chennai Super Kings",
+        "date": "24-Mar-2018",
+        "time": "4 (PM)",
+        "venue": "Mumbai"
+    },
+    {
+        "team1": "Chennai Super Kings",
+        "team2": "Kings XI Punjab",
+        "date": "24-Mar-2018",
+        "time": "8 (PM)",
+        "venue": "Chennai"
+    }
+]
