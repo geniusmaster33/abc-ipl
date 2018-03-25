@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 //import { Web3 } from 'web3-js';
 import Web3 = require('web3');
+//import { Web3 } from 'web3';
 
 declare let window: any;
 

@@ -2,7 +2,6 @@
         {"teamid":"CSK",
          "name":"Chennai Super Kings",
          "squad" : [
-            { "pid": "CSK1", "pname" : "MS Dhoni"},
             { "pid": "CSK2", "pname" : "Suresh Raina"},
             { "pid": "CSK3", "pname" : "Ravindra Jadeja"},
             { "pid": "CSK4", "pname" : "Faf du Plessis"},
@@ -30,7 +29,7 @@
          ]},
          {
              "teamid":"DD",
-             "name":"Delhi Dare Devils",
+             "name":"Delhi Daredevils",
              "squad": [
                 { "pid": "DD1", "pname" : "Rishabh Pant"},
                 { "pid": "DD2", "pname" : "Shreyas Iyer"},

@@ -4,5 +4,5 @@ import { HomePageComponent } from './component/home-page/home-page.component';
 
 export const appRoutes : Routes = [
     {path: '', component : HomePageComponent },
-    {path: 'matchpredict', component : MatchPredictComponent}
+    {path: 'matchpredict/:teams', component : MatchPredictComponent}
 ];
