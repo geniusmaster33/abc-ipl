@@ -9,6 +9,9 @@
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
     "target": "es5",
+    "types": [
+            "node"
+         ],
     "typeRoots": [
       "node_modules/@types"
     ],
