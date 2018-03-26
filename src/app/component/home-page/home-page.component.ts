@@ -32,7 +32,7 @@ export class HomePageComponent implements OnInit {
      }
 
 	this.web3.eth.getAccounts((err,accs) => {
-		console.log(accs);
+		console.log("Account info : " + accs);
 	});
 
   //   let account = this.web3.eth.accounts[0];
