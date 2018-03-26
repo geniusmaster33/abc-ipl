@@ -1,0 +1,170 @@
+<div class="wrapper">
+  <div class="page-header page-header-smaller" filter-color="orange">
+    <div class="page-header-image" style="background-image: url('../assets/img/stadium_night.jpg');">
+    </div>
+    <div class="container">
+      <div class="content-center">
+        <h4 class="text-white" style="margin-bottom:0px">
+          Submit Results
+        </h4>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-predict">
+    <form #resultForm="ngForm">
+      <div class="container" *ngIf="isMatchesLoaded">
+        <div class="col-md-12 offset-md-2 col-lg-12 offset-lg-2">
+          <div class="row valign-wrapper">
+            <div class="card card-blog">
+              <div class="card-body text-center">
+                <h5 class="card-title">
+                  Choose Match
+                </h5>
+                <select class="browser-default" required name="highestScorerPredict" (change)="handleTeamSelect($event.target.value)">
+                  <!--  browser-default-->
+                  <option value="" disabled selected>Select Match</option>
+                  <option *ngFor="let match of allMatches" value="{{match.team1}}:{{match.team2}}">({{match.date}} @ {{match.time}}) - {{match.team1}}:{{match.team2}}
+                  </option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div *ngIf="isSquadLoaded">
+            <!-- Scorer -->
+            <div class="row valign-wrapper">
+              <div class="card card-blog">
+                <div class="card-body text-center">
+                  <h5 class="card-title">
+                    Highest Scorer
+                  </h5>
+                  <select class="browser-default" required [(ngModel)]="results.scorer" name="highestScorerResult">
+                    <!--  browser-default-->
+                    <option value="" disabled selected>Choose player</option>
+                    <optgroup *ngFor="let team of selectedSquads" label="{{team.name}}">
+                      <option *ngFor="let member of team.squad" value="{{member.pid}}">{{member.pname}}</option>
+                    </optgroup>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bowler -->
+            <div class="row valign-wrapper">
+              <div class="card card-blog">
+                <div class="card-body text-center">
+                  <h5 class="card-title">
+                    Best Bowler
+                  </h5>
+                  <select class="browser-default" required [(ngModel)]="results.bowler" name="bowlerResult">
+                    <!--  browser-default-->
+                    <option value="" disabled selected>Choose player</option>
+                    <optgroup *ngFor="let team of selectedSquads" label="{{team.name}}">
+                      <option *ngFor="let member of team.squad" value="{{member.pid}}">{{member.pname}}</option>
+                    </optgroup>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+
+            <!-- MoM -->
+            <div class="row valign-wrapper">
+              <div class="card card-blog">
+                <div class="card-body text-center">
+                  <h5 class="card-title">
+                    Man of the Match
+                  </h5>
+                  <select class="browser-default" required [(ngModel)]="results.mom" name="momResult">
+                    <!--  browser-default-->
+                    <option value="" disabled selected>Choose player</option>
+                    <optgroup *ngFor="let team of selectedSquads" label="{{team.name}}">
+                      <option *ngFor="let member of team.squad" value="{{member.pid}}">{{member.pname}}</option>
+                    </optgroup>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- Winner -->
+            <div class="row valign-wrapper">
+                <div class="card card-blog">
+                  <div class="card-body text-center">
+                    <h5 class="card-title">
+                      Winner
+                    </h5>
+                    <div class="row">
+                        <div class="col-lg-6 text-center col-md-8 ml-auto mr-auto">
+                          <div *ngFor="let team of selectedSquads; let i = index" class="radio" style="text-align:left">
+                            <input name="grpTossWinner" type="radio" id="fToss{{i+1}}" class="with-gap" value="{{team.teamid}}"
+                                   [(ngModel)]="results.winner" name="winnerResult"/>
+                            <label for="fToss{{i+1}}">{{team.name}}</label>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+
+            <!-- Score -->
+            <div class="row valign-wrapper">
+                <div class="card card-blog">
+                  <div class="card-body text-center">
+                    <h5 class="card-title">
+                      1st Innings Score
+                    </h5>
+                    <div class="row">
+                        <div class="col-lg-6 text-center col-md-8 ml-auto mr-auto">
+                          <div class="input-group input-lg">
+                            <span class="input-group-addon">
+                              <i class="now-ui-icons sport_user-run"></i>
+                            </span>
+                            <input type="number" pattern="\d*" class="form-control" placeholder="Enter actual runs"
+                                   [(ngModel)]="results.score" name="scorePredict">
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class=" text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 text-center col-md-8 ml-auto mr-auto">
+            <div class="send-button">
+                <button class="btn btn-primary btn-round btn-block btn-lg" type="button" 
+                [disabled]="!isSquadLoaded"
+                data-toggle="modal" data-target="#myModal">Submit to Blockchain</button>
+              <!--<a href="#pablo" class="btn btn-primary btn-round btn-block btn-lg">Submit to Blockchain</a>-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+<!-- Modal Core -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" style="margin-top:100px">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="myModalLabel">Confirmation</h4>
+        </div>
+        <div class="modal-body">
+          Are you sure you want to submit?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default btn-simple" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-info btn-simple" data-dismiss="modal" (click)="submitIt()">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>

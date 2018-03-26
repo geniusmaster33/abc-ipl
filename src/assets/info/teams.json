@@ -2,6 +2,7 @@
         {"teamid":"CSK",
          "name":"Chennai Super Kings",
          "squad" : [
+            { "pid": "CSK1", "pname" : "MS Dhoni"},
             { "pid": "CSK2", "pname" : "Suresh Raina"},
             { "pid": "CSK3", "pname" : "Ravindra Jadeja"},
             { "pid": "CSK4", "pname" : "Faf du Plessis"},

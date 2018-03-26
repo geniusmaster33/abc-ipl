@@ -4,16 +4,20 @@ import {HomePageComponent} from './home-page/home-page.component';
 import {MatchInfoComponent} from './match-info/match-info.component';
 import {UtilModule} from '../util/util.module';
 import {RouterModule} from '@angular/router';
+import { MatchResultComponent } from './match-result/match-result.component';
+import { FormsModule }   from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
-    UtilModule
+    UtilModule,
+    FormsModule
   ],
   declarations: [
     HomePageComponent,
-    MatchInfoComponent
+    MatchInfoComponent,
+    MatchResultComponent
     ],
   exports: [
     HomePageComponent,
