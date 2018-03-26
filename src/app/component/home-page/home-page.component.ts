@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 //import { Web3 } from 'web3-js';
-import Web3 = require('web3');
-//import { Web3 } from 'web3';
+import {Web3Service} from '../../util/web3.service';
+import * as metacoin_artifacts from '../../../../build/contracts/MetaCoin.json';
 
-declare let window: any;
+//declare let window: any;
 
 @Component({
   selector: 'app-home-page',
@@ -11,39 +11,60 @@ declare let window: any;
   styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent implements OnInit {
-  private web3: Web3;
 
-  constructor() { }
+  accounts: string[];
+  MetaCoin: any;
+  
+  model = {
+    amount: 5,
+    receiver: '',
+    balance: 0,
+    account: ''
+  };
 
-  ngOnInit() {
-    this.getBalance();
+  status = '';
+
+   constructor(private web3Service: Web3Service) {
+    console.log('Constructor: ' + web3Service);
+   // console.log(metacoin_artifacts);
   }
 
-   getBalance() {
-  //   console.log("inside getBalance");
-  //   this.web3 = new Web3(new Web3.providers.HttpProvider("https://rinkeby.infura.io/rDtDtyNmAVjB12zhj5nn"));
-    
-    if (typeof window.web3 !== 'undefined') {
-       console.log('No web3 found, get MetaMask!');
-      this.web3 = new Web3(window.web3.currentProvider);
-	console.log(this.web3);
-	} else {
-       console.log('Web3 found! Tips welcome!');
-     }
+ ngOnInit(): void {
+    console.log('OnInit: ' + this.web3Service);
+    console.log(this);
+    this.watchAccount();
+    this.web3Service.artifactsToContract(metacoin_artifacts)
+      .then((MetaCoinAbstraction) => {
+        this.MetaCoin = MetaCoinAbstraction;
+       console.log(this.MetaCoin);
+      });
+     
+  }
 
-	this.web3.eth.getAccounts((err,accs) => {
-		console.log("Account info : " + accs);
-	});
+  setStatus(status) {
+    this.status = status;
+  }
+  
+   watchAccount() {
+    this.web3Service.accountsObservable.subscribe((accounts) => {
+      this.accounts = accounts;
+      console.log(this.accounts);
+      this.model.account = accounts[0];
+      this.refreshBalance();
+    });
+  }
+  async refreshBalance() {
+    console.log('Refreshing balance');
 
-  //   let account = this.web3.eth.accounts[0];
+    try {
+      const deployedMetaCoin = await this.MetaCoin.deployed();
+      const metaCoinBalance = await deployedMetaCoin.getBalance.call(this.model.account);
+      console.log('Found balance: ' + metaCoinBalance);
+      this.model.balance = metaCoinBalance;
+    } catch (e) {
+      console.log(e);
+      this.setStatus('Error getting balance; see log.');
+    }
+  }
 
-  //   this.web3.eth.getBalance(account, (err, balance) => {
-  //     if (err) {
-  //       console.log(err.message)
-  //     }
-      
-  //     const ether = this.web3.fromWei(balance, 'ether')
-  //     console.log(`Account balance: ${ether.toString()}`);
-  //   })
-   }
 }
