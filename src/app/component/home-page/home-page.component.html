@@ -16,16 +16,16 @@
                         <p>My Balance</p>
                     </div>
                     <div class="social-description col-sm-6">
-                        <h2>25000</h2>
-                        <p>Pot Size</p>
-                    </div>
-                    <div class="social-description col-sm-6">
                         <h2>#2</h2>
                         <p>Rank</p>
                     </div>
                     <div class="social-description col-sm-6">
                         <h2>5:8</h2>
                         <p>Win Loss Ratio</p>
+                    </div>
+                    <div class="social-description col-sm-6">
+                        <h2>25000</h2>
+                        <p>Pot Size</p>
                     </div>
                 </div>
             </div>
@@ -34,7 +34,9 @@
     <div class="section">
         <div class="container">
             <div class="button-container">
-                <a href="#button" class="btn btn-primary btn-round btn-lg">Today's Matches </a>
+                <a href="#button" class="btn btn-primary btn-round btn-lg" (click)="sendCoin()">Today's Matches </a>
+
+                <a href="#button" class="btn btn-primary btn-round btn-lg" (click)="refreshBalance()">Balance refresh</a>
             </div>
 
 
@@ -73,7 +75,6 @@
                 </ul>
             </nav>
         </div>
-        <app-match-result></app-match-result>
     </footer>
 </div>
     

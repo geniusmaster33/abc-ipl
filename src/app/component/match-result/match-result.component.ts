@@ -2,6 +2,8 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Http } from '@angular/http';
 import * as moment from 'moment';
 
+declare var jQuery:any;
+
 @Component({
   selector: 'app-match-result',
   templateUrl: './match-result.component.html',
@@ -25,6 +27,11 @@ export class MatchResultComponent implements OnInit {
 
   ngOnInit() {
     this.loadMatchList();
+
+    //jQuery('ul').tabs();
+
+    console.log("Element", jQuery('.tabs'));
+          
   }
 
   loadMatchList() {

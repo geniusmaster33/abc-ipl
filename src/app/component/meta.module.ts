@@ -6,6 +6,7 @@ import {UtilModule} from '../util/util.module';
 import {RouterModule} from '@angular/router';
 import { MatchResultComponent } from './match-result/match-result.component';
 import { FormsModule }   from '@angular/forms';
+import { MatchAdminComponent } from './match-admin/match-admin.component';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { FormsModule }   from '@angular/forms';
   declarations: [
     HomePageComponent,
     MatchInfoComponent,
-    MatchResultComponent
+    MatchResultComponent,
+    MatchAdminComponent
     ],
   exports: [
     HomePageComponent,
