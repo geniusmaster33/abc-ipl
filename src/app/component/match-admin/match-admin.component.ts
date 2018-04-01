@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Http } from '@angular/http';
+import * as moment from 'moment';
+
 
 @Component({
   selector: 'app-match-admin',
@@ -6,10 +9,81 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./match-admin.component.css']
 })
 export class MatchAdminComponent implements OnInit {
+  allMatches;
+  selectedSquads;
 
-  constructor() { }
+  selectedMatchId;
+  selectedMatchDateTime;
 
-  ngOnInit() {
+  //results:Results;
+
+  recentMatches;
+
+  isMatchesLoaded:boolean = false;
+  isSquadLoaded:boolean = false;
+
+  constructor(private http : Http) { 
+    //this.results = new Results();
   }
 
+  ngOnInit() {
+    this.loadMatchList();
+
+    //jQuery('ul').tabs();
+
+          
+  }
+
+  loadMatchList() {
+    const url = './../assets/info/match.json';
+
+    this.http.get(url).subscribe(
+      (data) => {
+        this.allMatches = data.json();
+        console.log("Matchlist ", this.allMatches);
+
+        // let i = 1;
+        // for(let match of this.allMatches) {
+        //   match.id = i;
+        //   i++;
+        // }
+
+        //console.log("Update match list", JSON.stringify(this.allMatches));
+      },
+      (error) => {
+        console.log("Error loading match list");
+      },
+     () => {
+       this.isMatchesLoaded = true;
+       console.log("Loaded " + this.isMatchesLoaded);
+     }
+    )
+  }
+
+  handleTeamSelect(selectedValue) {
+    console.log("Match selected ", selectedValue);
+    //TODO - Add match id
+    let matchInfo = selectedValue.split(":");
+    this.fetchSquads(matchInfo[0], matchInfo[1]);
+    this.selectedMatchDateTime = matchInfo[2] + " @ " + matchInfo[3];
+    this.selectedMatchId = matchInfo[4]; 
+    console.log("Date time ------- " + this.selectedMatchDateTime);
+  }
+
+  fetchSquads(team1, team2) {
+    console.log("--" + team1 + "-- --" + team2 + "--");
+    const url = './../assets/info/teams.json';
+    this.http.get(url).subscribe(
+      (data) => {
+        console.log("Data ", data);
+        this.selectedSquads = data.json().filter(team => team.name == team1 || team.name == team2);
+        //this.selectedSquads[0].id = "1";
+        console.log("Squad ", this.selectedSquads);
+      },
+      (error) => console.log(error),
+      () => this.isSquadLoaded = true
+    )
+  }
+
+//  get diagnostic() { return JSON.stringify(this.results); }
 }

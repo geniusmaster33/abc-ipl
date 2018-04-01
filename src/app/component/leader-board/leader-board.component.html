@@ -1,0 +1,98 @@
+<div class="wrapper">
+  <div class="page-header page-header-smaller" filter-color="orange">
+    <div class="page-header-image" style="background-image: url('../assets/img/stadium_night.jpg');">
+    </div>
+    <div class="container">
+      <div class="content-center">
+        <h4 class="text-white" style="margin-bottom:0px">
+          Leader Board
+        </h4>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-predict">
+      <div class="row">
+          <!-- Nav tabs -->
+          <div class="card">
+            <div class="card-header">
+              <ul class="nav nav-tabs justify-content-center" role="tablist">
+                <li class="nav-item">
+                  <a class="nav-link active" data-toggle="tab" href="#util" role="tab">
+                    <i class="now-ui-icons users_single-02"></i>
+                    All
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="tab" href="#result" role="tab">
+                    <i class="now-ui-icons tech_laptop"></i>
+                    AI
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="card-body">
+              <!-- Tab panes -->
+              <div class="tab-content text-center">
+                <div class="tab-pane active" id="util" role="tabpanel">
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                          <thead>
+                            <tr>
+                              <th class="text-center">#</th>
+                              <th>Name</th>
+                              <th class="text-right">Points</th>
+                              <th>W:L</th>
+                              <th class="text-right">Category</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <!---->
+                            <tr class="ng-star-inserted" *ngFor="let leader of leadersList; let i = index">
+                                <td class="text-center">{{i+1}}</td>
+                                <td class="text-left">{{leader.name}}</td>
+                                <td class="text-right">{{leader.points}}</td>
+                                <td class="text-center">{{leader.wl}}</td>
+                                <td class="text-left">{{leader.category}}</td>
+                              </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                </div>
+                <div class="tab-pane" id="result" role="tabpanel">
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                          <thead>
+                            <tr>
+                              <th class="text-center">#</th>
+                              <th>Name</th>
+                              <th class="text-right">Points</th>
+                              <th>W:L</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <!---->
+                            <tr class="ng-star-inserted" *ngFor="let leader of aiLeadersList; let i = index">
+                                <td class="text-center">{{i+1}}</td>
+                                <td class="text-left">{{leader.name}}</td>
+                                <td class="text-right">{{leader.points}}</td>
+                                <td class="text-center">{{leader.wl}}</td>
+                              </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        <!-- End Tabs on plain Card -->
+      </div>
+
+    
+
+
+
+  </div>

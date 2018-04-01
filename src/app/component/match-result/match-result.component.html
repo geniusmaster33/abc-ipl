@@ -1,36 +1,11 @@
 <div class="wrapper">
-  <div class="page-header page-header-smaller" filter-color="orange">
-    <div class="page-header-image" style="background-image: url('../assets/img/stadium_night.jpg');">
-    </div>
-    <div class="container">
-      <div class="content-center">
-        <h4 class="text-white" style="margin-bottom:0px">
-          Submit Results
-        </h4>
-      </div>
-    </div>
-  </div>
 
-  <div class="section-predict">
+  
     <form #resultForm="ngForm">
-      <div class="container" *ngIf="isMatchesLoaded">
+      <div class="container">
         <div class="col-md-12 offset-md-2 col-lg-12 offset-lg-2">
-          <div class="row valign-wrapper">
-            <div class="card card-blog">
-              <div class="card-body text-center">
-                <h5 class="card-title">
-                  Choose Match
-                </h5>
-                <select class="browser-default" required name="highestScorerPredict" (change)="handleTeamSelect($event.target.value)">
-                  <!--  browser-default-->
-                  <option value="" disabled selected>Select Match</option>
-                  <option *ngFor="let match of allMatches" value="{{match.team1}}:{{match.team2}}">({{match.date}} @ {{match.time}}) - {{match.team1}}:{{match.team2}}
-                  </option>
-                </select>
-              </div>
-            </div>
-          </div>
-          <div *ngIf="isSquadLoaded">
+          
+          <div >
             <!-- Scorer -->
             <div class="row valign-wrapper">
               <div class="card card-blog">
@@ -131,15 +106,13 @@
         </div>
       </div>
     </form>
-  </div>
-
+  
   <div class=" text-center">
       <div class="container">
         <div class="row">
           <div class="col-lg-6 text-center col-md-8 ml-auto mr-auto">
             <div class="send-button">
                 <button class="btn btn-primary btn-round btn-block btn-lg" type="button" 
-                [disabled]="!isSquadLoaded"
                 data-toggle="modal" data-target="#myModal">Submit to Blockchain</button>
               <!--<a href="#pablo" class="btn btn-primary btn-round btn-block btn-lg">Submit to Blockchain</a>-->
             </div>
@@ -147,9 +120,6 @@
         </div>
       </div>
     </div>
-
-    <app-match-admin></app-match-admin>
- 
 </div>
 
 

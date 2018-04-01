@@ -7,6 +7,8 @@ import {RouterModule} from '@angular/router';
 import { MatchResultComponent } from './match-result/match-result.component';
 import { FormsModule }   from '@angular/forms';
 import { MatchAdminComponent } from './match-admin/match-admin.component';
+import { MatchUtilComponent } from './match-util/match-util.component';
+import { LeaderBoardComponent } from './leader-board/leader-board.component';
 
 @NgModule({
   imports: [
@@ -19,7 +21,9 @@ import { MatchAdminComponent } from './match-admin/match-admin.component';
     HomePageComponent,
     MatchInfoComponent,
     MatchResultComponent,
-    MatchAdminComponent
+    MatchAdminComponent,
+    MatchUtilComponent,
+    LeaderBoardComponent
     ],
   exports: [
     HomePageComponent,
