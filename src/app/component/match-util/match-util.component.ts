@@ -31,4 +31,9 @@ export class MatchUtilComponent implements OnInit {
     // Add code to submit stop prediction request
   }
 
+  submitIt() {
+  
+  }
+  
+
 }

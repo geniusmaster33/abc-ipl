@@ -34,6 +34,11 @@ export class MatchResultComponent implements OnInit {
 
 
   get diagnostic() { return JSON.stringify(this.results); }
+
+  submitIt() {
+  
+  }
+  
 }
 
 class Results {
@@ -45,5 +50,6 @@ class Results {
 
   constructor() {}
 }
+
 
 

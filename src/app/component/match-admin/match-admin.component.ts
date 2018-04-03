@@ -85,5 +85,9 @@ export class MatchAdminComponent implements OnInit {
     )
   }
 
+  submitIt() {
+  
+  }
+  
 //  get diagnostic() { return JSON.stringify(this.results); }
 }
