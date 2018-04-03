@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 //import { Web3 } from 'web3-js';
 import { Web3Service } from '../../util/web3.service';
 import * as metacoin_artifacts from '../../../../build/contracts/MetaCoin.json';
@@ -12,6 +13,9 @@ import * as metacoin_artifacts from '../../../../build/contracts/MetaCoin.json';
 })
 export class HomePageComponent implements OnInit {
 
+  isAccountInfoLoaded = false;
+  isFirstTimeUser = false;
+
   accounts: string[];
   MetaCoin: any;
 
@@ -22,23 +26,41 @@ export class HomePageComponent implements OnInit {
     account: ''
   };
 
+  user = {
+    id: '',
+    name: '',
+    key: ''
+  }
+
   status = '';
 
-  constructor(private web3Service: Web3Service) {
+  constructor(private web3Service: Web3Service, private router: Router) {
     console.log('Constructor: ' + web3Service);
     // console.log(metacoin_artifacts);
   }
 
   ngOnInit(): void {
-    console.log('OnInit: ' + this.web3Service);
-    console.log(this);
+    console.log('########## OnInit: ' + this.web3Service);
+    this.accounts = this.web3Service.getAccount();
+    console.log("Accounts initial - " + this.accounts);
+
+    if(this.accounts) {
+      this.model.account = this.accounts[0];
+      console.log("Account on init " + this.model.account);
+     // this.refreshBalance(); 
+     // TODO - Balance not getting updated
+      this.isKeyRegistered();
+
+      this.isAccountInfoLoaded = true;
+    }
+
     this.watchAccount();
     this.web3Service.artifactsToContract(metacoin_artifacts)
       .then((MetaCoinAbstraction) => {
         this.MetaCoin = MetaCoinAbstraction;
         console.log(this.MetaCoin);
       });
-
+  console.log("Account ------ ", this.model.account);
   }
 
   setStatus(status) {
@@ -46,10 +68,15 @@ export class HomePageComponent implements OnInit {
   }
 
   watchAccount() {
+    console.log("Watching account ");
     this.web3Service.accountsObservable.subscribe((accounts) => {
       this.accounts = accounts;
       console.log(this.accounts);
       this.model.account = accounts[0];
+      console.log("found account");
+
+      this.user.key = this.model.account;
+      this.isKeyRegistered();
       this.refreshBalance();
     });
   }
@@ -115,6 +142,14 @@ export class HomePageComponent implements OnInit {
       .catch((e) => {
         console.log(e);
       })
+  }
+
+  isKeyRegistered() {
+    // fetch key registration status
+    this.isFirstTimeUser = false;
+
+    //this.router.navigate(['login', {key : this.model.account}]);
+    return false;
   }
 
 }

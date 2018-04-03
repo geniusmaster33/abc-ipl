@@ -74,4 +74,8 @@ export class Web3Service {
       this.ready = true;
     });
   }
+
+  public getAccount() {
+    return this.accounts;
+  }
 }

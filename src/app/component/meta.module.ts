@@ -9,6 +9,7 @@ import { FormsModule }   from '@angular/forms';
 import { MatchAdminComponent } from './match-admin/match-admin.component';
 import { MatchUtilComponent } from './match-util/match-util.component';
 import { LeaderBoardComponent } from './leader-board/leader-board.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   imports: [
@@ -23,7 +24,8 @@ import { LeaderBoardComponent } from './leader-board/leader-board.component';
     MatchResultComponent,
     MatchAdminComponent,
     MatchUtilComponent,
-    LeaderBoardComponent
+    LeaderBoardComponent,
+    LoginComponent
     ],
   exports: [
     HomePageComponent,

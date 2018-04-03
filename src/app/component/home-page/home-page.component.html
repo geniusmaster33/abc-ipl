@@ -1,7 +1,7 @@
 <!--<div class="profile-page sidebar-collapse">-->
 
 <!-- End Navbar -->
-<div class="wrapper profile-page">
+<div class="wrapper profile-page" *ngIf="accounts">
     <div class="page-header page-header-small" filter-color="orange">
         <div class="page-header-image" data-parallax="true" style="background-image:url(../../assets/img/bg11.jpg);">
         </div>
@@ -9,7 +9,7 @@
             <div class="content-center">
 
                 <h3 class="title">Peter Parker</h3>
-                <p class="category">{{model.account}}</p>
+                <p class="category" style="font-size:10px">{{model.account}}</p>
                 <div class="content">
                     <div class="social-description col-sm-6">
                         <h2>{{model.balance}}</h2>
@@ -43,38 +43,20 @@
             <div class="col-md-12 offset-md-2 col-lg-12 offset-lg-2">
 
                 <app-match-info></app-match-info>
-                
+
             </div>
         </div>
     </div>
 
     <footer class="footer footer-default">
-        <div class="container">
-            <nav>
-                <ul>
-                    <li>
-                        <a href="https://www.creative-tim.com">
-                            Creative Tim
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://presentation.creative-tim.com">
-                            About Us
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://blog.creative-tim.com">
-                            Blog
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/creativetimofficial/now-ui-kit/blob/master/LICENSE.md">
-                            MIT License
-                        </a>
-                    </li>
-                </ul>
-            </nav>
+        <div class="container text-center">
+            
+                        Team ABC
+           
         </div>
     </footer>
 </div>
-    
+
+
+
+<div id="loader" *ngIf="!accounts"></div>

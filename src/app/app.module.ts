@@ -21,7 +21,7 @@ import { MatchPredictComponent } from './component/match-predict/match-predict.c
     HttpModule,
     FormsModule,
     MetaModule,
-    RouterModule.forRoot(appRoutes, { enableTracing: true }) // <-- debugging purposes only)
+    RouterModule.forRoot(appRoutes/*, { enableTracing: true }*/) // <-- debugging purposes only)
   ],
   providers: [],
   bootstrap: [AppComponent]
