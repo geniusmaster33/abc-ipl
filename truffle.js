@@ -8,6 +8,11 @@ module.exports = {
         return new HDWalletProvider(mnemonic, "https://kovan.infura.io/rDtDtyNmAVjB12zhj5nn",2)
       },
       network_id: 42
+    },
+    development: {
+      host: "127.0.0.1",
+      port: 9545,
+      network_id: "*" // Match any network id
     }   
   }
 };
