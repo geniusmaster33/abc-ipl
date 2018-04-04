@@ -40,9 +40,9 @@ export class HomePageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log('########## OnInit: ' + this.web3Service);
-    this.accounts = this.web3Service.getAccount();
-    console.log("Accounts initial - " + this.accounts);
+    console.log('########## OnInit: ' + this.web3Service + "   " + this.isAccountInfoLoaded);
+    //this.accounts = this.web3Service.getAccount();
+    //console.log("Accounts initial - " + this.accounts);
 
     if(this.accounts) {
       this.model.account = this.accounts[0];
@@ -58,7 +58,7 @@ export class HomePageComponent implements OnInit {
     this.web3Service.artifactsToContract(metacoin_artifacts)
       .then((MetaCoinAbstraction) => {
         this.MetaCoin = MetaCoinAbstraction;
-        console.log(this.MetaCoin);
+        console.log("Metacoin " + this.MetaCoin);
       });
   console.log("Account ------ ", this.model.account);
   }
@@ -73,11 +73,16 @@ export class HomePageComponent implements OnInit {
       this.accounts = accounts;
       console.log(this.accounts);
       this.model.account = accounts[0];
-      console.log("found account");
-
+      console.log("found account ", this.accounts);
+      
       this.user.key = this.model.account;
       this.isKeyRegistered();
       this.refreshBalance();
+
+      this.isAccountInfoLoaded = true;
+
+      console.log("Account Info" + this.isAccountInfoLoaded );
+
     });
   }
   // async refreshBalance() {
