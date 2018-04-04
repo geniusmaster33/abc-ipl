@@ -3,6 +3,10 @@ import {Injectable} from '@angular/core';
 import Web3 = require('web3');
 import {Subject} from 'rxjs/Rx';
 
+import * as eip20_artifact from '../../../../build/contracts/EIP20.json';
+import * as ipl_artifact from '../../../build/contracts/Ipl.json';
+import * as match_artifact from '../../../../build/contracts/IPLMatch.json';
+
 const contract = require('truffle-contract');
 declare let window: any;
 
@@ -13,6 +17,10 @@ export class Web3Service {
   public ready = false;
   public MetaCoin: any;
   public accountsObservable = new Subject<string[]>();
+
+  public iplObservable = new Subject<number>();
+
+  public Ipl: any;
 
   constructor() {
     window.addEventListener('load', (event) => {
@@ -79,4 +87,30 @@ export class Web3Service {
   public getAccount() {
     return this.accounts;
   }
+
+  public async isRegistered(pubKey: string) {
+
+    let val;
+    console.log("Web3 isRegistered KEY - " + pubKey);
+    this.artifactsToContract(ipl_artifact)
+      .then((response) => {
+        this.Ipl = response;
+        console.log("IPL --- " + this.Ipl);
+
+        let meta;
+        this.Ipl.deployed().then((instance) => {
+
+          console.log("Instance ------- ", instance);
+          instance.numMatches.call().then((v) => {console.log("@@@@@@@@ " + v);
+          val = v;
+        return v;});
+
+          this.iplObservable.next(val);
+          console.log("Val ++++++++ ", val);
+        //return instance.isTrustedSource.call(pubKey, {from: pubKey});
+        },
+      (e) => {});
+      })
+  }
+
 }

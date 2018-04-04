@@ -102,7 +102,6 @@ contract Ipl is MultiOwnable, Haltable
     }
 
     function addPlayer(address _playerAddress, string playerName) 
-        onlyAdmin 
         onlyNotHalted
         returns (bool ok)
     {

@@ -3,7 +3,8 @@
     <div class="container">
         <div class="col-md-4 content-center">
             <div class="card card-login card-plain">
-                <form class="form" method="" action="">
+                <form class="form" method="post" 
+                        (ngSubmit)="submitForm()">
                     <div class="header header-primary text-center">
                         <h4>Register Your Key</h4>
                     </div>
@@ -13,26 +14,34 @@
                             <span class="input-group-addon">
                                 <i class="now-ui-icons users_circle-08"></i>
                             </span>
-                            <input type="text" class="form-control" placeholder="Interesting nick name">
+                            <input type="text" class="form-control"
+                                   name="username" id="username" placeholder="Interesting nick name"
+                                   [(ngModel)]="model.username">
                         </div>
                         <div class="input-group form-group-no-border input-lg">
                             <span class="input-group-addon">
                                 <i class="now-ui-icons text_caps-small"></i>
                             </span>
-                            <input type="text" placeholder="Full Name" class="form-control" />
+                            <input type="text" placeholder="Full Name"
+                                   class="form-control" 
+                                   name="fullname"
+                                   [(ngModel)]="model.fullname"/>
                         </div>
                         <div class="input-group form-group-no-border input-lg">
                             <span class="input-group-addon">
                                 <i class="now-ui-icons objects_key-25"></i>
                             </span>
-                            <input type="text" disabled class="form-control" value=""/>
+                            <input type="text" disabled class="form-control" value="{{model.key}}"
+                                   name="privatekey"/>
                         </div>
                     </div>
                     <div class="footer text-center">
-                        <a href="#pablo" class="btn btn-primary btn-round btn-lg btn-block">Register</a>
+                        <button class="btn btn-primary btn-round btn-block btn-lg" type="button" (click)="submitForm()">Register</button>
                     </div>
                     
                 </form>
             </div>
         </div>
     </div>
+
+    

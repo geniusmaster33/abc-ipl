@@ -3,6 +3,10 @@ import { Router } from '@angular/router';
 //import { Web3 } from 'web3-js';
 import { Web3Service } from '../../util/web3.service';
 import * as metacoin_artifacts from '../../../../build/contracts/MetaCoin.json';
+import * as eip20_artifact from '../../../../build/contracts/EIP20.json';
+import * as ipl_artifact from '../../../../build/contracts/Ipl.json';
+
+
 
 //declare let window: any;
 
@@ -18,6 +22,9 @@ export class HomePageComponent implements OnInit {
 
   accounts: string[];
   MetaCoin: any;
+  Ipl: any;
+  AbcCoin: any;
+
 
   model = {
     amount: 5,
@@ -71,13 +78,12 @@ export class HomePageComponent implements OnInit {
     console.log("Watching account ");
     this.web3Service.accountsObservable.subscribe((accounts) => {
       this.accounts = accounts;
-      console.log(this.accounts);
       this.model.account = accounts[0];
-      console.log("found account ", this.accounts);
+      console.log("Found account ", this.accounts);
       
       this.user.key = this.model.account;
       this.isKeyRegistered();
-      this.refreshBalance();
+      this.fetchBalance();
 
       this.isAccountInfoLoaded = true;
 
@@ -103,7 +109,7 @@ export class HomePageComponent implements OnInit {
     console.log('Refreshing balance');
 
     let meta;
-    this.MetaCoin.deployed()
+    this.Ipl.deployed()
       .then((instance) => {
         meta = instance;
         return meta.getBalance.call(this.model.account, {
@@ -149,12 +155,37 @@ export class HomePageComponent implements OnInit {
       })
   }
 
-  isKeyRegistered() {
-    // fetch key registration status
-    this.isFirstTimeUser = false;
 
-    //this.router.navigate(['login', {key : this.model.account}]);
-    return false;
+  isKeyRegistered() {
+  this.web3Service.artifactsToContract(ipl_artifact)
+      .then((response) => {
+        this.Ipl = response;
+        this.Ipl.deployed().then((instance) => {
+          console.log("Instance ------- ", instance);
+          instance.isTrustedSource.call(this.model.account).then((v) => {
+            console.log("@@@@@@@@ " + v);
+            if(!v) { // If not registered
+              this.router.navigate(['login', {key : this.model.account}]);
+            } 
+          });
+        },
+          (e) => { });
+      })
   }
+
+  fetchBalance() {
+    this.web3Service.artifactsToContract(eip20_artifact)
+        .then((response) => {
+          this.AbcCoin = response;
+          this.AbcCoin.deployed().then((instance) => {
+            console.log("Instance ------- ", instance);
+            instance.balanceOf.call(this.model.account).then((balance) => {
+              console.log(" AbcCoin Balance " + balance);
+              this.model.balance = balance; 
+            });
+          },
+            (e) => { });
+        })
+    }
 
 }
