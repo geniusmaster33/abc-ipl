@@ -46,13 +46,12 @@ export class HomePageComponent implements OnInit {
   constructor(private web3Service: Web3Service, 
               private router: Router,
               private http : Http) {
-    console.log('Constructor: ' + web3Service);
     // console.log(metacoin_artifacts);
   }
 
   ngOnInit(): void {
     console.log('########## OnInit: ' + this.web3Service + "   " + this.isAccountInfoLoaded);
-    //this.accounts = this.web3Service.getAccount();
+    this.accounts = this.web3Service.getAccount();
     //console.log("Accounts initial - " + this.accounts);
 
     if (this.accounts) {
