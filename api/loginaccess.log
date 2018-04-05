@@ -1,0 +1,133 @@
+ * Running on http://0.0.0.0:4021/ (Press CTRL+C to quit)
+27.110.77.254 - - [05/Apr/2018 11:51:38] "GET /removeuser HTTP/1.1" 404 -
+27.110.77.254 - - [05/Apr/2018 11:51:38] "GET /favicon.ico HTTP/1.1" 404 -
+ * Running on http://0.0.0.0:4021/ (Press CTRL+C to quit)
+27.110.77.254 - - [05/Apr/2018 11:52:34] "GET /removeUser?username=12 HTTP/1.1" 200 -
+Exception on /removeUser [GET]
+Traceback (most recent call last):
+  File "/home/nitesh_singh/.local/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/nitesh_singh/.local/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/nitesh_singh/.local/lib/python2.7/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/nitesh_singh/.local/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/nitesh_singh/.local/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/nitesh_singh/.local/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "login3.py", line 81, in removeusername
+    return Response(pk+"deleted")
+NameError: global name 'pk' is not defined
+27.110.77.254 - - [05/Apr/2018 11:52:53] "GET /removeUser?username=Test%20key HTTP/1.1" 500 -
+Exception on /removeUser [GET]
+Traceback (most recent call last):
+  File "/home/nitesh_singh/.local/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/nitesh_singh/.local/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/nitesh_singh/.local/lib/python2.7/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/nitesh_singh/.local/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/nitesh_singh/.local/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/nitesh_singh/.local/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "login3.py", line 81, in removeusername
+    return Response(pk+"deleted")
+NameError: global name 'pk' is not defined
+27.110.77.254 - - [05/Apr/2018 11:53:17] "GET /removeUser?username=Anand HTTP/1.1" 500 -
+ * Running on http://0.0.0.0:4021/ (Press CTRL+C to quit)
+27.110.77.254 - - [05/Apr/2018 11:55:57] "GET /removeUser?username=ayu HTTP/1.1" 200 -
+27.110.77.254 - - [05/Apr/2018 11:56:07] "GET /removeUser?username= HTTP/1.1" 200 -
+ * Running on http://0.0.0.0:4020/ (Press CTRL+C to quit)
+27.110.77.254 - - [05/Apr/2018 12:07:27] "GET /login HTTP/1.1" 200 -
+27.110.77.254 - - [05/Apr/2018 12:07:42] "GET /removeusers HTTP/1.1" 404 -
+27.110.77.254 - - [05/Apr/2018 12:07:57] "GET /removeUser HTTP/1.1" 200 -
+27.110.77.254 - - [05/Apr/2018 12:08:17] "GET /removeUser?username=Test%20key HTTP/1.1" 200 -
+27.110.77.254 - - [05/Apr/2018 12:08:51] "GET /removeUser?username=The_Last_Uchiha HTTP/1.1" 200 -
+27.110.77.254 - - [05/Apr/2018 12:13:53] "GET /getName?pk=0xB1ff063A7F26b4d5bd35369e6561b065e83a77CA HTTP/1.1" 200 -
+106.79.160.98 - - [05/Apr/2018 12:20:16] "GET /getName?pk=0x71De7bcbe8F4e5C54ad7e58856C70C19CdDAb1b3 HTTP/1.1" 200 -
+106.79.174.156 - - [05/Apr/2018 12:20:26] "OPTIONS /login HTTP/1.1" 200 -
+106.79.169.216 - - [05/Apr/2018 12:20:26] "POST /login HTTP/1.1" 200 -
+49.14.92.72 - - [05/Apr/2018 12:22:09] "GET /getName?pk=0x71De7bcbe8F4e5C54ad7e58856C70C19CdDAb1b3 HTTP/1.1" 200 -
+27.110.77.254 - - [05/Apr/2018 12:23:00] "OPTIONS /login HTTP/1.1" 200 -
+27.110.77.254 - - [05/Apr/2018 12:23:01] "POST /login HTTP/1.1" 200 -
+27.110.77.254 - - [05/Apr/2018 12:25:54] "GET /getName?pk=0xB1ff063A7F26b4d5bd35369e6561b065e83a77CA HTTP/1.1" 200 -
+27.110.77.254 - - [05/Apr/2018 12:26:35] "GET /getName?pk=0xB1ff063A7F26b4d5bd35369e6561b065e83a77CA HTTP/1.1" 200 -
+27.110.77.254 - - [05/Apr/2018 12:27:50] "POST /login HTTP/1.1" 200 -
+27.110.77.254 - - [05/Apr/2018 12:28:11] "GET /removeUser?username=1nitesh HTTP/1.1" 200 -
+27.110.77.254 - - [05/Apr/2018 12:29:30] "POST /login HTTP/1.1" 401 -
+27.110.77.254 - - [05/Apr/2018 12:30:07] "GET /checkpk?pk=0x71De7bcbe8F4e5C54ad7e58856C70C19CdDAb1b3 HTTP/1.1" 404 -
+27.110.77.254 - - [05/Apr/2018 12:30:11] "GET /checkpk?pk=0x71De7bcbe8F4e5C54ad7e58856C70C19CdDAb1b3 HTTP/1.1" 404 -
+157.33.27.154 - - [05/Apr/2018 12:34:45] "GET /getName?pk=0xc698F70f80aC18C9C33c7289E6CA55e8B88468D6 HTTP/1.1" 200 -
+157.33.27.154 - - [05/Apr/2018 12:35:12] "OPTIONS /login HTTP/1.1" 200 -
+157.33.27.154 - - [05/Apr/2018 12:35:12] "POST /login HTTP/1.1" 401 -
+157.33.27.154 - - [05/Apr/2018 12:35:17] "POST /login HTTP/1.1" 401 -
+157.33.27.154 - - [05/Apr/2018 12:35:20] "OPTIONS /login HTTP/1.1" 200 -
+157.33.27.154 - - [05/Apr/2018 12:35:21] "POST /login HTTP/1.1" 401 -
+157.33.27.154 - - [05/Apr/2018 12:35:26] "OPTIONS /login HTTP/1.1" 200 -
+157.33.27.154 - - [05/Apr/2018 12:35:27] "POST /login HTTP/1.1" 401 -
+157.33.27.154 - - [05/Apr/2018 12:35:29] "POST /login HTTP/1.1" 401 -
+157.33.27.154 - - [05/Apr/2018 12:35:30] "POST /login HTTP/1.1" 401 -
+157.33.27.154 - - [05/Apr/2018 12:35:31] "POST /login HTTP/1.1" 401 -
+157.33.27.154 - - [05/Apr/2018 12:35:56] "OPTIONS /login HTTP/1.1" 200 -
+157.33.27.154 - - [05/Apr/2018 12:35:56] "POST /login HTTP/1.1" 401 -
+157.33.27.154 - - [05/Apr/2018 12:35:59] "POST /login HTTP/1.1" 401 -
+157.33.27.154 - - [05/Apr/2018 12:36:11] "OPTIONS /login HTTP/1.1" 200 -
+157.33.27.154 - - [05/Apr/2018 12:36:12] "POST /login HTTP/1.1" 401 -
+157.33.27.154 - - [05/Apr/2018 12:36:14] "POST /login HTTP/1.1" 401 -
+157.33.27.154 - - [05/Apr/2018 12:36:14] "POST /login HTTP/1.1" 401 -
+157.33.27.154 - - [05/Apr/2018 12:36:14] "POST /login HTTP/1.1" 401 -
+157.33.27.154 - - [05/Apr/2018 12:36:14] "POST /login HTTP/1.1" 401 -
+157.33.27.154 - - [05/Apr/2018 12:36:14] "POST /login HTTP/1.1" 401 -
+157.33.27.154 - - [05/Apr/2018 12:36:15] "POST /login HTTP/1.1" 401 -
+157.33.27.154 - - [05/Apr/2018 12:36:15] "POST /login HTTP/1.1" 401 -
+157.33.27.154 - - [05/Apr/2018 12:36:15] "POST /login HTTP/1.1" 401 -
+157.33.27.154 - - [05/Apr/2018 12:36:15] "POST /login HTTP/1.1" 401 -
+157.33.27.154 - - [05/Apr/2018 12:36:15] "POST /login HTTP/1.1" 401 -
+157.33.27.154 - - [05/Apr/2018 12:36:33] "OPTIONS /login HTTP/1.1" 200 -
+157.33.27.154 - - [05/Apr/2018 12:36:33] "OPTIONS /login HTTP/1.1" 200 -
+157.33.27.154 - - [05/Apr/2018 12:36:34] "POST /login HTTP/1.1" 401 -
+157.33.27.154 - - [05/Apr/2018 12:36:34] "POST /login HTTP/1.1" 401 -
+157.33.27.154 - - [05/Apr/2018 12:36:34] "POST /login HTTP/1.1" 401 -
+157.33.27.154 - - [05/Apr/2018 12:36:34] "POST /login HTTP/1.1" 401 -
+157.33.27.154 - - [05/Apr/2018 12:37:17] "GET /getName?pk=0xc698F70f80aC18C9C33c7289E6CA55e8B88468D6 HTTP/1.1" 200 -
+157.33.27.154 - - [05/Apr/2018 12:37:26] "OPTIONS /login HTTP/1.1" 200 -
+157.33.27.154 - - [05/Apr/2018 12:37:27] "POST /login HTTP/1.1" 401 -
+157.33.27.154 - - [05/Apr/2018 12:37:28] "POST /login HTTP/1.1" 401 -
+157.33.27.154 - - [05/Apr/2018 12:37:40] "OPTIONS /login HTTP/1.1" 200 -
+157.33.27.154 - - [05/Apr/2018 12:37:40] "POST /login HTTP/1.1" 401 -
+157.33.27.154 - - [05/Apr/2018 12:37:43] "POST /login HTTP/1.1" 401 -
+157.33.27.154 - - [05/Apr/2018 12:37:44] "POST /login HTTP/1.1" 401 -
+157.33.27.154 - - [05/Apr/2018 12:38:27] "GET /getName?pk=0x9407fF05df9B102eaaF935a209dC7D037BaC831a HTTP/1.1" 200 -
+157.33.27.154 - - [05/Apr/2018 12:39:09] "OPTIONS /login HTTP/1.1" 200 -
+157.33.27.154 - - [05/Apr/2018 12:39:09] "POST /login HTTP/1.1" 200 -
+27.110.77.254 - - [05/Apr/2018 13:05:23] "GET /removeUser?username=Thamit HTTP/1.1" 200 -
+27.110.75.254 - - [05/Apr/2018 13:07:12] "GET /getName?pk=0x17664421d825760920b971327aE18E054BE92669 HTTP/1.1" 200 -
+27.110.75.254 - - [05/Apr/2018 13:07:26] "OPTIONS /login HTTP/1.1" 200 -
+27.110.75.254 - - [05/Apr/2018 13:07:26] "POST /login HTTP/1.1" 200 -
+27.110.75.254 - - [05/Apr/2018 13:09:19] "GET /getName?pk=0x17664421d825760920b971327aE18E054BE92669 HTTP/1.1" 200 -
+27.110.77.254 - - [05/Apr/2018 13:29:06] "GET /getName?pk=0xB1ff063A7F26b4d5bd35369e6561b065e83a77CA HTTP/1.1" 200 -
+106.193.188.134 - - [05/Apr/2018 13:31:02] "GET /getName?pk=0x21306b1bed3354a465B856D18D360B98821C99Cf HTTP/1.1" 200 -
+106.193.188.134 - - [05/Apr/2018 13:31:23] "GET /getName?pk=0x21306b1bed3354a465B856D18D360B98821C99Cf HTTP/1.1" 200 -
+106.193.188.134 - - [05/Apr/2018 13:32:01] "GET /getName?pk=0x21306b1bed3354a465B856D18D360B98821C99Cf HTTP/1.1" 200 -
+157.33.27.154 - - [05/Apr/2018 13:32:28] "GET /getName?pk=0x9407fF05df9B102eaaF935a209dC7D037BaC831a HTTP/1.1" 200 -
+106.193.188.134 - - [05/Apr/2018 13:32:54] "GET /getName?pk=0x21306b1bed3354a465B856D18D360B98821C99Cf HTTP/1.1" 200 -
+106.193.188.134 - - [05/Apr/2018 13:33:08] "GET /getName?pk=0x21306b1bed3354a465B856D18D360B98821C99Cf HTTP/1.1" 200 -
+106.193.188.134 - - [05/Apr/2018 13:33:26] "GET /getName?pk=0x21306b1bed3354a465B856D18D360B98821C99Cf HTTP/1.1" 200 -
+106.193.188.134 - - [05/Apr/2018 13:33:34] "GET /getName?pk=0x21306b1bed3354a465B856D18D360B98821C99Cf HTTP/1.1" 200 -
+106.193.188.134 - - [05/Apr/2018 13:34:15] "GET /getName?pk=0x21306b1bed3354a465B856D18D360B98821C99Cf HTTP/1.1" 200 -
+106.193.188.134 - - [05/Apr/2018 13:35:19] "GET /getName?pk=0x21306b1bed3354a465B856D18D360B98821C99Cf HTTP/1.1" 200 -
+106.193.188.134 - - [05/Apr/2018 13:36:13] "GET /getName?pk=0x21306b1bed3354a465B856D18D360B98821C99Cf HTTP/1.1" 200 -
+27.110.77.254 - - [05/Apr/2018 13:37:36] "GET /getName?pk=0x7aBEE1fAEB1e03d9058Def0b46820353c3F1528a HTTP/1.1" 200 -
+27.110.77.254 - - [05/Apr/2018 13:37:56] "GET /getName?pk=0x063c036EF15981F8811068849A8ffEcC2C4327d9 HTTP/1.1" 200 -
+106.193.188.134 - - [05/Apr/2018 13:38:44] "GET /getName?pk=0xf17f52151EbEF6C7334FAD080c5704D77216b732 HTTP/1.1" 200 -
+42.107.81.0 - - [05/Apr/2018 13:46:56] "GET /getName?pk=0x21306b1bed3354a465B856D18D360B98821C99Cf HTTP/1.1" 200 -
+42.107.81.0 - - [05/Apr/2018 13:51:19] "GET /getName?pk=0x21306b1bed3354a465B856D18D360B98821C99Cf HTTP/1.1" 200 -
+42.107.81.0 - - [05/Apr/2018 13:52:29] "GET /getName?pk=0x2d1EF08D350a5Ff4D1351b9BE26166171c967351 HTTP/1.1" 200 -
+42.107.81.0 - - [05/Apr/2018 13:53:35] "GET /getName?pk=0x2d1EF08D350a5Ff4D1351b9BE26166171c967351 HTTP/1.1" 200 -
+42.107.81.0 - - [05/Apr/2018 13:55:54] "GET /getName?pk=0x2d1EF08D350a5Ff4D1351b9BE26166171c967351 HTTP/1.1" 200 -
+42.107.81.0 - - [05/Apr/2018 13:56:24] "GET /getName?pk=0x2d1EF08D350a5Ff4D1351b9BE26166171c967351 HTTP/1.1" 200 -
