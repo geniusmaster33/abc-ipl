@@ -2,36 +2,46 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Http } from '@angular/http';
 import { ActivatedRoute } from '@angular/router';
 import { Predictions } from './predictions';
-import { PredictionData} from './prediction-data';
+import { PredictionData } from './prediction-data';
+import { Web3Service } from '../../util/web3.service';
+import * as match_artifact from '../../../../build/contracts/IPLMatch.json';
+import * as ipl_artifact from '../../../../build/contracts/Ipl.json';
 
 import * as moment from 'moment';
 
 import * as $ from 'jquery/dist/jquery.min.js';
 
-declare var jQuery:any;
+declare var jQuery: any;
 
 @Component({
   selector: 'app-match-predict',
   templateUrl: './match-predict.component.html',
   styleUrls: ['./match-predict.component.css']
 })
-export class MatchPredictComponent implements OnInit{
+export class MatchPredictComponent implements OnInit {
   todaysTeams;
   teamNames;
-  isDataLoaded:boolean = false;
+  isDataLoaded: boolean = false;
+
+  ipl: any;
+  match: any;
 
   counter = 0;
 
-  allPredictions:Predictions;
+  allPredictions: Predictions;
 
-  totalBalance:number = 10000; //TODO - Needs to be fetched from server
+  totalBalance: number = 10000; //TODO - Needs to be fetched from server
 
-  remainingBalance:number = 5000;
+  remainingBalance: number = 5000;
 
-  tempBet:number = 250;
-  temp2:number;
+  tempBet: number = 250;
+  temp2: number;
 
-  constructor(private http : Http,  private route: ActivatedRoute) { }
+  multipliers: number[] = new Array(6);
+
+  constructor(private http: Http,
+    private route: ActivatedRoute,
+    private web3Service: Web3Service) { }
 
   ngOnInit() {
     this.allPredictions = new Predictions();
@@ -47,6 +57,9 @@ export class MatchPredictComponent implements OnInit{
     this.findTeamNames();
     this.fetchSquads();
     //this.remainingBalance = 5000 - this.allPredictions.bestBowler.assignedPoints;
+
+
+    this.checkIfPredicted();
   }
 
   findTeamNames() {
@@ -86,9 +99,9 @@ export class MatchPredictComponent implements OnInit{
     console.log("Inside updateRange ", event.target.value);
   }
 
-  handleEvent(eventData, action:string) {
+  handleEvent(eventData, action: string) {
     console.log("Entered handleEvent");
-    
+
     // switch(action) {
     //   case 'tossWinnerEvent' :
     //     this.tossWinner = eventData.target.value;
@@ -101,32 +114,86 @@ export class MatchPredictComponent implements OnInit{
     // }
   }
 
-  evaluateRemainingBalance(eventData) {
-    console.log("%%%%%%%%%%%% " + eventData);
-    this.remainingBalance = 5000 - this.allPredictions.highestScorer.assignedPoints;
-    console.log("rem bal " + this.allPredictions.highestScorer.assignedPoints + " " + this.remainingBalance);
-  }
+  // evaluateRemainingBalance(eventData) {
+  //   console.log("%%%%%%%%%%%% " + eventData);
+  //   this.remainingBalance = 5000 - this.allPredictions.highestScorer.assignedPoints;
+  //   console.log("rem bal " + this.allPredictions.highestScorer.assignedPoints + " " + this.remainingBalance);
+  // }
 
   get diagnostic() { return JSON.stringify(this.allPredictions); }
 
   get getBalance() {
     this.counter++;
-    console.log("getBalance - " + this.counter);
+    //console.log("getBalance - " + this.counter);
     let available = 0;
 
-    available = this.totalBalance 
-                  - (!this.allPredictions.highestScorer.assignedPoints ? 0 : this.allPredictions.highestScorer.assignedPoints)
-                  - (!this.allPredictions.bestBowler.assignedPoints ? 0 : this.allPredictions.bestBowler.assignedPoints)
-                  - (!this.allPredictions.mom.assignedPoints ? 0 : this.allPredictions.mom.assignedPoints)
-                  - (!this.allPredictions.winningTeam.assignedPoints ? 0 : this.allPredictions.winningTeam.assignedPoints)
-                  - (!this.allPredictions.score.assignedPoints ? 0 : this.allPredictions.score.assignedPoints)
+    available = this.totalBalance
+      - (!this.allPredictions.highestScorer.assignedPoints ? 0 : this.allPredictions.highestScorer.assignedPoints)
+      - (!this.allPredictions.bestBowler.assignedPoints ? 0 : this.allPredictions.bestBowler.assignedPoints)
+      - (!this.allPredictions.mom.assignedPoints ? 0 : this.allPredictions.mom.assignedPoints)
+      - (!this.allPredictions.winningTeam.assignedPoints ? 0 : this.allPredictions.winningTeam.assignedPoints)
+      - (!this.allPredictions.score.assignedPoints ? 0 : this.allPredictions.score.assignedPoints)
 
-                  this.remainingBalance = available;
+    this.remainingBalance = available;
 
     return available;
   }
 
   submitIt() {
     console.log("Requested for submit");
+  }
+
+  submitPredictions() {
+    console.log("About to predict");
+    this.web3Service.artifactsToContract(ipl_artifact)
+      .then((response) => {
+        //console.log("Register preresponse ", response);
+        this.ipl = response;
+        this.ipl.deployed().then((instance) => {
+          instance.getMatchByIndex.call(0).then((matchAddr) => { //TODO 
+            console.log("Match address - ", matchAddr);
+            this.web3Service.artifactsToContract(match_artifact)
+              .then((m) => {
+                console.log("Register preresponse ", m);
+                this.match = m;
+                this.match.at(matchAddr).then((instance1) => {
+                  instance1.bet.sendTransaction([2, 3, 4, 5, 6], [1, 2, 3, 1, 150],
+                    { from: this.web3Service.getKey(), gas: 300000 })
+                    .then((v) => {
+                      console.log("Match Predict result - " + v);
+                      if (v) { // If not registered
+                      }
+                    });
+                });
+              })
+          })
+        })
+      }
+      );
+  }
+
+  async checkIfPredicted() {
+    console.log("About to check if prediction allowed for user");
+    let isHalted = true;
+
+    const iplContract = await this.web3Service.artifactsToContract(ipl_artifact);
+    const instance = await iplContract.deployed();
+    const matchAddr = await instance.getMatchByIndex.call(0);
+    const matchContract = await this.web3Service.artifactsToContract(match_artifact);
+    const matchInstance = await matchContract.at(matchAddr);
+    isHalted = await matchInstance.isHalted.call();
+    console.log("isHalted ", isHalted);
+
+    //await instance.haltSwitch.sendTransaction(true, {from: this.web3Service.getKey(), gas: 300000 });
+
+    for (let index = 0; index < 6; index++) {
+      this.multipliers[index] = await matchInstance.multiplier.call(index);
+    }
+    
+    console.log("Multiplier " + this.multipliers);
+  }
+
+  async getMultipliers() {
+
   }
 }

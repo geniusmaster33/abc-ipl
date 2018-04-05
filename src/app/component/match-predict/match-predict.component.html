@@ -48,7 +48,7 @@
                 </div>
                 <div class="card-footer">
                   <div class="stats stats-left">
-                    <i class="now-ui-icons objects_spaceship"></i> 2x
+                    <i class="now-ui-icons objects_spaceship"></i> {{multipliers[0]}}x
                   </div>
                   <div class="stats stats-right">
                     <i class="now-ui-icons media-2_sound-wave"></i> {{getBalance}}
@@ -91,7 +91,7 @@
                 {{remainingBalance}}
                 <div class="card-footer text-primary">
                   <div class="stats stats-left">
-                    <i class="now-ui-icons objects_spaceship"></i> 2x
+                    <i class="now-ui-icons objects_spaceship"></i> {{multipliers[1]}}x
                   </div>
                   <div class="stats stats-right">
                     <i class="now-ui-icons media-2_sound-wave"></i> {{remainingBalance}}
@@ -133,7 +133,7 @@
 
                 <div class="card-footer">
                   <div class="stats stats-left">
-                    <i class="now-ui-icons objects_spaceship"></i> 2x
+                    <i class="now-ui-icons objects_spaceship"></i> {{multipliers[2]}}x
                   </div>
                   <div class="stats stats-right">
                     <i class="now-ui-icons media-2_sound-wave"></i> {{remainingBalance}}
@@ -174,7 +174,7 @@
                 </div>
                 <div class="card-footer">
                   <div class="stats stats-left">
-                    <i class="now-ui-icons objects_spaceship"></i> 2x
+                    <i class="now-ui-icons objects_spaceship"></i> {{multipliers[3]}}x
                   </div>
                   <div class="stats stats-right">
                     <i class="now-ui-icons media-2_sound-wave"></i> {{remainingBalance}}
@@ -224,7 +224,7 @@
                 </p>-->
                 <div class="card-footer">
                   <div class="stats stats-left">
-                    <i class="now-ui-icons objects_spaceship"></i> 2x
+                    <i class="now-ui-icons objects_spaceship"></i> +/- 10 : {{multipliers[4]}}x Exact : {{multipliers[5]}}x
                   </div>
                   <div class="stats stats-right">
                     <i class="now-ui-icons media-2_sound-wave"></i> {{remainingBalance}}
@@ -303,7 +303,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default btn-simple" data-dismiss="modal">Cancel</button>
-          <button type="button" class="btn btn-info btn-simple" data-dismiss="modal" (click)="submitIt()">Submit</button>
+          <button type="button" class="btn btn-info btn-simple" data-dismiss="modal" (click)="submitPredictions()">Submit</button>
         </div>
       </div>
     </div>

@@ -42,6 +42,7 @@ export class LoginComponent implements OnInit {
 
     this.http.post(url, this.model).subscribe(
       (data) => {
+        console.log("Account registered with login service");
         this.registerInContract();
         //this.router.navigate(['']);
         // this.matchList = data.json();
@@ -68,7 +69,7 @@ export class LoginComponent implements OnInit {
         console.log("Register preresponse ", response);
         this.Ipl = response;
         this.Ipl.deployed().then((instance) => {
-          instance.addPlayer(this.model.key, this.model.username, { from: this.model.key, gas: 300000 }).then((v) => {
+          instance.addPlayer.sendTransaction(this.model.key, this.model.username, { from: this.model.key, gas: 300000 }).then((v) => {
             console.log("Add player response - " + v);
             if (v) { // If not registered
               this.router.navigate(['']);

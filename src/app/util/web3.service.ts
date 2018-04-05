@@ -22,6 +22,8 @@ export class Web3Service {
 
   public Ipl: any;
 
+  private key: string;
+
   constructor() {
     window.addEventListener('load', (event) => {
       this.bootstrapWeb3();
@@ -111,6 +113,14 @@ export class Web3Service {
         },
       (e) => {});
       })
+  }
+
+  public getKey() {
+    return this.key;
+  }
+
+  public setKey(key:string) {
+    this.key = key;
   }
 
 }
