@@ -22,6 +22,7 @@ export class MatchPredictComponent implements OnInit {
   todaysTeams;
   teamNames;
   isDataLoaded: boolean = false;
+  isHalted = true;
 
   ipl: any;
   match: any;
@@ -182,6 +183,7 @@ export class MatchPredictComponent implements OnInit {
     const matchContract = await this.web3Service.artifactsToContract(match_artifact);
     const matchInstance = await matchContract.at(matchAddr);
     isHalted = await matchInstance.isHalted.call();
+    this.isHalted = isHalted;
     console.log("isHalted ", isHalted);
 
     //await instance.haltSwitch.sendTransaction(true, {from: this.web3Service.getKey(), gas: 300000 });
