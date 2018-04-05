@@ -57,7 +57,7 @@ export class HomePageComponent implements OnInit {
     if (this.accounts) {
       this.model.account = this.accounts[0];
       console.log("Account on init " + this.model.account);
-      // this.refreshBalance(); 
+      this.refreshBalance(); 
       // TODO - Balance not getting updated
       this.isKeyRegistered();
 
@@ -99,20 +99,7 @@ export class HomePageComponent implements OnInit {
 
     });
   }
-  // async refreshBalance() {
-  //   console.log('Refreshing balance');
-
-  //   try {
-  //     const deployedMetaCoin = await this.MetaCoin.deployed();
-  //     const metaCoinBalance = await deployedMetaCoin.getBalance.call(this.model.account);
-  //     console.log('Found balance: ' + metaCoinBalance);
-  //     this.model.balance = metaCoinBalance;
-  //   } catch (e) {
-  //     console.log(e);
-  //     this.setStatus('Error getting balance; see log.');
-  //   }
-  // }
-
+  
   refreshBalance() {
     console.log('Refreshing balance');
 

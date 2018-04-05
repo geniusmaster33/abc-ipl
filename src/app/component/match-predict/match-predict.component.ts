@@ -159,7 +159,7 @@ export class MatchPredictComponent implements OnInit {
                 this.match = m;
                 this.match.at(matchAddr).then((instance1) => {
                   instance1.bet.sendTransaction([2, 3, 4, 5, 6], [1, 2, 3, 1, 150],
-                    { from: this.web3Service.getKey(), gas: 300000 })
+                    { from: this.web3Service.getKey(), gas: 500000, gasPrice: 20000000 })
                     .then((v) => {
                       console.log("Match Predict result - " + v);
                       if (v) { // If not registered
