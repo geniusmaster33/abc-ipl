@@ -174,7 +174,7 @@ export class HomePageComponent implements OnInit {
           instance.isTrustedSource.call(this.model.account).then((v) => {
             console.log("@@@@@@@@ " + v);
             if (!v) { // If not registered
-              //this.router.navigate(['login', {key : this.model.account}]);
+              this.router.navigate(['login', {key : this.model.account}]);
             }
           });
         },
