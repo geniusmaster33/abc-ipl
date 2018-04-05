@@ -7,7 +7,8 @@ module.exports = {
       provider: function() {
         return new HDWalletProvider(mnemonic, "https://kovan.infura.io/rDtDtyNmAVjB12zhj5nn",2)
       },
-      network_id: 42
+      network_id: 42,
+      gas:7990000
     },
     development: {
       host: "127.0.0.1",

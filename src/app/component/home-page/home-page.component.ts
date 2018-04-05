@@ -6,6 +6,7 @@ import { Web3Service } from '../../util/web3.service';
 import * as metacoin_artifacts from '../../../../build/contracts/MetaCoin.json';
 import * as eip20_artifact from '../../../../build/contracts/EIP20.json';
 import * as ipl_artifact from '../../../../build/contracts/Ipl.json';
+import * as registration_artifact from '../../../../build/contracts/Registration.json';
 
 
 
@@ -24,6 +25,7 @@ export class HomePageComponent implements OnInit {
   accounts: string[];
   MetaCoin: any;
   Ipl: any;
+  Regn: any;
   AbcCoin: any;
 
 
@@ -113,6 +115,8 @@ export class HomePageComponent implements OnInit {
       })
       .then((value) => {
         this.model.balance = value;
+        this.web3Service.setBalance(value);
+
         console.log('Balance : ' + value);
       })
       .catch((e) => {
@@ -152,12 +156,12 @@ export class HomePageComponent implements OnInit {
 
 
   isKeyRegistered() {
-    this.web3Service.artifactsToContract(ipl_artifact)
+    this.web3Service.artifactsToContract(registration_artifact)
       .then((response) => {
-        this.Ipl = response;
-        this.Ipl.deployed().then((instance) => {
-          console.log("Instance ------- ", instance);
-          instance.isTrustedSource.call(this.model.account).then((v) => {
+        this.Regn = response;
+        this.Regn.deployed().then((instance) => {
+          console.log("Regn contract ------- ", instance);
+          instance.isTrustedPlayer.call(this.model.account).then((v) => {
             console.log("@@@@@@@@ " + v);
             if (!v) { // If not registered
               this.router.navigate(['login', {key : this.model.account}]);
@@ -177,6 +181,7 @@ export class HomePageComponent implements OnInit {
           instance.balanceOf.call(this.model.account).then((balance) => {
             console.log(" AbcCoin Balance " + balance);
             this.model.balance = balance;
+            this.web3Service.setBalance(balance);
           });
         },
           (e) => { });

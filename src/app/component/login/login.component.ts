@@ -5,7 +5,7 @@ import { Web3Service } from '../../util/web3.service';
 import * as metacoin_artifacts from '../../../../build/contracts/MetaCoin.json';
 import * as eip20_artifact from '../../../../build/contracts/EIP20.json';
 import * as ipl_artifact from '../../../../build/contracts/Ipl.json';
-
+import * as registration_artifact from '../../../../build/contracts/Registration.json';
 
 @Component({
   selector: 'app-login',
@@ -19,12 +19,19 @@ export class LoginComponent implements OnInit {
 
   // }
   Ipl: any;
+  Regn: any;
 
   model = {
     username: '',
     fullname: '',
     key: ''
   }
+
+  isError = false;
+  errorMsg = 'Error encountered';
+
+  submitInProgress = false;
+
   constructor(private route: ActivatedRoute,
     private http: Http,
     private router: Router,
@@ -32,8 +39,51 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.model.key = this.route.snapshot.paramMap.get('key');
+    this.submitInProgress = false;
   }
 
+  checkUserName() {
+    console.log("CheckUSerName is progress ");
+    const url = 'http://abcipl.club:4020/checkusername?username=';
+    this.isError = false;
+    this.http.get(url + this.model.username).subscribe(
+      (data) => {
+        if(data.text() !== 'Welcome') {
+          console.log('Entered if');
+          this.isError = true;
+          this.errorMsg = 'User Name already exists !!!';
+          this.submitInProgress = false;
+        }
+        else {
+          console.log('Entered else');
+          this.checkKey();
+        }
+      },
+      (error) => {
+        console.log("Response code :  " + error.status);
+      }
+    )
+  }
+
+  checkKey() {
+    const url = 'http://abcipl.club:4020/getName?pk=';
+    this.http.get(url + this.model.key).subscribe(
+      (data) => {
+
+        if(data.text() !== 'Welcome') {
+          this.isError = true;
+          this.errorMsg = 'Public Key already exists !!!';
+          this.submitInProgress = false;
+        }
+        else {
+          this.registerInContract();
+        }
+      },
+      (error) => {
+        console.log("Response code :  " + error.status);
+      }
+    )
+  }
 
   submitForm() {
     const url = 'http://abcipl.club:4020/login';
@@ -43,18 +93,8 @@ export class LoginComponent implements OnInit {
     this.http.post(url, this.model).subscribe(
       (data) => {
         console.log("Account registered with login service");
-        this.registerInContract();
-        //this.router.navigate(['']);
-        // this.matchList = data.json();
-        // console.log("Matches ", this.matchList[0].team1);
-
-        // // let currentDate = moment();
-        // // console.log("Date " + currentDate.format());
-
-        // this.todaysMatches = this.matchList.filter(match => (currentDate).isSame(moment(match.date, "DD-MMM-YYYY"), 'day'));
-        // console.log("Today match ", this.todaysMatches);
-
-        //console.log(moment(currentDate).isSame('2018-03-21', 'day'));
+        //this.registerInContract();
+        this.router.navigate(['']);
       },
       (error) => {
         console.log("Response code :  " + error.status);
@@ -63,16 +103,17 @@ export class LoginComponent implements OnInit {
   }
 
   registerInContract() {
+    this.submitInProgress = true;
     console.log("About to register");
-    this.web3Service.artifactsToContract(ipl_artifact)
+    this.web3Service.artifactsToContract(registration_artifact)
       .then((response) => {
         console.log("Register preresponse ", response);
-        this.Ipl = response;
-        this.Ipl.deployed().then((instance) => {
-          instance.addPlayer.sendTransaction(this.model.key, this.model.username, { from: this.model.key, gas: 300000 }).then((v) => {
+        this.Regn = response;
+        this.Regn.deployed().then((instance) => {
+          instance.addPlayer.sendTransaction(this.model.key, this.model.username,0, { from: this.model.key, gas: 300000 }).then((v) => {
             console.log("Add player response - " + v);
-            if (v) { // If not registered
-              this.router.navigate(['']);
+            if (v) { 
+              this.submitForm();
             }
           });
         },

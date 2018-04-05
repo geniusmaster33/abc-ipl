@@ -28,12 +28,13 @@ export class MatchPredictComponent implements OnInit {
   match: any;
 
   counter = 0;
+  matchIndex:number;
 
   allPredictions: Predictions;
 
-  totalBalance: number = 10000; //TODO - Needs to be fetched from server
+  totalBalance: number; //TODO - Needs to be fetched from server
 
-  remainingBalance: number = 5000;
+  remainingBalance: number;
 
   tempBet: number = 250;
   temp2: number;
@@ -51,6 +52,9 @@ export class MatchPredictComponent implements OnInit {
 
     //this.allPredictions.highestScorer.assignedPoints = 200;
     //this.allPredictions.bestBowler.prediction = "CSK1";
+    this.totalBalance = this.web3Service.getBalance();
+
+    console.log("Balance here " + this.totalBalance);
 
     console.log("Predictions ", this.allPredictions.highestScorer.assignedPoints);
     console.log("isDataLoaded" + this.isDataLoaded);
@@ -67,6 +71,7 @@ export class MatchPredictComponent implements OnInit {
     const teamNamesFromURL = this.route.snapshot.paramMap.get('teams');
     this.teamNames = teamNamesFromURL.split("-");
     console.log("######## Team names : " + this.teamNames[0] + " - " + this.teamNames[1]);
+    this.matchIndex = this.teamNames[2] - 1;
 
   }
 
@@ -151,15 +156,24 @@ export class MatchPredictComponent implements OnInit {
         //console.log("Register preresponse ", response);
         this.ipl = response;
         this.ipl.deployed().then((instance) => {
-          instance.getMatchByIndex.call(0).then((matchAddr) => { //TODO 
+          instance.getMatchByIndex.call(this.matchIndex).then((matchAddr) => { //TODO 
             console.log("Match address - ", matchAddr);
             this.web3Service.artifactsToContract(match_artifact)
               .then((m) => {
                 console.log("Register preresponse ", m);
                 this.match = m;
                 this.match.at(matchAddr).then((instance1) => {
-                  instance1.bet.sendTransaction([2, 3, 4, 5, 6], [1, 2, 3, 1, 150],
-                    { from: this.web3Service.getKey(), gas: 500000, gasPrice: 20000000 })
+                  instance1.bet.sendTransaction([this.allPredictions.highestScorer.assignedPoints, 
+                                                this.allPredictions.bestBowler.assignedPoints,
+                                                this.allPredictions.mom.assignedPoints,
+                                                this.allPredictions.winningTeam.assignedPoints,
+                                                this.allPredictions.score.assignedPoints], 
+                                                [this.allPredictions.highestScorer.prediction, 
+                                                 this.allPredictions.bestBowler.prediction, 
+                                                 this.allPredictions.mom.prediction,
+                                                 this.allPredictions.winningTeam.prediction, 
+                                                 this.allPredictions.score.prediction],
+                    { from: this.web3Service.getKey(), gas: 500000, gasPrice: 20000000000 })
                     .then((v) => {
                       console.log("Match Predict result - " + v);
                       if (v) { // If not registered
@@ -179,12 +193,15 @@ export class MatchPredictComponent implements OnInit {
 
     const iplContract = await this.web3Service.artifactsToContract(ipl_artifact);
     const instance = await iplContract.deployed();
-    const matchAddr = await instance.getMatchByIndex.call(0);
+    const matchAddr = await instance.getMatchByIndex.call(this.matchIndex);
     const matchContract = await this.web3Service.artifactsToContract(match_artifact);
     const matchInstance = await matchContract.at(matchAddr);
     isHalted = await matchInstance.isHalted.call();
     this.isHalted = isHalted;
     console.log("isHalted ", isHalted);
+
+    //let isAlreadyBet = await matchInstance.isBet.call(this.web3Service.getKey);
+    //console.log("isAlreadyBet ", isAlreadyBet);
 
     //await instance.haltSwitch.sendTransaction(true, {from: this.web3Service.getKey(), gas: 300000 });
 

@@ -23,6 +23,7 @@ export class Web3Service {
   public Ipl: any;
 
   private key: string;
+  private balance: number;
 
   constructor() {
     window.addEventListener('load', (event) => {
@@ -121,6 +122,14 @@ export class Web3Service {
 
   public setKey(key:string) {
     this.key = key;
+  }
+
+  public getBalance() {
+    return this.balance;
+  }
+
+  public setBalance(balance:number) {
+    this.balance = balance;
   }
 
 }
