@@ -86,10 +86,10 @@ export class LeaderBoardComponent implements OnInit {
 
     this.http.get(url).subscribe(
       (response) => {
-        console.log("User Name " + response);
+        let responseText = "[" + response.json() + "]";
         // this.model.username = response.text();
-        for(let user of JSON.parse(response.text())) {
-            console.log(user);
+        for(let user of responseText) {
+            console.log("Name " + user);
             //this.userNameMap.set(user[0], user[1]);
           }
       },

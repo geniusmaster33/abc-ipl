@@ -47,7 +47,7 @@ contract IPLMatch is Haltable, Ownable
         
     }
     
-    MatchResult matchResult;
+    MatchResult public matchResult;
 
     uint256[5] public qPot;
     uint256 public totalPot;
@@ -56,6 +56,7 @@ contract IPLMatch is Haltable, Ownable
     mapping(address => Result) public results;
     
     address[] public playerList;
+   
     
     bool public matchAbandon;
     bool public matchEnd;
@@ -70,10 +71,10 @@ contract IPLMatch is Haltable, Ownable
     event LogLoose(uint indexed matchId,address indexed playerAddress,uint256 winningAmount,uint256 loosingAmount,uint256 toalBet);
     event LogDailyBonus(uint indexed matchId,address indexed playerAddress);
     
-    function IPLMatch(uint _id, address _register, uint256 _dailyBonus, uint256 _threshold){
+    function IPLMatch(uint _id, address _register, uint256 _dailyBonus, uint256 _threshold,address _tokenAddress){
         matchId = _id;
         register = RegistrationInterface(_register);
-        token =  EIP20Interface (address(register.tokenAddress));
+        token =  EIP20Interface (_tokenAddress);
         dailyBonus=_dailyBonus;
         threshold=_threshold;
         
@@ -134,17 +135,18 @@ contract IPLMatch is Haltable, Ownable
     // Utility Functions
     //
     
-    function calculateWinLoss(uint[5] options) onlyAdmin onlyHalted returns (bool ok){
+    function calculateWinLoss(uint256[5] options) onlyAdmin onlyHalted returns (bool ok){
         
-        uint i;
-        for(i=0;i<playerList.length;i++){
-            address playerAddress = playerList[i];
+        uint j;
+        for(j=0;j<playerList.length;j++){
+            address playerAddress = playerList[j];
             Bet storage myBet = bets[playerAddress];
-            
+            uint i;
             for(i=0;i<5;i++){
                 if(myBet.option[i] == options[i]){
                     results[playerAddress].wonLost[i]=1;
                     matchResult.amtQuestionWinBet[i] += myBet.weight[i];
+                    matchResult.totalWin++;
                 }
             }
             if ((myBet.option[4] >= (options[4]-10)) && (myBet.option[4] <= (options[4]+10)) && (myBet.option[4] != options[4])){
@@ -159,28 +161,29 @@ contract IPLMatch is Haltable, Ownable
     
     function endMatch() onlyAdmin onlyHalted returns (bool ok){
         require(calculateWinLost);
-        uint i;
-        for(i=0;i<playerList.length;i++){
-            address playerAddress = playerList[i];
+        uint j;
+        for(j=0;j<playerList.length;j++){
+            address playerAddress = playerList[j];
             Bet storage myBet = bets[playerAddress];
             uint profitTokens;
             profitTokens = 0;
+            uint i;
             for(i=0; i<5;i++)
             {
                 if(results[playerAddress].wonLost[i] == 1){
                     uint amt;
                     uint bet = myBet.weight[i];
                     amt = 0;
-                    amt = (bet * multiplier[i] / 10) + bet + ((bet / matchResult.amtQuestionWinBet[i]) * qPot[i]);
+                    amt = ((bet * multiplier[i]) / 10) + bet + (bet / (matchResult.amtQuestionWinBet[i] * qPot[i]));
                     profitTokens+=amt;
                 }
                 
             }
             if(results[playerAddress].wonLost[4] == 2){
                     uint amt1;
-                    uint bet1 = myBet.weight[i];
+                    uint bet1 = myBet.weight[4];
                     amt1 = 0;
-                    amt1 = (bet1 * multiplier[5] / 10) + bet1 + ((bet1 / matchResult.amtQuestionWinBet[i]) * qPot[i]);
+                    amt1 = ((bet1 * multiplier[5]) / 10) + bet1 + (bet1 / (matchResult.amtQuestionWinBet[4] * qPot[4]));
                     profitTokens+=amt1;
                 }
             token.addTokens(playerAddress,profitTokens);
@@ -243,6 +246,9 @@ contract IPLMatch is Haltable, Ownable
         
     }
     
+    function getPlayerLength() view returns (uint len){
+        return playerList.length;
+    }
     function resetBet(address _who,address _bettor) onlyAdmin returns (bool ok){
         uint i;
         uint256 sum;
