@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import * as eip20_artifact from '../../../../build/contracts/EIP20.json';
 import * as ipl_artifact from '../../../../build/contracts/Ipl.json';
 import * as registration_artifact from '../../../../build/contracts/Registration.json';
-import { Leader } from './Leader';
+import { Leader } from './leader';
 import { Web3Service } from '../../util/web3.service';
 
 @Component({
@@ -117,4 +117,21 @@ export class LeaderBoardComponent implements OnInit {
       return 0;
     }
   }
+
+  // getUserName() {
+  //   const url = 'http://abcipl.club:4020/getName';
+
+  //   this.http.get(url+"?pk="+this.model.account).subscribe(
+  //     (response) => {
+  //       console.log("User Name " + response.text());
+  //       this.model.username = response.text();
+  //     },
+  //     (error) => {
+  //       console.log("Error in getting todays date : " + error);
+  //     },
+  //     () => {
+
+  //     }
+  //   )
+  // }
 }
