@@ -84,12 +84,24 @@ export class LeaderBoardComponent implements OnInit {
   async getUserName() {
     const url = 'http://abcipl.club:4030/getuserspk';
 
+    let leaders = [{
+      "name": "Apple",
+    },
+    {
+      "name": "Boy",
+    }
+  ];
+
+
     this.http.get(url).subscribe(
       (response) => {
+        console.log("Raw response " + response.text());
         let responseText = "[" + response.json() + "]";
         // this.model.username = response.text();
-        for(let user of responseText) {
-            console.log("Name " + user);
+        console.log("Response text - ", responseText);
+
+        for(let user of leaders) {
+            console.log("Name " + user[0]);
             //this.userNameMap.set(user[0], user[1]);
           }
       },

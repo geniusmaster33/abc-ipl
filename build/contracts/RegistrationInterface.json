@@ -498,14 +498,14 @@
     "absolutePath": "/Users/punyampatnaik/Code Arena/Apps/abc-app/contracts/RegistrationInterface.sol",
     "exportedSymbols": {
       "RegistrationInterface": [
-        2366
+        2368
       ]
     },
-    "id": 2367,
+    "id": 2369,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 2205,
+        "id": 2207,
         "literals": [
           "solidity",
           "^",
@@ -518,10 +518,10 @@
       {
         "absolutePath": "/Users/punyampatnaik/Code Arena/Apps/abc-app/contracts/MultiOwnable.sol",
         "file": "./MultiOwnable.sol",
-        "id": 2206,
+        "id": 2208,
         "nodeType": "ImportDirective",
-        "scope": 2367,
-        "sourceUnit": 2179,
+        "scope": 2369,
+        "sourceUnit": 2181,
         "src": "26:28:9",
         "symbolAliases": [],
         "unitAlias": ""
@@ -529,9 +529,9 @@
       {
         "absolutePath": "/Users/punyampatnaik/Code Arena/Apps/abc-app/contracts/EIP20Interface.sol",
         "file": "./EIP20Interface.sol",
-        "id": 2207,
+        "id": 2209,
         "nodeType": "ImportDirective",
-        "scope": 2367,
+        "scope": 2369,
         "sourceUnit": 744,
         "src": "55:30:9",
         "symbolAliases": [],
@@ -543,23 +543,23 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 2366,
+        "id": 2368,
         "linearizedBaseContracts": [
-          2366
+          2368
         ],
         "name": "RegistrationInterface",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "canonicalName": "RegistrationInterface.PlayerStat",
-            "id": 2216,
+            "id": 2218,
             "members": [
               {
                 "constant": false,
-                "id": 2209,
+                "id": 2211,
                 "name": "toalWinAmount",
                 "nodeType": "VariableDeclaration",
-                "scope": 2216,
+                "scope": 2218,
                 "src": "157:21:9",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -568,7 +568,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 2208,
+                  "id": 2210,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "157:7:9",
@@ -582,10 +582,10 @@
               },
               {
                 "constant": false,
-                "id": 2211,
+                "id": 2213,
                 "name": "totalLooseAmount",
                 "nodeType": "VariableDeclaration",
-                "scope": 2216,
+                "scope": 2218,
                 "src": "188:24:9",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -594,7 +594,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 2210,
+                  "id": 2212,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "188:7:9",
@@ -608,10 +608,10 @@
               },
               {
                 "constant": false,
-                "id": 2213,
+                "id": 2215,
                 "name": "totalWins",
                 "nodeType": "VariableDeclaration",
-                "scope": 2216,
+                "scope": 2218,
                 "src": "222:17:9",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -620,7 +620,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 2212,
+                  "id": 2214,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "222:7:9",
@@ -634,10 +634,10 @@
               },
               {
                 "constant": false,
-                "id": 2215,
+                "id": 2217,
                 "name": "totalLoose",
                 "nodeType": "VariableDeclaration",
-                "scope": 2216,
+                "scope": 2218,
                 "src": "249:18:9",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -646,7 +646,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 2214,
+                  "id": 2216,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "249:7:9",
@@ -661,20 +661,20 @@
             ],
             "name": "PlayerStat",
             "nodeType": "StructDefinition",
-            "scope": 2366,
+            "scope": 2368,
             "src": "129:145:9",
             "visibility": "public"
           },
           {
             "canonicalName": "RegistrationInterface.MatchStat",
-            "id": 2225,
+            "id": 2227,
             "members": [
               {
                 "constant": false,
-                "id": 2218,
+                "id": 2220,
                 "name": "toalWinAmount",
                 "nodeType": "VariableDeclaration",
-                "scope": 2225,
+                "scope": 2227,
                 "src": "311:21:9",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -683,7 +683,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 2217,
+                  "id": 2219,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "311:7:9",
@@ -697,10 +697,10 @@
               },
               {
                 "constant": false,
-                "id": 2220,
+                "id": 2222,
                 "name": "totalLooseAmount",
                 "nodeType": "VariableDeclaration",
-                "scope": 2225,
+                "scope": 2227,
                 "src": "342:24:9",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -709,7 +709,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 2219,
+                  "id": 2221,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "342:7:9",
@@ -723,10 +723,10 @@
               },
               {
                 "constant": false,
-                "id": 2222,
+                "id": 2224,
                 "name": "totalWins",
                 "nodeType": "VariableDeclaration",
-                "scope": 2225,
+                "scope": 2227,
                 "src": "376:17:9",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -735,7 +735,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 2221,
+                  "id": 2223,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "376:7:9",
@@ -749,10 +749,10 @@
               },
               {
                 "constant": false,
-                "id": 2224,
+                "id": 2226,
                 "name": "totalLoose",
                 "nodeType": "VariableDeclaration",
-                "scope": 2225,
+                "scope": 2227,
                 "src": "403:18:9",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -761,7 +761,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 2223,
+                  "id": 2225,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "403:7:9",
@@ -776,20 +776,20 @@
             ],
             "name": "MatchStat",
             "nodeType": "StructDefinition",
-            "scope": 2366,
+            "scope": 2368,
             "src": "284:144:9",
             "visibility": "public"
           },
           {
             "canonicalName": "RegistrationInterface.QuestionStat",
-            "id": 2234,
+            "id": 2236,
             "members": [
               {
                 "constant": false,
-                "id": 2227,
+                "id": 2229,
                 "name": "toalWinAmount",
                 "nodeType": "VariableDeclaration",
-                "scope": 2234,
+                "scope": 2236,
                 "src": "468:21:9",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -798,7 +798,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 2226,
+                  "id": 2228,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "468:7:9",
@@ -812,10 +812,10 @@
               },
               {
                 "constant": false,
-                "id": 2229,
+                "id": 2231,
                 "name": "totalLooseAmount",
                 "nodeType": "VariableDeclaration",
-                "scope": 2234,
+                "scope": 2236,
                 "src": "499:24:9",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -824,7 +824,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 2228,
+                  "id": 2230,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "499:7:9",
@@ -838,10 +838,10 @@
               },
               {
                 "constant": false,
-                "id": 2231,
+                "id": 2233,
                 "name": "totalWins",
                 "nodeType": "VariableDeclaration",
-                "scope": 2234,
+                "scope": 2236,
                 "src": "533:17:9",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -850,7 +850,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 2230,
+                  "id": 2232,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "533:7:9",
@@ -864,10 +864,10 @@
               },
               {
                 "constant": false,
-                "id": 2233,
+                "id": 2235,
                 "name": "totalLoose",
                 "nodeType": "VariableDeclaration",
-                "scope": 2234,
+                "scope": 2236,
                 "src": "560:18:9",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -876,7 +876,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 2232,
+                  "id": 2234,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "560:7:9",
@@ -891,16 +891,16 @@
             ],
             "name": "QuestionStat",
             "nodeType": "StructDefinition",
-            "scope": 2366,
+            "scope": 2368,
             "src": "438:147:9",
             "visibility": "public"
           },
           {
             "constant": false,
-            "id": 2238,
+            "id": 2240,
             "name": "isTrustedPlayer",
             "nodeType": "VariableDeclaration",
-            "scope": 2366,
+            "scope": 2368,
             "src": "595:47:9",
             "stateVariable": true,
             "storageLocation": "default",
@@ -909,9 +909,9 @@
               "typeString": "mapping(address => bool)"
             },
             "typeName": {
-              "id": 2237,
+              "id": 2239,
               "keyType": {
-                "id": 2235,
+                "id": 2237,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "603:7:9",
@@ -927,7 +927,7 @@
                 "typeString": "mapping(address => bool)"
               },
               "valueType": {
-                "id": 2236,
+                "id": 2238,
                 "name": "bool",
                 "nodeType": "ElementaryTypeName",
                 "src": "614:4:9",
@@ -942,10 +942,10 @@
           },
           {
             "constant": false,
-            "id": 2242,
+            "id": 2244,
             "name": "isPlayerFrozen",
             "nodeType": "VariableDeclaration",
-            "scope": 2366,
+            "scope": 2368,
             "src": "648:46:9",
             "stateVariable": true,
             "storageLocation": "default",
@@ -954,9 +954,9 @@
               "typeString": "mapping(address => bool)"
             },
             "typeName": {
-              "id": 2241,
+              "id": 2243,
               "keyType": {
-                "id": 2239,
+                "id": 2241,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "656:7:9",
@@ -972,7 +972,7 @@
                 "typeString": "mapping(address => bool)"
               },
               "valueType": {
-                "id": 2240,
+                "id": 2242,
                 "name": "bool",
                 "nodeType": "ElementaryTypeName",
                 "src": "667:4:9",
@@ -987,10 +987,10 @@
           },
           {
             "constant": false,
-            "id": 2246,
+            "id": 2248,
             "name": "playerNames",
             "nodeType": "VariableDeclaration",
-            "scope": 2366,
+            "scope": 2368,
             "src": "700:45:9",
             "stateVariable": true,
             "storageLocation": "default",
@@ -999,9 +999,9 @@
               "typeString": "mapping(address => string storage ref)"
             },
             "typeName": {
-              "id": 2245,
+              "id": 2247,
               "keyType": {
-                "id": 2243,
+                "id": 2245,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "708:7:9",
@@ -1017,7 +1017,7 @@
                 "typeString": "mapping(address => string storage ref)"
               },
               "valueType": {
-                "id": 2244,
+                "id": 2246,
                 "name": "string",
                 "nodeType": "ElementaryTypeName",
                 "src": "719:6:9",
@@ -1032,10 +1032,10 @@
           },
           {
             "constant": false,
-            "id": 2249,
+            "id": 2251,
             "name": "playerList",
             "nodeType": "VariableDeclaration",
-            "scope": 2366,
+            "scope": 2368,
             "src": "751:27:9",
             "stateVariable": true,
             "storageLocation": "default",
@@ -1045,7 +1045,7 @@
             },
             "typeName": {
               "baseType": {
-                "id": 2247,
+                "id": 2249,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "751:7:9",
@@ -1054,7 +1054,7 @@
                   "typeString": "address"
                 }
               },
-              "id": 2248,
+              "id": 2250,
               "length": null,
               "nodeType": "ArrayTypeName",
               "src": "751:9:9",
@@ -1068,10 +1068,10 @@
           },
           {
             "constant": false,
-            "id": 2252,
+            "id": 2254,
             "name": "playerBalances",
             "nodeType": "VariableDeclaration",
-            "scope": 2366,
+            "scope": 2368,
             "src": "784:31:9",
             "stateVariable": true,
             "storageLocation": "default",
@@ -1081,7 +1081,7 @@
             },
             "typeName": {
               "baseType": {
-                "id": 2250,
+                "id": 2252,
                 "name": "uint256",
                 "nodeType": "ElementaryTypeName",
                 "src": "784:7:9",
@@ -1090,7 +1090,7 @@
                   "typeString": "uint256"
                 }
               },
-              "id": 2251,
+              "id": 2253,
               "length": null,
               "nodeType": "ArrayTypeName",
               "src": "784:9:9",
@@ -1104,10 +1104,10 @@
           },
           {
             "constant": false,
-            "id": 2255,
+            "id": 2257,
             "name": "playerTypes",
             "nodeType": "VariableDeclaration",
-            "scope": 2366,
+            "scope": 2368,
             "src": "821:28:9",
             "stateVariable": true,
             "storageLocation": "default",
@@ -1117,7 +1117,7 @@
             },
             "typeName": {
               "baseType": {
-                "id": 2253,
+                "id": 2255,
                 "name": "uint256",
                 "nodeType": "ElementaryTypeName",
                 "src": "821:7:9",
@@ -1126,7 +1126,7 @@
                   "typeString": "uint256"
                 }
               },
-              "id": 2254,
+              "id": 2256,
               "length": null,
               "nodeType": "ArrayTypeName",
               "src": "821:9:9",
@@ -1140,10 +1140,10 @@
           },
           {
             "constant": false,
-            "id": 2257,
+            "id": 2259,
             "name": "startingPoints",
             "nodeType": "VariableDeclaration",
-            "scope": 2366,
+            "scope": 2368,
             "src": "860:29:9",
             "stateVariable": true,
             "storageLocation": "default",
@@ -1152,7 +1152,7 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 2256,
+              "id": 2258,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
               "src": "860:7:9",
@@ -1166,10 +1166,10 @@
           },
           {
             "constant": false,
-            "id": 2259,
+            "id": 2261,
             "name": "tokenAddress",
             "nodeType": "VariableDeclaration",
-            "scope": 2366,
+            "scope": 2368,
             "src": "899:27:9",
             "stateVariable": true,
             "storageLocation": "default",
@@ -1178,7 +1178,7 @@
               "typeString": "address"
             },
             "typeName": {
-              "id": 2258,
+              "id": 2260,
               "name": "address",
               "nodeType": "ElementaryTypeName",
               "src": "899:7:9",
@@ -1192,10 +1192,10 @@
           },
           {
             "constant": false,
-            "id": 2261,
+            "id": 2263,
             "name": "token",
             "nodeType": "VariableDeclaration",
-            "scope": 2366,
+            "scope": 2368,
             "src": "936:20:9",
             "stateVariable": true,
             "storageLocation": "default",
@@ -1205,7 +1205,7 @@
             },
             "typeName": {
               "contractScope": null,
-              "id": 2260,
+              "id": 2262,
               "name": "EIP20Interface",
               "nodeType": "UserDefinedTypeName",
               "referencedDeclaration": 743,
@@ -1220,10 +1220,10 @@
           },
           {
             "constant": false,
-            "id": 2265,
+            "id": 2267,
             "name": "playerRank",
             "nodeType": "VariableDeclaration",
-            "scope": 2366,
+            "scope": 2368,
             "src": "967:43:9",
             "stateVariable": true,
             "storageLocation": "default",
@@ -1232,9 +1232,9 @@
               "typeString": "mapping(address => uint256)"
             },
             "typeName": {
-              "id": 2264,
+              "id": 2266,
               "keyType": {
-                "id": 2262,
+                "id": 2264,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "976:7:9",
@@ -1250,7 +1250,7 @@
                 "typeString": "mapping(address => uint256)"
               },
               "valueType": {
-                "id": 2263,
+                "id": 2265,
                 "name": "uint",
                 "nodeType": "ElementaryTypeName",
                 "src": "987:4:9",
@@ -1265,21 +1265,21 @@
           },
           {
             "constant": false,
-            "id": 2269,
+            "id": 2271,
             "name": "playerStats",
             "nodeType": "VariableDeclaration",
-            "scope": 2366,
+            "scope": 2368,
             "src": "1016:50:9",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_PlayerStat_$2216_storage_$",
+              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_PlayerStat_$2218_storage_$",
               "typeString": "mapping(address => struct RegistrationInterface.PlayerStat storage ref)"
             },
             "typeName": {
-              "id": 2268,
+              "id": 2270,
               "keyType": {
-                "id": 2266,
+                "id": 2268,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "1025:7:9",
@@ -1291,18 +1291,18 @@
               "nodeType": "Mapping",
               "src": "1016:31:9",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_PlayerStat_$2216_storage_$",
+                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_PlayerStat_$2218_storage_$",
                 "typeString": "mapping(address => struct RegistrationInterface.PlayerStat storage ref)"
               },
               "valueType": {
                 "contractScope": null,
-                "id": 2267,
+                "id": 2269,
                 "name": "PlayerStat",
                 "nodeType": "UserDefinedTypeName",
-                "referencedDeclaration": 2216,
+                "referencedDeclaration": 2218,
                 "src": "1036:10:9",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_PlayerStat_$2216_storage_ptr",
+                  "typeIdentifier": "t_struct$_PlayerStat_$2218_storage_ptr",
                   "typeString": "struct RegistrationInterface.PlayerStat storage pointer"
                 }
               }
@@ -1312,10 +1312,10 @@
           },
           {
             "constant": false,
-            "id": 2273,
+            "id": 2275,
             "name": "playerType",
             "nodeType": "VariableDeclaration",
-            "scope": 2366,
+            "scope": 2368,
             "src": "1074:43:9",
             "stateVariable": true,
             "storageLocation": "default",
@@ -1324,9 +1324,9 @@
               "typeString": "mapping(address => uint256)"
             },
             "typeName": {
-              "id": 2272,
+              "id": 2274,
               "keyType": {
-                "id": 2270,
+                "id": 2272,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "1083:7:9",
@@ -1342,7 +1342,7 @@
                 "typeString": "mapping(address => uint256)"
               },
               "valueType": {
-                "id": 2271,
+                "id": 2273,
                 "name": "uint",
                 "nodeType": "ElementaryTypeName",
                 "src": "1094:4:9",
@@ -1357,21 +1357,21 @@
           },
           {
             "constant": false,
-            "id": 2277,
+            "id": 2279,
             "name": "matchStats",
             "nodeType": "VariableDeclaration",
-            "scope": 2366,
+            "scope": 2368,
             "src": "1123:48:9",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_MatchStat_$2225_storage_$",
+              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_MatchStat_$2227_storage_$",
               "typeString": "mapping(address => struct RegistrationInterface.MatchStat storage ref)"
             },
             "typeName": {
-              "id": 2276,
+              "id": 2278,
               "keyType": {
-                "id": 2274,
+                "id": 2276,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "1132:7:9",
@@ -1383,18 +1383,18 @@
               "nodeType": "Mapping",
               "src": "1123:30:9",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_MatchStat_$2225_storage_$",
+                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_MatchStat_$2227_storage_$",
                 "typeString": "mapping(address => struct RegistrationInterface.MatchStat storage ref)"
               },
               "valueType": {
                 "contractScope": null,
-                "id": 2275,
+                "id": 2277,
                 "name": "MatchStat",
                 "nodeType": "UserDefinedTypeName",
-                "referencedDeclaration": 2225,
+                "referencedDeclaration": 2227,
                 "src": "1143:9:9",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_MatchStat_$2225_storage_ptr",
+                  "typeIdentifier": "t_struct$_MatchStat_$2227_storage_ptr",
                   "typeString": "struct RegistrationInterface.MatchStat storage pointer"
                 }
               }
@@ -1404,21 +1404,21 @@
           },
           {
             "constant": false,
-            "id": 2281,
+            "id": 2283,
             "name": "questionStats",
             "nodeType": "VariableDeclaration",
-            "scope": 2366,
+            "scope": 2368,
             "src": "1177:51:9",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_QuestionStat_$2234_storage_$",
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_QuestionStat_$2236_storage_$",
               "typeString": "mapping(uint256 => struct RegistrationInterface.QuestionStat storage ref)"
             },
             "typeName": {
-              "id": 2280,
+              "id": 2282,
               "keyType": {
-                "id": 2278,
+                "id": 2280,
                 "name": "uint",
                 "nodeType": "ElementaryTypeName",
                 "src": "1186:4:9",
@@ -1430,18 +1430,18 @@
               "nodeType": "Mapping",
               "src": "1177:30:9",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_QuestionStat_$2234_storage_$",
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_QuestionStat_$2236_storage_$",
                 "typeString": "mapping(uint256 => struct RegistrationInterface.QuestionStat storage ref)"
               },
               "valueType": {
                 "contractScope": null,
-                "id": 2279,
+                "id": 2281,
                 "name": "QuestionStat",
                 "nodeType": "UserDefinedTypeName",
-                "referencedDeclaration": 2234,
+                "referencedDeclaration": 2236,
                 "src": "1194:12:9",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_QuestionStat_$2234_storage_ptr",
+                  "typeIdentifier": "t_struct$_QuestionStat_$2236_storage_ptr",
                   "typeString": "struct RegistrationInterface.QuestionStat storage pointer"
                 }
               }
@@ -1452,7 +1452,7 @@
           {
             "body": null,
             "documentation": null,
-            "id": 2292,
+            "id": 2294,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -1460,15 +1460,15 @@
             "name": "addPlayer",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2288,
+              "id": 2290,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2283,
+                  "id": 2285,
                   "name": "_playerAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2292,
+                  "scope": 2294,
                   "src": "1290:22:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1477,7 +1477,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2282,
+                    "id": 2284,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1290:7:9",
@@ -1491,10 +1491,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 2285,
+                  "id": 2287,
                   "name": "playerName",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2292,
+                  "scope": 2294,
                   "src": "1314:17:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1503,7 +1503,7 @@
                     "typeString": "string memory"
                   },
                   "typeName": {
-                    "id": 2284,
+                    "id": 2286,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1314:6:9",
@@ -1517,10 +1517,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 2287,
+                  "id": 2289,
                   "name": "_playerType",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2292,
+                  "scope": 2294,
                   "src": "1333:16:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1529,7 +1529,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2286,
+                    "id": 2288,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "1333:4:9",
@@ -1546,15 +1546,15 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 2291,
+              "id": 2293,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2290,
+                  "id": 2292,
                   "name": "ok",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2292,
+                  "scope": 2294,
                   "src": "1375:7:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1563,7 +1563,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 2289,
+                    "id": 2291,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "1375:4:9",
@@ -1578,7 +1578,7 @@
               ],
               "src": "1374:9:9"
             },
-            "scope": 2366,
+            "scope": 2368,
             "src": "1271:113:9",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -1587,7 +1587,7 @@
           {
             "body": null,
             "documentation": null,
-            "id": 2301,
+            "id": 2303,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -1595,15 +1595,15 @@
             "name": "freezePlayer",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2297,
+              "id": 2299,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2294,
+                  "id": 2296,
                   "name": "_playerAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2301,
+                  "scope": 2303,
                   "src": "1416:22:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1612,7 +1612,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2293,
+                    "id": 2295,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1416:7:9",
@@ -1626,10 +1626,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 2296,
+                  "id": 2298,
                   "name": "freezeStatus",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2301,
+                  "scope": 2303,
                   "src": "1440:17:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1638,7 +1638,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 2295,
+                    "id": 2297,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "1440:4:9",
@@ -1655,15 +1655,15 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 2300,
+              "id": 2302,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2299,
+                  "id": 2301,
                   "name": "ok",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2301,
+                  "scope": 2303,
                   "src": "1474:7:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1672,7 +1672,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 2298,
+                    "id": 2300,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "1474:4:9",
@@ -1687,7 +1687,7 @@
               ],
               "src": "1473:9:9"
             },
-            "scope": 2366,
+            "scope": 2368,
             "src": "1394:89:9",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -1696,7 +1696,7 @@
           {
             "body": null,
             "documentation": null,
-            "id": 2307,
+            "id": 2309,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -1704,22 +1704,22 @@
             "name": "getPlayerList",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2302,
+              "id": 2304,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1544:2:9"
             },
             "payable": false,
             "returnParameters": {
-              "id": 2306,
+              "id": 2308,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2305,
+                  "id": 2307,
                   "name": "_playerList",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2307,
+                  "scope": 2309,
                   "src": "1567:21:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1729,7 +1729,7 @@
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 2303,
+                      "id": 2305,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
                       "src": "1567:7:9",
@@ -1738,7 +1738,7 @@
                         "typeString": "address"
                       }
                     },
-                    "id": 2304,
+                    "id": 2306,
                     "length": null,
                     "nodeType": "ArrayTypeName",
                     "src": "1567:9:9",
@@ -1753,7 +1753,7 @@
               ],
               "src": "1566:23:9"
             },
-            "scope": 2366,
+            "scope": 2368,
             "src": "1522:68:9",
             "stateMutability": "view",
             "superFunction": null,
@@ -1762,7 +1762,7 @@
           {
             "body": null,
             "documentation": null,
-            "id": 2312,
+            "id": 2314,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -1770,22 +1770,22 @@
             "name": "getNumberPlayers",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2308,
+              "id": 2310,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1625:2:9"
             },
             "payable": false,
             "returnParameters": {
-              "id": 2311,
+              "id": 2313,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2310,
+                  "id": 2312,
                   "name": "numberPlayer",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2312,
+                  "scope": 2314,
                   "src": "1649:17:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1794,7 +1794,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2309,
+                    "id": 2311,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "1649:4:9",
@@ -1809,7 +1809,7 @@
               ],
               "src": "1648:19:9"
             },
-            "scope": 2366,
+            "scope": 2368,
             "src": "1600:68:9",
             "stateMutability": "view",
             "superFunction": null,
@@ -1818,7 +1818,7 @@
           {
             "body": null,
             "documentation": null,
-            "id": 2319,
+            "id": 2321,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -1826,15 +1826,15 @@
             "name": "getPlayerBalance",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2315,
+              "id": 2317,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2314,
+                  "id": 2316,
                   "name": "_playerAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2319,
+                  "scope": 2321,
                   "src": "1704:22:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1843,7 +1843,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2313,
+                    "id": 2315,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1704:7:9",
@@ -1860,15 +1860,15 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 2318,
+              "id": 2320,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2317,
+                  "id": 2319,
                   "name": "balance",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2319,
+                  "scope": 2321,
                   "src": "1749:12:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1877,7 +1877,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2316,
+                    "id": 2318,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "1749:4:9",
@@ -1892,7 +1892,7 @@
               ],
               "src": "1748:14:9"
             },
-            "scope": 2366,
+            "scope": 2368,
             "src": "1678:85:9",
             "stateMutability": "view",
             "superFunction": null,
@@ -1901,7 +1901,7 @@
           {
             "body": null,
             "documentation": null,
-            "id": 2331,
+            "id": 2333,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -1909,22 +1909,22 @@
             "name": "getPlayerDetail",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2320,
+              "id": 2322,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1797:2:9"
             },
             "payable": false,
             "returnParameters": {
-              "id": 2330,
+              "id": 2332,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2323,
+                  "id": 2325,
                   "name": "_playerList",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2331,
+                  "scope": 2333,
                   "src": "1815:21:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1934,7 +1934,7 @@
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 2321,
+                      "id": 2323,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
                       "src": "1815:7:9",
@@ -1943,7 +1943,7 @@
                         "typeString": "address"
                       }
                     },
-                    "id": 2322,
+                    "id": 2324,
                     "length": null,
                     "nodeType": "ArrayTypeName",
                     "src": "1815:9:9",
@@ -1957,10 +1957,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 2326,
+                  "id": 2328,
                   "name": "balance",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2331,
+                  "scope": 2333,
                   "src": "1838:17:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1970,7 +1970,7 @@
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 2324,
+                      "id": 2326,
                       "name": "uint256",
                       "nodeType": "ElementaryTypeName",
                       "src": "1838:7:9",
@@ -1979,7 +1979,7 @@
                         "typeString": "uint256"
                       }
                     },
-                    "id": 2325,
+                    "id": 2327,
                     "length": null,
                     "nodeType": "ArrayTypeName",
                     "src": "1838:9:9",
@@ -1993,10 +1993,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 2329,
+                  "id": 2331,
                   "name": "_playerType",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2331,
+                  "scope": 2333,
                   "src": "1856:18:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2006,7 +2006,7 @@
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 2327,
+                      "id": 2329,
                       "name": "uint",
                       "nodeType": "ElementaryTypeName",
                       "src": "1856:4:9",
@@ -2015,7 +2015,7 @@
                         "typeString": "uint256"
                       }
                     },
-                    "id": 2328,
+                    "id": 2330,
                     "length": null,
                     "nodeType": "ArrayTypeName",
                     "src": "1856:6:9",
@@ -2030,7 +2030,7 @@
               ],
               "src": "1814:61:9"
             },
-            "scope": 2366,
+            "scope": 2368,
             "src": "1773:103:9",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -2039,7 +2039,7 @@
           {
             "body": null,
             "documentation": null,
-            "id": 2338,
+            "id": 2340,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -2047,15 +2047,15 @@
             "name": "changeTokenAddress",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2334,
+              "id": 2336,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2333,
+                  "id": 2335,
                   "name": "_newTokenAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2338,
+                  "scope": 2340,
                   "src": "1914:24:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2064,7 +2064,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2332,
+                    "id": 2334,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1914:7:9",
@@ -2081,15 +2081,15 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 2337,
+              "id": 2339,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2336,
+                  "id": 2338,
                   "name": "ok",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2338,
+                  "scope": 2340,
                   "src": "1956:7:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2098,7 +2098,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 2335,
+                    "id": 2337,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "1956:4:9",
@@ -2113,7 +2113,7 @@
               ],
               "src": "1955:9:9"
             },
-            "scope": 2366,
+            "scope": 2368,
             "src": "1886:79:9",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -2122,7 +2122,7 @@
           {
             "body": null,
             "documentation": null,
-            "id": 2345,
+            "id": 2347,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -2130,15 +2130,15 @@
             "name": "changeStartingPoints",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2341,
+              "id": 2343,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2340,
+                  "id": 2342,
                   "name": "newPoints",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2345,
+                  "scope": 2347,
                   "src": "2005:17:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2147,7 +2147,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2339,
+                    "id": 2341,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "2005:7:9",
@@ -2164,15 +2164,15 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 2344,
+              "id": 2346,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2343,
+                  "id": 2345,
                   "name": "ok",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2345,
+                  "scope": 2347,
                   "src": "2039:7:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2181,7 +2181,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 2342,
+                    "id": 2344,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "2039:4:9",
@@ -2196,7 +2196,7 @@
               ],
               "src": "2038:9:9"
             },
-            "scope": 2366,
+            "scope": 2368,
             "src": "1975:73:9",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -2205,20 +2205,20 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 2353,
+            "id": 2355,
             "name": "LogAddPlayer",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 2352,
+              "id": 2354,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2347,
+                  "id": 2349,
                   "indexed": true,
                   "name": "playerAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2353,
+                  "scope": 2355,
                   "src": "2121:29:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2227,7 +2227,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2346,
+                    "id": 2348,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "2121:7:9",
@@ -2241,11 +2241,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 2349,
+                  "id": 2351,
                   "indexed": false,
                   "name": "playerName",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2353,
+                  "scope": 2355,
                   "src": "2152:17:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2254,7 +2254,7 @@
                     "typeString": "string memory"
                   },
                   "typeName": {
-                    "id": 2348,
+                    "id": 2350,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "2152:6:9",
@@ -2268,11 +2268,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 2351,
+                  "id": 2353,
                   "indexed": false,
                   "name": "playerType",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2353,
+                  "scope": 2355,
                   "src": "2171:15:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2281,7 +2281,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2350,
+                    "id": 2352,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "2171:4:9",
@@ -2301,20 +2301,20 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 2359,
+            "id": 2361,
             "name": "LogChangeStartingpoint",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 2358,
+              "id": 2360,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2355,
+                  "id": 2357,
                   "indexed": false,
                   "name": "oldPoints",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2359,
+                  "scope": 2361,
                   "src": "2222:17:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2323,7 +2323,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2354,
+                    "id": 2356,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "2222:7:9",
@@ -2337,11 +2337,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 2357,
+                  "id": 2359,
                   "indexed": false,
                   "name": "newPoints",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2359,
+                  "scope": 2361,
                   "src": "2241:17:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2350,7 +2350,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2356,
+                    "id": 2358,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "2241:7:9",
@@ -2370,20 +2370,20 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 2365,
+            "id": 2367,
             "name": "LogPlayerStatus",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 2364,
+              "id": 2366,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2361,
+                  "id": 2363,
                   "indexed": true,
                   "name": "playerAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2365,
+                  "scope": 2367,
                   "src": "2287:29:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2392,7 +2392,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2360,
+                    "id": 2362,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "2287:7:9",
@@ -2406,11 +2406,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 2363,
+                  "id": 2365,
                   "indexed": false,
                   "name": "freezeStatus",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2365,
+                  "scope": 2367,
                   "src": "2318:17:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2419,7 +2419,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 2362,
+                    "id": 2364,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "2318:4:9",
@@ -2437,7 +2437,7 @@
             "src": "2265:72:9"
           }
         ],
-        "scope": 2367,
+        "scope": 2369,
         "src": "87:2267:9"
       }
     ],
@@ -2447,14 +2447,14 @@
     "absolutePath": "/Users/punyampatnaik/Code Arena/Apps/abc-app/contracts/RegistrationInterface.sol",
     "exportedSymbols": {
       "RegistrationInterface": [
-        2366
+        2368
       ]
     },
-    "id": 2367,
+    "id": 2369,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 2205,
+        "id": 2207,
         "literals": [
           "solidity",
           "^",
@@ -2467,10 +2467,10 @@
       {
         "absolutePath": "/Users/punyampatnaik/Code Arena/Apps/abc-app/contracts/MultiOwnable.sol",
         "file": "./MultiOwnable.sol",
-        "id": 2206,
+        "id": 2208,
         "nodeType": "ImportDirective",
-        "scope": 2367,
-        "sourceUnit": 2179,
+        "scope": 2369,
+        "sourceUnit": 2181,
         "src": "26:28:9",
         "symbolAliases": [],
         "unitAlias": ""
@@ -2478,9 +2478,9 @@
       {
         "absolutePath": "/Users/punyampatnaik/Code Arena/Apps/abc-app/contracts/EIP20Interface.sol",
         "file": "./EIP20Interface.sol",
-        "id": 2207,
+        "id": 2209,
         "nodeType": "ImportDirective",
-        "scope": 2367,
+        "scope": 2369,
         "sourceUnit": 744,
         "src": "55:30:9",
         "symbolAliases": [],
@@ -2492,23 +2492,23 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 2366,
+        "id": 2368,
         "linearizedBaseContracts": [
-          2366
+          2368
         ],
         "name": "RegistrationInterface",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "canonicalName": "RegistrationInterface.PlayerStat",
-            "id": 2216,
+            "id": 2218,
             "members": [
               {
                 "constant": false,
-                "id": 2209,
+                "id": 2211,
                 "name": "toalWinAmount",
                 "nodeType": "VariableDeclaration",
-                "scope": 2216,
+                "scope": 2218,
                 "src": "157:21:9",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -2517,7 +2517,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 2208,
+                  "id": 2210,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "157:7:9",
@@ -2531,10 +2531,10 @@
               },
               {
                 "constant": false,
-                "id": 2211,
+                "id": 2213,
                 "name": "totalLooseAmount",
                 "nodeType": "VariableDeclaration",
-                "scope": 2216,
+                "scope": 2218,
                 "src": "188:24:9",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -2543,7 +2543,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 2210,
+                  "id": 2212,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "188:7:9",
@@ -2557,10 +2557,10 @@
               },
               {
                 "constant": false,
-                "id": 2213,
+                "id": 2215,
                 "name": "totalWins",
                 "nodeType": "VariableDeclaration",
-                "scope": 2216,
+                "scope": 2218,
                 "src": "222:17:9",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -2569,7 +2569,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 2212,
+                  "id": 2214,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "222:7:9",
@@ -2583,10 +2583,10 @@
               },
               {
                 "constant": false,
-                "id": 2215,
+                "id": 2217,
                 "name": "totalLoose",
                 "nodeType": "VariableDeclaration",
-                "scope": 2216,
+                "scope": 2218,
                 "src": "249:18:9",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -2595,7 +2595,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 2214,
+                  "id": 2216,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "249:7:9",
@@ -2610,20 +2610,20 @@
             ],
             "name": "PlayerStat",
             "nodeType": "StructDefinition",
-            "scope": 2366,
+            "scope": 2368,
             "src": "129:145:9",
             "visibility": "public"
           },
           {
             "canonicalName": "RegistrationInterface.MatchStat",
-            "id": 2225,
+            "id": 2227,
             "members": [
               {
                 "constant": false,
-                "id": 2218,
+                "id": 2220,
                 "name": "toalWinAmount",
                 "nodeType": "VariableDeclaration",
-                "scope": 2225,
+                "scope": 2227,
                 "src": "311:21:9",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -2632,7 +2632,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 2217,
+                  "id": 2219,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "311:7:9",
@@ -2646,10 +2646,10 @@
               },
               {
                 "constant": false,
-                "id": 2220,
+                "id": 2222,
                 "name": "totalLooseAmount",
                 "nodeType": "VariableDeclaration",
-                "scope": 2225,
+                "scope": 2227,
                 "src": "342:24:9",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -2658,7 +2658,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 2219,
+                  "id": 2221,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "342:7:9",
@@ -2672,10 +2672,10 @@
               },
               {
                 "constant": false,
-                "id": 2222,
+                "id": 2224,
                 "name": "totalWins",
                 "nodeType": "VariableDeclaration",
-                "scope": 2225,
+                "scope": 2227,
                 "src": "376:17:9",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -2684,7 +2684,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 2221,
+                  "id": 2223,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "376:7:9",
@@ -2698,10 +2698,10 @@
               },
               {
                 "constant": false,
-                "id": 2224,
+                "id": 2226,
                 "name": "totalLoose",
                 "nodeType": "VariableDeclaration",
-                "scope": 2225,
+                "scope": 2227,
                 "src": "403:18:9",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -2710,7 +2710,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 2223,
+                  "id": 2225,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "403:7:9",
@@ -2725,20 +2725,20 @@
             ],
             "name": "MatchStat",
             "nodeType": "StructDefinition",
-            "scope": 2366,
+            "scope": 2368,
             "src": "284:144:9",
             "visibility": "public"
           },
           {
             "canonicalName": "RegistrationInterface.QuestionStat",
-            "id": 2234,
+            "id": 2236,
             "members": [
               {
                 "constant": false,
-                "id": 2227,
+                "id": 2229,
                 "name": "toalWinAmount",
                 "nodeType": "VariableDeclaration",
-                "scope": 2234,
+                "scope": 2236,
                 "src": "468:21:9",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -2747,7 +2747,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 2226,
+                  "id": 2228,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "468:7:9",
@@ -2761,10 +2761,10 @@
               },
               {
                 "constant": false,
-                "id": 2229,
+                "id": 2231,
                 "name": "totalLooseAmount",
                 "nodeType": "VariableDeclaration",
-                "scope": 2234,
+                "scope": 2236,
                 "src": "499:24:9",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -2773,7 +2773,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 2228,
+                  "id": 2230,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "499:7:9",
@@ -2787,10 +2787,10 @@
               },
               {
                 "constant": false,
-                "id": 2231,
+                "id": 2233,
                 "name": "totalWins",
                 "nodeType": "VariableDeclaration",
-                "scope": 2234,
+                "scope": 2236,
                 "src": "533:17:9",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -2799,7 +2799,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 2230,
+                  "id": 2232,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "533:7:9",
@@ -2813,10 +2813,10 @@
               },
               {
                 "constant": false,
-                "id": 2233,
+                "id": 2235,
                 "name": "totalLoose",
                 "nodeType": "VariableDeclaration",
-                "scope": 2234,
+                "scope": 2236,
                 "src": "560:18:9",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -2825,7 +2825,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 2232,
+                  "id": 2234,
                   "name": "uint256",
                   "nodeType": "ElementaryTypeName",
                   "src": "560:7:9",
@@ -2840,16 +2840,16 @@
             ],
             "name": "QuestionStat",
             "nodeType": "StructDefinition",
-            "scope": 2366,
+            "scope": 2368,
             "src": "438:147:9",
             "visibility": "public"
           },
           {
             "constant": false,
-            "id": 2238,
+            "id": 2240,
             "name": "isTrustedPlayer",
             "nodeType": "VariableDeclaration",
-            "scope": 2366,
+            "scope": 2368,
             "src": "595:47:9",
             "stateVariable": true,
             "storageLocation": "default",
@@ -2858,9 +2858,9 @@
               "typeString": "mapping(address => bool)"
             },
             "typeName": {
-              "id": 2237,
+              "id": 2239,
               "keyType": {
-                "id": 2235,
+                "id": 2237,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "603:7:9",
@@ -2876,7 +2876,7 @@
                 "typeString": "mapping(address => bool)"
               },
               "valueType": {
-                "id": 2236,
+                "id": 2238,
                 "name": "bool",
                 "nodeType": "ElementaryTypeName",
                 "src": "614:4:9",
@@ -2891,10 +2891,10 @@
           },
           {
             "constant": false,
-            "id": 2242,
+            "id": 2244,
             "name": "isPlayerFrozen",
             "nodeType": "VariableDeclaration",
-            "scope": 2366,
+            "scope": 2368,
             "src": "648:46:9",
             "stateVariable": true,
             "storageLocation": "default",
@@ -2903,9 +2903,9 @@
               "typeString": "mapping(address => bool)"
             },
             "typeName": {
-              "id": 2241,
+              "id": 2243,
               "keyType": {
-                "id": 2239,
+                "id": 2241,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "656:7:9",
@@ -2921,7 +2921,7 @@
                 "typeString": "mapping(address => bool)"
               },
               "valueType": {
-                "id": 2240,
+                "id": 2242,
                 "name": "bool",
                 "nodeType": "ElementaryTypeName",
                 "src": "667:4:9",
@@ -2936,10 +2936,10 @@
           },
           {
             "constant": false,
-            "id": 2246,
+            "id": 2248,
             "name": "playerNames",
             "nodeType": "VariableDeclaration",
-            "scope": 2366,
+            "scope": 2368,
             "src": "700:45:9",
             "stateVariable": true,
             "storageLocation": "default",
@@ -2948,9 +2948,9 @@
               "typeString": "mapping(address => string storage ref)"
             },
             "typeName": {
-              "id": 2245,
+              "id": 2247,
               "keyType": {
-                "id": 2243,
+                "id": 2245,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "708:7:9",
@@ -2966,7 +2966,7 @@
                 "typeString": "mapping(address => string storage ref)"
               },
               "valueType": {
-                "id": 2244,
+                "id": 2246,
                 "name": "string",
                 "nodeType": "ElementaryTypeName",
                 "src": "719:6:9",
@@ -2981,10 +2981,10 @@
           },
           {
             "constant": false,
-            "id": 2249,
+            "id": 2251,
             "name": "playerList",
             "nodeType": "VariableDeclaration",
-            "scope": 2366,
+            "scope": 2368,
             "src": "751:27:9",
             "stateVariable": true,
             "storageLocation": "default",
@@ -2994,7 +2994,7 @@
             },
             "typeName": {
               "baseType": {
-                "id": 2247,
+                "id": 2249,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "751:7:9",
@@ -3003,7 +3003,7 @@
                   "typeString": "address"
                 }
               },
-              "id": 2248,
+              "id": 2250,
               "length": null,
               "nodeType": "ArrayTypeName",
               "src": "751:9:9",
@@ -3017,10 +3017,10 @@
           },
           {
             "constant": false,
-            "id": 2252,
+            "id": 2254,
             "name": "playerBalances",
             "nodeType": "VariableDeclaration",
-            "scope": 2366,
+            "scope": 2368,
             "src": "784:31:9",
             "stateVariable": true,
             "storageLocation": "default",
@@ -3030,7 +3030,7 @@
             },
             "typeName": {
               "baseType": {
-                "id": 2250,
+                "id": 2252,
                 "name": "uint256",
                 "nodeType": "ElementaryTypeName",
                 "src": "784:7:9",
@@ -3039,7 +3039,7 @@
                   "typeString": "uint256"
                 }
               },
-              "id": 2251,
+              "id": 2253,
               "length": null,
               "nodeType": "ArrayTypeName",
               "src": "784:9:9",
@@ -3053,10 +3053,10 @@
           },
           {
             "constant": false,
-            "id": 2255,
+            "id": 2257,
             "name": "playerTypes",
             "nodeType": "VariableDeclaration",
-            "scope": 2366,
+            "scope": 2368,
             "src": "821:28:9",
             "stateVariable": true,
             "storageLocation": "default",
@@ -3066,7 +3066,7 @@
             },
             "typeName": {
               "baseType": {
-                "id": 2253,
+                "id": 2255,
                 "name": "uint256",
                 "nodeType": "ElementaryTypeName",
                 "src": "821:7:9",
@@ -3075,7 +3075,7 @@
                   "typeString": "uint256"
                 }
               },
-              "id": 2254,
+              "id": 2256,
               "length": null,
               "nodeType": "ArrayTypeName",
               "src": "821:9:9",
@@ -3089,10 +3089,10 @@
           },
           {
             "constant": false,
-            "id": 2257,
+            "id": 2259,
             "name": "startingPoints",
             "nodeType": "VariableDeclaration",
-            "scope": 2366,
+            "scope": 2368,
             "src": "860:29:9",
             "stateVariable": true,
             "storageLocation": "default",
@@ -3101,7 +3101,7 @@
               "typeString": "uint256"
             },
             "typeName": {
-              "id": 2256,
+              "id": 2258,
               "name": "uint256",
               "nodeType": "ElementaryTypeName",
               "src": "860:7:9",
@@ -3115,10 +3115,10 @@
           },
           {
             "constant": false,
-            "id": 2259,
+            "id": 2261,
             "name": "tokenAddress",
             "nodeType": "VariableDeclaration",
-            "scope": 2366,
+            "scope": 2368,
             "src": "899:27:9",
             "stateVariable": true,
             "storageLocation": "default",
@@ -3127,7 +3127,7 @@
               "typeString": "address"
             },
             "typeName": {
-              "id": 2258,
+              "id": 2260,
               "name": "address",
               "nodeType": "ElementaryTypeName",
               "src": "899:7:9",
@@ -3141,10 +3141,10 @@
           },
           {
             "constant": false,
-            "id": 2261,
+            "id": 2263,
             "name": "token",
             "nodeType": "VariableDeclaration",
-            "scope": 2366,
+            "scope": 2368,
             "src": "936:20:9",
             "stateVariable": true,
             "storageLocation": "default",
@@ -3154,7 +3154,7 @@
             },
             "typeName": {
               "contractScope": null,
-              "id": 2260,
+              "id": 2262,
               "name": "EIP20Interface",
               "nodeType": "UserDefinedTypeName",
               "referencedDeclaration": 743,
@@ -3169,10 +3169,10 @@
           },
           {
             "constant": false,
-            "id": 2265,
+            "id": 2267,
             "name": "playerRank",
             "nodeType": "VariableDeclaration",
-            "scope": 2366,
+            "scope": 2368,
             "src": "967:43:9",
             "stateVariable": true,
             "storageLocation": "default",
@@ -3181,9 +3181,9 @@
               "typeString": "mapping(address => uint256)"
             },
             "typeName": {
-              "id": 2264,
+              "id": 2266,
               "keyType": {
-                "id": 2262,
+                "id": 2264,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "976:7:9",
@@ -3199,7 +3199,7 @@
                 "typeString": "mapping(address => uint256)"
               },
               "valueType": {
-                "id": 2263,
+                "id": 2265,
                 "name": "uint",
                 "nodeType": "ElementaryTypeName",
                 "src": "987:4:9",
@@ -3214,21 +3214,21 @@
           },
           {
             "constant": false,
-            "id": 2269,
+            "id": 2271,
             "name": "playerStats",
             "nodeType": "VariableDeclaration",
-            "scope": 2366,
+            "scope": 2368,
             "src": "1016:50:9",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_PlayerStat_$2216_storage_$",
+              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_PlayerStat_$2218_storage_$",
               "typeString": "mapping(address => struct RegistrationInterface.PlayerStat storage ref)"
             },
             "typeName": {
-              "id": 2268,
+              "id": 2270,
               "keyType": {
-                "id": 2266,
+                "id": 2268,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "1025:7:9",
@@ -3240,18 +3240,18 @@
               "nodeType": "Mapping",
               "src": "1016:31:9",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_PlayerStat_$2216_storage_$",
+                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_PlayerStat_$2218_storage_$",
                 "typeString": "mapping(address => struct RegistrationInterface.PlayerStat storage ref)"
               },
               "valueType": {
                 "contractScope": null,
-                "id": 2267,
+                "id": 2269,
                 "name": "PlayerStat",
                 "nodeType": "UserDefinedTypeName",
-                "referencedDeclaration": 2216,
+                "referencedDeclaration": 2218,
                 "src": "1036:10:9",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_PlayerStat_$2216_storage_ptr",
+                  "typeIdentifier": "t_struct$_PlayerStat_$2218_storage_ptr",
                   "typeString": "struct RegistrationInterface.PlayerStat storage pointer"
                 }
               }
@@ -3261,10 +3261,10 @@
           },
           {
             "constant": false,
-            "id": 2273,
+            "id": 2275,
             "name": "playerType",
             "nodeType": "VariableDeclaration",
-            "scope": 2366,
+            "scope": 2368,
             "src": "1074:43:9",
             "stateVariable": true,
             "storageLocation": "default",
@@ -3273,9 +3273,9 @@
               "typeString": "mapping(address => uint256)"
             },
             "typeName": {
-              "id": 2272,
+              "id": 2274,
               "keyType": {
-                "id": 2270,
+                "id": 2272,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "1083:7:9",
@@ -3291,7 +3291,7 @@
                 "typeString": "mapping(address => uint256)"
               },
               "valueType": {
-                "id": 2271,
+                "id": 2273,
                 "name": "uint",
                 "nodeType": "ElementaryTypeName",
                 "src": "1094:4:9",
@@ -3306,21 +3306,21 @@
           },
           {
             "constant": false,
-            "id": 2277,
+            "id": 2279,
             "name": "matchStats",
             "nodeType": "VariableDeclaration",
-            "scope": 2366,
+            "scope": 2368,
             "src": "1123:48:9",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_MatchStat_$2225_storage_$",
+              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_MatchStat_$2227_storage_$",
               "typeString": "mapping(address => struct RegistrationInterface.MatchStat storage ref)"
             },
             "typeName": {
-              "id": 2276,
+              "id": 2278,
               "keyType": {
-                "id": 2274,
+                "id": 2276,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "1132:7:9",
@@ -3332,18 +3332,18 @@
               "nodeType": "Mapping",
               "src": "1123:30:9",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_MatchStat_$2225_storage_$",
+                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_MatchStat_$2227_storage_$",
                 "typeString": "mapping(address => struct RegistrationInterface.MatchStat storage ref)"
               },
               "valueType": {
                 "contractScope": null,
-                "id": 2275,
+                "id": 2277,
                 "name": "MatchStat",
                 "nodeType": "UserDefinedTypeName",
-                "referencedDeclaration": 2225,
+                "referencedDeclaration": 2227,
                 "src": "1143:9:9",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_MatchStat_$2225_storage_ptr",
+                  "typeIdentifier": "t_struct$_MatchStat_$2227_storage_ptr",
                   "typeString": "struct RegistrationInterface.MatchStat storage pointer"
                 }
               }
@@ -3353,21 +3353,21 @@
           },
           {
             "constant": false,
-            "id": 2281,
+            "id": 2283,
             "name": "questionStats",
             "nodeType": "VariableDeclaration",
-            "scope": 2366,
+            "scope": 2368,
             "src": "1177:51:9",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_QuestionStat_$2234_storage_$",
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_QuestionStat_$2236_storage_$",
               "typeString": "mapping(uint256 => struct RegistrationInterface.QuestionStat storage ref)"
             },
             "typeName": {
-              "id": 2280,
+              "id": 2282,
               "keyType": {
-                "id": 2278,
+                "id": 2280,
                 "name": "uint",
                 "nodeType": "ElementaryTypeName",
                 "src": "1186:4:9",
@@ -3379,18 +3379,18 @@
               "nodeType": "Mapping",
               "src": "1177:30:9",
               "typeDescriptions": {
-                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_QuestionStat_$2234_storage_$",
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_QuestionStat_$2236_storage_$",
                 "typeString": "mapping(uint256 => struct RegistrationInterface.QuestionStat storage ref)"
               },
               "valueType": {
                 "contractScope": null,
-                "id": 2279,
+                "id": 2281,
                 "name": "QuestionStat",
                 "nodeType": "UserDefinedTypeName",
-                "referencedDeclaration": 2234,
+                "referencedDeclaration": 2236,
                 "src": "1194:12:9",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_struct$_QuestionStat_$2234_storage_ptr",
+                  "typeIdentifier": "t_struct$_QuestionStat_$2236_storage_ptr",
                   "typeString": "struct RegistrationInterface.QuestionStat storage pointer"
                 }
               }
@@ -3401,7 +3401,7 @@
           {
             "body": null,
             "documentation": null,
-            "id": 2292,
+            "id": 2294,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -3409,15 +3409,15 @@
             "name": "addPlayer",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2288,
+              "id": 2290,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2283,
+                  "id": 2285,
                   "name": "_playerAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2292,
+                  "scope": 2294,
                   "src": "1290:22:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3426,7 +3426,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2282,
+                    "id": 2284,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1290:7:9",
@@ -3440,10 +3440,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 2285,
+                  "id": 2287,
                   "name": "playerName",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2292,
+                  "scope": 2294,
                   "src": "1314:17:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3452,7 +3452,7 @@
                     "typeString": "string memory"
                   },
                   "typeName": {
-                    "id": 2284,
+                    "id": 2286,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1314:6:9",
@@ -3466,10 +3466,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 2287,
+                  "id": 2289,
                   "name": "_playerType",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2292,
+                  "scope": 2294,
                   "src": "1333:16:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3478,7 +3478,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2286,
+                    "id": 2288,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "1333:4:9",
@@ -3495,15 +3495,15 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 2291,
+              "id": 2293,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2290,
+                  "id": 2292,
                   "name": "ok",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2292,
+                  "scope": 2294,
                   "src": "1375:7:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3512,7 +3512,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 2289,
+                    "id": 2291,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "1375:4:9",
@@ -3527,7 +3527,7 @@
               ],
               "src": "1374:9:9"
             },
-            "scope": 2366,
+            "scope": 2368,
             "src": "1271:113:9",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -3536,7 +3536,7 @@
           {
             "body": null,
             "documentation": null,
-            "id": 2301,
+            "id": 2303,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -3544,15 +3544,15 @@
             "name": "freezePlayer",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2297,
+              "id": 2299,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2294,
+                  "id": 2296,
                   "name": "_playerAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2301,
+                  "scope": 2303,
                   "src": "1416:22:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3561,7 +3561,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2293,
+                    "id": 2295,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1416:7:9",
@@ -3575,10 +3575,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 2296,
+                  "id": 2298,
                   "name": "freezeStatus",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2301,
+                  "scope": 2303,
                   "src": "1440:17:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3587,7 +3587,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 2295,
+                    "id": 2297,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "1440:4:9",
@@ -3604,15 +3604,15 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 2300,
+              "id": 2302,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2299,
+                  "id": 2301,
                   "name": "ok",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2301,
+                  "scope": 2303,
                   "src": "1474:7:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3621,7 +3621,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 2298,
+                    "id": 2300,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "1474:4:9",
@@ -3636,7 +3636,7 @@
               ],
               "src": "1473:9:9"
             },
-            "scope": 2366,
+            "scope": 2368,
             "src": "1394:89:9",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -3645,7 +3645,7 @@
           {
             "body": null,
             "documentation": null,
-            "id": 2307,
+            "id": 2309,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -3653,22 +3653,22 @@
             "name": "getPlayerList",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2302,
+              "id": 2304,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1544:2:9"
             },
             "payable": false,
             "returnParameters": {
-              "id": 2306,
+              "id": 2308,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2305,
+                  "id": 2307,
                   "name": "_playerList",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2307,
+                  "scope": 2309,
                   "src": "1567:21:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3678,7 +3678,7 @@
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 2303,
+                      "id": 2305,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
                       "src": "1567:7:9",
@@ -3687,7 +3687,7 @@
                         "typeString": "address"
                       }
                     },
-                    "id": 2304,
+                    "id": 2306,
                     "length": null,
                     "nodeType": "ArrayTypeName",
                     "src": "1567:9:9",
@@ -3702,7 +3702,7 @@
               ],
               "src": "1566:23:9"
             },
-            "scope": 2366,
+            "scope": 2368,
             "src": "1522:68:9",
             "stateMutability": "view",
             "superFunction": null,
@@ -3711,7 +3711,7 @@
           {
             "body": null,
             "documentation": null,
-            "id": 2312,
+            "id": 2314,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -3719,22 +3719,22 @@
             "name": "getNumberPlayers",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2308,
+              "id": 2310,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1625:2:9"
             },
             "payable": false,
             "returnParameters": {
-              "id": 2311,
+              "id": 2313,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2310,
+                  "id": 2312,
                   "name": "numberPlayer",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2312,
+                  "scope": 2314,
                   "src": "1649:17:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3743,7 +3743,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2309,
+                    "id": 2311,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "1649:4:9",
@@ -3758,7 +3758,7 @@
               ],
               "src": "1648:19:9"
             },
-            "scope": 2366,
+            "scope": 2368,
             "src": "1600:68:9",
             "stateMutability": "view",
             "superFunction": null,
@@ -3767,7 +3767,7 @@
           {
             "body": null,
             "documentation": null,
-            "id": 2319,
+            "id": 2321,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -3775,15 +3775,15 @@
             "name": "getPlayerBalance",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2315,
+              "id": 2317,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2314,
+                  "id": 2316,
                   "name": "_playerAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2319,
+                  "scope": 2321,
                   "src": "1704:22:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3792,7 +3792,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2313,
+                    "id": 2315,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1704:7:9",
@@ -3809,15 +3809,15 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 2318,
+              "id": 2320,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2317,
+                  "id": 2319,
                   "name": "balance",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2319,
+                  "scope": 2321,
                   "src": "1749:12:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3826,7 +3826,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2316,
+                    "id": 2318,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "1749:4:9",
@@ -3841,7 +3841,7 @@
               ],
               "src": "1748:14:9"
             },
-            "scope": 2366,
+            "scope": 2368,
             "src": "1678:85:9",
             "stateMutability": "view",
             "superFunction": null,
@@ -3850,7 +3850,7 @@
           {
             "body": null,
             "documentation": null,
-            "id": 2331,
+            "id": 2333,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -3858,22 +3858,22 @@
             "name": "getPlayerDetail",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2320,
+              "id": 2322,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1797:2:9"
             },
             "payable": false,
             "returnParameters": {
-              "id": 2330,
+              "id": 2332,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2323,
+                  "id": 2325,
                   "name": "_playerList",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2331,
+                  "scope": 2333,
                   "src": "1815:21:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3883,7 +3883,7 @@
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 2321,
+                      "id": 2323,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
                       "src": "1815:7:9",
@@ -3892,7 +3892,7 @@
                         "typeString": "address"
                       }
                     },
-                    "id": 2322,
+                    "id": 2324,
                     "length": null,
                     "nodeType": "ArrayTypeName",
                     "src": "1815:9:9",
@@ -3906,10 +3906,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 2326,
+                  "id": 2328,
                   "name": "balance",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2331,
+                  "scope": 2333,
                   "src": "1838:17:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3919,7 +3919,7 @@
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 2324,
+                      "id": 2326,
                       "name": "uint256",
                       "nodeType": "ElementaryTypeName",
                       "src": "1838:7:9",
@@ -3928,7 +3928,7 @@
                         "typeString": "uint256"
                       }
                     },
-                    "id": 2325,
+                    "id": 2327,
                     "length": null,
                     "nodeType": "ArrayTypeName",
                     "src": "1838:9:9",
@@ -3942,10 +3942,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 2329,
+                  "id": 2331,
                   "name": "_playerType",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2331,
+                  "scope": 2333,
                   "src": "1856:18:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3955,7 +3955,7 @@
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 2327,
+                      "id": 2329,
                       "name": "uint",
                       "nodeType": "ElementaryTypeName",
                       "src": "1856:4:9",
@@ -3964,7 +3964,7 @@
                         "typeString": "uint256"
                       }
                     },
-                    "id": 2328,
+                    "id": 2330,
                     "length": null,
                     "nodeType": "ArrayTypeName",
                     "src": "1856:6:9",
@@ -3979,7 +3979,7 @@
               ],
               "src": "1814:61:9"
             },
-            "scope": 2366,
+            "scope": 2368,
             "src": "1773:103:9",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -3988,7 +3988,7 @@
           {
             "body": null,
             "documentation": null,
-            "id": 2338,
+            "id": 2340,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -3996,15 +3996,15 @@
             "name": "changeTokenAddress",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2334,
+              "id": 2336,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2333,
+                  "id": 2335,
                   "name": "_newTokenAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2338,
+                  "scope": 2340,
                   "src": "1914:24:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -4013,7 +4013,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2332,
+                    "id": 2334,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1914:7:9",
@@ -4030,15 +4030,15 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 2337,
+              "id": 2339,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2336,
+                  "id": 2338,
                   "name": "ok",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2338,
+                  "scope": 2340,
                   "src": "1956:7:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -4047,7 +4047,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 2335,
+                    "id": 2337,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "1956:4:9",
@@ -4062,7 +4062,7 @@
               ],
               "src": "1955:9:9"
             },
-            "scope": 2366,
+            "scope": 2368,
             "src": "1886:79:9",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -4071,7 +4071,7 @@
           {
             "body": null,
             "documentation": null,
-            "id": 2345,
+            "id": 2347,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -4079,15 +4079,15 @@
             "name": "changeStartingPoints",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 2341,
+              "id": 2343,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2340,
+                  "id": 2342,
                   "name": "newPoints",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2345,
+                  "scope": 2347,
                   "src": "2005:17:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -4096,7 +4096,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2339,
+                    "id": 2341,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "2005:7:9",
@@ -4113,15 +4113,15 @@
             },
             "payable": false,
             "returnParameters": {
-              "id": 2344,
+              "id": 2346,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2343,
+                  "id": 2345,
                   "name": "ok",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2345,
+                  "scope": 2347,
                   "src": "2039:7:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -4130,7 +4130,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 2342,
+                    "id": 2344,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "2039:4:9",
@@ -4145,7 +4145,7 @@
               ],
               "src": "2038:9:9"
             },
-            "scope": 2366,
+            "scope": 2368,
             "src": "1975:73:9",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -4154,20 +4154,20 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 2353,
+            "id": 2355,
             "name": "LogAddPlayer",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 2352,
+              "id": 2354,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2347,
+                  "id": 2349,
                   "indexed": true,
                   "name": "playerAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2353,
+                  "scope": 2355,
                   "src": "2121:29:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -4176,7 +4176,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2346,
+                    "id": 2348,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "2121:7:9",
@@ -4190,11 +4190,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 2349,
+                  "id": 2351,
                   "indexed": false,
                   "name": "playerName",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2353,
+                  "scope": 2355,
                   "src": "2152:17:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -4203,7 +4203,7 @@
                     "typeString": "string memory"
                   },
                   "typeName": {
-                    "id": 2348,
+                    "id": 2350,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "2152:6:9",
@@ -4217,11 +4217,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 2351,
+                  "id": 2353,
                   "indexed": false,
                   "name": "playerType",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2353,
+                  "scope": 2355,
                   "src": "2171:15:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -4230,7 +4230,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2350,
+                    "id": 2352,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "2171:4:9",
@@ -4250,20 +4250,20 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 2359,
+            "id": 2361,
             "name": "LogChangeStartingpoint",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 2358,
+              "id": 2360,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2355,
+                  "id": 2357,
                   "indexed": false,
                   "name": "oldPoints",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2359,
+                  "scope": 2361,
                   "src": "2222:17:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -4272,7 +4272,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2354,
+                    "id": 2356,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "2222:7:9",
@@ -4286,11 +4286,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 2357,
+                  "id": 2359,
                   "indexed": false,
                   "name": "newPoints",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2359,
+                  "scope": 2361,
                   "src": "2241:17:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -4299,7 +4299,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 2356,
+                    "id": 2358,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "2241:7:9",
@@ -4319,20 +4319,20 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 2365,
+            "id": 2367,
             "name": "LogPlayerStatus",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 2364,
+              "id": 2366,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 2361,
+                  "id": 2363,
                   "indexed": true,
                   "name": "playerAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2365,
+                  "scope": 2367,
                   "src": "2287:29:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -4341,7 +4341,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 2360,
+                    "id": 2362,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "2287:7:9",
@@ -4355,11 +4355,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 2363,
+                  "id": 2365,
                   "indexed": false,
                   "name": "freezeStatus",
                   "nodeType": "VariableDeclaration",
-                  "scope": 2365,
+                  "scope": 2367,
                   "src": "2318:17:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -4368,7 +4368,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 2362,
+                    "id": 2364,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "2318:4:9",
@@ -4386,7 +4386,7 @@
             "src": "2265:72:9"
           }
         ],
-        "scope": 2367,
+        "scope": 2369,
         "src": "87:2267:9"
       }
     ],
@@ -4398,5 +4398,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.0",
-  "updatedAt": "2018-04-06T16:42:41.239Z"
+  "updatedAt": "2018-04-06T17:41:11.427Z"
 }

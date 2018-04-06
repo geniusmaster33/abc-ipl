@@ -8,7 +8,7 @@ module.exports = {
         return new HDWalletProvider(mnemonic, "https://kovan.infura.io/rDtDtyNmAVjB12zhj5nn",2)
       },
       network_id: 42,
-      gas:7992187
+      gas:7992188
     },
     development: {
       host: "127.0.0.1",
