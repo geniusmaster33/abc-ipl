@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import * as eip20_artifact from '../../../../build/contracts/EIP20.json';
 import * as ipl_artifact from '../../../../build/contracts/Ipl.json';
 import * as registration_artifact from '../../../../build/contracts/Registration.json';
+import { Http } from '@angular/http';
 import { Leader } from './leader';
 import { Web3Service } from '../../util/web3.service';
 
@@ -17,59 +18,19 @@ export class LeaderBoardComponent implements OnInit {
   Regn: any;
 
   leaders: Leader[];
+  userNameMap = new Map();
 
-  constructor(private web3Service: Web3Service) { }
+  constructor(private web3Service: Web3Service, private http:Http) { }
 
   ngOnInit() {
-    this.leadersList = this.getLeaderBoard();
+    //this.leadersList = this.getLeaderBoard();
     this.aiLeadersList = this.getAILeaders();
     this.getLeaderBoardData();
   }
 
-  getLeaderBoard() {
-    let leaders = [{
-      "name": "Apple",
-      "points": 2000,
-      "wl": "5:3",
-      "category": "man"
-    },
-    {
-      "name": "Boy",
-      "points": 1800,
-      "wl": "5:4",
-      "category": "man"
-    },
-    {
-      "name": "Apple",
-      "points": 2000,
-      "wl": "5:3",
-      "category": "machine"
-    },
-    {
-      "name": "Apple",
-      "points": 2000,
-      "wl": "5:3",
-      "category": "man"
-    },
-    {
-      "name": "Apple",
-      "points": 2000,
-      "wl": "5:3",
-      "category": "man"
-    },
-    {
-      "name": "Apple",
-      "points": 2000,
-      "wl": "5:3",
-      "category": "man"
-    },
-  ];
-
-  return leaders;
-  }
-
+  
   getAILeaders() {
-    return this.leadersList.filter((leader) => (leader.category === 'machine'));
+    //return this.leadersList.filter((leader) => (leader.category === 'machine'));
   }
 
   getLeaderBoardData() {
@@ -100,6 +61,8 @@ export class LeaderBoardComponent implements OnInit {
              this.leaders.sort(this.sortLeaderBoard);
 
             console.log(this.leaders);
+
+            this.getUserName();
           });
         },
           (e) => { });
@@ -118,20 +81,39 @@ export class LeaderBoardComponent implements OnInit {
     }
   }
 
-  // getUserName() {
-  //   const url = 'http://abcipl.club:4020/getName';
+  async getUserName() {
+    const url = 'http://abcipl.club:4030/getuserspk';
 
-  //   this.http.get(url+"?pk="+this.model.account).subscribe(
-  //     (response) => {
-  //       console.log("User Name " + response.text());
-  //       this.model.username = response.text();
-  //     },
-  //     (error) => {
-  //       console.log("Error in getting todays date : " + error);
-  //     },
-  //     () => {
+    this.http.get(url).subscribe(
+      (response) => {
+        console.log("User Name " + response);
+        // this.model.username = response.text();
+        for(let user of JSON.parse(response.text())) {
+            console.log(user);
+            //this.userNameMap.set(user[0], user[1]);
+          }
+      },
+      (error) => {
+        console.log("Error in getting todays date : " + error);
+      },
+      () => {
 
-  //     }
-  //   )
-  // }
+      }
+    )
+    // let usernames = await this.http.get(url).toPromise();
+    // console.log('User name from python ', usernames.text());
+
+    // console.log(JSON.parse(usernames.text()));
+    
+    // .forEach(user => {
+    //    this.userNameMap.set(user[0], user[1]);
+    //  });
+
+    // for(let user of usernames) {
+    //   console.log(user);
+    //   //this.userNameMap.set(user[0], user[1]);
+    // }
+
+    // console.log('Usernames List', this.userNameMap  );
+  }
 }
