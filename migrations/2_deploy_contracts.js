@@ -12,7 +12,7 @@ module.exports = function(deployer) {
      return deployer.deploy(Registry,EIP.address).then(function(){
       deployer.link(SafeMath, [Ipl]);
       deployer.link(AddressSet,[Ipl]);
-       return deployer.deploy(Ipl,Registry.address);
+       return deployer.deploy(Ipl,Registry.address,EIP.address);
     })
   })
   // deployer.deploy(MetaCoin);

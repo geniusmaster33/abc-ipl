@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import * as eip20_artifact from '../../../../build/contracts/EIP20.json';
 import * as ipl_artifact from '../../../../build/contracts/Ipl.json';
 import * as registration_artifact from '../../../../build/contracts/Registration.json';
+import { Leader } from './Leader';
 import { Web3Service } from '../../util/web3.service';
 
 @Component({
@@ -15,8 +16,7 @@ export class LeaderBoardComponent implements OnInit {
   aiLeadersList;
   Regn: any;
 
-  names;
-  balances;
+  leaders: Leader[];
 
   constructor(private web3Service: Web3Service) { }
 
@@ -81,16 +81,40 @@ export class LeaderBoardComponent implements OnInit {
           instance.getLeaderBoard.call().then((v) => {
             console.log("LeaderBoard Details", v);
             this.leadersList = v;
-            this.names = this.leadersList[0];
-            this.balances = this.leadersList[1];
+            let names = this.leadersList[0];
+            let balances = this.leadersList[1];
 
-            console.log(this.names);
+            this.leaders = new Array(names.length);
 
+            for(let index = 0; index < names.length; index++) {
+              let ldr = new Leader();
+              ldr.name = names[index];
+              ldr.balance = balances[index];
+              this.leaders[index] = ldr;
+            }
+            // this.leaders[0].balance = 100;
+            // this.leaders[1].balance = 190;
+            // this.leaders[2].balance = 20;
+            // this.leaders[3].balance = 40;
+            // this.leaders[4].balance = 10;
+             this.leaders.sort(this.sortLeaderBoard);
 
-            
+            console.log(this.leaders);
           });
         },
           (e) => { });
       })
+  }
+
+  sortLeaderBoard(obj1:Leader, obj2:Leader) {
+    if(Number(obj1.balance) < Number(obj2.balance)) {
+      return 1;
+    } 
+    else if(Number(obj1.balance) > Number(obj2.balance)) {
+      return -1;
+    }
+    else {
+      return 0;
+    }
   }
 }
