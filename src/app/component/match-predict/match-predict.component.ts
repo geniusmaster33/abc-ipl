@@ -163,15 +163,15 @@ export class MatchPredictComponent implements OnInit {
                 console.log("Register preresponse ", m);
                 this.match = m;
                 this.match.at(matchAddr).then((instance1) => {
-                  instance1.bet.sendTransaction([this.allPredictions.highestScorer.assignedPoints, 
+                  instance1.bet.sendTransaction([this.allPredictions.winningTeam.assignedPoints,
+                                                this.allPredictions.highestScorer.assignedPoints, 
                                                 this.allPredictions.bestBowler.assignedPoints,
                                                 this.allPredictions.mom.assignedPoints,
-                                                this.allPredictions.winningTeam.assignedPoints,
                                                 this.allPredictions.score.assignedPoints], 
-                                                [this.allPredictions.highestScorer.prediction, 
+                                                [ this.allPredictions.winningTeam.prediction, 
+                                                  this.allPredictions.highestScorer.prediction, 
                                                  this.allPredictions.bestBowler.prediction, 
                                                  this.allPredictions.mom.prediction,
-                                                 this.allPredictions.winningTeam.prediction, 
                                                  this.allPredictions.score.prediction],
                     { from: this.web3Service.getKey(), gas: 500000, gasPrice: 20000000000 })
                     .then((v) => {
