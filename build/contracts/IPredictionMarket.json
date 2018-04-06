@@ -31,14 +31,14 @@
     "absolutePath": "/Users/punyampatnaik/Code Arena/Apps/abc-app/contracts/Interfaces.sol",
     "exportedSymbols": {
       "IPredictionMarket": [
-        1784
+        1750
       ]
     },
-    "id": 1785,
+    "id": 1751,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1779,
+        "id": 1745,
         "literals": [
           "solidity",
           "^",
@@ -54,19 +54,19 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 1784,
+        "id": 1750,
         "linearizedBaseContracts": [
-          1784
+          1750
         ],
         "name": "IPredictionMarket",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": false,
-            "id": 1783,
+            "id": 1749,
             "name": "isAdmin",
             "nodeType": "VariableDeclaration",
-            "scope": 1784,
+            "scope": 1750,
             "src": "60:39:5",
             "stateVariable": true,
             "storageLocation": "default",
@@ -75,9 +75,9 @@
               "typeString": "mapping(address => bool)"
             },
             "typeName": {
-              "id": 1782,
+              "id": 1748,
               "keyType": {
-                "id": 1780,
+                "id": 1746,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "68:7:5",
@@ -93,7 +93,7 @@
                 "typeString": "mapping(address => bool)"
               },
               "valueType": {
-                "id": 1781,
+                "id": 1747,
                 "name": "bool",
                 "nodeType": "ElementaryTypeName",
                 "src": "79:4:5",
@@ -107,7 +107,7 @@
             "visibility": "public"
           }
         ],
-        "scope": 1785,
+        "scope": 1751,
         "src": "27:75:5"
       }
     ],
@@ -117,14 +117,14 @@
     "absolutePath": "/Users/punyampatnaik/Code Arena/Apps/abc-app/contracts/Interfaces.sol",
     "exportedSymbols": {
       "IPredictionMarket": [
-        1784
+        1750
       ]
     },
-    "id": 1785,
+    "id": 1751,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1779,
+        "id": 1745,
         "literals": [
           "solidity",
           "^",
@@ -140,19 +140,19 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 1784,
+        "id": 1750,
         "linearizedBaseContracts": [
-          1784
+          1750
         ],
         "name": "IPredictionMarket",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "constant": false,
-            "id": 1783,
+            "id": 1749,
             "name": "isAdmin",
             "nodeType": "VariableDeclaration",
-            "scope": 1784,
+            "scope": 1750,
             "src": "60:39:5",
             "stateVariable": true,
             "storageLocation": "default",
@@ -161,9 +161,9 @@
               "typeString": "mapping(address => bool)"
             },
             "typeName": {
-              "id": 1782,
+              "id": 1748,
               "keyType": {
-                "id": 1780,
+                "id": 1746,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
                 "src": "68:7:5",
@@ -179,7 +179,7 @@
                 "typeString": "mapping(address => bool)"
               },
               "valueType": {
-                "id": 1781,
+                "id": 1747,
                 "name": "bool",
                 "nodeType": "ElementaryTypeName",
                 "src": "79:4:5",
@@ -193,7 +193,7 @@
             "visibility": "public"
           }
         ],
-        "scope": 1785,
+        "scope": 1751,
         "src": "27:75:5"
       }
     ],
@@ -205,5 +205,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.0",
-  "updatedAt": "2018-04-05T15:44:38.901Z"
+  "updatedAt": "2018-04-06T13:42:53.935Z"
 }

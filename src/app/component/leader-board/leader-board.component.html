@@ -49,12 +49,12 @@
                           </thead>
                           <tbody>
                             <!---->
-                            <tr class="ng-star-inserted" *ngFor="let leader of leadersList; let i = index">
+                            <tr class="ng-star-inserted" *ngFor="let name of names;  let balance of balances;let i = index">
                                 <td class="text-center">{{i+1}}</td>
-                                <td class="text-left">{{leader.name}}</td>
-                                <td class="text-right">{{leader.points}}</td>
-                                <td class="text-center">{{leader.wl}}</td>
-                                <td class="text-left">{{leader.category}}</td>
+                                <td class="text-left">{{name}}</td>
+                               <td class="text-right">{{balances[i]}}</td>
+                               <!--<td class="text-center">{{leader.wl}}</td>
+                                <td class="text-left">{{leader.category}}</td>-->
                               </tr>
                           </tbody>
                         </table>
