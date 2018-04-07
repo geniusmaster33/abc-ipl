@@ -34,6 +34,7 @@ export class LeaderBoardComponent implements OnInit {
   }
 
   getLeaderBoardData() {
+    console.log("Inside function");
     this.web3Service.artifactsToContract(registration_artifact)
       .then((response) => {
         this.Regn = response;
@@ -86,6 +87,7 @@ export class LeaderBoardComponent implements OnInit {
 
     let leaders = [{
       "name": "Apple",
+      "key" : "lkajsdljkajdskl"
     },
     {
       "name": "Boy",
@@ -98,12 +100,14 @@ export class LeaderBoardComponent implements OnInit {
         console.log("Raw response " + response.text());
         let responseText = "[" + response.json() + "]";
         // this.model.username = response.text();
+
+        let slipts
         console.log("Response text - ", responseText);
 
-        for(let user of leaders) {
-            console.log("Name " + user[0]);
-            //this.userNameMap.set(user[0], user[1]);
-          }
+        // for(let user of leaders) {
+        //     console.log("Name " + );
+        //     //this.userNameMap.set(user[0], user[1]);
+        //   }
       },
       (error) => {
         console.log("Error in getting todays date : " + error);

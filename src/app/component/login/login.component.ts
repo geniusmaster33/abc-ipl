@@ -12,6 +12,7 @@ import * as registration_artifact from '../../../../build/contracts/Registration
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
+
 export class LoginComponent implements OnInit {
 
   // regModel = {
@@ -24,7 +25,8 @@ export class LoginComponent implements OnInit {
   model = {
     username: '',
     fullname: '',
-    key: ''
+    key: '',
+    isMLTeam: false
   }
 
   isError = false;
@@ -110,7 +112,10 @@ export class LoginComponent implements OnInit {
         console.log("Register preresponse ", response);
         this.Regn = response;
         this.Regn.deployed().then((instance) => {
-          instance.addPlayer.sendTransaction(this.model.key, this.model.username,0, { from: this.model.key, gas: 300000 }).then((v) => {
+          instance.addPlayer.sendTransaction(this.model.key, 
+                                             this.model.username,
+                                             (this.model.isMLTeam === true ? 1 : 0), 
+                                             { from: this.model.key, gas: 300000 }).then((v) => {
             console.log("Add player response - " + v);
             if (v) { 
               this.submitForm();
