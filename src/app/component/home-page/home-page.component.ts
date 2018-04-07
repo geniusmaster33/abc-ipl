@@ -23,7 +23,7 @@ export class HomePageComponent implements OnInit {
   isFirstTimeUser = false;
 
   accounts: string[];
-  MetaCoin: any;
+  //MetaCoin: any;
   Ipl: any;
   Regn: any;
   AbcCoin: any;
@@ -45,34 +45,36 @@ export class HomePageComponent implements OnInit {
 
   status = '';
 
-  constructor(private web3Service: Web3Service, 
-              private router: Router,
-              private http : Http) {
+  constructor(private web3Service: Web3Service,
+    private router: Router,
+    private http: Http) {
     // console.log(metacoin_artifacts);
   }
 
   ngOnInit(): void {
-    console.log('########## OnInit: ' + this.web3Service + "   " + this.isAccountInfoLoaded);
+    console.log('Home Page OnInit' );
     this.accounts = this.web3Service.getAccount();
     //console.log("Accounts initial - " + this.accounts);
 
     if (this.accounts) {
       this.model.account = this.accounts[0];
-      console.log("Account on init " + this.model.account);
-      this.refreshBalance(); 
+      console.log("Account found from service : " + this.model.account);
+      //this.refreshBalance(); 
       // TODO - Balance not getting updated
       this.isKeyRegistered();
+      this.fetchBalance();
+      this.getUserName();
 
       this.isAccountInfoLoaded = true;
     }
 
     this.watchAccount();
-    this.web3Service.artifactsToContract(metacoin_artifacts)
-      .then((MetaCoinAbstraction) => {
-        this.MetaCoin = MetaCoinAbstraction;
-        console.log("Metacoin " + this.MetaCoin);
-      });
-    console.log("Account ------ ", this.model.account);
+    // this.web3Service.artifactsToContract(metacoin_artifacts)
+    //   .then((MetaCoinAbstraction) => {
+    //     this.MetaCoin = MetaCoinAbstraction;
+    //     //console.log("Metacoin " + this.MetaCoin);
+    //   });
+    // console.log("Account ------ ", this.model.account);
   }
 
   setStatus(status) {
@@ -80,28 +82,24 @@ export class HomePageComponent implements OnInit {
   }
 
   watchAccount() {
-    console.log("Watching account ");
+    console.log("Watching account from Web3Service ");
     this.web3Service.accountsObservable.subscribe((accounts) => {
       this.accounts = accounts;
       this.model.account = accounts[0];
-      console.log("Found account ", this.accounts);
+      console.log("Found fresh account ", this.accounts);
 
       this.user.key = this.model.account;
-
       this.web3Service.setKey(this.user.key);
 
       this.isKeyRegistered();
       this.fetchBalance();
-
-      this.isAccountInfoLoaded = true;
-
-      console.log("Account Info" + this.isAccountInfoLoaded);
-
       this.getUserName();
 
+      this.isAccountInfoLoaded = true;
+      console.log("@@@@@@@@@@@@@@@@@@@@@@ " + this.isAccountInfoLoaded);
     });
   }
-  
+
   refreshBalance() {
     console.log('Refreshing balance');
 
@@ -140,18 +138,18 @@ export class HomePageComponent implements OnInit {
     //   console.log('Error ', e);
     // })
 
-    this.MetaCoin.deployed()
-      .then((instance) => {
-        meta = instance;
-        return meta.sendCoin(receiver, 10, { from: this.model.account });
-      })
-      .then(() => {
-        console.log('Coins sent successfully');
-        this.refreshBalance();
-      })
-      .catch((e) => {
-        console.log(e);
-      })
+    // this.MetaCoin.deployed()
+    //   .then((instance) => {
+    //     meta = instance;
+    //     return meta.sendCoin(receiver, 10, { from: this.model.account });
+    //   })
+    //   .then(() => {
+    //     console.log('Coins sent successfully');
+    //     this.refreshBalance();
+    //   })
+    //   .catch((e) => {
+    //     console.log(e);
+    //   })
   }
 
 
@@ -160,15 +158,16 @@ export class HomePageComponent implements OnInit {
       .then((response) => {
         this.Regn = response;
         this.Regn.deployed().then((instance) => {
-          console.log("Regn contract ------- ", instance);
           instance.isTrustedPlayer.call(this.model.account).then((v) => {
-            console.log("@@@@@@@@ " + v);
+            console.log("Is key registered - " + v);
             if (!v) { // If not registered
               this.router.navigate(['login', {key : this.model.account}]);
             }
           });
         },
-          (e) => { });
+          (e) => { 
+            console.log('Error encountered in fetching registration status ', e);
+          });
       })
   }
 
@@ -177,27 +176,28 @@ export class HomePageComponent implements OnInit {
       .then((response) => {
         this.AbcCoin = response;
         this.AbcCoin.deployed().then((instance) => {
-          console.log("Instance ------- ", instance);
           instance.balanceOf.call(this.model.account).then((balance) => {
             console.log(" AbcCoin Balance " + balance);
             this.model.balance = balance;
             this.web3Service.setBalance(balance);
           });
         },
-          (e) => { });
+          (e) => { 
+            console.log('Error encountered in fetching balance ', e);
+          });
       })
   }
 
   getUserName() {
     const url = 'http://abcipl.club:4020/getName';
 
-    this.http.get(url+"?pk="+this.model.account).subscribe(
+    this.http.get(url + "?pk=" + this.model.account).subscribe(
       (response) => {
         console.log("User Name " + response.text());
         this.model.username = response.text();
       },
       (error) => {
-        console.log("Error in getting todays date : " + error);
+        console.log("Error in getting user name : " + error);
       },
       () => {
 

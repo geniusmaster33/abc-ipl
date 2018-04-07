@@ -1,5 +1,5 @@
 <div class="page-header" filter-color="orange">
-    <div class="page-header-image" style="background-image:url(../assets/img/login.jpg)"></div>
+    <div class="page-header-image" style="background-image:url(../assets/img/ground2.jpg)"></div>
     <div class="container">
         <div class="col-md-4 content-center">
             <div class="card card-login card-plain">
@@ -12,7 +12,7 @@
                     <div class="content">
                         <div class="input-group form-group-no-border input-lg">
                             <span class="input-group-addon">
-                                <i class="now-ui-icons users_circle-08"></i>
+                                <i class="now-ui-icons users_circle-08 text-white"></i>
                             </span>
                             <input type="text" class="form-control"
                                    name="username" id="username" placeholder="Interesting nick name"
@@ -20,7 +20,7 @@
                         </div>
                         <div class="input-group form-group-no-border input-lg">
                             <span class="input-group-addon">
-                                <i class="now-ui-icons text_caps-small"></i>
+                                <i class="now-ui-icons text_caps-small text-white"></i>
                             </span>
                             <input type="text" placeholder="Full Name"
                                    class="form-control" 
@@ -29,19 +29,18 @@
                         </div>
                         <div class="input-group form-group-no-border input-lg">
                             <span class="input-group-addon">
-                                <i class="now-ui-icons objects_key-25"></i>
+                                <i class="now-ui-icons objects_key-25 text-white"></i>
                             </span>
-                            <input type="text" disabled class="form-control" value="{{model.key}}"
+                            <input type="text" disabled class="form-control text-grey" value="{{model.key}}"
                                    name="privatekey"/>
                         </div>
-                        <div class="input-group form-group-no-border input-lg content-right">
-                                
-                          <div class="checkbox content-right">
-                                <input id="checkbox1" type="checkbox">
-                                <label for="checkbox1">
-                                    Registering as ML Team? 
-                                </label>
-                            </div>
+                        <div class="header header-primary text-center">
+                              <div class="checkbox">
+                                    <input id="checkbox2" type="checkbox" name="ml"  [(ngModel)]="model.isMLTeam">
+                                    <label for="checkbox2">
+                                            Registering as ML Team? 
+                                    </label>
+                                </div>
                             </div>
                     </div>
                     <div class="footer text-center">
