@@ -1,4 +1,3 @@
-
 from flask import Flask, Response, redirect, url_for, request, session, abort
 from flask_cors import CORS
 import pickle as cPickle
@@ -16,25 +15,26 @@ CORS(app)
 def checkuser():
 #     username = request.args.get('username')
 #        if(username in usernameFullname.keys()):
-	if(os.path.isfile("usernameFullname.pickle")):
-        	with open(r"usernameFullname.pickle", "r") as input_file:
-                	usernameFullname= cPickle.load(input_file)
-		        return json.dumps(usernameFullname)
+        if(os.path.isfile("usernameFullname.pickle")):
+                with open(r"usernameFullname.pickle", "r") as input_file:
+                        usernameFullname= cPickle.load(input_file)
+                        return json.dumps(usernameFullname)
         #else:
         return "NA"
 @app.route("/getuserspk")
 def checkpk():
-#     username = request.args.get('username')
-#        if(username in usernameFullname.keys()):
+        output = "["
         if(os.path.isfile("usernamePK.pickle")):
                 with open(r"usernamePK.pickle", "r") as input_file:
                         usernamePK= cPickle.load(input_file)
-                        for i in usernamePK.keys():
-                                output = output + "{ \"name\":\""+i+"\", \"key\":\""+username[i]+"\"},"
+                        if(os.path.isfile("usernameFullname.pickle")):
+                                with open(r"usernameFullname.pickle", "r") as input_file1:
+                                        usernameFullname= cPickle.load(input_file1)
+                                        for i in usernamePK.keys():
+                                                output = output + "{ \"name\":\""+usernameFullname[i]+"\", \"key\":\""+usernamePK[i]+"\"},"
                         output = output[:len(output)-1] + "]"
-                        return json.dumps(output)
-        #else:
+                        return output
+                #else:
         return "NA"
-
 if __name__ == "__main__":
         app.run(host="0.0.0.0",port=4030,debug=False,threaded=True)

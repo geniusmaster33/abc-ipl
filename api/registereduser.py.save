@@ -29,9 +29,9 @@ def checkpk():
         if(os.path.isfile("usernamePK.pickle")):
                 with open(r"usernamePK.pickle", "r") as input_file:
                         usernamePK= cPickle.load(input_file)
-                        for i in usernamePK.keys():
+			for i in usernamePK.keys():
                                 output = output + "{ \"name\":\""+i+"\", \"key\":\""+username[i]+"\"},"
-                        output = output[:len(output)-1] + "]"
+			output = output[:len(output)-1] + "]"
                         return json.dumps(output)
         #else:
         return "NA"

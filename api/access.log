@@ -32,3 +32,237 @@
 27.110.77.254 - - [05/Apr/2018 13:15:36] "GET /getusers HTTP/1.1" 200 -
 27.110.77.254 - - [05/Apr/2018 13:17:32] "GET /getusers HTTP/1.1" 200 -
 27.110.77.254 - - [05/Apr/2018 13:22:15] "GET /getusers HTTP/1.1" 200 -
+ * Running on http://0.0.0.0:4030/ (Press CTRL+C to quit)
+Exception on /getuserspk [GET]
+Traceback (most recent call last):
+  File "/home/nitesh_singh/.local/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/nitesh_singh/.local/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/nitesh_singh/.local/lib/python2.7/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/nitesh_singh/.local/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/nitesh_singh/.local/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/nitesh_singh/.local/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "registereduser-new.py", line 30, in checkpk
+    output = output + "{ \"name\":\""+i+"\", \"key\":\""+username[i]+"\"},"
+UnboundLocalError: local variable 'output' referenced before assignment
+103.51.74.213 - - [07/Apr/2018 16:30:24] "GET /getuserspk HTTP/1.1" 500 -
+103.51.74.213 - - [07/Apr/2018 16:30:25] "GET /favicon.ico HTTP/1.1" 404 -
+ * Running on http://0.0.0.0:4030/ (Press CTRL+C to quit)
+Exception on /getuserspk [GET]
+Traceback (most recent call last):
+  File "/home/nitesh_singh/.local/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/nitesh_singh/.local/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/nitesh_singh/.local/lib/python2.7/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/nitesh_singh/.local/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/nitesh_singh/.local/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/nitesh_singh/.local/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "registereduser-new.py", line 31, in checkpk
+    output = output + "{ \"name\":\""+i+"\", \"key\":\""+username[i]+"\"},"
+NameError: global name 'username' is not defined
+103.51.74.213 - - [07/Apr/2018 16:31:07] "GET /getuserspk HTTP/1.1" 500 -
+ * Running on http://0.0.0.0:4030/ (Press CTRL+C to quit)
+103.51.74.213 - - [07/Apr/2018 16:31:44] "GET /getuserspk HTTP/1.1" 200 -
+103.51.74.213 - - [07/Apr/2018 16:31:44] "GET /getuserspk HTTP/1.1" 200 -
+103.51.74.213 - - [07/Apr/2018 16:31:52] "GET /getuserspk HTTP/1.1" 200 -
+103.51.74.213 - - [07/Apr/2018 16:31:52] "GET /getuserspk HTTP/1.1" 200 -
+ * Running on http://0.0.0.0:4030/ (Press CTRL+C to quit)
+103.51.74.213 - - [07/Apr/2018 16:33:27] "GET /getuserspk HTTP/1.1" 200 -
+103.51.74.213 - - [07/Apr/2018 16:38:56] "GET /getuserspk HTTP/1.1" 200 -
+103.51.74.213 - - [07/Apr/2018 16:38:57] "GET /favicon.ico HTTP/1.1" 404 -
+103.51.74.213 - - [07/Apr/2018 16:39:01] "GET /getuserspk HTTP/1.1" 200 -
+ * Running on http://0.0.0.0:4030/ (Press CTRL+C to quit)
+Exception on /getuserspk [GET]
+Traceback (most recent call last):
+  File "/home/nitesh_singh/.local/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/nitesh_singh/.local/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/nitesh_singh/.local/lib/python2.7/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/nitesh_singh/.local/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/nitesh_singh/.local/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/nitesh_singh/.local/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "registereduser.py", line 33, in checkpk
+    output = output + "{ \"name\":\""+i+"\", \"key\":\""+username[i]+"\"},"
+UnboundLocalError: local variable 'output' referenced before assignment
+106.193.227.244 - - [07/Apr/2018 18:40:48] "GET /getuserspk HTTP/1.1" 500 -
+Exception on /getuserspk [GET]
+Traceback (most recent call last):
+  File "/home/nitesh_singh/.local/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/nitesh_singh/.local/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/nitesh_singh/.local/lib/python2.7/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/nitesh_singh/.local/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/nitesh_singh/.local/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/nitesh_singh/.local/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "registereduser.py", line 33, in checkpk
+    output = output + "{ \"name\":\""+i+"\", \"key\":\""+username[i]+"\"},"
+UnboundLocalError: local variable 'output' referenced before assignment
+106.193.227.244 - - [07/Apr/2018 18:40:50] "GET /getuserspk HTTP/1.1" 500 -
+ * Running on http://0.0.0.0:4030/ (Press CTRL+C to quit)
+Exception on /getuserspk [GET]
+Traceback (most recent call last):
+  File "/home/nitesh_singh/.local/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/nitesh_singh/.local/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/nitesh_singh/.local/lib/python2.7/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/nitesh_singh/.local/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/nitesh_singh/.local/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/nitesh_singh/.local/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "registereduser.py", line 33, in checkpk
+    output = output + "{ \"name\":\""+i+"\", \"key\":\""+username[i]+"\"},"
+UnboundLocalError: local variable 'output' referenced before assignment
+106.193.227.244 - - [07/Apr/2018 18:41:40] "GET /getuserspk HTTP/1.1" 500 -
+Exception on /getuserspk [GET]
+Traceback (most recent call last):
+  File "/home/nitesh_singh/.local/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/nitesh_singh/.local/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/nitesh_singh/.local/lib/python2.7/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/nitesh_singh/.local/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/nitesh_singh/.local/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/nitesh_singh/.local/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "registereduser.py", line 33, in checkpk
+    output = output + "{ \"name\":\""+i+"\", \"key\":\""+username[i]+"\"},"
+UnboundLocalError: local variable 'output' referenced before assignment
+106.193.227.244 - - [07/Apr/2018 18:41:57] "GET /getuserspk HTTP/1.1" 500 -
+ * Running on http://0.0.0.0:4030/ (Press CTRL+C to quit)
+106.193.227.244 - - [07/Apr/2018 18:43:26] "GET /getuserspk HTTP/1.1" 200 -
+ * Running on http://0.0.0.0:4030/ (Press CTRL+C to quit)
+ * Running on http://0.0.0.0:4030/ (Press CTRL+C to quit)
+106.193.227.244 - - [07/Apr/2018 18:44:41] "GET /getuserspk HTTP/1.1" 200 -
+106.193.227.244 - - [07/Apr/2018 18:45:10] "GET /getuserspk HTTP/1.1" 200 -
+49.248.186.174 - - [07/Apr/2018 18:47:24] "GET /getuserspk HTTP/1.1" 200 -
+106.193.227.244 - - [07/Apr/2018 18:49:15] "GET /getusers HTTP/1.1" 200 -
+106.193.227.244 - - [07/Apr/2018 18:49:25] "GET /getusers HTTP/1.1" 200 -
+49.248.186.174 - - [07/Apr/2018 18:50:32] "GET /getuserspk HTTP/1.1" 200 -
+106.193.227.244 - - [07/Apr/2018 18:56:30] "GET /getuserspk HTTP/1.1" 200 -
+49.248.186.174 - - [07/Apr/2018 18:56:36] "GET /getuserspk HTTP/1.1" 200 -
+49.248.186.174 - - [07/Apr/2018 18:57:24] "GET /getuserspk HTTP/1.1" 200 -
+49.248.186.174 - - [07/Apr/2018 19:06:02] "GET /getuserspk HTTP/1.1" 200 -
+49.248.186.174 - - [07/Apr/2018 19:08:14] "GET /getuserspk HTTP/1.1" 200 -
+49.248.186.174 - - [07/Apr/2018 19:09:46] "GET /getuserspk HTTP/1.1" 200 -
+49.248.186.174 - - [07/Apr/2018 19:15:19] "GET /getuserspk HTTP/1.1" 200 -
+49.248.186.174 - - [07/Apr/2018 19:16:33] "GET /getuserspk HTTP/1.1" 200 -
+122.169.48.9 - - [07/Apr/2018 19:16:57] "GET /getuserspk HTTP/1.1" 200 -
+122.169.48.9 - - [07/Apr/2018 19:17:16] "GET /getuserspk HTTP/1.1" 200 -
+49.248.186.174 - - [07/Apr/2018 19:19:35] "GET /getuserspk HTTP/1.1" 200 -
+49.248.186.174 - - [07/Apr/2018 19:20:02] "GET /getuserspk HTTP/1.1" 200 -
+49.248.186.174 - - [07/Apr/2018 19:20:25] "GET /getuserspk HTTP/1.1" 200 -
+49.248.186.174 - - [07/Apr/2018 19:21:09] "GET /getuserspk HTTP/1.1" 200 -
+49.248.186.174 - - [07/Apr/2018 19:21:53] "GET /getuserspk HTTP/1.1" 200 -
+49.248.186.174 - - [07/Apr/2018 19:22:43] "GET /getuserspk HTTP/1.1" 200 -
+49.248.186.174 - - [07/Apr/2018 19:24:25] "GET /getuserspk HTTP/1.1" 200 -
+49.248.186.174 - - [07/Apr/2018 19:32:58] "GET /getuserspk HTTP/1.1" 200 -
+49.248.186.174 - - [07/Apr/2018 19:33:45] "GET /getuserspk HTTP/1.1" 200 -
+49.248.186.174 - - [07/Apr/2018 19:35:30] "GET /getuserspk HTTP/1.1" 200 -
+49.248.186.174 - - [07/Apr/2018 19:36:11] "GET /getuserspk HTTP/1.1" 200 -
+49.248.186.174 - - [07/Apr/2018 19:36:54] "GET /getuserspk HTTP/1.1" 200 -
+49.248.186.174 - - [07/Apr/2018 19:37:12] "GET /getuserspk HTTP/1.1" 200 -
+49.248.186.174 - - [07/Apr/2018 19:38:11] "GET /getuserspk HTTP/1.1" 200 -
+49.248.186.174 - - [07/Apr/2018 19:38:37] "GET /getuserspk HTTP/1.1" 200 -
+49.248.186.174 - - [07/Apr/2018 19:43:37] "GET /getuserspk HTTP/1.1" 200 -
+49.248.186.174 - - [07/Apr/2018 19:44:06] "GET /getuserspk HTTP/1.1" 200 -
+49.248.186.174 - - [07/Apr/2018 19:44:32] "GET /getuserspk HTTP/1.1" 200 -
+49.248.186.174 - - [07/Apr/2018 19:45:32] "GET /getuserspk HTTP/1.1" 200 -
+49.248.186.174 - - [07/Apr/2018 19:46:29] "GET /getuserspk HTTP/1.1" 200 -
+49.248.186.174 - - [07/Apr/2018 19:47:07] "GET /getuserspk HTTP/1.1" 200 -
+49.248.186.174 - - [07/Apr/2018 19:47:48] "GET /getuserspk HTTP/1.1" 200 -
+49.248.186.174 - - [07/Apr/2018 19:48:15] "GET /getuserspk HTTP/1.1" 200 -
+49.248.186.174 - - [07/Apr/2018 19:48:33] "GET /getuserspk HTTP/1.1" 200 -
+49.248.186.174 - - [07/Apr/2018 19:49:35] "GET /getuserspk HTTP/1.1" 200 -
+49.248.186.174 - - [07/Apr/2018 19:50:47] "GET /getuserspk HTTP/1.1" 200 -
+49.248.186.174 - - [07/Apr/2018 19:50:49] "GET /getuserspk HTTP/1.1" 200 -
+49.248.186.174 - - [07/Apr/2018 19:53:41] "GET /getuserspk HTTP/1.1" 200 -
+49.248.186.174 - - [07/Apr/2018 19:54:27] "GET /getuserspk HTTP/1.1" 200 -
+49.248.186.174 - - [07/Apr/2018 19:56:29] "GET /getuserspk HTTP/1.1" 200 -
+49.248.186.174 - - [07/Apr/2018 20:08:25] "GET /getuserspk HTTP/1.1" 200 -
+49.248.186.174 - - [07/Apr/2018 20:08:45] "GET /getuserspk HTTP/1.1" 200 -
+103.51.74.213 - - [07/Apr/2018 21:37:46] "GET /getuserspk HTTP/1.1" 200 -
+103.51.74.213 - - [07/Apr/2018 21:37:52] "GET /getusers HTTP/1.1" 200 -
+ * Running on http://0.0.0.0:4030/ (Press CTRL+C to quit)
+Exception on /getuserspk [GET]
+Traceback (most recent call last):
+  File "/home/nitesh_singh/.local/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/nitesh_singh/.local/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/nitesh_singh/.local/lib/python2.7/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/nitesh_singh/.local/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/nitesh_singh/.local/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/nitesh_singh/.local/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "registereduser-new.py", line 32, in checkpk
+    usernameFullname= cPickle.load(input_file)
+  File "/usr/lib/python2.7/pickle.py", line 1384, in load
+    return Unpickler(file).load()
+  File "/usr/lib/python2.7/pickle.py", line 864, in load
+    dispatch[key](self)
+  File "/usr/lib/python2.7/pickle.py", line 886, in load_eof
+    raise EOFError
+EOFError
+103.51.74.213 - - [07/Apr/2018 21:44:47] "GET /getuserspk HTTP/1.1" 500 -
+ * Running on http://0.0.0.0:4030/ (Press CTRL+C to quit)
+Exception on /getuserspk [GET]
+Traceback (most recent call last):
+  File "/home/nitesh_singh/.local/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/nitesh_singh/.local/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/nitesh_singh/.local/lib/python2.7/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/home/nitesh_singh/.local/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/nitesh_singh/.local/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/nitesh_singh/.local/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "registereduser-new.py", line 34, in checkpk
+    output = output + "{ \"name\":\""+usernameFullname[i]+"\", \"key\":\""+username[i]+"\"},"
+NameError: global name 'username' is not defined
+103.51.74.213 - - [07/Apr/2018 21:46:15] "GET /getuserspk HTTP/1.1" 500 -
+ * Running on http://0.0.0.0:4030/ (Press CTRL+C to quit)
+103.51.74.213 - - [07/Apr/2018 21:46:51] "GET /getuserspk HTTP/1.1" 200 -
+103.51.74.213 - - [07/Apr/2018 21:46:52] "GET /getuserspk HTTP/1.1" 200 -
+ * Running on http://0.0.0.0:4030/ (Press CTRL+C to quit)
+103.51.74.213 - - [07/Apr/2018 21:47:38] "GET /getuserspk HTTP/1.1" 200 -
+ * Running on http://0.0.0.0:4030/ (Press CTRL+C to quit)
+103.51.74.213 - - [07/Apr/2018 21:48:07] "GET /getuserspk HTTP/1.1" 200 -
+ * Running on http://0.0.0.0:4030/ (Press CTRL+C to quit)
+103.51.74.213 - - [07/Apr/2018 21:57:27] "GET /getusers HTTP/1.1" 200 -
+103.51.74.213 - - [07/Apr/2018 21:57:31] "GET /getuserspk HTTP/1.1" 200 -
+103.51.74.213 - - [07/Apr/2018 22:07:57] "GET /getusers HTTP/1.1" 200 -
+103.51.74.213 - - [07/Apr/2018 22:08:07] "GET /getuserspk HTTP/1.1" 200 -
+103.51.74.213 - - [07/Apr/2018 22:08:13] "GET /getusers HTTP/1.1" 200 -

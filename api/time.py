@@ -13,7 +13,7 @@ app.logger.addHandler(handler)
 @app.route('/getTime')
 def hello_name():
 	naive_dt = datetime.now()
-	tz = pytz.timezone('Europe/London')
+	tz = pytz.timezone('Etc/GMT0')
 	epochtime = datetime.now(tz)
 	return epochtime.strftime('%s')
 
