@@ -47,23 +47,12 @@ export class MatchPredictComponent implements OnInit {
 
   ngOnInit() {
     this.allPredictions = new Predictions();
-    //this.allPredictions.bestBowler = new PredictionData();
-    //this.allPredictions.highestScorer = new PredictionData();
-
-    //this.allPredictions.highestScorer.assignedPoints = 200;
-    //this.allPredictions.bestBowler.prediction = "CSK1";
     this.totalBalance = this.web3Service.getBalance();
 
     console.log("Balance here " + this.totalBalance);
 
-    console.log("Predictions ", this.allPredictions.highestScorer.assignedPoints);
-    console.log("isDataLoaded" + this.isDataLoaded);
-
     this.findTeamNames();
     this.fetchSquads();
-    //this.remainingBalance = 5000 - this.allPredictions.bestBowler.assignedPoints;
-
-
     this.checkIfPredicted();
   }
 
@@ -72,7 +61,6 @@ export class MatchPredictComponent implements OnInit {
     this.teamNames = teamNamesFromURL.split("-");
     console.log("######## Team names : " + this.teamNames[0] + " - " + this.teamNames[1]);
     this.matchIndex = this.teamNames[2] - 1;
-
   }
 
   fetchSquads() {
@@ -82,54 +70,20 @@ export class MatchPredictComponent implements OnInit {
         this.todaysTeams = data.json().filter(team => team.name == this.teamNames[0] || team.name == this.teamNames[1]);
         console.log("Todays team ", this.todaysTeams);
         this.isDataLoaded = true;
-        console.log("isDataLoaded " + this.isDataLoaded);
-        //jQuery('select').material_select();
       },
       (error) => console.log(error),
       () => this.isDataLoaded = true
     )
   }
 
-  // ngAfterViewInit() {
-  //   jQuery('#sliderRegular').noUiSlider({
-  //     start: 40,
-  //     connect: "lower",
-  //     range: {
-  //         min: 0,
-  //         max: 100
-  //     }
-  //   });
-  // }
-
   updateRange(event) {
     console.log("Inside updateRange ", event.target.value);
   }
 
-  handleEvent(eventData, action: string) {
-    console.log("Entered handleEvent");
-
-    // switch(action) {
-    //   case 'tossWinnerEvent' :
-    //     this.tossWinner = eventData.target.value;
-    //     console.log("Toss Winner : ", this.tossWinner);
-    //     break;
-    //   case 'highestScorerEvent' :
-    //     this.highestScorer = eventData;
-    //     console.log("Highest Scorer : " + this.highestScorer);
-    //     break;
-    // }
-  }
-
-  // evaluateRemainingBalance(eventData) {
-  //   console.log("%%%%%%%%%%%% " + eventData);
-  //   this.remainingBalance = 5000 - this.allPredictions.highestScorer.assignedPoints;
-  //   console.log("rem bal " + this.allPredictions.highestScorer.assignedPoints + " " + this.remainingBalance);
-  // }
-
   get diagnostic() { return JSON.stringify(this.allPredictions); }
 
   get getBalance() {
-    this.counter++;
+    // this.counter++;
     //console.log("getBalance - " + this.counter);
     let available = 0;
 
@@ -143,10 +97,6 @@ export class MatchPredictComponent implements OnInit {
     this.remainingBalance = available;
 
     return available;
-  }
-
-  submitIt() {
-    console.log("Requested for submit");
   }
 
   submitPredictions() {

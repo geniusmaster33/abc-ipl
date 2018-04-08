@@ -45,6 +45,8 @@ export class HomePageComponent implements OnInit {
 
   status = '';
 
+  isAdmin = false;
+
   constructor(private web3Service: Web3Service,
     private router: Router,
     private http: Http) {
@@ -194,7 +196,12 @@ export class HomePageComponent implements OnInit {
     this.http.get(url + "?pk=" + this.model.account).subscribe(
       (response) => {
         console.log("User Name " + response.text());
-        this.model.username = response.text();
+        let userInfo = response.text().split(',');
+        this.model.username = userInfo[0];
+        if(userInfo.length == 2)  {
+          this.isAdmin = true;
+          this.web3Service.setIsAdminUser(true);
+        }
       },
       (error) => {
         console.log("Error in getting user name : " + error);

@@ -25,6 +25,8 @@ export class Web3Service {
   private key: string;
   private balance: number;
 
+  private isAdminUser = false;
+
   constructor() {
     window.addEventListener('load', (event) => {
       this.bootstrapWeb3();
@@ -130,6 +132,14 @@ export class Web3Service {
 
   public setBalance(balance:number) {
     this.balance = balance;
+  }
+
+  public setIsAdminUser(flag: boolean) {
+    this.isAdminUser = flag;
+  }
+
+  public getIsAdminUser() {
+    return this.isAdminUser;
   }
 
 }

@@ -14,6 +14,7 @@
                     <div class="social-description col-sm-6">
                         <h2>{{model.balance}}</h2>
                         <p>My Balance</p>
+                        Admins - {{isAdmin}}
                     </div>
                     <!--
                     <div class="social-description col-sm-6">
@@ -49,12 +50,12 @@
             </div>
         </div>
     </div>
-
+    <div class="container text-center" *ngIf="isAdmin">
+            <a routerLink="/special">Khul ja sim sim</a>
+    </div>
     <footer class="footer footer-default">
         <div class="container text-center">
-            
-                        Team ABC
-           
+                        Team ABCIPL
         </div>
     </footer>
 </div>
