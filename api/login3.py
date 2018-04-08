@@ -18,6 +18,7 @@ CORS(app)
 usernameFullname = {}
 usernamePK = {}
 pkusername = {}
+pkusernameAdmin = {}
 if(os.path.isfile("usernameFullname.pickle")):
 	with open(r"usernameFullname.pickle", "r") as input_file:
 		usernameFullname= cPickle.load(input_file)
@@ -27,6 +28,9 @@ if(os.path.isfile("usernamePK.pickle")):
 if(os.path.isfile("pkusername.pickle")):
         with open(r"pkusername.pickle", "r") as input_file:
                 pkusername= cPickle.load(input_file)
+if(os.path.isfile("pkusernameAdmin.pickle")):
+        with open(r"pkusernameAdmin.pickle", "r") as input_file:
+                pkusernameAdmin= cPickle.load(input_file)
 @app.route("/login", methods=["GET", "POST"])
 def login():
 	if request.method == 'POST':
@@ -67,9 +71,31 @@ def login():
 def checkusername():
 	pk = request.args.get('pk')
 	if(pk in pkusername.keys()):
-		return Response(usernameFullname[pkusername[pk]])
+		if(pk in pkusernameAdmin.keys()):
+			return Response(usernameFullname[pkusername[pk]]+",Admin")
+		else:
+			return Response(usernameFullname[pkusername[pk]])
 	else:
 		return "Welcome"
+@app.route("/makeAdmin")
+def makeAdmin():
+        pk = request.args.get('pk')
+	if pk in pkusername.keys():
+		pkusernameAdmin[pk] =  pkusername[pk]
+		with open(r"pkusernameAdmin.pickle", "wb") as output_file:
+               	        cPickle.dump(pkusernameAdmin, output_file)
+		return "Admin Added successfully"
+	return "User Not registered"
+
+@app.route("/removeAdmin")
+def removeAdmin():
+        pk = request.args.get('pk')
+        if pk in pkusernameAdmin.keys():
+                pkusernameAdmin.pop(pk,None)
+                with open(r"pkusernameAdmin.pickle", "wb") as output_file:
+                        cPickle.dump(pkusernameAdmin, output_file)
+                return "Admin removed successfully"
+        return "User Not Admin"
 
 @app.route("/removeUser")
 def removeusername():
