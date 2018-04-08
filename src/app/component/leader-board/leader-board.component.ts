@@ -24,13 +24,14 @@ export class LeaderBoardComponent implements OnInit {
 
   ngOnInit() {
     //this.leadersList = this.getLeaderBoard();
-    this.aiLeadersList = this.getAILeaders();
-    this.getLeaderBoardData();
+    
+    //this.getLeaderBoardData();
+    this.createKeyToNameMap();
   }
 
   
   getAILeaders() {
-    //return this.leadersList.filter((leader) => (leader.category === 'machine'));
+    return this.leaders.filter((leader) => (leader.category == 1));
   }
 
   getLeaderBoardData() {
@@ -39,31 +40,39 @@ export class LeaderBoardComponent implements OnInit {
       .then((response) => {
         this.Regn = response;
         this.Regn.deployed().then((instance) => {
-          console.log("Regn contract ------- ", instance);
+          // console.log("Regn contract ------- ", instance);
           instance.getLeaderBoard.call().then((v) => {
             console.log("LeaderBoard Details", v);
-            this.leadersList = v;
-            let names = this.leadersList[0];
+            this.leadersList = v; // Contract sends 3 different arrays
+            let keys = this.leadersList[0];
             let balances = this.leadersList[1];
+            let categories = this.leadersList[2];
 
-            this.leaders = new Array(names.length);
+            this.leaders = new Array(keys.length);
 
-            for(let index = 0; index < names.length; index++) {
+            // console.log('Inside leader board - map contents ', this.userNameMap);
+
+            for(let index = 0; index < keys.length; index++) {
               let ldr = new Leader();
-              ldr.name = names[index];
+              ldr.key = keys[index].toLowerCase();
               ldr.balance = balances[index];
+              ldr.category = categories[index];
+              ldr.name = this.userNameMap.get(ldr.key.toLowerCase());
+              // console.log("From map for [" + ldr.key + "]", this.userNameMap.get(ldr.key));
+
               this.leaders[index] = ldr;
+
             }
             // this.leaders[0].balance = 100;
             // this.leaders[1].balance = 190;
             // this.leaders[2].balance = 20;
             // this.leaders[3].balance = 40;
-            // this.leaders[4].balance = 10;
-             this.leaders.sort(this.sortLeaderBoard);
+            this.leaders[4].category = 1;
+            this.leaders.sort(this.sortLeaderBoard);
 
             console.log(this.leaders);
 
-            this.getUserName();
+            this.aiLeadersList = this.getAILeaders();
           });
         },
           (e) => { });
@@ -82,54 +91,24 @@ export class LeaderBoardComponent implements OnInit {
     }
   }
 
-  async getUserName() {
+  createKeyToNameMap() {
     const url = 'http://abcipl.club:4030/getuserspk';
-
-    let leaders = [{
-      "name": "Apple",
-      "key" : "lkajsdljkajdskl"
-    },
-    {
-      "name": "Boy",
-    }
-  ];
-
 
     this.http.get(url).subscribe(
       (response) => {
-        console.log("Raw response " + response.text());
-        let responseText = "[" + response.json() + "]";
-        // this.model.username = response.text();
+        let responseText = response.json();
 
-        let slipts
-        console.log("Response text - ", responseText);
-
-        // for(let user of leaders) {
-        //     console.log("Name " + );
-        //     //this.userNameMap.set(user[0], user[1]);
-        //   }
+        for (let user of responseText) {
+          this.userNameMap.set(user.key.toLowerCase(), user.name);
+        }
       },
       (error) => {
-        console.log("Error in getting todays date : " + error);
+        console.log("Error in getting users list : " + error);
       },
       () => {
-
+        this.getLeaderBoardData();
       }
     )
-    // let usernames = await this.http.get(url).toPromise();
-    // console.log('User name from python ', usernames.text());
-
-    // console.log(JSON.parse(usernames.text()));
     
-    // .forEach(user => {
-    //    this.userNameMap.set(user[0], user[1]);
-    //  });
-
-    // for(let user of usernames) {
-    //   console.log(user);
-    //   //this.userNameMap.set(user[0], user[1]);
-    // }
-
-    // console.log('Usernames List', this.userNameMap  );
   }
 }

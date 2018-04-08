@@ -43,7 +43,6 @@
                               <th class="text-center">#</th>
                               <th>Name</th>
                               <th class="text-right">Points</th>
-                              <th>W:L</th>
                               <th class="text-right">Category</th>
                             </tr>
                           </thead>
@@ -52,18 +51,12 @@
                             <tr class="ng-star-inserted" *ngFor="let leader of leaders; let i = index">
                                 <td class="text-center">{{i+1}}</td>
                                 <td class="text-left">{{leader.name}}</td>
-                               <td class="text-right">{{leader.balance}}</td>
-                               <!--<td class="text-center">{{leader.wl}}</td>
-                                <td class="text-left">{{leader.category}}</td>-->
+                                <td class="text-right">{{leader.balance}}</td>
+                                <td class="text-right">
+                                      <div *ngIf="leader.category == 0"><i class="now-ui-icons users_single-02"></i></div>
+                                      <div *ngIf="leader.category == 1"><i class="now-ui-icons tech_laptop text-primary"></i></div>
+                                </td>
                               </tr>
-                              <!--
-                                <tr class="ng-star-inserted" *ngFor="let name of names;  let balance of balances;let i = index">
-                                <td class="text-center">{{i+1}}</td>
-                                <td class="text-left">{{name}}</td>
-                               <td class="text-right">{{balances[i]}}</td>
-                               <td class="text-center">{{leader.wl}}</td>
-                                <td class="text-left">{{leader.category}}</td>-
-                              </tr>-->
                           </tbody>
                         </table>
                       </div>
@@ -76,7 +69,6 @@
                               <th class="text-center">#</th>
                               <th>Name</th>
                               <th class="text-right">Points</th>
-                              <th>W:L</th>
                             </tr>
                           </thead>
                           <tbody>
@@ -84,8 +76,7 @@
                             <tr class="ng-star-inserted" *ngFor="let leader of aiLeadersList; let i = index">
                                 <td class="text-center">{{i+1}}</td>
                                 <td class="text-left">{{leader.name}}</td>
-                                <td class="text-right">{{leader.points}}</td>
-                                <td class="text-center">{{leader.wl}}</td>
+                                <td class="text-right">{{leader.balance}}</td>
                               </tr>
                           </tbody>
                         </table>
