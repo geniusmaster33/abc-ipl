@@ -14,7 +14,6 @@
                     <div class="social-description col-sm-6">
                         <h2>{{model.balance}}</h2>
                         <p>My Balance</p>
-                        Admins - {{isAdmin}}
                     </div>
                     <!--
                     <div class="social-description col-sm-6">
@@ -61,9 +60,18 @@
 </div>
 
 
-<div *ngIf="!isAccountInfoLoaded">
+<div *ngIf="!isAccountInfoLoaded" style="height: 100%">
     <div id="loader"></div>
-    <div id="loader-wrapper">
-            
+    <div id="loader-wrapper container text-center">
+            <div class="container text-center" style="position: relative;">
+                <br><br><br>{{infoUpdates}}
+            </div>
+            <div class="container text-center" style="position: relative;">
+                    <br><br><br><a href="http://j.mp/abciplhelpdesk" target="_blank">Support WhatsApp Group</a>
+                </div>
+                
     </div>
+    {{infoUpdates}}
+    {{dataLoadCount}}
 </div>
+{{infoUpdates}}

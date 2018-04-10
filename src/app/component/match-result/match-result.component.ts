@@ -1,6 +1,9 @@
 import { Component, OnInit, AfterViewInit, Input, OnChanges } from '@angular/core';
 import { Http } from '@angular/http';
 import * as moment from 'moment';
+import * as ipl_artifact from '../../../../build/contracts/Ipl.json';
+import * as match_artifact from '../../../../build/contracts/IPLMatch.json';
+import { Web3Service } from '../../util/web3.service';
 
 declare var jQuery:any;
 
@@ -16,11 +19,18 @@ export class MatchResultComponent implements OnInit {
   @Input('squads') inputSquads;
   selectedSquads;
 
+  @Input('matchId') inputMatchId;
+  selectedMatchId;
+
   results:Results;
 
   recentMatches;
 
-  constructor(private http : Http) { 
+  ipl: any;
+  match: any;
+
+  constructor(private http : Http,
+              private web3Service: Web3Service) { 
     this.results = new Results();
   }
 
@@ -35,47 +45,67 @@ export class MatchResultComponent implements OnInit {
 
   get diagnostic() { return JSON.stringify(this.results); }
 
-  submitIt() {
-  
+  submitResults() {
+    console.log("About to predict");
+    this.web3Service.artifactsToContract(ipl_artifact)
+      .then((response, error) => {
+        console.log("ipl_artifact preresponse ", response);
+        console.log("ipl_artifact error ", response);
+        this.ipl = response;
+        this.ipl.deployed().then((instance) => {
+          instance.getMatchByIndex.call(this.selectedMatchId - 1).then((matchAddr) => { //TODO 
+            console.log("Match address - ", matchAddr);
+            this.web3Service.artifactsToContract(match_artifact)
+              .then((m) => {
+                console.log("Register preresponse ", m);
+                this.match = m;
+                this.match.at(matchAddr).then((instance1) => {
+                  instance1.calculateWinLoss.sendTransaction([this.results.winner,
+                                                this.results.scorer, 
+                                                this.results.bowler,
+                                                this.results.mom,
+                                                this.results.score],
+                    { from: this.web3Service.getKey(), gas: 500000, gasPrice: 20000000000 })
+                    .then((v) => {
+                      console.log("Result submission status - " + v);
+                    });
+                });
+              })
+          })
+        })
+      }
+      );
   }
 
-  // submitPredictions() {
-  //   console.log("About to predict");
-  //   this.web3Service.artifactsToContract(ipl_artifact)
-  //     .then((response) => {
-  //       //console.log("Register preresponse ", response);
-  //       this.ipl = response;
-  //       this.ipl.deployed().then((instance) => {
-  //         instance.getMatchByIndex.call(this.matchIndex).then((matchAddr) => { //TODO 
-  //           console.log("Match address - ", matchAddr);
-  //           this.web3Service.artifactsToContract(match_artifact)
-  //             .then((m) => {
-  //               console.log("Register preresponse ", m);
-  //               this.match = m;
-  //               this.match.at(matchAddr).then((instance1) => {
-  //                 instance1.bet.sendTransaction([this.allPredictions.winningTeam.assignedPoints,
-  //                                               this.allPredictions.highestScorer.assignedPoints, 
-  //                                               this.allPredictions.bestBowler.assignedPoints,
-  //                                               this.allPredictions.mom.assignedPoints,
-  //                                               this.allPredictions.score.assignedPoints], 
-  //                                               [ this.allPredictions.winningTeam.prediction, 
-  //                                                 this.allPredictions.highestScorer.prediction, 
-  //                                                this.allPredictions.bestBowler.prediction, 
-  //                                                this.allPredictions.mom.prediction,
-  //                                                this.allPredictions.score.prediction],
-  //                   { from: this.web3Service.getKey(), gas: 500000, gasPrice: 20000000000 })
-  //                   .then((v) => {
-  //                     console.log("Match Predict result - " + v);
-  //                     if (v) { // If not registered
-  //                     }
-  //                   });
-  //               });
-  //             })
-  //         })
-  //       })
-  //     }
-  //     );
-  // }
+  submitIt() {
+    console.log("About to end match ");
+    this.web3Service.artifactsToContract(ipl_artifact)
+      .then((response) => {
+        //console.log("Register preresponse ", response);
+        this.ipl = response;
+        this.ipl.deployed().then((instance) => {
+          instance.getMatchByIndex.call(this.selectedMatchId - 1).then((matchAddr) => { //TODO 
+            console.log("Match address - ", matchAddr);
+            this.web3Service.artifactsToContract(match_artifact)
+              .then((m) => {
+                this.match = m;
+                this.match.at(matchAddr).then((instance1) => {
+                  instance1.calculateWinLoss.sendTransaction([this.results.winner,
+                                                              this.results.scorer, 
+                                                              this.results.bowler,
+                                                              this.results.mom,
+                                                              this.results.score],
+                                                              { from: this.web3Service.getKey(), gas: 500000, gasPrice: 5000000000 })
+                    .then((v) => {
+                      console.log("Match end submission status - " + v);
+                    });
+                });
+              })
+          })
+        })
+      }
+      );
+  }
   
 }
 

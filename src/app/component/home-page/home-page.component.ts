@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { Http } from '@angular/http';
 //import { Web3 } from 'web3-js';
@@ -27,6 +27,8 @@ export class HomePageComponent implements OnInit {
   Ipl: any;
   Regn: any;
   AbcCoin: any;
+
+  infoUpdates: string;
 
 
   model = {
@@ -84,46 +86,58 @@ export class HomePageComponent implements OnInit {
   }
 
   watchAccount() {
+    //this.infoUpdates = 'Fetching account info';
     console.log("Watching account from Web3Service ");
     this.web3Service.accountsObservable.subscribe((accounts) => {
       this.accounts = accounts;
       this.model.account = accounts[0];
       console.log("Found fresh account ", this.accounts);
+      this.infoUpdates = 'Account found';
+
+      console.log('************************* ' + this.infoUpdates);
 
       this.user.key = this.model.account;
       this.web3Service.setKey(this.user.key);
-
       this.isKeyRegistered();
       this.fetchBalance();
       this.getUserName();
 
       this.isAccountInfoLoaded = true;
       console.log("@@@@@@@@@@@@@@@@@@@@@@ " + this.isAccountInfoLoaded);
+      return;
     });
+
+    //this.infoUpdates = 'Account info not found !! Might be an issue with Ethereum Client'
   }
 
-  refreshBalance() {
-    console.log('Refreshing balance');
+  // refreshBalance() {
+  //   console.log('Refreshing balance');
 
-    let meta;
-    this.Ipl.deployed()
-      .then((instance) => {
-        meta = instance;
-        return meta.getBalance.call(this.model.account, {
-          from: this.model.account
-        });
-      })
-      .then((value) => {
-        this.model.balance = value;
-        this.web3Service.setBalance(value);
+  //   this.infoUpdates = 'Fetching Balance';
+  //   console.log('************************* ' + this.infoUpdates);
 
-        console.log('Balance : ' + value);
-      })
-      .catch((e) => {
-        console.log(e);
-        this.setStatus('Error getting balance; see log.');
-      });
-  }
+  //   let meta;
+  //   this.Ipl.deployed()
+  //     .then((instance) => {
+  //       meta = instance;
+  //       return meta.getBalance.call(this.model.account, {
+  //         from: this.model.account
+  //       });
+  //     })
+  //     .then((value) => {
+  //       this.model.balance = value;
+  //       this.web3Service.setBalance(value);
+
+  //       console.log('Balance : ' + value);
+  //       this.infoUpdates = 'Balance retrieved';
+  //       console.log('************************* ' + this.infoUpdates);
+  //     })
+  //     .catch((e) => {
+  //       console.log(e);
+  //       this.setStatus('Error getting balance; see log.');
+  //       this.infoUpdates = 'Error in getting balance';
+  //     });
+  // }
 
   /*async*/ sendCoin() {
     console.log('Sending coin');
@@ -156,24 +170,34 @@ export class HomePageComponent implements OnInit {
 
 
   isKeyRegistered() {
+    this.infoUpdates = 'Checking registration status';
+    console.log('************************* ' + this.infoUpdates);
+
     this.web3Service.artifactsToContract(registration_artifact)
       .then((response) => {
         this.Regn = response;
         this.Regn.deployed().then((instance) => {
           instance.isTrustedPlayer.call(this.model.account).then((v) => {
             console.log("Is key registered - " + v);
+            
             if (!v) { // If not registered
+              this.infoUpdates = 'Redirecting to registration page';
+              console.log('************************* ' + this.infoUpdates);
               this.router.navigate(['login', {key : this.model.account}]);
             }
           });
         },
           (e) => { 
             console.log('Error encountered in fetching registration status ', e);
+            this.infoUpdates = 'Error in fetching registration status';
           });
       })
   }
 
   fetchBalance() {
+    this.infoUpdates = 'Fetching Balance';
+    console.log('************************* ' + this.infoUpdates);
+
     this.web3Service.artifactsToContract(eip20_artifact)
       .then((response) => {
         this.AbcCoin = response;
@@ -182,10 +206,13 @@ export class HomePageComponent implements OnInit {
             console.log(" AbcCoin Balance " + balance);
             this.model.balance = balance;
             this.web3Service.setBalance(balance);
+            this.infoUpdates = 'Balance Retrieved';
+            console.log('************************* ' + this.infoUpdates);
           });
         },
           (e) => { 
             console.log('Error encountered in fetching balance ', e);
+            this.infoUpdates = 'Error in fetching balance';
           });
       })
   }
