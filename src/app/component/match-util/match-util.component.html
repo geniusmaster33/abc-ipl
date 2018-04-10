@@ -9,7 +9,7 @@
             <div class="card card-blog">
               <div class="card-body text-center">
                 <h5 class="card-title">
-                  Stop Predictions
+                  Toggle Predictions
                 </h5>
                 {{selectedSquads[0].name}}
                 <br/> v
@@ -23,7 +23,7 @@
                       <div class="col-lg-6 text-center col-md-8 ml-auto mr-auto">
                         <div class="send-button">
                             <button class="btn btn-primary btn-round btn-block btn-sm" type="button" 
-                            data-toggle="modal" data-target="#myModal">Stop Predictions</button>
+                            data-toggle="modal" data-target="#myModal">Stop/Start Predictions</button>
                           <!--<a href="#pablo" class="btn btn-primary btn-round btn-block btn-lg">Submit to Blockchain</a>-->
                         </div>
                       </div>
@@ -54,7 +54,8 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default btn-simple" data-dismiss="modal">Cancel</button>
-          <button type="button" class="btn btn-info btn-simple" data-dismiss="modal" (click)="submitIt()">Submit</button>
+          <button type="button" class="btn btn-info btn-simple" data-dismiss="modal" (click)="stopPrediction(true)">Stop</button>
+          <button type="button" class="btn btn-info btn-simple" data-dismiss="modal" (click)="stopPrediction(false)">Start</button>
         </div>
       </div>
     </div>

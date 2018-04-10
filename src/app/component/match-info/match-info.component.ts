@@ -57,6 +57,12 @@ export class MatchInfoComponent implements OnInit {
         this.todaysMatches = this.matchList.filter(match => (currentDate).isSame(moment(match.date, "DD-MMM-YYYY"), 'day'));
         console.log("Today match ", this.todaysMatches);
 
+        let haltTime = moment([currentDate.year(), currentDate.month(), currentDate.date(), 4+12, 50, 0]);
+console.log(haltTime.format());
+        if(currentDate.isAfter(haltTime)) {
+          console.log("Current date is ahead");
+        }
+
         //console.log(moment(currentDate).isSame('2018-03-21', 'day'));
       }
     )
