@@ -4,7 +4,6 @@
       <div class="col-md-12 offset-md-2 col-lg-12 offset-lg-2">
 
         <div>
-          <!-- Scorer -->
           <div class="row valign-wrapper">
             <div class="card card-blog">
               <div class="card-body text-center">
@@ -32,8 +31,68 @@
                 </div>
             </div>
           </div>
+        </div>
 
-          
+
+        <div>
+          <div class="row valign-wrapper">
+            <div class="card card-blog">
+              <div class="card-body text-center">
+                <h5 class="card-title">
+                  Leader Board Refresh
+                </h5>
+                {{selectedSquads[0].name}}
+                <br/> v
+                <br/> {{selectedSquads[1].name}}
+                <br/> {{selectedMatchTime}}
+              </div>
+
+              <div class=" text-center">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-lg-6 text-center col-md-8 ml-auto mr-auto">
+                        <div class="send-button">
+                            <button class="btn btn-primary btn-round btn-block btn-sm" type="button" 
+                            data-toggle="modal" data-target="#refreshModal">Refresh It</button>
+                          <!--<a href="#pablo" class="btn btn-primary btn-round btn-block btn-lg">Submit to Blockchain</a>-->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div>
+          <div class="row valign-wrapper">
+            <div class="card card-blog">
+              <div class="card-body text-center">
+                <h5 class="card-title">
+                  End Match
+                </h5>
+                {{selectedSquads[0].name}}
+                <br/> v
+                <br/> {{selectedSquads[1].name}}
+                <br/> {{selectedMatchTime}}
+              </div>
+
+              <div class=" text-center">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-lg-6 text-center col-md-8 ml-auto mr-auto">
+                        <div class="send-button">
+                            <button class="btn btn-primary btn-round btn-block btn-sm" type="button" 
+                            data-toggle="modal" data-target="#matchEndModal">End Match</button>
+                          <!--<a href="#pablo" class="btn btn-primary btn-round btn-block btn-lg">Submit to Blockchain</a>-->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -60,3 +119,42 @@
       </div>
     </div>
   </div>
+
+
+  <!-- Modal Core -->
+<div class="modal fade" id="matchEndModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" style="margin-top:100px">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Confirmation</h4>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to end match ?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default btn-simple" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-info btn-simple" data-dismiss="modal" (click)="endMatch()">End Match</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="refreshModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" style="margin-top:100px">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Confirmation</h4>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to refresh leader board ?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default btn-simple" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-info btn-simple" data-dismiss="modal" (click)="refreshLeaderBoard()">Refresh Leader Board</button>
+      </div>
+    </div>
+  </div>
+</div>

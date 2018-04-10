@@ -45,15 +45,12 @@ export class MatchResultComponent implements OnInit {
 
   get diagnostic() { return JSON.stringify(this.results); }
 
-  submitIt() {
-  
-  }
-
   submitResults() {
     console.log("About to predict");
     this.web3Service.artifactsToContract(ipl_artifact)
-      .then((response) => {
-        //console.log("Register preresponse ", response);
+      .then((response, error) => {
+        console.log("ipl_artifact preresponse ", response);
+        console.log("ipl_artifact error ", response);
         this.ipl = response;
         this.ipl.deployed().then((instance) => {
           instance.getMatchByIndex.call(this.selectedMatchId - 1).then((matchAddr) => { //TODO 
@@ -71,6 +68,36 @@ export class MatchResultComponent implements OnInit {
                     { from: this.web3Service.getKey(), gas: 500000, gasPrice: 20000000000 })
                     .then((v) => {
                       console.log("Result submission status - " + v);
+                    });
+                });
+              })
+          })
+        })
+      }
+      );
+  }
+
+  submitIt() {
+    console.log("About to end match ");
+    this.web3Service.artifactsToContract(ipl_artifact)
+      .then((response) => {
+        //console.log("Register preresponse ", response);
+        this.ipl = response;
+        this.ipl.deployed().then((instance) => {
+          instance.getMatchByIndex.call(this.selectedMatchId - 1).then((matchAddr) => { //TODO 
+            console.log("Match address - ", matchAddr);
+            this.web3Service.artifactsToContract(match_artifact)
+              .then((m) => {
+                this.match = m;
+                this.match.at(matchAddr).then((instance1) => {
+                  instance1.calculateWinLoss.sendTransaction([this.results.winner,
+                                                              this.results.scorer, 
+                                                              this.results.bowler,
+                                                              this.results.mom,
+                                                              this.results.score],
+                                                              { from: this.web3Service.getKey(), gas: 500000, gasPrice: 5000000000 })
+                    .then((v) => {
+                      console.log("Match end submission status - " + v);
                     });
                 });
               })
