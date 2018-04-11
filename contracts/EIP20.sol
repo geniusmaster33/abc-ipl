@@ -88,6 +88,18 @@ contract EIP20 is MultiOwnable,EIP20Interface {
         return true;
     }
     
+     function addAdminX(address admin)
+        public
+        onlyAdmin
+        returns (bool ok)
+    {
+        require(isAdmin[admin] == false);
+        isAdmin[admin] = true;
+
+        emit LogAddAdmin(msg.sender, admin);
+        return true;
+    }
+    
     function totalSupply() public constant returns (uint){
         return _totalSupply;
     }

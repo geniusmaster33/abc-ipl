@@ -14,6 +14,18 @@
   </div>
 
   <div class="section-predict" *ngIf="isDataLoaded">
+
+      <div class="alert alert-danger" role="alert" *ngIf="isBet || isHalted">
+          <div class="container text-center">
+              <strong>{{matchInfoTxt}}</strong>
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">
+                      <i class="now-ui-icons ui-1_simple-remove"></i>
+                  </span>
+              </button>
+          </div>
+      </div>
+
     <form #predictForm="ngForm">
       <div class="container">
         <div class="col-md-12 offset-md-2 col-lg-12 offset-lg-2">
@@ -48,7 +60,7 @@
                 </div>
                 <div class="card-footer">
                   <div class="stats stats-left">
-                    <i class="now-ui-icons objects_spaceship"></i> {{multipliers[0]}}x
+                    <i class="now-ui-icons objects_spaceship"></i> {{(multipliers[1])/10 + 1}}x
                   </div>
                   <div class="stats stats-right">
                     <i class="now-ui-icons media-2_sound-wave"></i> {{getBalance}}
@@ -88,9 +100,9 @@
                     </div>
                   </div>
                 </div>
-                <div class="card-footer text-primary">
+                <div class="card-footer">
                   <div class="stats stats-left">
-                    <i class="now-ui-icons objects_spaceship"></i> {{multipliers[1]}}x
+                    <i class="now-ui-icons objects_spaceship"></i> {{(multipliers[2])/10 + 1}}x
                   </div>
                   <div class="stats stats-right">
                     <i class="now-ui-icons media-2_sound-wave"></i> {{remainingBalance}}
@@ -132,7 +144,7 @@
 
                 <div class="card-footer">
                   <div class="stats stats-left">
-                    <i class="now-ui-icons objects_spaceship"></i> {{multipliers[2]}}x
+                    <i class="now-ui-icons objects_spaceship"></i> {{(multipliers[3])/10 + 1}}x
                   </div>
                   <div class="stats stats-right">
                     <i class="now-ui-icons media-2_sound-wave"></i> {{remainingBalance}}
@@ -154,7 +166,6 @@
                   <div class="col-lg-6 text-center col-md-8 ml-auto mr-auto">
                     <div *ngFor="let team of todaysTeams; let i = index" class="radio" style="text-align:left">
                       <input name="grpTossWinner" type="radio" id="fToss{{i+1}}" class="with-gap" value="{{team.teamid}}"
-                             (change)="handleEvent($event, 'tossWinnerEvent')"
                              [(ngModel)]="allPredictions.winningTeam.prediction" name="winnerPredict"/>
                       <label for="fToss{{i+1}}">{{team.name}}</label>
                     </div>
@@ -173,7 +184,7 @@
                 </div>
                 <div class="card-footer">
                   <div class="stats stats-left">
-                    <i class="now-ui-icons objects_spaceship"></i> {{multipliers[3]}}x
+                    <i class="now-ui-icons objects_spaceship"></i> {{(multipliers[0])/10 + 1}}x
                   </div>
                   <div class="stats stats-right">
                     <i class="now-ui-icons media-2_sound-wave"></i> {{remainingBalance}}
@@ -223,7 +234,7 @@
                 </p>-->
                 <div class="card-footer">
                   <div class="stats stats-left">
-                    <i class="now-ui-icons objects_spaceship"></i> +/- 10 : {{multipliers[4]}}x Exact : {{multipliers[5]}}x
+                    <i class="now-ui-icons objects_spaceship"></i> +/- 10 : {{(multipliers[5])/10 + 1}}x Exact : {{(multipliers[4]) / 10 + 1}}x
                   </div>
                   <div class="stats stats-right">
                     <i class="now-ui-icons media-2_sound-wave"></i> {{remainingBalance}}
@@ -238,11 +249,11 @@
   </div>
   <div class=" text-center">
     <div class="container">
-      <div class="row">
+      <div class="row" *ngIf="!isHalted && !isBet">
         <div class="col-lg-6 text-center col-md-8 ml-auto mr-auto">
           <div class="send-button">
               <button class="btn btn-primary btn-round btn-block btn-lg" type="button" 
-              [disabled]="getBalance < 0"
+              [disabled]="(getBalance < 0) || (isBetSubmitted == true)"
               data-toggle="modal" data-target="#myModal">Submit to Blockchain</button>
             <!--<a href="#pablo" class="btn btn-primary btn-round btn-block btn-lg">Submit to Blockchain</a>-->
           </div>
@@ -283,6 +294,8 @@
         </div>
         <div class="modal-body">
           Are you sure you want to submit?
+
+          Note : Pls dont resubmit immediately. Check your transaction in the transaction tab.
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default btn-simple" data-dismiss="modal">Cancel</button>

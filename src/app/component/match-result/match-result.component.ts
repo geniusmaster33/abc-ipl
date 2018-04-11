@@ -39,6 +39,7 @@ export class MatchResultComponent implements OnInit {
 
   ngOnChanges() {
     this.selectedSquads = this.inputSquads;
+    this.selectedMatchId = this.inputMatchId;
     console.log('Squadzzzzzzz', this.selectedSquads);
   }
 
@@ -79,6 +80,10 @@ export class MatchResultComponent implements OnInit {
 
   submitIt() {
     console.log("About to end match ");
+
+    console.log("Match Id : " + this.selectedMatchId);
+    console.log("Results ", this.results);
+
     this.web3Service.artifactsToContract(ipl_artifact)
       .then((response) => {
         //console.log("Register preresponse ", response);
@@ -89,12 +94,13 @@ export class MatchResultComponent implements OnInit {
             this.web3Service.artifactsToContract(match_artifact)
               .then((m) => {
                 this.match = m;
+                console.log("Results ", this.results);
                 this.match.at(matchAddr).then((instance1) => {
-                  instance1.calculateWinLoss.sendTransaction([this.results.winner,
-                                                              this.results.scorer, 
-                                                              this.results.bowler,
-                                                              this.results.mom,
-                                                              this.results.score],
+                  instance1.calculateWinLoss.sendTransaction([Number(this.results.winner),
+                                                              Number(this.results.scorer), 
+                                                                Number(this.results.bowler),
+                                                                  Number(this.results.mom),
+                                                                    this.results.score],
                                                               { from: this.web3Service.getKey(), gas: 500000, gasPrice: 5000000000 })
                     .then((v) => {
                       console.log("Match end submission status - " + v);

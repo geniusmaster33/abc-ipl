@@ -2,10 +2,10 @@
     {
         "team1": "Mumbai Indians",
         "team2": "Chennai Super Kings",
-        "date": "07-Apr",
+        "date": "11-Apr",
         "time": "8 (PM)",
         "venue": "Mumbai",
-        "id": 3
+        "id": 1
     },
     {
         "team1": "Delhi Daredevils",
@@ -13,7 +13,7 @@
         "date": "08-Apr",
         "time": "4 (PM)",
         "venue": "Delhi",
-        "id": 4
+        "id": 2
     },
     {
         "team1": "Kolkata Knight Riders",
@@ -21,7 +21,7 @@
         "date": "08-Apr",
         "time": "8 (PM)",
         "venue": "Kolkata",
-        "id": 5
+        "id": 3
     },
     {
         "team1": "Sunrisers Hyderabad",
@@ -29,7 +29,7 @@
         "date": "9-Apr",
         "time": "8 (PM)",
         "venue": "Hyderabad",
-        "id": 6
+        "id": 4
     },
     {
         "team1": "Chennai Super Kings",
@@ -37,7 +37,7 @@
         "date": "10-Apr",
         "time": "8 (PM)",
         "venue": "Chennai",
-        "id": 7
+        "id": 5
     },
     {
         "team1": "Rajasthan Royals",
@@ -45,7 +45,7 @@
         "date": "11-Apr",
         "time": "8 (PM)",
         "venue": "Jaipur",
-        "id": 8
+        "id": 6
     },
     {
         "team1": "Sunrisers Hyderabad",
@@ -53,7 +53,7 @@
         "date": "12-Apr",
         "time": "8 (PM)",
         "venue": "Hyderabad",
-        "id": 9
+        "id": 7
     },
     {
         "team1": "Royal Challengers Bangalore",
@@ -61,7 +61,7 @@
         "date": "13-Apr",
         "time": "8 (PM)",
         "venue": "Bengaluru",
-        "id": 10
+        "id": 8
     },
     {
         "team1": "Mumbai Indians",
@@ -478,21 +478,5 @@
         "time": "8 (PM)",
         "venue": "Mumbai",
         "id": 60
-    },
-    {
-        "team1": "Kings XI Punjab",
-        "team2": "Chennai Super Kings",
-        "date": "06-Apr",
-        "time": "4 (PM)",
-        "venue": "Mumbai",
-        "id": 1
-    },
-    {
-        "team1": "Delhi Daredevils",
-        "team2": "Mumbai Indians",
-        "date": "10-Apr",
-        "time": "8 (PM)",
-        "venue": "Chennai",
-        "id": 9
     }
 ]

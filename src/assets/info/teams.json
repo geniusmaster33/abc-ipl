@@ -6,14 +6,15 @@
                 { "pid": "1", "pname": "Ambati Rayudu"},
                 { "pid": "2", "pname": "Asif K M"},
                 { "pid": "3", "pname": "Chaitanya Bishnoi"},
+                { "pid": "11", "pname": "David Willey"},
                 { "pid": "4", "pname": "Deepak Chahar"},
                 { "pid": "5", "pname": "Dhruv Shorey"},
-                { "pid": "6", "pname": "Dwayne Bravo. Karn Sharma"},
+                { "pid": "6", "pname": "Dwayne Bravo"},
                 { "pid": "7", "pname": "Faf Du Plessis"},
                 { "pid": "8", "pname": "Harbhajan Singh"},
                 { "pid": "9", "pname": "Imran Tahir"},
                 { "pid": "10", "pname": "Kanishk Seth"},
-                { "pid": "11", "pname": "Kedar Jadhav"},
+                { "pid": "301", "pname": "Karn Sharma"},
                 { "pid": "12", "pname": "Kshitiz Sharma"},
                 { "pid": "13", "pname": "Lungisani Ngidi"},
                 { "pid": "14", "pname": "Mark Wood"},
@@ -45,7 +46,7 @@
                 { "pid": "34", "pname": "Harshal Patel"},
                 { "pid": "35", "pname": "Jason Roy"},
                 { "pid": "36", "pname": "Jayant Yadav"},
-                { "pid": "37", "pname": "Kagiso Rabada"},
+                { "pid": "37", "pname": "Liam Plunket"},
                 { "pid": "38", "pname": "Manjot Kalra"},
                 { "pid": "39", "pname": "Mohammad Shami"},
                 { "pid": "40", "pname": "Naman Ojha"},
@@ -143,7 +144,7 @@
                 { "pid": "111", "pname": "Sharad Lumba"},
                 { "pid": "112", "pname": "Siddhesh Dinesh Lad"},
                 { "pid": "113", "pname": "Suryakumar Yadav"},
-                { "pid": "114", "pname": "Tajinder Dhillon"}
+                { "pid": "114", "pname": "Tajinder Singh"}
             ]
         },
         {
@@ -173,7 +174,7 @@
                 { "pid": "133", "pname": "Sanju Samson"},
                 { "pid": "134", "pname": "Shreyas Gopal"},
                 { "pid": "136", "pname": "Stuart Binny"},
-                { "pid": "137", "pname": "Zahir Khan Pakteen"}
+                { "pid": "137", "pname": "Ish Sodhi"}
             ]
         },
         {
