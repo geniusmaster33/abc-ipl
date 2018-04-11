@@ -70,7 +70,7 @@ export class MatchPredictComponent implements OnInit {
   }
 
   fetchSquads() {
-    const url = './../assets/info/teams.json';
+    const url = './../assets/info/teams1.json';
     this.http.get(url).subscribe(
       (data) => {
         this.todaysTeams = data.json().filter(team => team.name == this.teamNames[0] || team.name == this.teamNames[1]);

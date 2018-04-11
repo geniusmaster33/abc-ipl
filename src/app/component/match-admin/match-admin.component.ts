@@ -72,7 +72,7 @@ export class MatchAdminComponent implements OnInit {
 
   fetchSquads(team1, team2) {
     console.log("--" + team1 + "-- --" + team2 + "--");
-    const url = './../assets/info/teams.json';
+    const url = './../assets/info/teams1.json';
     this.http.get(url).subscribe(
       (data) => {
         console.log("Data ", data);
