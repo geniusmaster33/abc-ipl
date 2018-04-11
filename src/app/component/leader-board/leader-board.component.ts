@@ -59,24 +59,20 @@ export class LeaderBoardComponent implements OnInit {
               ldr.balance = balances[index];
               ldr.category = categories[index];
 
-
-              if(ldr.key.toLowerCase() == this.web3Service.getKey().toLowerCase()) {
-                this.myRank = index + 1;
-                console.log("RANKkkkkkkk " + this.myRank);
-              }
-
               ldr.name = this.userNameMap.get(ldr.key.toLowerCase());
               // console.log("From map for [" + ldr.key + "]", this.userNameMap.get(ldr.key));
 
               this.leaders[index] = ldr;
 
             }
-            // this.leaders[0].balance = 100;
-            // this.leaders[1].balance = 190;
-            // this.leaders[2].balance = 20;
-            // this.leaders[3].balance = 40;
-            // this.leaders[4].category = 1;
             this.leaders.sort(this.sortLeaderBoard);
+
+            // for(let index = 0; index < this.leaders.length; index++) {
+            //   if(this.leaders[index].key.toLowerCase() == this.web3Service.getKey().toLowerCase()) {
+            //     this.myRank = index + 1;
+            //     console.log("RANKkkkkkkk " + this.myRank);
+            //   }
+            // }
 
             console.log(this.leaders);
 
