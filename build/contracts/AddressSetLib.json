@@ -500,7 +500,7 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2384,
+                      "referencedDeclaration": 3497,
                       "src": "561:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -704,7 +704,7 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2384,
+                      "referencedDeclaration": 3497,
                       "src": "673:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -4926,7 +4926,7 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2384,
+                      "referencedDeclaration": 3497,
                       "src": "561:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -5130,7 +5130,7 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2384,
+                      "referencedDeclaration": 3497,
                       "src": "673:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -9086,14 +9086,12 @@
     "name": "solc",
     "version": "0.4.21+commit.dfe3193c.Emscripten.clang"
   },
-  "networks": {
-    "42": {
+  "networks": {"42": {
       "events": {},
       "links": {},
-      "address": "0xa13da25e8726093e887d53f2edd33440ac1b6344",
-      "transactionHash": "0xbf6f396f063b695106f097142c3b7fad5b636a2d80013ebedde14b9eac3c9def"
-    }
-  },
+      "address": "0xd0c20d5bed12a6c75ebe1a300be5688777607643",
+      "transactionHash": "0x49930e72bb5831a1f0ceaf7ce1710c362aea0d61c9375d430f8a621d9a24b05c"
+    }},
   "schemaVersion": "2.0.0",
-  "updatedAt": "2018-04-06T17:44:10.252Z"
+  "updatedAt": "2018-04-11T17:13:05.340Z"
 }

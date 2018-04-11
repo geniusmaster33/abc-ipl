@@ -11,8 +11,6 @@ import * as moment from 'moment';
 
 import * as $ from 'jquery/dist/jquery.min.js';
 
-declare var jQuery: any;
-
 @Component({
   selector: 'app-match-predict',
   templateUrl: './match-predict.component.html',
@@ -22,12 +20,12 @@ export class MatchPredictComponent implements OnInit {
   todaysTeams;
   teamNames;
   isDataLoaded: boolean = false;
-  isHalted = true;
+  isHalted = false;
+  isBet = false;
 
   ipl: any;
   match: any;
 
-  counter = 0;
   matchIndex:number;
 
   allPredictions: Predictions;
@@ -35,11 +33,15 @@ export class MatchPredictComponent implements OnInit {
   totalBalance: number; //TODO - Needs to be fetched from server
 
   remainingBalance: number;
+  matchInfoTxt: string;
 
-  tempBet: number = 250;
-  temp2: number;
+  intervalHandler;
 
   multipliers: number[] = new Array(6);
+
+  testC = 0;
+
+  isBetSubmitted;
 
   constructor(private http: Http,
     private route: ActivatedRoute,
@@ -50,10 +52,10 @@ export class MatchPredictComponent implements OnInit {
     this.totalBalance = this.web3Service.getBalance();
 
     console.log("Balance here " + this.totalBalance);
+    this.matchInfoTxt = '';
+    this.isBetSubmitted = false;
 
     this.findTeamNames();
-    this.fetchSquads();
-    this.checkIfPredicted();
   }
 
   findTeamNames() {
@@ -61,6 +63,10 @@ export class MatchPredictComponent implements OnInit {
     this.teamNames = teamNamesFromURL.split("-");
     console.log("######## Team names : " + this.teamNames[0] + " - " + this.teamNames[1]);
     this.matchIndex = this.teamNames[2] - 1;
+
+    this.fetchSquads();
+    this.getMatchInfo();
+    //this.checkIfBet();
   }
 
   fetchSquads() {
@@ -71,8 +77,7 @@ export class MatchPredictComponent implements OnInit {
         console.log("Todays team ", this.todaysTeams);
         this.isDataLoaded = true;
       },
-      (error) => console.log(error),
-      () => this.isDataLoaded = true
+      (error) => console.log(error)
     )
   }
 
@@ -101,9 +106,9 @@ export class MatchPredictComponent implements OnInit {
 
   submitPredictions() {
     console.log("About to predict");
+
     this.web3Service.artifactsToContract(ipl_artifact)
       .then((response) => {
-        //console.log("Register preresponse ", response);
         this.ipl = response;
         this.ipl.deployed().then((instance) => {
           instance.getMatchByIndex.call(this.matchIndex).then((matchAddr) => { //TODO 
@@ -126,7 +131,9 @@ export class MatchPredictComponent implements OnInit {
                     { from: this.web3Service.getKey(), gas: 500000, gasPrice: 20000000000 })
                     .then((v) => {
                       console.log("Match Predict result - " + v);
-                     
+
+                      this.isBetSubmitted = true;
+                      //this.intervalHandler = setInterval(() => this.checkIfBet(), 3000);
                     });
                 });
               })
@@ -136,18 +143,17 @@ export class MatchPredictComponent implements OnInit {
       );
   }
 
-  async checkIfPredicted() {
-    console.log("About to check if prediction allowed for user");
-    let isHalted = true;
+  async getMatchInfo() {
+    console.log("About to check if match halted");
+    //let isHalted = true;
 
     const iplContract = await this.web3Service.artifactsToContract(ipl_artifact);
     const instance = await iplContract.deployed();
     const matchAddr = await instance.getMatchByIndex.call(this.matchIndex);
     const matchContract = await this.web3Service.artifactsToContract(match_artifact);
     const matchInstance = await matchContract.at(matchAddr);
-    isHalted = await matchInstance.isHalted.call();
-    this.isHalted = isHalted;
-    console.log("isHalted ", isHalted);
+    this.isHalted = await matchInstance.isHalted.call();
+    console.log("GetMatchInfo : isHalted ", this.isHalted);
 
     //let isAlreadyBet = await matchInstance.isBet.call(this.web3Service.getKey);
     //console.log("isAlreadyBet ", isAlreadyBet);
@@ -157,11 +163,52 @@ export class MatchPredictComponent implements OnInit {
     for (let index = 0; index < 6; index++) {
       this.multipliers[index] = await matchInstance.multiplier.call(index);
     }
+
+    if(this.isHalted == false) {
+      this.checkIfBet();
+    }
+    else {
+      this.matchInfoTxt = 'Predictions are stopped now !';
+      this.isDataLoaded = true;
+    }
     
-    console.log("Multiplier " + this.multipliers);
   }
 
+  async checkIfBet() {
+    console.log("About to check if prediction allowed for user " + this.testC);
+    let isBet;
+    this.testC++;
+
+    if(this.testC === 3 ) {
+      clearInterval(this.intervalHandler);
+
+      console.log("Interval stopped");
+    }
+    
+
+    
+    const iplContract = await this.web3Service.artifactsToContract(ipl_artifact);
+    const instance = await iplContract.deployed();
+    const matchAddr = await instance.getMatchByIndex.call(this.matchIndex);
+    const matchContract = await this.web3Service.artifactsToContract(match_artifact);
+    const matchInstance = await matchContract.at(matchAddr);
+    //console.log("KEy ------ " + this.web3Service.getKey());
+    isBet = await matchInstance.isBet.call(this.web3Service.getKey());
+    this.isBet = isBet;
+    console.log("isBet ", isBet);
+
+    this.isDataLoaded = true;
+
+    if(isBet == true) {
+      this.matchInfoTxt = 'You have already predicted !'
+      // if(!!this.intervalHandler) {
+      //   this.intervalHandler.clearInterval();
+      // }
+    }
+  }
   async getMultipliers() {
 
   }
+
+  
 }
