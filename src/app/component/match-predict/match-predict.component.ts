@@ -33,7 +33,10 @@ export class MatchPredictComponent implements OnInit {
   totalBalance: number; //TODO - Needs to be fetched from server
 
   remainingBalance: number;
+  totalBetPut: number;
   matchInfoTxt: string;
+
+  betLength: number;
 
   intervalHandler;
 
@@ -100,6 +103,10 @@ export class MatchPredictComponent implements OnInit {
       - (!this.allPredictions.score.assignedPoints ? 0 : this.allPredictions.score.assignedPoints)
 
     this.remainingBalance = available;
+
+    this.totalBetPut = this.totalBalance - available;
+
+    //console.log("Bet amount : " + this.totalBetPut);
 
     return available;
   }
@@ -171,6 +178,31 @@ export class MatchPredictComponent implements OnInit {
       this.matchInfoTxt = 'Predictions are stopped now !';
       this.isDataLoaded = true;
     }
+
+
+    this.web3Service.artifactsToContract(ipl_artifact)
+      .then((response) => {
+        this.ipl = response;
+        this.ipl.deployed().then((instance) => {
+          instance.getMatchByIndex.call(this.matchIndex).then((matchAddr) => { //TODO 
+            console.log("Match address - ", matchAddr);
+            this.web3Service.artifactsToContract(match_artifact)
+              .then((m) => {
+                console.log("Register preresponse ", m);
+                this.match = m;
+                this.match.at(matchAddr).then((instance1) => {
+                  instance1.getBetLength.call()
+                    .then((v) => {
+                      //console.log("Bet Length - " + v);
+                      this.betLength = v;
+                    });
+                });
+              })
+          })
+        })
+      }
+      );
+
     
   }
 
