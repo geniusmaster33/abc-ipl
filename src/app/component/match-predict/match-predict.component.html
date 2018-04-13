@@ -8,7 +8,9 @@
           {{teamNames[0]}} <br/>
           v<br/>
           {{teamNames[1]}}<br/>
-        <small>Lets Predict</small></h4>
+          <div *ngIf="!!betLength">
+        <small>Total Bets on this Match : {{betLength}}</small>
+      </div></h4>
       </div>
     </div>
   </div>
@@ -293,9 +295,12 @@
           <h4 class="modal-title" id="myModalLabel">Confirmation</h4>
         </div>
         <div class="modal-body">
+          <div class="text-primary" *ngIf="totalBetPut < 60">
+            Warning !! You have put less than 60. You wont get the 100 bonus points for next match !!
+          </div>
           Are you sure you want to submit?
-
-          Note : Pls dont resubmit immediately. Check your transaction in the transaction tab.
+          <br><br>
+          <i>Note : After submitting pls check your transaction in the transaction tab.</i>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default btn-simple" data-dismiss="modal">Cancel</button>
