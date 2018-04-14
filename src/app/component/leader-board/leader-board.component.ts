@@ -5,6 +5,7 @@ import * as registration_artifact from '../../../../build/contracts/Registration
 import { Http } from '@angular/http';
 import { Leader } from './leader';
 import { Web3Service } from '../../util/web3.service';
+import { FilterPipe } from './../pipes/filterpipe';
 
 @Component({
   selector: 'app-leader-board',
@@ -20,6 +21,9 @@ export class LeaderBoardComponent implements OnInit {
   leaders: Leader[];
   userNameMap = new Map();
   myRank: number;
+
+  allSearchTerm: string;
+  aiSearchTerm: string;
 
   constructor(private web3Service: Web3Service, private http:Http) { }
 
@@ -74,9 +78,12 @@ export class LeaderBoardComponent implements OnInit {
             //   }
             // }
 
+            this.evaluateRank();
+
             console.log(this.leaders);
 
             this.aiLeadersList = this.getAILeaders();
+            this.evaluateAIRank();
           });
         },
           (e) => { });
@@ -92,6 +99,35 @@ export class LeaderBoardComponent implements OnInit {
     }
     else {
       return 0;
+    }
+  }
+
+  evaluateRank() {
+    let leaders = this.leaders;
+    let rank = 1;
+    leaders[0].rank = rank;
+
+    for(let i = 1; i < leaders.length; i++) {
+      // if balance not same as previous then increment rank
+      if(Number(leaders[i].balance) !== Number(leaders[i - 1].balance)) {
+        rank++;
+      }
+      leaders[i].rank = rank
+    }
+  }
+
+  evaluateAIRank() {
+    let leaders: Leader[] = this.aiLeadersList;
+    
+    let aiRank = 1;
+    leaders[0].aiRank = aiRank;
+
+    for(let i = 1; i < leaders.length; i++) {
+      // if balance not same as previous then increment rank
+      if(Number(leaders[i].balance) != Number(leaders[i - 1].balance)) {
+        aiRank++;
+      }
+      leaders[i].aiRank = aiRank
     }
   }
 
@@ -114,5 +150,9 @@ export class LeaderBoardComponent implements OnInit {
       }
     )
     
+  }
+
+  searchAll(searchTerm: string) {
+    console.log("Search term " + searchTerm);
   }
 }

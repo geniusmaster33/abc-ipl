@@ -5258,6 +5258,10 @@ Created using IcoMoon - icomoon.io
     min-height: 400px;
 }
 
+.leader-page .page-header {
+    min-height: 400px;
+}
+
 .profile-page .profile-container {
     color: #FFFFFF;
 }
@@ -5296,6 +5300,14 @@ Created using IcoMoon - icomoon.io
 }
 
 .profile-page .content .social-description {
+    display: inline-block;
+    max-width: 150px;
+    width: 135px;
+    text-align: center;
+    margin: 15px 0 0px;
+}
+
+.content .social-description {
     display: inline-block;
     max-width: 150px;
     width: 135px;

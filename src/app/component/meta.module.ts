@@ -10,6 +10,8 @@ import { MatchAdminComponent } from './match-admin/match-admin.component';
 import { MatchUtilComponent } from './match-util/match-util.component';
 import { LeaderBoardComponent } from './leader-board/leader-board.component';
 import { LoginComponent } from './login/login.component';
+import { RecentPredictionsComponent } from './recent-predictions/recent-predictions.component';
+import { FilterPipe } from './pipes/filterpipe'
 
 @NgModule({
   imports: [
@@ -25,7 +27,9 @@ import { LoginComponent } from './login/login.component';
     MatchAdminComponent,
     MatchUtilComponent,
     LeaderBoardComponent,
-    LoginComponent
+    LoginComponent,
+    RecentPredictionsComponent,
+    FilterPipe
     ],
   exports: [
     HomePageComponent,
