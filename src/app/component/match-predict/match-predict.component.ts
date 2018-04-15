@@ -45,6 +45,7 @@ export class MatchPredictComponent implements OnInit {
   testC = 0;
 
   isBetSubmitted;
+  isInputValid: boolean;
 
   constructor(private http: Http,
     private route: ActivatedRoute,
@@ -207,17 +208,8 @@ export class MatchPredictComponent implements OnInit {
   }
 
   async checkIfBet() {
-    console.log("About to check if prediction allowed for user " + this.testC);
+    console.log("About to check if prediction allowed for user ");
     let isBet;
-    this.testC++;
-
-    if(this.testC === 3 ) {
-      clearInterval(this.intervalHandler);
-
-      console.log("Interval stopped");
-    }
-    
-
     
     const iplContract = await this.web3Service.artifactsToContract(ipl_artifact);
     const instance = await iplContract.deployed();
@@ -238,8 +230,22 @@ export class MatchPredictComponent implements OnInit {
       // }
     }
   }
-  async getMultipliers() {
 
+  validateInputs() {
+    console.log("Validating.......");
+
+    console.log(this.allPredictions.score.isValid()  + this.allPredictions.score.prediction);
+
+    if(!this.allPredictions.bestBowler.isValid() ||
+       !this.allPredictions.highestScorer.isValid() ||
+       !this.allPredictions.mom.isValid() ||
+       !this.allPredictions.score.isValid() ||
+       !this.allPredictions.winningTeam.isValid()) {
+         this.isInputValid = false;
+    }
+    else {
+      this.isInputValid = true;
+    }
   }
 
   
