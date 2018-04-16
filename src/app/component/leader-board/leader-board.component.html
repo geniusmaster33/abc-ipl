@@ -51,7 +51,7 @@
                     <div class="col-md-12 coll-md-offset-1" style="padding-top: 10px">
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Search..." 
-                                   [(ngModel)]="allSearchText">
+                                   [(ngModel)]="allSearchTerm">
                                    <span class="input-group-addon">
                                       <i class="now-ui-icons ui-1_zoom-bold"></i>
                                   </span>
@@ -70,7 +70,7 @@
                           </thead>
                           <tbody>
                             <!---->
-                            <tr class="ng-star-inserted" *ngFor="let leader of leaders | filter : allSearchText; let i = index">
+                            <tr class="ng-star-inserted" *ngFor="let leader of leaders | filter : allSearchTerm; let i = index">
                                 <!--<td class="text-center">{{i+1}}</td>-->
                                 <td class="text-center">{{leader.rank}}</td>
                                 <td class="text-left">{{leader.name}}</td>
@@ -88,7 +88,7 @@
                     <div class="col-md-12 coll-md-offset-1" style="padding-top: 10px">
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Search..."
-                                   [(ngModel)]="aiSearchText">
+                                   [(ngModel)]="aiSearchTerm">
                                    <span class="input-group-addon">
                                       <i class="now-ui-icons ui-1_zoom-bold"></i>
                                   </span>
@@ -105,7 +105,7 @@
                           </thead>
                           <tbody>
                             <!---->
-                            <tr class="ng-star-inserted" *ngFor="let leader of aiLeadersList | filter : aiSearchText; let i = index">
+                            <tr class="ng-star-inserted" *ngFor="let leader of aiLeadersList | filter : aiSearchTerm; let i = index">
                                 <td class="text-center">{{leader.aiRank}}</td>
                                 <td class="text-left">{{leader.name}}</td>
                                 <td class="text-right">{{leader.balance}}</td>
