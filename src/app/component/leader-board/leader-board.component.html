@@ -2,14 +2,22 @@
   <div class="page-header page-header-smaller" filter-color="orange">
     <div class="page-header-image" style="background-image: url('../assets/img/stadium_night.jpg');">
     </div>
-    <div class="container">
+    <div class="container" >
       <div class="content-center">
-        <h4 class="text-white" style="margin-bottom:0px">
-          Leader Board
-        </h4>
-        <p class="category" style="font-size:10px"></p>
-                <!--<h3>#{{myRank}}</h3>
-                My Rank-->
+          <h3 class="title" style="margin-bottom:0px; margin-top:40px">Leaderboard</h3>
+          <div class="content">
+              <div class="social-description col-sm-6" *ngIf="!!leaders">
+                  <h3 style="margin-bottom:10px">{{leaders.length}}</h3>
+                  <p>Total Players</p>
+              </div>
+              
+              <div class="social-description col-sm-6" *ngIf="!!leaders">
+                  <h3 style="margin-bottom:10px">{{aiLeadersList.length}}</h3>
+                  <p>ML Teams</p>
+              </div>
+        </div>
+      </div>
+                
        
       </div>
     </div>
@@ -40,11 +48,21 @@
               <!-- Tab panes -->
               <div class="tab-content text-center">
                 <div class="tab-pane active" id="util" role="tabpanel">
+                    <div class="col-md-12 coll-md-offset-1" style="padding-top: 10px">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search..." 
+                                   [(ngModel)]="allSearchText">
+                                   <span class="input-group-addon">
+                                      <i class="now-ui-icons ui-1_zoom-bold"></i>
+                                  </span>
+                        </div>
+                    </div>
                     <div class="table-responsive">
                         <table class="table table-striped">
                           <thead>
                             <tr>
-                              <th class="text-center">#</th>
+                              <!--<th class="text-center">#</th>-->
+                              <th class="text-center">Rank</th>
                               <th>Name</th>
                               <th class="text-right">Points</th>
                               <th class="text-right">Category</th>
@@ -52,8 +70,9 @@
                           </thead>
                           <tbody>
                             <!---->
-                            <tr class="ng-star-inserted" *ngFor="let leader of leaders; let i = index">
-                                <td class="text-center">{{i+1}}</td>
+                            <tr class="ng-star-inserted" *ngFor="let leader of leaders | filter : allSearchText; let i = index">
+                                <!--<td class="text-center">{{i+1}}</td>-->
+                                <td class="text-center">{{leader.rank}}</td>
                                 <td class="text-left">{{leader.name}}</td>
                                 <td class="text-right">{{leader.balance}}</td>
                                 <td class="text-right">
@@ -66,19 +85,28 @@
                       </div>
                 </div>
                 <div class="tab-pane" id="result" role="tabpanel">
+                    <div class="col-md-12 coll-md-offset-1" style="padding-top: 10px">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search..."
+                                   [(ngModel)]="aiSearchText">
+                                   <span class="input-group-addon">
+                                      <i class="now-ui-icons ui-1_zoom-bold"></i>
+                                  </span>
+                        </div>
+                    </div>
                     <div class="table-responsive">
                         <table class="table table-striped">
                           <thead>
                             <tr>
-                              <th class="text-center">#</th>
+                              <th class="text-center">Rank</th>
                               <th>Name</th>
                               <th class="text-right">Points</th>
                             </tr>
                           </thead>
                           <tbody>
                             <!---->
-                            <tr class="ng-star-inserted" *ngFor="let leader of aiLeadersList; let i = index">
-                                <td class="text-center">{{i+1}}</td>
+                            <tr class="ng-star-inserted" *ngFor="let leader of aiLeadersList | filter : aiSearchText; let i = index">
+                                <td class="text-center">{{leader.aiRank}}</td>
                                 <td class="text-left">{{leader.name}}</td>
                                 <td class="text-right">{{leader.balance}}</td>
                               </tr>

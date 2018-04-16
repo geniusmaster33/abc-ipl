@@ -4,4 +4,6 @@ export class Leader {
     public key:string = '';
     public balance:number = 0;
     public category:number = -1;
+    public rank:number;
+    public aiRank:number;
 }

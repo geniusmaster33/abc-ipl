@@ -55,7 +55,8 @@
                         <i class="now-ui-icons business_money-coins"></i>
                       </span>
                       <input type="number" pattern="\d*" class="form-control" placeholder="Enter points to assign" 
-                             [(ngModel)]="allPredictions.highestScorer.assignedPoints" name="highestScorerPoints" required >
+                             [(ngModel)]="allPredictions.highestScorer.assignedPoints" name="highestScorerPoints" 
+                             >
                     </div>
           
                   </div>
@@ -256,7 +257,8 @@
           <div class="send-button">
               <button class="btn btn-primary btn-round btn-block btn-lg" type="button" 
               [disabled]="(getBalance < 0) || (isBetSubmitted == true)"
-              data-toggle="modal" data-target="#myModal">Submit to Blockchain</button>
+              data-toggle="modal" data-target="#myModal"
+              (click)="validateInputs()">Submit to Blockchain</button>
             <!--<a href="#pablo" class="btn btn-primary btn-round btn-block btn-lg">Submit to Blockchain</a>-->
           </div>
         </div>
@@ -292,20 +294,36 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title" id="myModalLabel">Confirmation</h4>
-        </div>
-        <div class="modal-body">
-          <div class="text-primary" *ngIf="totalBetPut < 60">
-            Warning !! You have put less than 60. You wont get the 100 bonus points for next match !!
+          <div *ngIf="isInputValid">
+            <h4 class="modal-title" id="myModalLabel">Confirmation</h4>
           </div>
-          Are you sure you want to submit?
-          <br><br>
-          <i>Note : After submitting pls check your transaction in the transaction tab.</i>
+          <div *ngIf="!isInputValid">
+              <h4 class="modal-title text-danger" id="myModalLabel">Error</h4>
+            </div>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default btn-simple" data-dismiss="modal">Cancel</button>
-          <button type="button" class="btn btn-info btn-simple" data-dismiss="modal" (click)="submitPredictions()">Submit</button>
+        <div class="modal-body" *ngIf="!isInputValid">
+          <div class="text-danger" *ngIf="!isInputValid">
+            Some of your predictions have no points assigned !! Pls assign points.
+          </div>
         </div>
+
+        <div class="modal-body" *ngIf="isInputValid">
+            <div class="text-primary" *ngIf="(totalBetPut < 60)">
+              Warning !! <br> You have put less than 60. You wont get the 100 bonus points for next match !!
+            </div>
+            Are you sure you want to submit?
+            <br>
+            <br>
+            <i>Note : After submitting pls check your transaction in the transaction tab.</i>
+          </div>
+        <div class="modal-footer" *ngIf="!isInputValid" style="justify-content: flex-end">
+          <button type="button" class="btn btn-default btn-simple" data-dismiss="modal">OK</button>
+        </div>
+
+        <div class="modal-footer" *ngIf="isInputValid">
+            <button type="button" class="btn btn-default btn-simple" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-info btn-simple" data-dismiss="modal" (click)="submitPredictions()" [disabled]="!isInputValid">Submit</button>
+          </div>
       </div>
     </div>
   </div>
