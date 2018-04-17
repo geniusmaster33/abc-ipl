@@ -49,7 +49,7 @@ export class MatchInfoComponent implements OnInit {
     this.http.get(url).subscribe(
       (data) => {
         this.matchList = data.json();
-        console.log("Matches ", this.matchList[0].team1);
+        //console.log("Matches ", this.matchList[0].team1);
 
         // let currentDate = moment();
         // console.log("Date " + currentDate.format());

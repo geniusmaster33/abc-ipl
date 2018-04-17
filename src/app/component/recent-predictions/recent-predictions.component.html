@@ -1,3 +1,119 @@
-<p>
-  recent-predictions works!
-</p>
+<div class="wrapper">
+  <div class="page-header page-header-smaller" filter-color="orange">
+    <div class="page-header-image" style="background-image: url('../assets/img/stadium_night.jpg');">
+    </div>
+    <div class="container">
+      <div class="content-center">
+        <h4 class="text-white" style="margin-bottom:0px">
+          Recent Predictions
+        </h4>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="section-predict">
+    <form #resultForm="ngForm">
+      <div class="container" *ngIf="isMatchesLoaded">
+        <div class="col-md-12 offset-md-2 col-lg-12 offset-lg-2">
+          <div class="row valign-wrapper">
+            <div class="card card-blog">
+              <div class="card-body text-center" style="min-height: 150px">
+                <h5 class="card-title">
+                  Choose Match
+                </h5>
+                <select class="browser-default" required name="highestScorerPredict" (change)="handleTeamSelect($event.target.value)" style="text-align: center; text-align-last: center;">
+                  <!--  browser-default-->
+                  <option value="" disabled selected>Select Match</option>
+                  <option *ngFor="let match of allMatches" value="{{match.team1}}:{{match.team2}}:{{match.date}}:{{match.time}}:{{match.id}}"
+                    class="text-center">{{match.date}} @ {{match.time}} - {{getTeamShortName(match.team1)}} : {{getTeamShortName(match.team2)}}
+                  </option>
+                </select>
+                <div *ngIf="isSquadLoaded">
+                  <br> {{selectedSquads[0].name}}
+                  <br/> v
+                  <br/> {{selectedSquads[1].name}}
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </form>
+  </div>
+
+
+  <div class="wrapper" *ngIf="predictionLoaded">
+    <div class="container">
+      <div class="col-md-12 offset-md-2 col-lg-12 offset-lg-2">
+
+        <div>
+          <div class="row valign-wrapper">
+            <div class="card card-blog">
+              <div class="card-body text-center">
+                <h5 class="card-title">
+                  My Predictions
+                </h5>
+                <div *ngIf="predictions.highestScorer.prediction">
+                  <h6>Highest Scorer</h6>
+                  {{predictions.highestScorer.prediction}}
+                  <br/>( {{predictions.highestScorer.assignedPoints}} )
+                  <br/>
+                  <br/>
+                </div>
+
+                <div *ngIf="predictions.bestBowler.prediction">
+                  <h6>Best Bowler</h6>
+                  {{predictions.bestBowler.prediction}}
+                  <br/>( {{predictions.bestBowler.assignedPoints}} )
+                  <br/>
+                  <br/>
+                </div>
+                <div *ngIf="predictions.mom.prediction">
+                  <h6>Man of the Match</h6>
+                  {{predictions.mom.prediction}}
+                  <br/>( {{predictions.mom.assignedPoints}} )
+                  <br/>
+                  <br/>
+                </div>
+                <div *ngIf="predictions.winningTeam.prediction">
+                  <h6>Winning Team</h6>
+                  {{predictions.winningTeam.prediction}}
+                  <br/>( {{predictions.winningTeam.assignedPoints}} )
+                  <br/>
+                  <br/>
+                </div>
+                <div *ngIf="predictions.score.prediction">
+                  <h6>1st Innings Score</h6>
+                  {{predictions.score.prediction}}
+                  <br/>( {{predictions.score.assignedPoints}} )
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrapper" *ngIf="notPredictedFlag">
+    <div class="container">
+      <div class="col-md-12 offset-md-2 col-lg-12 offset-lg-2">
+
+        <div>
+          <div class="row valign-wrapper">
+            <div class="card card-blog">
+              <div class="card-body text-center" style="min-height: 130px">
+                <h5 class="card-title">
+                  Oops !!!
+                </h5>
+                No predictions made
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
