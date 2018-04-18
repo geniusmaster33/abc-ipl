@@ -139,7 +139,6 @@ export class MatchPredictComponent implements OnInit {
                     { from: this.web3Service.getKey(), gas: 500000, gasPrice: 20000000000 })
                     .then((v) => {
                       console.log("Match Predict result - " + v);
-
                       this.isBetSubmitted = true;
                       //this.intervalHandler = setInterval(() => this.checkIfBet(), 3000);
                     });
