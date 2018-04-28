@@ -37,6 +37,7 @@ export class MatchPredictComponent implements OnInit {
   matchInfoTxt: string;
 
   betLength: number;
+  potSize: number[] = new Array(5);
 
   intervalHandler;
 
@@ -70,6 +71,11 @@ export class MatchPredictComponent implements OnInit {
 
     this.fetchSquads();
     this.getMatchInfo();
+
+    for(let i = 0; i < 5; i++) {
+      this.getPotSize(i);
+    }
+    
     //this.checkIfBet();
   }
 
@@ -247,5 +253,33 @@ export class MatchPredictComponent implements OnInit {
     }
   }
 
-  
+  getPotSize(index) {
+
+    console.log("Trying to fetch pot sizes");
+
+    this.web3Service.artifactsToContract(ipl_artifact)
+      .then((response) => {
+        this.ipl = response;
+        this.ipl.deployed().then((instance) => {
+          instance.getMatchByIndex.call(this.matchIndex).then((matchAddr) => { //TODO 
+            console.log("qPot Match address - ", matchAddr);
+            this.web3Service.artifactsToContract(match_artifact)
+              .then((m) => {
+                console.log("qPot Register preresponse ", m);
+                this.match = m;
+                this.match.at(matchAddr).then((instance1) => {
+                  instance1.qPot.call(index)
+                    .then((v) => {
+                      this.potSize[index] = v;
+                      console.log("Total " + this.potSize[index]);
+                      
+
+                    });
+                });
+              })
+          })
+        })
+      }
+      );
+  }
 }

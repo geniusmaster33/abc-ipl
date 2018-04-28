@@ -80,7 +80,7 @@ export class LeaderBoardComponent implements OnInit {
 
             this.evaluateRank();
 
-            console.log(this.leaders);
+            console.log(JSON.stringify(this.leaders));
 
             this.aiLeadersList = this.getAILeaders();
             this.evaluateAIRank();

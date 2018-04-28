@@ -79,6 +79,7 @@ export class RecentPredictionsComponent implements OnInit {
         this.selectedSquads = data.json().filter(team => team.name == team1 || team.name == team2);
         this.loadPlayerIdNameMap();
         this.getRecentPredictions(matchId - 1);
+        this.getPotSize(matchId - 1);
       },
       (error) => console.log(error),
       () => this.isSquadLoaded = true
@@ -101,6 +102,7 @@ export class RecentPredictionsComponent implements OnInit {
                 this.match = m;
                 this.match.at(matchAddr).then((instance1) => {
                   instance1.getPlayerBet.call(this.web3Service.getKey())
+                  //instance1.getPlayerBet.call('0x4fBE1ae379936CaEf4f28cfDc3623478b9bf2C93')
                     .then((v) => {
                       
                       let points = v[0];
@@ -219,6 +221,37 @@ export class RecentPredictionsComponent implements OnInit {
 
   getPlayerName(id) {
     return this.playerMap.get(id);
+  }
+
+  getPotSize(matchIndex) {
+    this.predictionLoaded = false;
+    this.notPredictedFlag = false;
+
+    console.log("Trying to fetch pot sizes");
+
+    this.web3Service.artifactsToContract(ipl_artifact)
+      .then((response) => {
+        this.ipl = response;
+        this.ipl.deployed().then((instance) => {
+          instance.getMatchByIndex.call(matchIndex).then((matchAddr) => { //TODO 
+            console.log("qPot Match address - ", matchAddr);
+            this.web3Service.artifactsToContract(match_artifact)
+              .then((m) => {
+                console.log("qPot Register preresponse ", m);
+                this.match = m;
+                this.match.at(matchAddr).then((instance1) => {
+                  instance1.totalPot.call()
+                    .then((v) => {
+                      
+                      console.log("Total ", v);
+
+                    });
+                });
+              })
+          })
+        })
+      }
+      );
   }
 
 }
