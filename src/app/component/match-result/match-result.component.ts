@@ -29,6 +29,52 @@ export class MatchResultComponent implements OnInit {
   ipl: any;
   match: any;
 
+  q30PlusOptions = [
+    {
+      "displayTxt": "Less than 4",
+      "value": "1"
+    },
+    {
+      "displayTxt": "4",
+      "value": "2"
+    },
+    {
+      "displayTxt": "More than 4",
+      "value": "3"
+    }];
+
+  qSixesOptions = [
+    {
+      "displayTxt": "0 - 10",
+      "value": "1"
+    },
+    {
+      "displayTxt": "11 - 17",
+      "value": "2"
+    },
+    {
+      "displayTxt": "More than 17",
+      "value": "3"
+    }];
+
+    qWicketsOptions = [
+      {
+        "displayTxt": "0 - 9",
+        "value": "1"
+      },
+      {
+        "displayTxt": "10 - 12",
+        "value": "2"
+      },
+      {
+        "displayTxt": "13 - 15",
+        "value": "3"
+      },
+      {
+        "displayTxt": "More than 15",
+        "value": "4"
+      }];
+
   constructor(private http : Http,
               private web3Service: Web3Service) { 
     this.results = new Results();
@@ -62,9 +108,9 @@ export class MatchResultComponent implements OnInit {
                 this.match = m;
                 this.match.at(matchAddr).then((instance1) => {
                   instance1.calculateWinLoss.sendTransaction([this.results.winner,
-                                                this.results.scorer, 
-                                                this.results.bowler,
-                                                this.results.mom,
+                                                this.results.score30plus, 
+                                                this.results.sixes,
+                                                this.results.wickets,
                                                 this.results.score],
                     { from: this.web3Service.getKey(), gas: 500000, gasPrice: 20000000000 })
                     .then((v) => {
@@ -79,7 +125,6 @@ export class MatchResultComponent implements OnInit {
   }
 
   submitIt() {
-    console.log("About to end match ");
 
     console.log("Match Id : " + this.selectedMatchId);
     console.log("Results ", this.results);
@@ -97,11 +142,11 @@ export class MatchResultComponent implements OnInit {
                 console.log("Results ", this.results);
                 this.match.at(matchAddr).then((instance1) => {
                   instance1.calculateWinLoss.sendTransaction([Number(this.results.winner),
-                                                              Number(this.results.scorer), 
-                                                                Number(this.results.bowler),
-                                                                  Number(this.results.mom),
+                                                              Number(this.results.score30plus), 
+                                                                Number(this.results.sixes),
+                                                                  Number(this.results.wickets),
                                                                     this.results.score],
-                                                              { from: this.web3Service.getKey(), gas: 500000, gasPrice: 5000000000 })
+                                                              { from: this.web3Service.getKey(), gas: 6000000, gasPrice: 5000000000 })
                     .then((v) => {
                       console.log("Match end submission status - " + v);
                     });
@@ -116,9 +161,9 @@ export class MatchResultComponent implements OnInit {
 }
 
 class Results {
-  scorer = "";
-  bowler = "";
-  mom = "";
+  score30plus = "";
+  sixes = "";
+  wickets = "";
   winner = "";
   score = 0;
 

@@ -52,27 +52,25 @@
             <div class="card card-blog">
               <div class="card-body text-center">
                 <h5 class="card-title">
-                  Highest Scorer
+                  Total 30+ Scores
                 </h5>
 
-                <select class="browser-default" required 
-                        [(ngModel)]="allPredictions.highestScorer.prediction" name="highestScorerPredict"
-                        style="text-align: center; text-align-last: center;">
-                  <!--  browser-default-->
-                  <option value="" disabled selected>Choose player</option>
-                  <optgroup *ngFor="let team of todaysTeams" label="{{team.name}}">
-                    <option *ngFor="let member of team.squad" value="{{member.pid}}" (click)="handleEvent($event.target.value, 'highestScorerEvent')">{{member.pname}}</option>
-                  </optgroup>
-                </select>
-                <br/>
-                <br/>
+                <div class="row">
+                    <div class="col-lg-6 text-center col-md-8 ml-auto mr-auto">
+                      <div *ngFor="let option of q30PlusOptions; let i = index" class="radio" style="text-align:left">
+                        <input name="grp30Score" type="radio" id="f30Score{{i+1}}" class="with-gap" value="{{option.value}}" [(ngModel)]="allPredictions.score30Plus.prediction"
+                          name="30ScorePredict" />
+                        <label for="f30Score{{i+1}}">{{option.displayTxt}}</label>
+                      </div>
+                    </div>
+                  </div>
                 <div class="row">
                   <div class="col-lg-6 text-center col-md-8 ml-auto mr-auto">
                     <div class="input-group input-lg">
                       <span class="input-group-addon">
                         <i class="now-ui-icons business_money-coins"></i>
                       </span>
-                      <input type="number" pattern="\d*" class="form-control" placeholder="Enter points to assign" [(ngModel)]="allPredictions.highestScorer.assignedPoints"
+                      <input type="number" pattern="\d*" class="form-control" placeholder="Enter points to assign" [(ngModel)]="allPredictions.score30Plus.assignedPoints"
                         name="highestScorerPoints">
                     </div>
                     <div *ngIf="!!potSize[1]">
@@ -99,27 +97,25 @@
             <div class="card card-blog">
               <div class="card-body text-center">
                 <h5 class="card-title">
-                  Best Bowler
+                  Total Sixes
                 </h5>
 
-                <select class="browser-default" [(ngModel)]="allPredictions.bestBowler.prediction" 
-                        name="bowlerPredict"
-                        style="text-align: center; text-align-last: center;">
-                  <!--  browser-default-->
-                  <option value="" disabled selected>Choose player</option>
-                  <optgroup *ngFor="let team of todaysTeams" label="{{team.name}}">
-                    <option *ngFor="let member of team.squad" value="{{member.pid}}" (click)="handleEvent($event.target.value, 'bestBowlerEvent')">{{member.pname}}</option>
-                  </optgroup>
-                </select>
-                <br/>
-                <br/>
+                <div class="row">
+                    <div class="col-lg-6 text-center col-md-8 ml-auto mr-auto">
+                      <div *ngFor="let option of qSixesOptions; let i = index" class="radio" style="text-align:left">
+                        <input name="grpSixes" type="radio" id="fSixes{{i+1}}" class="with-gap" value="{{option.value}}" [(ngModel)]="allPredictions.sixes.prediction"
+                          name="SixesPredict" />
+                        <label for="fSixes{{i+1}}">{{option.displayTxt}}</label>
+                      </div>
+                    </div>
+                  </div>
                 <div class="row">
                   <div class="col-lg-6 text-center col-md-8 ml-auto mr-auto">
                     <div class="input-group input-lg">
                       <span class="input-group-addon">
                         <i class="now-ui-icons business_money-coins"></i>
                       </span>
-                      <input type="number" pattern="\d*" class="form-control" placeholder="Enter points to assign" id="bestBowler" [(ngModel)]="allPredictions.bestBowler.assignedPoints"
+                      <input type="number" pattern="\d*" class="form-control" placeholder="Enter points to assign" id="bestBowler" [(ngModel)]="allPredictions.sixes.assignedPoints"
                         name="bowlerPoints" required #bestBowler="ngModel">
                       <!--<div *ngIf="bestBowler.errors && (bestBowler.dirty || bestBowler.touched)" class="form-control-danger">Hello</div>-->
                     </div>
@@ -146,27 +142,25 @@
             <div class="card card-blog">
               <div class="card-body text-center">
                 <h5 class="card-title">
-                  Man of the Match
+                  Total Wickets
                 </h5>
 
-                <select class="browser-default" [(ngModel)]="allPredictions.mom.prediction" 
-                        name="momPredict"
-                        style="text-align: center; text-align-last: center;">
-                  <!--  browser-default-->
-                  <option value="" disabled selected>Choose player</option>
-                  <optgroup *ngFor="let team of todaysTeams" label="{{team.name}}">
-                    <option *ngFor="let member of team.squad" value="{{member.pid}}" (click)="handleEvent($event.target.value, 'momEvent')">{{member.pname}}</option>
-                  </optgroup>
-                </select>
-                <br/>
-                <br/>
+                <div class="row">
+                    <div class="col-lg-6 text-center col-md-8 ml-auto mr-auto">
+                      <div *ngFor="let option of qWicketsOptions; let i = index" class="radio" style="text-align:left">
+                        <input name="grpWickets" type="radio" id="fWickets{{i+1}}" class="with-gap" value="{{option.value}}" [(ngModel)]="allPredictions.wickets.prediction"
+                          name="WicketsPredict" />
+                        <label for="fWickets{{i+1}}">{{option.displayTxt}}</label>
+                      </div>
+                    </div>
+                  </div>
                 <div class="row">
                   <div class="col-lg-6 text-center col-md-8 ml-auto mr-auto">
                     <div class="input-group input-lg">
                       <span class="input-group-addon">
                         <i class="now-ui-icons business_money-coins"></i>
                       </span>
-                      <input type="number" pattern="\d*" class="form-control" placeholder="Enter points to assign" [(ngModel)]="allPredictions.mom.assignedPoints"
+                      <input type="number" pattern="\d*" class="form-control" placeholder="Enter points to assign" [(ngModel)]="allPredictions.wickets.assignedPoints"
                         name="momPoints">
                     </div>
                     <div *ngIf="!!potSize[3]">

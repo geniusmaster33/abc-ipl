@@ -48,6 +48,52 @@ export class MatchPredictComponent implements OnInit {
   isBetSubmitted;
   isInputValid: boolean;
 
+  q30PlusOptions = [
+    {
+      "displayTxt": "Less than 4",
+      "value": "1"
+    },
+    {
+      "displayTxt": "4",
+      "value": "2"
+    },
+    {
+      "displayTxt": "More than 4",
+      "value": "3"
+    }];
+
+  qSixesOptions = [
+    {
+      "displayTxt": "0 - 10",
+      "value": "1"
+    },
+    {
+      "displayTxt": "11 - 17",
+      "value": "2"
+    },
+    {
+      "displayTxt": "More than 17",
+      "value": "3"
+    }];
+
+    qWicketsOptions = [
+      {
+        "displayTxt": "0 - 9",
+        "value": "1"
+      },
+      {
+        "displayTxt": "10 - 12",
+        "value": "2"
+      },
+      {
+        "displayTxt": "13 - 15",
+        "value": "3"
+      },
+      {
+        "displayTxt": "More than 15",
+        "value": "4"
+      }];
+
   constructor(private http: Http,
     private route: ActivatedRoute,
     private web3Service: Web3Service) { }
@@ -103,9 +149,9 @@ export class MatchPredictComponent implements OnInit {
     let available = 0;
 
     available = this.totalBalance
-      - (!this.allPredictions.highestScorer.assignedPoints ? 0 : this.allPredictions.highestScorer.assignedPoints)
-      - (!this.allPredictions.bestBowler.assignedPoints ? 0 : this.allPredictions.bestBowler.assignedPoints)
-      - (!this.allPredictions.mom.assignedPoints ? 0 : this.allPredictions.mom.assignedPoints)
+      - (!this.allPredictions.score30Plus.assignedPoints ? 0 : this.allPredictions.score30Plus.assignedPoints)
+      - (!this.allPredictions.sixes.assignedPoints ? 0 : this.allPredictions.sixes.assignedPoints)
+      - (!this.allPredictions.wickets.assignedPoints ? 0 : this.allPredictions.wickets.assignedPoints)
       - (!this.allPredictions.winningTeam.assignedPoints ? 0 : this.allPredictions.winningTeam.assignedPoints)
       - (!this.allPredictions.score.assignedPoints ? 0 : this.allPredictions.score.assignedPoints)
 
@@ -133,14 +179,14 @@ export class MatchPredictComponent implements OnInit {
                 this.match = m;
                 this.match.at(matchAddr).then((instance1) => {
                   instance1.bet.sendTransaction([this.allPredictions.winningTeam.assignedPoints,
-                                                this.allPredictions.highestScorer.assignedPoints, 
-                                                this.allPredictions.bestBowler.assignedPoints,
-                                                this.allPredictions.mom.assignedPoints,
+                                                this.allPredictions.score30Plus.assignedPoints, 
+                                                this.allPredictions.sixes.assignedPoints,
+                                                this.allPredictions.wickets.assignedPoints,
                                                 this.allPredictions.score.assignedPoints], 
                                                 [ this.allPredictions.winningTeam.prediction, 
-                                                  this.allPredictions.highestScorer.prediction, 
-                                                 this.allPredictions.bestBowler.prediction, 
-                                                 this.allPredictions.mom.prediction,
+                                                  this.allPredictions.score30Plus.prediction, 
+                                                 this.allPredictions.sixes.prediction, 
+                                                 this.allPredictions.wickets.prediction,
                                                  this.allPredictions.score.prediction],
                     { from: this.web3Service.getKey(), gas: 500000, gasPrice: 20000000000 })
                     .then((v) => {
@@ -239,11 +285,11 @@ export class MatchPredictComponent implements OnInit {
   validateInputs() {
     console.log("Validating.......");
 
-    console.log(this.allPredictions.score.isValid()  + this.allPredictions.score.prediction);
+    //console.log(this.allPredictions.score.isValid()  + this.allPredictions.score.prediction);
 
-    if(!this.allPredictions.bestBowler.isValid() ||
-       !this.allPredictions.highestScorer.isValid() ||
-       !this.allPredictions.mom.isValid() ||
+    if(!this.allPredictions.sixes.isValid() ||
+       !this.allPredictions.score30Plus.isValid() ||
+       !this.allPredictions.wickets.isValid() ||
        !this.allPredictions.score.isValid() ||
        !this.allPredictions.winningTeam.isValid()) {
          this.isInputValid = false;

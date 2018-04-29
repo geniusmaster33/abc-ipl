@@ -6,58 +6,65 @@
         <div class="col-md-12 offset-md-2 col-lg-12 offset-lg-2">
           
           <div >
-            <!-- Scorer -->
+            <!-- 30 Plus -->
             <div class="row valign-wrapper">
               <div class="card card-blog">
                 <div class="card-body text-center">
                   <h5 class="card-title">
-                    Highest Scorer
+                    Total 30+ Scores
                   </h5>
-                  <select class="browser-default" required [(ngModel)]="results.scorer" name="highestScorerResult">
-                    <!--  browser-default-->
-                    <option value="" disabled selected>Choose player</option>
-                    <optgroup *ngFor="let team of selectedSquads" label="{{team.name}}">
-                      <option *ngFor="let member of team.squad" value="{{member.pid}}">{{member.pname}}</option>
-                    </optgroup>
-                  </select>
+                  <div class="row">
+                      <div class="col-lg-6 text-center col-md-8 ml-auto mr-auto">
+                  <div *ngFor="let optn of q30PlusOptions; let i = index" class="radio" style="text-align:left">
+                      <input name="grp30PlusScore" type="radio" id="f30PlusScore{{i+1}}" class="with-gap" value="{{optn.value}}"
+                             [(ngModel)]="results.score30plus" name="30PlusScoreResult"/>
+                      <label for="f30PlusScore{{i+1}}">{{optn.displayTxt}}</label>
+                    </div>
+                    </div>
+                    </div>
                 </div>
               </div>
             </div>
 
-            <!-- Bowler -->
+            <!-- Sixes -->
             <div class="row valign-wrapper">
               <div class="card card-blog">
                 <div class="card-body text-center">
                   <h5 class="card-title">
-                    Best Bowler
+                    Total Sixes
                   </h5>
-                  <select class="browser-default" required [(ngModel)]="results.bowler" name="bowlerResult">
-                    <!--  browser-default-->
-                    <option value="" disabled selected>Choose player</option>
-                    <optgroup *ngFor="let team of selectedSquads" label="{{team.name}}">
-                      <option *ngFor="let member of team.squad" value="{{member.pid}}">{{member.pname}}</option>
-                    </optgroup>
-                  </select>
+                  <div class="row">
+                      <div class="col-lg-6 text-center col-md-8 ml-auto mr-auto">
+                  <div *ngFor="let optn of qSixesOptions; let i = index" class="radio" style="text-align:left">
+                      <input name="grpSixes" type="radio" id="fSixes{{i+1}}" class="with-gap" value="{{optn.value}}"
+                             [(ngModel)]="results.sixes" name="SixesResult"/>
+                      <label for="fSixes{{i+1}}">{{optn.displayTxt}}</label>
+                    </div>
+                    </div>
+                    </div>
                 </div>
               </div>
             </div>
 
 
-            <!-- MoM -->
+            <!-- Wickets -->
             <div class="row valign-wrapper">
               <div class="card card-blog">
                 <div class="card-body text-center">
                   <h5 class="card-title">
-                    Man of the Match
+                    Total Wickets
                   </h5>
-                  <select class="browser-default" required [(ngModel)]="results.mom" name="momResult">
-                    <!--  browser-default-->
-                    <option value="" disabled selected>Choose player</option>
-                    <optgroup *ngFor="let team of selectedSquads" label="{{team.name}}">
-                      <option *ngFor="let member of team.squad" value="{{member.pid}}">{{member.pname}}</option>
-                    </optgroup>
-                  </select>
+                  <div class="row">
+                      <div class="col-lg-6 text-center col-md-8 ml-auto mr-auto">
+                  <div *ngFor="let optn of qWicketsOptions; let i = index" class="radio" style="text-align:left">
+                      <input name="grpWickets" type="radio" id="fWickets{{i+1}}" class="with-gap" value="{{optn.value}}"
+                             [(ngModel)]="results.wickets" name="WicketsResult"/>
+                      <label for="fWickets{{i+1}}">{{optn.displayTxt}}</label>
+                    </div>
                 </div>
+                </div>
+                </div>
+
               </div>
             </div>
 
