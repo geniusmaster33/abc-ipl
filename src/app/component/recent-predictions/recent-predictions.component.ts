@@ -5,6 +5,7 @@ import * as moment from 'moment';
 import * as match_artifact from '../../../../build/contracts/IPLMatch.json';
 import * as ipl_artifact from '../../../../build/contracts/Ipl.json';
 import { Predictions } from '../match-predict/predictions';
+import { DataElement } from "./../model/DataElement";
 import * as _ from 'lodash';
 
 
@@ -33,6 +34,14 @@ export class RecentPredictionsComponent implements OnInit {
   predictions: Predictions;
   notPredictedFlag = false;
 
+  id = 'chart1';
+  type = 'doughnut2d';
+  dataFormat = 'json';
+  dataSource;
+
+  potSizeArray : DataElement[] = new Array(5);
+  potSizeLoadCount = 0;
+
 
   constructor(private web3Service: Web3Service,
               private http : Http) { }
@@ -41,6 +50,32 @@ export class RecentPredictionsComponent implements OnInit {
     this.fetchDate();
     this.loadTeamIdNameMap();
     this.loadTeamShortNames();
+
+    this.dataSource = {
+      "chart": {
+          "caption": "",
+          "subCaption": "",
+          "theme": "ocean",
+          "renderAt": "chartContainer",
+          "width": "100%",
+          "enableSmartLabels" : "1",
+          "labelDistance": "5",
+          "smartLabelClearance": "5",
+          "use3DLighting": "0",
+          "radius3D": "0",
+          "showBorder": "0",
+          "bgColor": "#FFFFFF",
+          "showLabels": "0",
+          "placeValuesInside" : "1",
+          "showLegend": "1",
+          "legendBorderThickness": "0",
+          "legendCaptionAlignment": "center",
+          "legendShadow": "0",
+          "formatNumberScale": "0",
+          "legendIconScale": "1.5"
+      },
+      "data": []
+    }
   }
 
   loadMatchList(currentDate) {
@@ -62,12 +97,19 @@ export class RecentPredictionsComponent implements OnInit {
   }
 
   handleTeamSelect(selectedValue) {
+    this.potSizeLoadCount = 0;
     console.log("Match selected ", selectedValue);
     //TODO - Add match id
+    
     let chosenMatchInfo = selectedValue.split(":");
     let selectedMatchId = chosenMatchInfo[4]; 
+    this.matchIndex = selectedMatchId - 1;
 
     this.fetchSquads(chosenMatchInfo[0], chosenMatchInfo[1], selectedMatchId);
+
+    for(let i = 0; i < 5; i++) {
+      this.getPotSize(i);
+    }
     
   }
 
@@ -79,7 +121,7 @@ export class RecentPredictionsComponent implements OnInit {
         this.selectedSquads = data.json().filter(team => team.name == team1 || team.name == team2);
         this.loadPlayerIdNameMap();
         this.getRecentPredictions(matchId - 1);
-        this.getPotSize(matchId - 1);
+        //this.getPotSize(matchId - 1);
       },
       (error) => console.log(error),
       () => this.isSquadLoaded = true
@@ -223,9 +265,7 @@ export class RecentPredictionsComponent implements OnInit {
     return this.playerMap.get(id);
   }
 
-  getPotSize(matchIndex) {
-    this.predictionLoaded = false;
-    this.notPredictedFlag = false;
+  getPotSize(index) {
 
     console.log("Trying to fetch pot sizes");
 
@@ -233,18 +273,21 @@ export class RecentPredictionsComponent implements OnInit {
       .then((response) => {
         this.ipl = response;
         this.ipl.deployed().then((instance) => {
-          instance.getMatchByIndex.call(matchIndex).then((matchAddr) => { //TODO 
-            console.log("qPot Match address - ", matchAddr);
+          instance.getMatchByIndex.call(this.matchIndex).then((matchAddr) => { //TODO 
+           console.log("qPot Match address - ", matchAddr);
             this.web3Service.artifactsToContract(match_artifact)
               .then((m) => {
-                console.log("qPot Register preresponse ", m);
+             //   console.log("qPot Register preresponse ", m);
                 this.match = m;
                 this.match.at(matchAddr).then((instance1) => {
-                  instance1.totalPot.call()
+                  instance1.qPot.call(index)
                     .then((v) => {
-                      
-                      console.log("Total ", v);
+                      //this.potSize[index] = v;
+                      console.log("Pot["+ index + "] = " + Number(v));
 
+                     // if(index == 4) {
+                        this.setPotSizeArrayForChart(index, v);
+                      //}
                     });
                 });
               })
@@ -252,6 +295,69 @@ export class RecentPredictionsComponent implements OnInit {
         })
       }
       );
+  }
+
+  setPotSizeArrayForChart(index, value) {
+
+    console.log("setpotsize called for" + index );
+
+    switch(index) {
+      case 0 :
+        let winner = new DataElement("Winning Team", value, "#F26522");
+        this.potSizeArray[0] = winner;
+        this.incrementLoadCount();
+        break;
+      case 1 :
+        let scorer = new DataElement("Highest Scorer", value, "#ADD5D7");
+        this.potSizeArray[1] = scorer;
+        this.incrementLoadCount();
+        break;
+      case 2 :
+        let bowler = new DataElement("Best Bowler", value, "#676766");
+        this.potSizeArray[2] = bowler;
+        this.incrementLoadCount();
+        break;
+      case 3 :
+      let mom = new DataElement("MoM", value, "#FFCD33");
+      this.potSizeArray[3] = mom;
+      this.incrementLoadCount();
+        break;
+      case 4 :
+      let score = new DataElement("Score", value, "#47ACB1");
+      this.potSizeArray[4] = score;
+      this.incrementLoadCount();
+        break;
+      default :
+      break;
+    }
+
+    // let winner = new DataElement("Winning Team", this.potSize[0]);
+    // let scorer = new DataElement("Highest Scorer", this.potSize[1]);
+    // let bowler = new DataElement("Highest Scorer", this.potSize[2]);
+    // let mom = new DataElement("Highest Scorer", this.potSize[3]);
+    // let score = new DataElement("Highest Scorer", this.potSize[4]);
+    
+    // this.potSizeArray[0] = winner;
+    // this.potSizeArray[1] = scorer;
+    // this.potSizeArray[2] = bowler;
+    // this.potSizeArray[3] = mom;
+    // this.potSizeArray[4] = score;
+
+    // this.dataSource.data = this.potSizeArray;
+    // this.potSizeLoaded = true;
+
+    // console.log(this.dataSource.data);
+  }
+
+  incrementLoadCount() {
+    this.potSizeLoadCount++;
+    console.log("Loac count " + this.potSizeLoadCount);
+
+    if(this.potSizeLoadCount === 5) {
+      this.dataSource.data = this.potSizeArray;
+
+      console.log(this.dataSource);
+    }
   }
 
 }

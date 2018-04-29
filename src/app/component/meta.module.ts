@@ -13,12 +13,20 @@ import { LoginComponent } from './login/login.component';
 import { RecentPredictionsComponent } from './recent-predictions/recent-predictions.component';
 import { FilterPipe } from './pipes/filterpipe'
 
+import * as FusionCharts from 'fusioncharts';
+import * as Charts from 'fusioncharts/fusioncharts.charts';
+import * as FintTheme from 'fusioncharts/themes/fusioncharts.theme.fint';
+import { FusionChartsModule } from 'angular4-fusioncharts';
+
+FusionChartsModule.fcRoot(FusionCharts, Charts, FintTheme);
+
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
     UtilModule,
-    FormsModule
+    FormsModule,
+    FusionChartsModule
   ],
   declarations: [
     HomePageComponent,
