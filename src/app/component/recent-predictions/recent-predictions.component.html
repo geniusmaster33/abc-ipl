@@ -76,6 +76,30 @@
                   <br/>
                   <br/>
                 </div>
+
+                <div *ngIf="predictions.score30Plus.prediction">
+                    <h6>30+ Scores</h6>
+                    {{predictions.score30Plus.prediction}}
+                    <br/>( {{predictions.score30Plus.assignedPoints}} )
+                    <br/>
+                    <br/>
+                  </div>
+  
+                  <div *ngIf="predictions.sixes.prediction">
+                    <h6>Total Sixes</h6>
+                    {{predictions.sixes.prediction}}
+                    <br/>( {{predictions.sixes.assignedPoints}} )
+                    <br/>
+                    <br/>
+                  </div>
+                  <div *ngIf="predictions.wickets.prediction">
+                    <h6>Total Wickets</h6>
+                    {{predictions.wickets.prediction}}
+                    <br/>( {{predictions.wickets.assignedPoints}} )
+                    <br/>
+                    <br/>
+                  </div>
+
                 <div *ngIf="predictions.winningTeam.prediction">
                   <h6>Winning Team</h6>
                   {{predictions.winningTeam.prediction}}
