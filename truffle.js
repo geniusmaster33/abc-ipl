@@ -1,6 +1,6 @@
 
 var HDWalletProvider = require("truffle-hdwallet-provider");
-var mnemonic =  "off find version cram note manage runway e1xecute prevent auction keep suggest"
+var mnemonic =  "off find version cram note manage runway execute prevent auction keep suggest"
 module.exports = {
   networks: {
     kovan: {
