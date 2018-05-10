@@ -9,7 +9,12 @@ import { AppComponent } from './app.component';
 import {MetaModule} from './component/meta.module';
 //import { MatchInfoComponent } from './component/match-info/match-info.component';
 import { MatchPredictComponent } from './component/match-predict/match-predict.component';
+import * as FusionCharts from 'fusioncharts';
+import * as Charts from 'fusioncharts/fusioncharts.charts';
+import * as FintTheme from 'fusioncharts/themes/fusioncharts.theme.fint';
+import { FusionChartsModule } from 'angular4-fusioncharts';
 
+FusionChartsModule.fcRoot(FusionCharts, Charts, FintTheme);
 
 @NgModule({
   declarations: [
@@ -21,7 +26,8 @@ import { MatchPredictComponent } from './component/match-predict/match-predict.c
     HttpModule,
     FormsModule,
     MetaModule,
-    RouterModule.forRoot(appRoutes/*, { enableTracing: true }*/) // <-- debugging purposes only)
+    RouterModule.forRoot(appRoutes/*, { enableTracing: true }*/) ,// <-- debugging purposes only)
+    FusionChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

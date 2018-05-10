@@ -42,6 +42,7 @@
     </form>
   </div>
 
+  
 
   <div class="wrapper" *ngIf="predictionLoaded">
     <div class="container">
@@ -134,10 +135,36 @@
                 </h5>
                 No predictions made
               </div>
+
+              
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+
+  <div class="wrapper" *ngIf="potSizeLoadCount === 5">
+      <div class="container">
+        <div class="col-md-12 offset-md-2 col-lg-12 offset-lg-2">
+  
+          <div>
+            <div class="row valign-wrapper">
+              <div class="card card-blog">
+                <div class="card-body text-center">
+                  <h5 class="card-title">
+                    Pot Size Stats
+                  </h5>
+                  
+                  <fusioncharts [id]="id" [type]="type" [width]="dataSource.chart.width" [dataFormat]="dataFormat" [dataSource]="dataSource"></fusioncharts>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 </div>
+
+
+

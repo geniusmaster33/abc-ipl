@@ -6,6 +6,7 @@ import { PredictionData } from './prediction-data';
 import { Web3Service } from '../../util/web3.service';
 import * as match_artifact from '../../../../build/contracts/IPLMatch.json';
 import * as ipl_artifact from '../../../../build/contracts/Ipl.json';
+import { DataElement } from "./../model/DataElement";
 
 import * as moment from 'moment';
 
@@ -93,12 +94,21 @@ export class MatchPredictComponent implements OnInit {
         "displayTxt": "More than 15",
         "value": "4"
       }];
+  potSizeArray : DataElement[] = new Array(5);
+  potSizeLoadCount = 0;
+
+  id = 'chart1';
+    type = 'doughnut2d';
+    dataFormat = 'json';
+    dataSource;
 
   constructor(private http: Http,
     private route: ActivatedRoute,
     private web3Service: Web3Service) { }
 
   ngOnInit() {
+    this.potSizeLoadCount = 0;
+
     this.allPredictions = new Predictions();
     this.totalBalance = this.web3Service.getBalance();
 
@@ -107,6 +117,31 @@ export class MatchPredictComponent implements OnInit {
     this.isBetSubmitted = false;
 
     this.findTeamNames();
+
+    this.dataSource = {
+      "chart": {
+          "caption": "",
+          "subCaption": "",
+          "theme": "ocean",
+          "renderAt": "chartContainer",
+          "width": "100%",
+          "enableSmartLabels" : "1",
+          "labelDistance": "5",
+          "smartLabelClearance": "5",
+          "use3DLighting": "0",
+          "radius3D": "0",
+          "showBorder": "0",
+          "bgColor": "#FFFFFF",
+          "showLabels": "0",
+          "placeValuesInside" : "1",
+          "showLegend": "1",
+          "legendBorderThickness": "0",
+          "legendCaptionAlignment": "center",
+          "legendShadow": "0",
+          "formatNumberScale": "0"
+      },
+      "data": []
+  }
   }
 
   findTeamNames() {
@@ -118,9 +153,9 @@ export class MatchPredictComponent implements OnInit {
     this.fetchSquads();
     this.getMatchInfo();
 
-    for(let i = 0; i < 5; i++) {
-      this.getPotSize(i);
-    }
+    // for(let i = 0; i < 5; i++) {
+    //   this.getPotSize(i);
+    // }
     
     //this.checkIfBet();
   }
@@ -299,33 +334,93 @@ export class MatchPredictComponent implements OnInit {
     }
   }
 
-  getPotSize(index) {
+  // getPotSize(index) {
 
-    console.log("Trying to fetch pot sizes");
+  //   console.log("Trying to fetch pot sizes");
 
-    this.web3Service.artifactsToContract(ipl_artifact)
-      .then((response) => {
-        this.ipl = response;
-        this.ipl.deployed().then((instance) => {
-          instance.getMatchByIndex.call(this.matchIndex).then((matchAddr) => { //TODO 
-            console.log("qPot Match address - ", matchAddr);
-            this.web3Service.artifactsToContract(match_artifact)
-              .then((m) => {
-                console.log("qPot Register preresponse ", m);
-                this.match = m;
-                this.match.at(matchAddr).then((instance1) => {
-                  instance1.qPot.call(index)
-                    .then((v) => {
-                      this.potSize[index] = v;
-                      console.log("Total " + this.potSize[index]);
-                      
+  //   this.web3Service.artifactsToContract(ipl_artifact)
+  //     .then((response) => {
+  //       this.ipl = response;
+  //       this.ipl.deployed().then((instance) => {
+  //         instance.getMatchByIndex.call(this.matchIndex).then((matchAddr) => { //TODO 
+  //           console.log("qPot Match address - ", matchAddr);
+  //           this.web3Service.artifactsToContract(match_artifact)
+  //             .then((m) => {
+  //               console.log("qPot Register preresponse ", m);
+  //               this.match = m;
+  //               this.match.at(matchAddr).then((instance1) => {
+  //                 instance1.qPot.call(index)
+  //                   .then((v) => {
+  //                     this.potSize[index] = v;
+  //                     console.log("Total " + this.potSize[index]);
 
-                    });
-                });
-              })
-          })
-        })
-      }
-      );
-  }
+  //                    // if(index == 4) {
+  //                       this.setPotSizeArrayForChart(index);
+  //                     //}
+  //                   });
+  //               });
+  //             })
+  //         })
+  //       })
+  //     }
+  //     );
+  // }
+
+  // setPotSizeArrayForChart(index) {
+
+  //   switch(index) {
+  //     case 0 :
+  //       let winner = new DataElement("Winning Team", this.potSize[0]);
+  //       this.potSizeArray[0] = winner;
+  //       this.incrementLoadCount();
+  //       break;
+  //     case 1 :
+  //       let scorer = new DataElement("Highest Scorer", this.potSize[1]);
+  //       this.potSizeArray[1] = scorer;
+  //       this.incrementLoadCount();
+  //       break;
+  //     case 2 :
+  //       let bowler = new DataElement("Best Bowler", this.potSize[2]);
+  //       this.potSizeArray[2] = bowler;
+  //       this.incrementLoadCount();
+  //       break;
+  //     case 3 :
+  //     let mom = new DataElement("Mom", this.potSize[3]);
+  //     this.potSizeArray[3] = mom;
+  //     this.incrementLoadCount();
+  //       break;
+  //     case 4 :
+  //     let score = new DataElement("Score", this.potSize[4]);
+  //     this.potSizeArray[4] = score;
+  //     this.incrementLoadCount();
+  //       break;
+  //     default :
+  //     break;
+  //   }
+
+  //   // let winner = new DataElement("Winning Team", this.potSize[0]);
+  //   // let scorer = new DataElement("Highest Scorer", this.potSize[1]);
+  //   // let bowler = new DataElement("Highest Scorer", this.potSize[2]);
+  //   // let mom = new DataElement("Highest Scorer", this.potSize[3]);
+  //   // let score = new DataElement("Highest Scorer", this.potSize[4]);
+    
+  //   // this.potSizeArray[0] = winner;
+  //   // this.potSizeArray[1] = scorer;
+  //   // this.potSizeArray[2] = bowler;
+  //   // this.potSizeArray[3] = mom;
+  //   // this.potSizeArray[4] = score;
+
+  //   // this.dataSource.data = this.potSizeArray;
+  //   // this.potSizeLoaded = true;
+
+  //   // console.log(this.dataSource.data);
+  // }
+
+  // incrementLoadCount() {
+  //   this.potSizeLoadCount++;
+
+  //   if(this.potSizeLoadCount === 5) {
+  //     this.dataSource.data = this.potSizeArray;
+  //   }
+  // }
 }

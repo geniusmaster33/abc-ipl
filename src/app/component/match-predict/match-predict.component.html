@@ -21,7 +21,7 @@
             <h3 style="margin-bottom:0px">{{betLength}}</h3>
             <p style="margin-bottom:0px">Predictions</p>
           </div>
-<!--
+          <!--
           <div class="social-description col-sm-6" style="margin-bottom: 0px">
             <h3 style="margin-bottom:0px">35000</h3>
             <p style="margin-bottom: 0px">ML Teams</p>
@@ -120,8 +120,8 @@
                       <!--<div *ngIf="bestBowler.errors && (bestBowler.dirty || bestBowler.touched)" class="form-control-danger">Hello</div>-->
                     </div>
                     <div *ngIf="!!potSize[2]">
-                        <p style="margin-bottom: 0px" class="text-primary">Pot Size : {{potSize[2]}}</p>
-                      </div>
+                      <p style="margin-bottom: 0px" class="text-primary">Pot Size : {{potSize[2]}}</p>
+                    </div>
                   </div>
                 </div>
                 <div class="card-footer">
@@ -164,8 +164,8 @@
                         name="momPoints">
                     </div>
                     <div *ngIf="!!potSize[3]">
-                        <p style="margin-bottom: 0px" class="text-primary">Pot Size : {{potSize[3]}}</p>
-                      </div>
+                      <p style="margin-bottom: 0px" class="text-primary">Pot Size : {{potSize[3]}}</p>
+                    </div>
                   </div>
                 </div>
 
@@ -208,8 +208,8 @@
                         name="winnerPoints">
                     </div>
                     <div *ngIf="!!potSize[0]">
-                        <p style="margin-bottom: 0px" class="text-primary">Pot Size : {{potSize[0]}}</p>
-                      </div>
+                      <p style="margin-bottom: 0px" class="text-primary">Pot Size : {{potSize[0]}}</p>
+                    </div>
                   </div>
                 </div>
                 <div class="card-footer">
@@ -257,10 +257,14 @@
                         name="runsPoints">
                     </div>
                     <div *ngIf="!!potSize[4]">
-                        <p style="margin-bottom: 0px;" class="text-primary">Pot Size : {{potSize[4]}}</p>
-                      </div>
+                      <p style="margin-bottom: 0px;" class="text-primary">Pot Size : {{potSize[4]}}</p>
+                    </div>
                   </div>
+
+
                 </div>
+
+
 
                 <!--<p class="range-field">
                     <input type="range" id="test5" min="0" max="10000" value="25" (change)="updateRange($event)"/>
@@ -276,6 +280,24 @@
               </div>
             </div>
           </div>
+
+          <!-- Pot Size Stats 
+          <div class="row valign-wrapper">
+            <div class="card card-blog">
+              <div class="card-body text-center">
+                <h5 class="card-title">
+                  Pot Size Stats
+                </h5>
+                <div class="row">
+                  <div class="col-lg-6 text-center col-md-8 ml-auto mr-auto">
+                    <div *ngIf="potSizeLoadCount === 5">
+                      <fusioncharts [id]="id" [type]="type" [width]="dataSource.chart.width" [dataFormat]="dataFormat" [dataSource]="dataSource"></fusioncharts>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>-->
         </div>
       </div>
     </form>
@@ -353,6 +375,8 @@
         <button type="button" class="btn btn-default btn-simple" data-dismiss="modal">Cancel</button>
         <button type="button" class="btn btn-info btn-simple" data-dismiss="modal" (click)="submitPredictions()" [disabled]="!isInputValid">Submit</button>
       </div>
+
+
     </div>
   </div>
 </div>
