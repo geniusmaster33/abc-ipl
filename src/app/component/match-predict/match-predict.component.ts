@@ -153,9 +153,9 @@ export class MatchPredictComponent implements OnInit {
     this.fetchSquads();
     this.getMatchInfo();
 
-    // for(let i = 0; i < 5; i++) {
-    //   this.getPotSize(i);
-    // }
+     for(let i = 0; i < 5; i++) {
+       this.getPotSize(i);
+    }
     
     //this.checkIfBet();
   }
@@ -334,37 +334,34 @@ export class MatchPredictComponent implements OnInit {
     }
   }
 
-  // getPotSize(index) {
+  getPotSize(index) {
 
-  //   console.log("Trying to fetch pot sizes");
+    console.log("Trying to fetch pot sizes");
 
-  //   this.web3Service.artifactsToContract(ipl_artifact)
-  //     .then((response) => {
-  //       this.ipl = response;
-  //       this.ipl.deployed().then((instance) => {
-  //         instance.getMatchByIndex.call(this.matchIndex).then((matchAddr) => { //TODO 
-  //           console.log("qPot Match address - ", matchAddr);
-  //           this.web3Service.artifactsToContract(match_artifact)
-  //             .then((m) => {
-  //               console.log("qPot Register preresponse ", m);
-  //               this.match = m;
-  //               this.match.at(matchAddr).then((instance1) => {
-  //                 instance1.qPot.call(index)
-  //                   .then((v) => {
-  //                     this.potSize[index] = v;
-  //                     console.log("Total " + this.potSize[index]);
+    this.web3Service.artifactsToContract(ipl_artifact)
+      .then((response) => {
+        this.ipl = response;
+        this.ipl.deployed().then((instance) => {
+          instance.getMatchByIndex.call(this.matchIndex).then((matchAddr) => { //TODO 
+            console.log("qPot Match address - ", matchAddr);
+            this.web3Service.artifactsToContract(match_artifact)
+              .then((m) => {
+                console.log("qPot Register preresponse ", m);
+                this.match = m;
+                this.match.at(matchAddr).then((instance1) => {
+                  instance1.qPot.call(index)
+                    .then((v) => {
+                      this.potSize[index] = v;
+                      console.log("Total " + this.potSize[index]);
 
-  //                    // if(index == 4) {
-  //                       this.setPotSizeArrayForChart(index);
-  //                     //}
-  //                   });
-  //               });
-  //             })
-  //         })
-  //       })
-  //     }
-  //     );
-  // }
+                    });
+                });
+              })
+          })
+        })
+      }
+      );
+  }
 
   // setPotSizeArrayForChart(index) {
 
