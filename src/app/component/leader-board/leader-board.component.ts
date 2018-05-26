@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import * as eip20_artifact from '../../../../build/contracts/EIP20.json';
 import * as ipl_artifact from '../../../../build/contracts/Ipl.json';
 import * as registration_artifact from '../../../../build/contracts/Registration.json';
+import * as match_artifact from '../../../../build/contracts/IPLMatch.json';
 import { Http } from '@angular/http';
 import { Leader } from './leader';
 import { Web3Service } from '../../util/web3.service';
@@ -24,6 +25,8 @@ export class LeaderBoardComponent implements OnInit {
 
   allSearchTerm: string;
   aiSearchTerm: string;
+
+  isHalted = false;
 
   constructor(private web3Service: Web3Service, private http:Http) { }
 
@@ -146,7 +149,8 @@ export class LeaderBoardComponent implements OnInit {
         console.log("Error in getting users list : " + error);
       },
       () => {
-        this.getLeaderBoardData();
+        //this.getLeaderBoardData();
+        this.getMatchInfo();
       }
     )
     
@@ -154,5 +158,22 @@ export class LeaderBoardComponent implements OnInit {
 
   searchAll(searchTerm: string) {
     console.log("Search term " + searchTerm);
+  }
+
+  async getMatchInfo() {
+    console.log("About to check if match halted");
+    //let isHalted = true;
+
+    const iplContract = await this.web3Service.artifactsToContract(ipl_artifact);
+    const instance = await iplContract.deployed();
+    const matchAddr = await instance.getMatchByIndex.call(59);
+    const matchContract = await this.web3Service.artifactsToContract(match_artifact);
+    const matchInstance = await matchContract.at(matchAddr);
+    this.isHalted = await matchInstance.isHalted.call();
+    console.log("GetMatchInfo : isHalted ", this.isHalted);
+
+    if(this.isHalted == false) {
+      this.getLeaderBoardData();
+    }
   }
 }

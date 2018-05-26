@@ -7,6 +7,7 @@ import * as metacoin_artifacts from '../../../../build/contracts/MetaCoin.json';
 import * as eip20_artifact from '../../../../build/contracts/EIP20.json';
 import * as ipl_artifact from '../../../../build/contracts/Ipl.json';
 import * as registration_artifact from '../../../../build/contracts/Registration.json';
+import * as match_artifact from '../../../../build/contracts/IPLMatch.json';
 
 
 
@@ -29,6 +30,8 @@ export class HomePageComponent implements OnInit {
   AbcCoin: any;
 
   infoUpdates: string;
+
+  isHalted = false;
 
 
   model = {
@@ -66,7 +69,8 @@ export class HomePageComponent implements OnInit {
       //this.refreshBalance(); 
       // TODO - Balance not getting updated
       this.isKeyRegistered();
-      this.fetchBalance();
+      this.getMatchInfo();
+      //this.fetchBalance();
       this.getUserName();
 
       this.isAccountInfoLoaded = true;
@@ -99,7 +103,8 @@ export class HomePageComponent implements OnInit {
       this.user.key = this.model.account;
       this.web3Service.setKey(this.user.key);
       this.isKeyRegistered();
-      this.fetchBalance();
+      //this.fetchBalance();
+      this.getMatchInfo();
       this.getUserName();
 
       this.isAccountInfoLoaded = true;
@@ -203,11 +208,14 @@ export class HomePageComponent implements OnInit {
         this.AbcCoin = response;
         this.AbcCoin.deployed().then((instance) => {
           instance.balanceOf.call(this.model.account).then((balance) => {
-            console.log(" AbcCoin Balance " + balance);
-            this.model.balance = balance;
-            this.web3Service.setBalance(balance);
-            this.infoUpdates = 'Balance Retrieved';
-            console.log('************************* ' + this.infoUpdates);
+            //console.log(" AbcCoin Balance " + balance);
+
+            if(this.isHalted == false) {
+              this.model.balance = balance;
+              this.web3Service.setBalance(balance);
+              this.infoUpdates = 'Balance Retrieved';
+              //console.log('************************* ' + this.infoUpdates);
+            }
           });
         },
           (e) => { 
@@ -238,5 +246,21 @@ export class HomePageComponent implements OnInit {
       }
     )
   }
+
+  async getMatchInfo() {
+    console.log("About to check if match halted");
+    //let isHalted = true;
+
+    const iplContract = await this.web3Service.artifactsToContract(ipl_artifact);
+    const instance = await iplContract.deployed();
+    const matchAddr = await instance.getMatchByIndex.call(59);
+    const matchContract = await this.web3Service.artifactsToContract(match_artifact);
+    const matchInstance = await matchContract.at(matchAddr);
+    this.isHalted = await matchInstance.isHalted.call();
+    console.log("GetMatchInfo : isHalted ", this.isHalted);
+
+    this.fetchBalance();
+  }
+    
 
 }

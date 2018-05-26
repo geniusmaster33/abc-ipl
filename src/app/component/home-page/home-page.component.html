@@ -11,11 +11,17 @@
                 <h3 class="title">{{model.username}}</h3>
                 <p class="category" style="font-size:10px">{{model.account}}</p>
                 <div class="content">
-                    <div class="social-description col-sm-6">
+                    <div class="social-description col-sm-6" *ngIf="!isHalted">
                         <h2>{{model.balance}}</h2>
                         <p>My Balance</p>
                     </div>
-                    
+                    <div *ngIf="isHalted">
+                        <br>
+                        <h4>Thank You</h4>
+                            <h5>for making ABC IPL a success</h5>
+                            <h2><i class="now-ui-icons emoticons_satisfied"></i> </h2>
+                        </div>
+                   
                     <!--
                     <div class="social-description col-sm-6">
                         <h2>#2</h2>
@@ -35,7 +41,7 @@
     </div>
     <div class="section">
         <div class="container">
-            <div class="button-container">
+            <div class="button-container" *ngIf="!isHalted">
                 <a class="btn btn-primary btn-round btn-lg text-white">Today's Matches </a>
                 <!--
                     (click)="sendCoin()"
@@ -50,6 +56,7 @@
             </div>
         </div>
     </div>
+  
     <div class="container text-center" *ngIf="isAdmin">
             <a routerLink="/special">Khul ja sim sim</a>
     </div>

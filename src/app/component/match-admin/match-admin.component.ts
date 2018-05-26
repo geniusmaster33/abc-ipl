@@ -35,7 +35,7 @@ export class MatchAdminComponent implements OnInit {
   }
 
   loadMatchList() {
-    const url = './../assets/info/match3.json';
+    const url = './../assets/info/match4.json';
 
     this.http.get(url).subscribe(
       (data) => {
