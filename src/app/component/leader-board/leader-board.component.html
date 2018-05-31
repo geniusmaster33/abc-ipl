@@ -23,7 +23,7 @@
   </div>
 </div>
 
-<div class="section-predict" *ngIf="!isHalted">
+<div class="section-predict" *ngIf="isHalted">
   <div class="row">
     <!-- Nav tabs -->
     <div class="card">
@@ -125,7 +125,7 @@
   </div>
 </div>
 
-<div class="section-predict text-center" *ngIf="isHalted">
+<div class="section-predict text-center" *ngIf="!isHalted">
   <br>
   <h5 class="text-primary">Leaderboard Hibernated !!!</h5>
   <h5>We want to make it all the more exciting by building some suspense</h5>

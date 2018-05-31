@@ -253,7 +253,8 @@ export class HomePageComponent implements OnInit {
 
     const iplContract = await this.web3Service.artifactsToContract(ipl_artifact);
     const instance = await iplContract.deployed();
-    const matchAddr = await instance.getMatchByIndex.call(59);
+    const matchAddr = await instance.getMatchByIndex.call(58);
+    console.log(matchAddr);
     const matchContract = await this.web3Service.artifactsToContract(match_artifact);
     const matchInstance = await matchContract.at(matchAddr);
     this.isHalted = await matchInstance.isHalted.call();

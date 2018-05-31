@@ -172,7 +172,7 @@ export class LeaderBoardComponent implements OnInit {
     this.isHalted = await matchInstance.isHalted.call();
     console.log("GetMatchInfo : isHalted ", this.isHalted);
 
-    if(this.isHalted == false) {
+    if(this.isHalted == true) { 
       this.getLeaderBoardData();
     }
   }
