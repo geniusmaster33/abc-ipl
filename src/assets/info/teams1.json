@@ -1,7 +1,7 @@
     [
         {"teamid":"1",
-         "teamcode":"CSK",
-         "name":"Chennai Super Kings",
+         "teamcode":"SW",
+         "name": "Switzerland",
          "squad": [
                 { "pid": "1", "pname": "Ambati Rayudu"},
                 { "pid": "2", "pname": "Asif K M"},
@@ -31,8 +31,9 @@
          ]},
          {
              "teamid":"2",
-             "teamcode":"DD",
-             "name":"Delhi Daredevils",
+             "teamcode":"CR",
+             "name": "Costa rica",
+
              "squad": [
                 { "pid": "25", "pname": "Abhishek Sharma"},
                 { "pid": "26", "pname": "Amit Mishra"},
@@ -63,8 +64,8 @@
          },
          {
             "teamid":"3",
-            "teamcode":"KXIP",
-            "name":"Kings XI Punjab",
+            "teamcode": "EG",
+            "name": "England",
             "squad": [
                 { "pid": "50", "pname": "Aaron Finch"},
                 { "pid": "51", "pname": "Akshdeep Nath"},
@@ -91,8 +92,8 @@
         },
         {
             "teamid":"4",
-            "teamcode":"KKR",
-            "name":"Kolkata Knight Riders",
+            "teamcode":"BG",
+            "name": "Belgium",
             "squad": [
                 { "pid": "71", "pname": "Andre Russell"},
                 { "pid": "72", "pname": "Apoorv Vijay Wankhade"},

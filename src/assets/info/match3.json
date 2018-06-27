@@ -1,17 +1,17 @@
 [
     {
-        "team1": "Mumbai Indians",
-        "team2": "Chennai Super Kings",
-        "date": "07-Apr",
-        "time": "8 (PM)",
+        "team1": "Switzerland",
+        "team2": "Costa rica",
+        "date": "28-Jun",
+        "time": "11:30 (PM)",
         "venue": "Mumbai",
         "id": 1
     },
     {
-        "team1": "Delhi Daredevils",
-        "team2": "Kings XI Punjab",
-        "date": "08-Apr",
-        "time": "4 (PM)",
+        "team1": "England",
+        "team2": "Belgium",
+        "date": "29-Jun",
+        "time": "11:30 (PM)",
         "venue": "Delhi",
         "id": 2
     },
