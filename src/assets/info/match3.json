@@ -2,7 +2,7 @@
     {
         "team1": "Switzerland",
         "team2": "Costa rica",
-        "date": "28-Jun",
+        "date": "29-Jun",
         "time": "11:30 (PM)",
         "venue": "Mumbai",
         "id": 1
@@ -10,24 +10,24 @@
     {
         "team1": "England",
         "team2": "Belgium",
-        "date": "29-Jun",
+        "date": "28-Jun",
         "time": "11:30 (PM)",
         "venue": "Delhi",
         "id": 2
     },
     {
-        "team1": "Kolkata Knight Riders",
-        "team2": "Royal Challengers Bangalore",
-        "date": "08-Apr",
-        "time": "8 (PM)",
+        "team1": "Serbia",
+        "team2": "Brazil",
+        "date": "28-Jun",
+        "time": "11:30 (PM)",
         "venue": "Kolkata",
         "id": 3
     },
     {
-        "team1": "Sunrisers Hyderabad",
-        "team2": "Rajasthan Royals",
-        "date": "09-Apr",
-        "time": "8 (PM)",
+        "team1": "Senegal",
+        "team2": "Colombia",
+        "date": "28-Jun",
+        "time": "7:30 (PM)",
         "venue": "Hyderabad",
         "id": 4
     },
