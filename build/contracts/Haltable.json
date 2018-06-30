@@ -33,14 +33,14 @@
       "type": "event"
     }
   ],
-  "bytecode": "0x60606040523415600e57600080fd5b60ac8061001c6000396000f300606060405260043610603f576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063c7ff1584146044575b600080fd5b3415604e57600080fd5b6054606e565b604051808215151515815260200191505060405180910390f35b6000809054906101000a900460ff16815600a165627a7a72305820a799c99dd7a84d6b1227c53918d64639842c5f1ea1f5806ca6529367f5f5de690029",
-  "deployedBytecode": "0x606060405260043610603f576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063c7ff1584146044575b600080fd5b3415604e57600080fd5b6054606e565b604051808215151515815260200191505060405180910390f35b6000809054906101000a900460ff16815600a165627a7a72305820a799c99dd7a84d6b1227c53918d64639842c5f1ea1f5806ca6529367f5f5de690029",
-  "sourceMap": "26:680:4:-;;;;;;;;;;;;;;;;;",
-  "deployedSourceMap": "26:680:4:-;;;;;;;;;;;;;;;;;;;;;;;;50:20;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "bytecode": "0x6080604052348015600f57600080fd5b5060ae8061001e6000396000f300608060405260043610603f576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063c7ff1584146044575b600080fd5b348015604f57600080fd5b5060566070565b604051808215151515815260200191505060405180910390f35b6000809054906101000a900460ff16815600a165627a7a72305820440ad27e3bf5eea719a5f92ecc212204c33eb7ac965c0ee3435907f60ce080350029",
+  "deployedBytecode": "0x608060405260043610603f576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063c7ff1584146044575b600080fd5b348015604f57600080fd5b5060566070565b604051808215151515815260200191505060405180910390f35b6000809054906101000a900460ff16815600a165627a7a72305820440ad27e3bf5eea719a5f92ecc212204c33eb7ac965c0ee3435907f60ce080350029",
+  "sourceMap": "26:680:4:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;26:680:4;;;;;;;",
+  "deployedSourceMap": "26:680:4:-;;;;;;;;;;;;;;;;;;;;;;;;50:20;;8:9:-1;5:2;;;30:1;27;20:12;5:2;50:20:4;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
   "source": "pragma solidity ^0.4.15;\n\ncontract Haltable {\n    bool public isHalted;\n\n    event LogHaltSwitch(address who, bool halted);\n\n    // this is prefixed with an underscore so that contracts overriding it (to add extra access\n    // modifiers, etc.) don't run into TypeErrors if they need to change the function signature.\n    function _haltSwitch(address _who, bool _isHalted)\n        internal\n        returns (bool ok)\n    {\n        require(isHalted != _isHalted);\n        isHalted = _isHalted;\n        LogHaltSwitch(_who, _isHalted);\n        return true;\n    }\n\n    modifier onlyHalted {\n        require(isHalted);\n        _;\n    }\n\n    modifier onlyNotHalted {\n        require(!isHalted);\n        _;\n    }\n}",
-  "sourcePath": "/Users/punyampatnaik/Code Arena/Apps/abc-app/contracts/Haltable.sol",
+  "sourcePath": "/home/nitesh_ns19/abc-ipl/contracts/Haltable.sol",
   "ast": {
-    "absolutePath": "/Users/punyampatnaik/Code Arena/Apps/abc-app/contracts/Haltable.sol",
+    "absolutePath": "/home/nitesh_ns19/abc-ipl/contracts/Haltable.sol",
     "exportedSymbols": {
       "Haltable": [
         1126
@@ -234,8 +234,11 @@
                       "id": 1090,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [],
-                      "referencedDeclaration": 3497,
+                      "overloadedDeclarations": [
+                        3499,
+                        3500
+                      ],
+                      "referencedDeclaration": 3499,
                       "src": "430:7:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -544,8 +547,11 @@
                       "id": 1110,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [],
-                      "referencedDeclaration": 3497,
+                      "overloadedDeclarations": [
+                        3499,
+                        3500
+                      ],
+                      "referencedDeclaration": 3499,
                       "src": "594:7:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -640,8 +646,11 @@
                       "id": 1118,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [],
-                      "referencedDeclaration": 3497,
+                      "overloadedDeclarations": [
+                        3499,
+                        3500
+                      ],
+                      "referencedDeclaration": 3499,
                       "src": "668:7:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -694,7 +703,7 @@
     "src": "0:706:4"
   },
   "legacyAST": {
-    "absolutePath": "/Users/punyampatnaik/Code Arena/Apps/abc-app/contracts/Haltable.sol",
+    "absolutePath": "/home/nitesh_ns19/abc-ipl/contracts/Haltable.sol",
     "exportedSymbols": {
       "Haltable": [
         1126
@@ -888,8 +897,11 @@
                       "id": 1090,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [],
-                      "referencedDeclaration": 3497,
+                      "overloadedDeclarations": [
+                        3499,
+                        3500
+                      ],
+                      "referencedDeclaration": 3499,
                       "src": "430:7:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -1198,8 +1210,11 @@
                       "id": 1110,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [],
-                      "referencedDeclaration": 3497,
+                      "overloadedDeclarations": [
+                        3499,
+                        3500
+                      ],
+                      "referencedDeclaration": 3499,
                       "src": "594:7:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -1294,8 +1309,11 @@
                       "id": 1118,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [],
-                      "referencedDeclaration": 3497,
+                      "overloadedDeclarations": [
+                        3499,
+                        3500
+                      ],
+                      "referencedDeclaration": 3499,
                       "src": "668:7:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -1349,9 +1367,9 @@
   },
   "compiler": {
     "name": "solc",
-    "version": "0.4.21+commit.dfe3193c.Emscripten.clang"
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "2.0.0",
-  "updatedAt": "2018-04-11T17:13:05.346Z"
+  "schemaVersion": "2.0.1",
+  "updatedAt": "2018-06-30T14:18:55.185Z"
 }
