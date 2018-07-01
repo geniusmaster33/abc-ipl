@@ -31,8 +31,8 @@
          ]},
          {
              "teamid":"2",
-             "teamcode":"CR",
-             "name": "Costa rica",
+             "teamcode":"SP",
+             "name": "Spain",
 
              "squad": [
                 { "pid": "25", "pname": "Abhishek Sharma"},
@@ -64,8 +64,8 @@
          },
          {
             "teamid":"3",
-            "teamcode": "EG",
-            "name": "England",
+            "teamcode": "SW",
+            "name": "Sweden",
             "squad": [
                 { "pid": "50", "pname": "Aaron Finch"},
                 { "pid": "51", "pname": "Akshdeep Nath"},
@@ -118,8 +118,8 @@
         },
         {
             "teamid":"5",
-            "teamcode":"MI",
-            "name":"Mumbai Indians",
+            "teamcode":"FR",
+            "name":"France",
             "squad": [
                 { "pid": "90", "pname": "Aditya Tare"},
                 { "pid": "91", "pname": "Akila Dhananjaya"},
@@ -150,8 +150,8 @@
         },
         {
             "teamid":"6",
-            "teamcode":"RR",
-            "name":"Rajasthan Royals",
+            "teamcode":"ENG",
+            "name": "England",
             "squad": [
                 { "pid": "115", "pname": "Ajinkya Rahane"},
                 { "pid": "116", "pname": "Ankit Sharma"},
@@ -180,8 +180,8 @@
         },
         {
             "teamid":"7",
-            "teamcode":"RCB",
-            "name":"Royal Challengers Bangalore",
+            "teamcode":"RUS",
+            "name": "Russia",
             "squad": [
                 { "pid": "138", "pname": "AB de Villiers"},
                 { "pid": "139", "pname": "Aniket Choudhary"},
@@ -211,8 +211,8 @@
         },
         {
             "teamid":"8",
-            "teamcode":"SRH",
-            "name":"Sunrisers Hyderabad",
+            "teamcode":"COL",
+            "name": "Colombia",
             "squad": [
                 { "pid": "167", "pname": "Alex Hales"},
                 { "pid": "162", "pname": "Basil Thampi"},
