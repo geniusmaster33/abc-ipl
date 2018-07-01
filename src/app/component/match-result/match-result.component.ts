@@ -45,33 +45,33 @@ export class MatchResultComponent implements OnInit {
 
   qSixesOptions = [
     {
-      "displayTxt": "0 - 10",
+      "displayTxt": "0 - 2",
       "value": "1"
     },
     {
-      "displayTxt": "11 - 17",
+      "displayTxt": "3 - 5",
       "value": "2"
     },
     {
-      "displayTxt": "More than 17",
+      "displayTxt": "More than 5",
       "value": "3"
     }];
 
     qWicketsOptions = [
       {
-        "displayTxt": "0 - 9",
+        "displayTxt": "0 - 7",
         "value": "1"
       },
       {
-        "displayTxt": "10 - 12",
+        "displayTxt": "7 - 13",
         "value": "2"
       },
       {
-        "displayTxt": "13 - 15",
+        "displayTxt": "14 - 18",
         "value": "3"
       },
       {
-        "displayTxt": "More than 15",
+        "displayTxt": "More than 18",
         "value": "4"
       }];
 

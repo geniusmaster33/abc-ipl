@@ -8,35 +8,91 @@
     "id": 1
   }, 
   {
-    "team1": "Sweden",
-    "team2": "Switzerland",
+    "team1": "Croatia",
+    "team2": "Denmark",
     "date": "01-Jul",
-    "time": "7:30 (PM)",
+    "time": "11:30 (PM)",
     "venue": "Mumbai",
     "id": 2
   },
    {
-    "team1": "Colombia",
-    "team2": "England",
+    "team1": "Brazil",
+    "team2": "Mexico",
     "date": "02-Jul",
     "time": "7:30 (PM)",
     "venue": "Mumbai",
     "id": 3
   },
-    {
-        "team1": "Sweden",
-        "team2": "Switzerland",
-        "date": "03-Jul",
-        "time": "7:30 (PM)",
-        "venue": "Mumbai",
-        "id": 4
-    },
-     {
-       "team1": "Colombia",
-       "team2": "England",
-       "date": "02-Jul",
-       "time": "7:30 (PM)",
-       "venue": "Mumbai",
-       "id": 4
-     }
+  {
+    "team1": "Belgium",
+    "team2": "Japan",
+    "date": "02-Jul",
+    "time": "11:30 (PM)",
+    "venue": "Mumbai",
+    "id": 4
+  }, {
+    "team1": "Sweden",
+    "team2": "Switzerland",
+    "date": "03-Jul",
+    "time": "7:30 (PM)",
+    "venue": "Mumbai",
+    "id": 5
+  }, {
+    "team1": "Colombia",
+    "team2": "England",
+    "date": "03-Jul",
+    "time": "11:30 (PM)",
+    "venue": "Mumbai",
+    "id": 6
+  }, {
+    "team1": "Uruguay",
+    "team2": "France",
+    "date": "06-Jul",
+    "time": "7:30 (PM)",
+    "venue": "Mumbai",
+    "id": 7
+  }, {
+    "team1": "Brazil/Mexico",
+    "team2": "Belgium/Japan",
+    "date": "06-Jul",
+    "time": "11:30 (PM)",
+    "venue": "Mumbai",
+    "id": 8
+  }, {
+    "team1": "Spain/Russia",
+    "team2": "Croatia/Denmark",
+    "date": "07-Jul",
+    "time": "11:30 (PM)",
+    "venue": "Mumbai",
+    "id": 9
+  }, {
+    "team1": "Sweden/Switzerland",
+    "team2": "Colombia/England",
+    "date": "07-Jul",
+    "time": "7:30 (PM)",
+    "venue": "Mumbai",
+    "id": 10
+  }, {
+    "team1": "SF1",
+    "team2": "SF2",
+    "date": "06-Jul",
+    "time": "11:30 (PM)",
+    "venue": "Mumbai",
+    "id": 11
+  }, {
+    "team1": "SF3",
+    "team2": "SF4",
+    "date": "11-Jul",
+    "time": "11:30 (PM)",
+    "venue": "Mumbai",
+    "id": 12
+  }, {
+    "team1": "Finalist1",
+    "team2": "Finalist2",
+    "date": "15-Jul",
+    "time": "8:30 (PM)",
+    "venue": "Mumbai",
+    "id": 13
+  }
+  
 ]

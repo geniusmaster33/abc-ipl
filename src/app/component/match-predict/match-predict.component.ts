@@ -65,33 +65,33 @@ export class MatchPredictComponent implements OnInit {
 
   qSixesOptions = [
     {
-      "displayTxt": "0 - 1",
+      "displayTxt": "0 - 2",
       "value": "1"
     },
     {
-      "displayTxt": "2 - 3",
+      "displayTxt": "3 - 5",
       "value": "2"
     },
     {
-      "displayTxt": "More than or = 4",
+      "displayTxt": "More than 5",
       "value": "3"
     }];
 
     qWicketsOptions = [
       {
-        "displayTxt": "0 - 4",
+        "displayTxt": "0 - 7",
         "value": "1"
       },
       {
-        "displayTxt": "4 - 8",
+        "displayTxt": "7 - 13",
         "value": "2"
       },
       {
-        "displayTxt": "8 - 10",
+        "displayTxt": "14 - 18",
         "value": "3"
       },
       {
-        "displayTxt": "More than 10",
+        "displayTxt": "More than 18",
         "value": "4"
       }];
   potSizeArray : DataElement[] = new Array(5);

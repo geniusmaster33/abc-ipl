@@ -286,25 +286,37 @@ export class RecentPredictionsComponent implements OnInit {
 
 
   loadTeamIdNameMap() {
-    this.teamIdNameMap.set('1', 'Chennai Super Kings');
-    this.teamIdNameMap.set('2', 'Delhi Daredevils');
-    this.teamIdNameMap.set('3', 'Kings XI Punjab');
-    this.teamIdNameMap.set('4', 'Kolkata Knight Riders');
-    this.teamIdNameMap.set('5', 'Mumbai Indians');
-    this.teamIdNameMap.set('6', 'Rajasthan Royals');
-    this.teamIdNameMap.set('7', 'Royal Challengers Bangalore');
-    this.teamIdNameMap.set('8', 'Sunrisers Hyderabad');
+    this.teamIdNameMap.set('1', 'Uruguay');
+    this.teamIdNameMap.set('2', 'France');
+    this.teamIdNameMap.set('3', 'Brazil');
+    this.teamIdNameMap.set('4', 'Mexico');
+    this.teamIdNameMap.set('5', 'Belgium');
+    this.teamIdNameMap.set('6', 'Japan');
+    this.teamIdNameMap.set('7', 'Spain');
+    this.teamIdNameMap.set('8', 'Russia');
+    this.teamIdNameMap.set('9', 'Croatia');
+    this.teamIdNameMap.set('10', 'Denmark');
+    this.teamIdNameMap.set('11', 'Swizerland');
+    this.teamIdNameMap.set('12', 'Sweden');
+    this.teamIdNameMap.set('13', 'Colombia');
+    this.teamIdNameMap.set('14', 'England');
   }
 
   loadTeamShortNames() {
-    this.teamShortNameMap.set('Chennai Super Kings', 'CSK');
-    this.teamShortNameMap.set('Delhi Daredevils', 'DD');
-    this.teamShortNameMap.set('Kings XI Punjab', 'KXIP');
-    this.teamShortNameMap.set('Kolkata Knight Riders', 'KKR');
-    this.teamShortNameMap.set('Mumbai Indians', 'MI');
-    this.teamShortNameMap.set('Rajasthan Royals', 'RR');
-    this.teamShortNameMap.set('Royal Challengers Bangalore', 'RCB');
-    this.teamShortNameMap.set('Sunrisers Hyderabad', 'SRH');
+    this.teamShortNameMap.set( 'Uruguay',"UG");
+    this.teamShortNameMap.set( 'France','FR');
+    this.teamShortNameMap.set( 'Brazil','BRZ');
+    this.teamShortNameMap.set( 'Mexico','MX');
+    this.teamShortNameMap.set( 'Belgium','BG');
+    this.teamShortNameMap.set( 'Japan','JPN');
+    this.teamShortNameMap.set( 'Spain','SPN');
+    this.teamShortNameMap.set(  'Russia','RUS');
+    this.teamShortNameMap.set( 'Croatia','CRO');
+    this.teamShortNameMap.set(  'Denmark','DEN');
+    this.teamShortNameMap.set( 'Swizerland','SWZ');
+    this.teamShortNameMap.set( 'Sweden','SWE');
+    this.teamShortNameMap.set( 'Colombia','COL');
+    this.teamShortNameMap.set(  'England','ENG');
   }
 
   loadPlayerIdNameMap() {
