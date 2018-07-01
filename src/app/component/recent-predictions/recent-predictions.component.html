@@ -79,7 +79,7 @@
                 </div>
 
                 <div *ngIf="predictions.score30Plus.prediction">
-                    <h6>30+ Scores</h6>
+                    <h6>Total Yellow Cards</h6>
                     {{predictions.score30Plus.prediction}}
                     <br/>( {{predictions.score30Plus.assignedPoints}} )
                     <br/>
@@ -87,14 +87,14 @@
                   </div>
   
                   <div *ngIf="predictions.sixes.prediction">
-                    <h6>Total Sixes</h6>
+                    <h6>Total Goals</h6>
                     {{predictions.sixes.prediction}}
                     <br/>( {{predictions.sixes.assignedPoints}} )
                     <br/>
                     <br/>
                   </div>
                   <div *ngIf="predictions.wickets.prediction">
-                    <h6>Total Wickets</h6>
+                    <h6>Total Fouls</h6>
                     {{predictions.wickets.prediction}}
                     <br/>( {{predictions.wickets.assignedPoints}} )
                     <br/>
@@ -109,7 +109,7 @@
                   <br/>
                 </div>
                 <div *ngIf="predictions.score.prediction">
-                  <h6>1st Innings Score</h6>
+                  <h6>Winning Team Possession %</h6>
                   {{predictions.score.prediction}}
                   <br/>( {{predictions.score.assignedPoints}} )
                   <br/>
