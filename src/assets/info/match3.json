@@ -47,27 +47,56 @@
   }, {
     "team1": "Uruguay",
     "team2": "France",
+    "date": "04-Jul",
+    "time": "7:30 (PM)",
+    "venue": "Mumbai",
+    "id": 7
+  }, {
+    "team1": "Uruguay",
+    "team2": "France",
+    "date": "05-Jul",
+    "time": "7:30 (PM)",
+    "venue": "Mumbai",
+    "id": 7
+  },
+  {
+    "team1": "Uruguay",
+    "team2": "France",
     "date": "06-Jul",
     "time": "7:30 (PM)",
     "venue": "Mumbai",
     "id": 7
   }, {
-    "team1": "Brazil/Mexico",
-    "team2": "Belgium/Japan",
+    "team1": "Brazil",
+    "team2": "Belgium",
+    "date": "04-Jul",
+    "time": "11:30 (PM)",
+    "venue": "Mumbai",
+    "id": 8
+  }, {
+    "team1": "Brazil",
+    "team2": "Belgium",
+    "date": "05-Jul",
+    "time": "11:30 (PM)",
+    "venue": "Mumbai",
+    "id": 8
+  }, {
+    "team1": "Brazil",
+    "team2": "Belgium",
     "date": "06-Jul",
     "time": "11:30 (PM)",
     "venue": "Mumbai",
     "id": 8
   }, {
-    "team1": "Spain/Russia",
-    "team2": "Croatia/Denmark",
+    "team1": "Russia",
+    "team2": "Croatia",
     "date": "07-Jul",
     "time": "11:30 (PM)",
     "venue": "Mumbai",
     "id": 9
   }, {
-    "team1": "Sweden/Switzerland",
-    "team2": "Colombia/England",
+    "team1": "Sweden",
+    "team2": "England",
     "date": "07-Jul",
     "time": "7:30 (PM)",
     "venue": "Mumbai",
