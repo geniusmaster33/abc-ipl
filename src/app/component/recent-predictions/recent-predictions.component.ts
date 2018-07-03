@@ -336,14 +336,14 @@ export class RecentPredictionsComponent implements OnInit {
     this.scores30PlusMap.set(2, '4');
     this.scores30PlusMap.set(3, 'More than 4');
 
-    this.sixesMap.set(1, '0 - 10');
-    this.sixesMap.set(2, '11 - 17');
-    this.sixesMap.set(3, 'More than 17');
+    this.sixesMap.set(1, '0 - 2');
+    this.sixesMap.set(2, '3 - 5');
+    this.sixesMap.set(3, 'More than 5');
 
-    this.wicketsMap.set(1, '0 - 9');
-    this.wicketsMap.set(2, '10 - 12');
-    this.wicketsMap.set(3, '13 - 15');
-    this.wicketsMap.set(4, 'More than 15');
+    this.wicketsMap.set(1, '0 - 7');
+    this.wicketsMap.set(2, '8 - 13');
+    this.wicketsMap.set(3, '14 - 18');
+    this.wicketsMap.set(4, 'More than 18');
   }
 
   getTeamName(id) {
@@ -402,22 +402,22 @@ export class RecentPredictionsComponent implements OnInit {
         this.incrementLoadCount();
         break;
       case 1 :
-        let scorer30 = new DataElement("30+ Scores", value, "#ADD5D7");
+        let scorer30 = new DataElement("Yellow Card", value, "#ADD5D7");
         this.potSizeArray[1] = scorer30;
         this.incrementLoadCount();
         break;
       case 2 :
-        let sixes = new DataElement("Sixes", value, "#676766");
+        let sixes = new DataElement("Goals", value, "#676766");
         this.potSizeArray[2] = sixes;
         this.incrementLoadCount();
         break;
       case 3 :
-      let wickets = new DataElement("Wickets", value, "#FFCD33");
+      let wickets = new DataElement("Fouls", value, "#FFCD33");
       this.potSizeArray[3] = wickets;
       this.incrementLoadCount();
         break;
       case 4 :
-      let score = new DataElement("Score", value, "#47ACB1");
+      let score = new DataElement("Winning Team POSSESSION", value, "#47ACB1");
       this.potSizeArray[4] = score;
       this.incrementLoadCount();
         break;

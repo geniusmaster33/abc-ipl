@@ -83,7 +83,7 @@ export class MatchPredictComponent implements OnInit {
         "value": "1"
       },
       {
-        "displayTxt": "7 - 13",
+        "displayTxt": "8 - 13",
         "value": "2"
       },
       {
