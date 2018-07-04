@@ -152,7 +152,7 @@ export class RecentPredictionsComponent implements OnInit {
     //TODO - Add match id
     
     let chosenMatchInfo = selectedValue.split(":");
-    let selectedMatchId = chosenMatchInfo[4]; 
+    let selectedMatchId = chosenMatchInfo[5]; 
     this.matchIndex = selectedMatchId - 1;
 
     this.fetchSquads(chosenMatchInfo[0], chosenMatchInfo[1], selectedMatchId);

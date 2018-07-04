@@ -66,7 +66,7 @@ export class MatchAdminComponent implements OnInit {
     let matchInfo = selectedValue.split(":");
     this.fetchSquads(matchInfo[0], matchInfo[1]);
     this.selectedMatchDateTime = matchInfo[2] + " @ " + matchInfo[3];
-    this.selectedMatchId = matchInfo[4]; 
+    this.selectedMatchId = matchInfo[5]; 
     console.log("Date time ------- " + this.selectedMatchDateTime);
   }
 
