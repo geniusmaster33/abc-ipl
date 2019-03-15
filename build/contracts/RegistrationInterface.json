@@ -493,9 +493,9 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "pragma solidity ^0.4.20;\n\nimport './MultiOwnable.sol';\nimport './EIP20Interface.sol';\n\ncontract RegistrationInterface {\n    \n    struct PlayerStat {\n        uint256 toalWinAmount;\n        uint256 totalLooseAmount;\n        uint256 totalWins;\n        uint256 totalLoose;\n    }\n    \n    struct MatchStat {\n        uint256 toalWinAmount;\n        uint256 totalLooseAmount;\n        uint256 totalWins;\n        uint256 totalLoose;\n    }\n    \n    struct QuestionStat {\n        uint256 toalWinAmount;\n        uint256 totalLooseAmount;\n        uint256 totalWins;\n        uint256 totalLoose;\n    }\n    \n    mapping(address => bool) public isTrustedPlayer;\n    mapping(address => bool) public isPlayerFrozen;\n    mapping(address => string) public playerNames;\n    address[] public playerList;\n    uint256[] public playerBalances;\n    uint256[] public playerTypes;\n    \n    uint256 public startingPoints;\n   \n    address public tokenAddress;\n   \n    EIP20Interface token;\n    \n    mapping (address => uint) public playerRank;\n    mapping (address => PlayerStat) public playerStats;\n      mapping (address => uint) public playerType;\n    mapping (address => MatchStat) public matchStats;\n    mapping (uint => QuestionStat) public questionStats;\n    \n    \n    //AdminFunctions\n    \n     function addPlayer(address _playerAddress, string playerName, uint _playerType)\n        public returns (bool ok);\n    \n    function freezePlayer(address _playerAddress, bool freezeStatus) public returns(bool ok);\n    \n    //Utility Functions\n    \n    function getPlayerList() public view returns(address[] _playerList);\n    \n    function getNumberPlayers() public view returns (uint numberPlayer);\n    \n    function getPlayerBalance(address _playerAddress) public view returns (uint balance);\n    \n    function getPlayerDetail() public returns(address[] _playerList, uint256[] balance,uint[] _playerType);\n    \n    function changeTokenAddress(address _newTokenAddress) public returns (bool ok);\n    \n    function changeStartingPoints(uint256 newPoints) public returns(bool ok);\n    \n    \n    //Modifiers\n    \n    //Events\n    \n    event LogAddPlayer(address indexed playerAddress, string playerName, uint playerType);\n    event LogChangeStartingpoint(uint256 oldPoints, uint256 newPoints);\n    event LogPlayerStatus(address indexed playerAddress, bool freezeStatus);\n    \n    \n    \n}",
-  "sourcePath": "/home/nitesh_ns19/abc-ipl/contracts/RegistrationInterface.sol",
+  "sourcePath": "/Users/punyampatnaik/Code Arena/Apps/abc-app/contracts/RegistrationInterface.sol",
   "ast": {
-    "absolutePath": "/home/nitesh_ns19/abc-ipl/contracts/RegistrationInterface.sol",
+    "absolutePath": "/Users/punyampatnaik/Code Arena/Apps/abc-app/contracts/RegistrationInterface.sol",
     "exportedSymbols": {
       "RegistrationInterface": [
         3364
@@ -516,7 +516,7 @@
         "src": "0:24:13"
       },
       {
-        "absolutePath": "/home/nitesh_ns19/abc-ipl/contracts/MultiOwnable.sol",
+        "absolutePath": "/Users/punyampatnaik/Code Arena/Apps/abc-app/contracts/MultiOwnable.sol",
         "file": "./MultiOwnable.sol",
         "id": 3204,
         "nodeType": "ImportDirective",
@@ -527,7 +527,7 @@
         "unitAlias": ""
       },
       {
-        "absolutePath": "/home/nitesh_ns19/abc-ipl/contracts/EIP20Interface.sol",
+        "absolutePath": "/Users/punyampatnaik/Code Arena/Apps/abc-app/contracts/EIP20Interface.sol",
         "file": "./EIP20Interface.sol",
         "id": 3205,
         "nodeType": "ImportDirective",
@@ -996,7 +996,7 @@
             "storageLocation": "default",
             "typeDescriptions": {
               "typeIdentifier": "t_mapping$_t_address_$_t_string_storage_$",
-              "typeString": "mapping(address => string)"
+              "typeString": "mapping(address => string storage ref)"
             },
             "typeName": {
               "id": 3243,
@@ -1014,7 +1014,7 @@
               "src": "700:26:13",
               "typeDescriptions": {
                 "typeIdentifier": "t_mapping$_t_address_$_t_string_storage_$",
-                "typeString": "mapping(address => string)"
+                "typeString": "mapping(address => string storage ref)"
               },
               "valueType": {
                 "id": 3242,
@@ -1023,7 +1023,7 @@
                 "src": "719:6:13",
                 "typeDescriptions": {
                   "typeIdentifier": "t_string_storage_ptr",
-                  "typeString": "string"
+                  "typeString": "string storage pointer"
                 }
               }
             },
@@ -1041,7 +1041,7 @@
             "storageLocation": "default",
             "typeDescriptions": {
               "typeIdentifier": "t_array$_t_address_$dyn_storage",
-              "typeString": "address[]"
+              "typeString": "address[] storage ref"
             },
             "typeName": {
               "baseType": {
@@ -1060,7 +1060,7 @@
               "src": "751:9:13",
               "typeDescriptions": {
                 "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
-                "typeString": "address[]"
+                "typeString": "address[] storage pointer"
               }
             },
             "value": null,
@@ -1077,7 +1077,7 @@
             "storageLocation": "default",
             "typeDescriptions": {
               "typeIdentifier": "t_array$_t_uint256_$dyn_storage",
-              "typeString": "uint256[]"
+              "typeString": "uint256[] storage ref"
             },
             "typeName": {
               "baseType": {
@@ -1096,7 +1096,7 @@
               "src": "784:9:13",
               "typeDescriptions": {
                 "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
-                "typeString": "uint256[]"
+                "typeString": "uint256[] storage pointer"
               }
             },
             "value": null,
@@ -1113,7 +1113,7 @@
             "storageLocation": "default",
             "typeDescriptions": {
               "typeIdentifier": "t_array$_t_uint256_$dyn_storage",
-              "typeString": "uint256[]"
+              "typeString": "uint256[] storage ref"
             },
             "typeName": {
               "baseType": {
@@ -1132,7 +1132,7 @@
               "src": "821:9:13",
               "typeDescriptions": {
                 "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
-                "typeString": "uint256[]"
+                "typeString": "uint256[] storage pointer"
               }
             },
             "value": null,
@@ -1274,7 +1274,7 @@
             "storageLocation": "default",
             "typeDescriptions": {
               "typeIdentifier": "t_mapping$_t_address_$_t_struct$_PlayerStat_$3214_storage_$",
-              "typeString": "mapping(address => struct RegistrationInterface.PlayerStat)"
+              "typeString": "mapping(address => struct RegistrationInterface.PlayerStat storage ref)"
             },
             "typeName": {
               "id": 3266,
@@ -1292,7 +1292,7 @@
               "src": "1016:31:13",
               "typeDescriptions": {
                 "typeIdentifier": "t_mapping$_t_address_$_t_struct$_PlayerStat_$3214_storage_$",
-                "typeString": "mapping(address => struct RegistrationInterface.PlayerStat)"
+                "typeString": "mapping(address => struct RegistrationInterface.PlayerStat storage ref)"
               },
               "valueType": {
                 "contractScope": null,
@@ -1303,7 +1303,7 @@
                 "src": "1036:10:13",
                 "typeDescriptions": {
                   "typeIdentifier": "t_struct$_PlayerStat_$3214_storage_ptr",
-                  "typeString": "struct RegistrationInterface.PlayerStat"
+                  "typeString": "struct RegistrationInterface.PlayerStat storage pointer"
                 }
               }
             },
@@ -1366,7 +1366,7 @@
             "storageLocation": "default",
             "typeDescriptions": {
               "typeIdentifier": "t_mapping$_t_address_$_t_struct$_MatchStat_$3223_storage_$",
-              "typeString": "mapping(address => struct RegistrationInterface.MatchStat)"
+              "typeString": "mapping(address => struct RegistrationInterface.MatchStat storage ref)"
             },
             "typeName": {
               "id": 3274,
@@ -1384,7 +1384,7 @@
               "src": "1123:30:13",
               "typeDescriptions": {
                 "typeIdentifier": "t_mapping$_t_address_$_t_struct$_MatchStat_$3223_storage_$",
-                "typeString": "mapping(address => struct RegistrationInterface.MatchStat)"
+                "typeString": "mapping(address => struct RegistrationInterface.MatchStat storage ref)"
               },
               "valueType": {
                 "contractScope": null,
@@ -1395,7 +1395,7 @@
                 "src": "1143:9:13",
                 "typeDescriptions": {
                   "typeIdentifier": "t_struct$_MatchStat_$3223_storage_ptr",
-                  "typeString": "struct RegistrationInterface.MatchStat"
+                  "typeString": "struct RegistrationInterface.MatchStat storage pointer"
                 }
               }
             },
@@ -1413,7 +1413,7 @@
             "storageLocation": "default",
             "typeDescriptions": {
               "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_QuestionStat_$3232_storage_$",
-              "typeString": "mapping(uint256 => struct RegistrationInterface.QuestionStat)"
+              "typeString": "mapping(uint256 => struct RegistrationInterface.QuestionStat storage ref)"
             },
             "typeName": {
               "id": 3278,
@@ -1431,7 +1431,7 @@
               "src": "1177:30:13",
               "typeDescriptions": {
                 "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_QuestionStat_$3232_storage_$",
-                "typeString": "mapping(uint256 => struct RegistrationInterface.QuestionStat)"
+                "typeString": "mapping(uint256 => struct RegistrationInterface.QuestionStat storage ref)"
               },
               "valueType": {
                 "contractScope": null,
@@ -1442,7 +1442,7 @@
                 "src": "1194:12:13",
                 "typeDescriptions": {
                   "typeIdentifier": "t_struct$_QuestionStat_$3232_storage_ptr",
-                  "typeString": "struct RegistrationInterface.QuestionStat"
+                  "typeString": "struct RegistrationInterface.QuestionStat storage pointer"
                 }
               }
             },
@@ -1500,7 +1500,7 @@
                   "storageLocation": "default",
                   "typeDescriptions": {
                     "typeIdentifier": "t_string_memory_ptr",
-                    "typeString": "string"
+                    "typeString": "string memory"
                   },
                   "typeName": {
                     "id": 3282,
@@ -1509,7 +1509,7 @@
                     "src": "1314:6:13",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
-                      "typeString": "string"
+                      "typeString": "string storage pointer"
                     }
                   },
                   "value": null,
@@ -1725,7 +1725,7 @@
                   "storageLocation": "default",
                   "typeDescriptions": {
                     "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
-                    "typeString": "address[]"
+                    "typeString": "address[] memory"
                   },
                   "typeName": {
                     "baseType": {
@@ -1744,7 +1744,7 @@
                     "src": "1567:9:13",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
-                      "typeString": "address[]"
+                      "typeString": "address[] storage pointer"
                     }
                   },
                   "value": null,
@@ -1930,7 +1930,7 @@
                   "storageLocation": "default",
                   "typeDescriptions": {
                     "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
-                    "typeString": "address[]"
+                    "typeString": "address[] memory"
                   },
                   "typeName": {
                     "baseType": {
@@ -1949,7 +1949,7 @@
                     "src": "1815:9:13",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
-                      "typeString": "address[]"
+                      "typeString": "address[] storage pointer"
                     }
                   },
                   "value": null,
@@ -1966,7 +1966,7 @@
                   "storageLocation": "default",
                   "typeDescriptions": {
                     "typeIdentifier": "t_array$_t_uint256_$dyn_memory_ptr",
-                    "typeString": "uint256[]"
+                    "typeString": "uint256[] memory"
                   },
                   "typeName": {
                     "baseType": {
@@ -1985,7 +1985,7 @@
                     "src": "1838:9:13",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
-                      "typeString": "uint256[]"
+                      "typeString": "uint256[] storage pointer"
                     }
                   },
                   "value": null,
@@ -2002,7 +2002,7 @@
                   "storageLocation": "default",
                   "typeDescriptions": {
                     "typeIdentifier": "t_array$_t_uint256_$dyn_memory_ptr",
-                    "typeString": "uint256[]"
+                    "typeString": "uint256[] memory"
                   },
                   "typeName": {
                     "baseType": {
@@ -2021,7 +2021,7 @@
                     "src": "1856:6:13",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
-                      "typeString": "uint256[]"
+                      "typeString": "uint256[] storage pointer"
                     }
                   },
                   "value": null,
@@ -2251,7 +2251,7 @@
                   "storageLocation": "default",
                   "typeDescriptions": {
                     "typeIdentifier": "t_string_memory_ptr",
-                    "typeString": "string"
+                    "typeString": "string memory"
                   },
                   "typeName": {
                     "id": 3346,
@@ -2260,7 +2260,7 @@
                     "src": "2152:6:13",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
-                      "typeString": "string"
+                      "typeString": "string storage pointer"
                     }
                   },
                   "value": null,
@@ -2444,7 +2444,7 @@
     "src": "0:2354:13"
   },
   "legacyAST": {
-    "absolutePath": "/home/nitesh_ns19/abc-ipl/contracts/RegistrationInterface.sol",
+    "absolutePath": "/Users/punyampatnaik/Code Arena/Apps/abc-app/contracts/RegistrationInterface.sol",
     "exportedSymbols": {
       "RegistrationInterface": [
         3364
@@ -2465,7 +2465,7 @@
         "src": "0:24:13"
       },
       {
-        "absolutePath": "/home/nitesh_ns19/abc-ipl/contracts/MultiOwnable.sol",
+        "absolutePath": "/Users/punyampatnaik/Code Arena/Apps/abc-app/contracts/MultiOwnable.sol",
         "file": "./MultiOwnable.sol",
         "id": 3204,
         "nodeType": "ImportDirective",
@@ -2476,7 +2476,7 @@
         "unitAlias": ""
       },
       {
-        "absolutePath": "/home/nitesh_ns19/abc-ipl/contracts/EIP20Interface.sol",
+        "absolutePath": "/Users/punyampatnaik/Code Arena/Apps/abc-app/contracts/EIP20Interface.sol",
         "file": "./EIP20Interface.sol",
         "id": 3205,
         "nodeType": "ImportDirective",
@@ -2945,7 +2945,7 @@
             "storageLocation": "default",
             "typeDescriptions": {
               "typeIdentifier": "t_mapping$_t_address_$_t_string_storage_$",
-              "typeString": "mapping(address => string)"
+              "typeString": "mapping(address => string storage ref)"
             },
             "typeName": {
               "id": 3243,
@@ -2963,7 +2963,7 @@
               "src": "700:26:13",
               "typeDescriptions": {
                 "typeIdentifier": "t_mapping$_t_address_$_t_string_storage_$",
-                "typeString": "mapping(address => string)"
+                "typeString": "mapping(address => string storage ref)"
               },
               "valueType": {
                 "id": 3242,
@@ -2972,7 +2972,7 @@
                 "src": "719:6:13",
                 "typeDescriptions": {
                   "typeIdentifier": "t_string_storage_ptr",
-                  "typeString": "string"
+                  "typeString": "string storage pointer"
                 }
               }
             },
@@ -2990,7 +2990,7 @@
             "storageLocation": "default",
             "typeDescriptions": {
               "typeIdentifier": "t_array$_t_address_$dyn_storage",
-              "typeString": "address[]"
+              "typeString": "address[] storage ref"
             },
             "typeName": {
               "baseType": {
@@ -3009,7 +3009,7 @@
               "src": "751:9:13",
               "typeDescriptions": {
                 "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
-                "typeString": "address[]"
+                "typeString": "address[] storage pointer"
               }
             },
             "value": null,
@@ -3026,7 +3026,7 @@
             "storageLocation": "default",
             "typeDescriptions": {
               "typeIdentifier": "t_array$_t_uint256_$dyn_storage",
-              "typeString": "uint256[]"
+              "typeString": "uint256[] storage ref"
             },
             "typeName": {
               "baseType": {
@@ -3045,7 +3045,7 @@
               "src": "784:9:13",
               "typeDescriptions": {
                 "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
-                "typeString": "uint256[]"
+                "typeString": "uint256[] storage pointer"
               }
             },
             "value": null,
@@ -3062,7 +3062,7 @@
             "storageLocation": "default",
             "typeDescriptions": {
               "typeIdentifier": "t_array$_t_uint256_$dyn_storage",
-              "typeString": "uint256[]"
+              "typeString": "uint256[] storage ref"
             },
             "typeName": {
               "baseType": {
@@ -3081,7 +3081,7 @@
               "src": "821:9:13",
               "typeDescriptions": {
                 "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
-                "typeString": "uint256[]"
+                "typeString": "uint256[] storage pointer"
               }
             },
             "value": null,
@@ -3223,7 +3223,7 @@
             "storageLocation": "default",
             "typeDescriptions": {
               "typeIdentifier": "t_mapping$_t_address_$_t_struct$_PlayerStat_$3214_storage_$",
-              "typeString": "mapping(address => struct RegistrationInterface.PlayerStat)"
+              "typeString": "mapping(address => struct RegistrationInterface.PlayerStat storage ref)"
             },
             "typeName": {
               "id": 3266,
@@ -3241,7 +3241,7 @@
               "src": "1016:31:13",
               "typeDescriptions": {
                 "typeIdentifier": "t_mapping$_t_address_$_t_struct$_PlayerStat_$3214_storage_$",
-                "typeString": "mapping(address => struct RegistrationInterface.PlayerStat)"
+                "typeString": "mapping(address => struct RegistrationInterface.PlayerStat storage ref)"
               },
               "valueType": {
                 "contractScope": null,
@@ -3252,7 +3252,7 @@
                 "src": "1036:10:13",
                 "typeDescriptions": {
                   "typeIdentifier": "t_struct$_PlayerStat_$3214_storage_ptr",
-                  "typeString": "struct RegistrationInterface.PlayerStat"
+                  "typeString": "struct RegistrationInterface.PlayerStat storage pointer"
                 }
               }
             },
@@ -3315,7 +3315,7 @@
             "storageLocation": "default",
             "typeDescriptions": {
               "typeIdentifier": "t_mapping$_t_address_$_t_struct$_MatchStat_$3223_storage_$",
-              "typeString": "mapping(address => struct RegistrationInterface.MatchStat)"
+              "typeString": "mapping(address => struct RegistrationInterface.MatchStat storage ref)"
             },
             "typeName": {
               "id": 3274,
@@ -3333,7 +3333,7 @@
               "src": "1123:30:13",
               "typeDescriptions": {
                 "typeIdentifier": "t_mapping$_t_address_$_t_struct$_MatchStat_$3223_storage_$",
-                "typeString": "mapping(address => struct RegistrationInterface.MatchStat)"
+                "typeString": "mapping(address => struct RegistrationInterface.MatchStat storage ref)"
               },
               "valueType": {
                 "contractScope": null,
@@ -3344,7 +3344,7 @@
                 "src": "1143:9:13",
                 "typeDescriptions": {
                   "typeIdentifier": "t_struct$_MatchStat_$3223_storage_ptr",
-                  "typeString": "struct RegistrationInterface.MatchStat"
+                  "typeString": "struct RegistrationInterface.MatchStat storage pointer"
                 }
               }
             },
@@ -3362,7 +3362,7 @@
             "storageLocation": "default",
             "typeDescriptions": {
               "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_QuestionStat_$3232_storage_$",
-              "typeString": "mapping(uint256 => struct RegistrationInterface.QuestionStat)"
+              "typeString": "mapping(uint256 => struct RegistrationInterface.QuestionStat storage ref)"
             },
             "typeName": {
               "id": 3278,
@@ -3380,7 +3380,7 @@
               "src": "1177:30:13",
               "typeDescriptions": {
                 "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_QuestionStat_$3232_storage_$",
-                "typeString": "mapping(uint256 => struct RegistrationInterface.QuestionStat)"
+                "typeString": "mapping(uint256 => struct RegistrationInterface.QuestionStat storage ref)"
               },
               "valueType": {
                 "contractScope": null,
@@ -3391,7 +3391,7 @@
                 "src": "1194:12:13",
                 "typeDescriptions": {
                   "typeIdentifier": "t_struct$_QuestionStat_$3232_storage_ptr",
-                  "typeString": "struct RegistrationInterface.QuestionStat"
+                  "typeString": "struct RegistrationInterface.QuestionStat storage pointer"
                 }
               }
             },
@@ -3449,7 +3449,7 @@
                   "storageLocation": "default",
                   "typeDescriptions": {
                     "typeIdentifier": "t_string_memory_ptr",
-                    "typeString": "string"
+                    "typeString": "string memory"
                   },
                   "typeName": {
                     "id": 3282,
@@ -3458,7 +3458,7 @@
                     "src": "1314:6:13",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
-                      "typeString": "string"
+                      "typeString": "string storage pointer"
                     }
                   },
                   "value": null,
@@ -3674,7 +3674,7 @@
                   "storageLocation": "default",
                   "typeDescriptions": {
                     "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
-                    "typeString": "address[]"
+                    "typeString": "address[] memory"
                   },
                   "typeName": {
                     "baseType": {
@@ -3693,7 +3693,7 @@
                     "src": "1567:9:13",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
-                      "typeString": "address[]"
+                      "typeString": "address[] storage pointer"
                     }
                   },
                   "value": null,
@@ -3879,7 +3879,7 @@
                   "storageLocation": "default",
                   "typeDescriptions": {
                     "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
-                    "typeString": "address[]"
+                    "typeString": "address[] memory"
                   },
                   "typeName": {
                     "baseType": {
@@ -3898,7 +3898,7 @@
                     "src": "1815:9:13",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
-                      "typeString": "address[]"
+                      "typeString": "address[] storage pointer"
                     }
                   },
                   "value": null,
@@ -3915,7 +3915,7 @@
                   "storageLocation": "default",
                   "typeDescriptions": {
                     "typeIdentifier": "t_array$_t_uint256_$dyn_memory_ptr",
-                    "typeString": "uint256[]"
+                    "typeString": "uint256[] memory"
                   },
                   "typeName": {
                     "baseType": {
@@ -3934,7 +3934,7 @@
                     "src": "1838:9:13",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
-                      "typeString": "uint256[]"
+                      "typeString": "uint256[] storage pointer"
                     }
                   },
                   "value": null,
@@ -3951,7 +3951,7 @@
                   "storageLocation": "default",
                   "typeDescriptions": {
                     "typeIdentifier": "t_array$_t_uint256_$dyn_memory_ptr",
-                    "typeString": "uint256[]"
+                    "typeString": "uint256[] memory"
                   },
                   "typeName": {
                     "baseType": {
@@ -3970,7 +3970,7 @@
                     "src": "1856:6:13",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
-                      "typeString": "uint256[]"
+                      "typeString": "uint256[] storage pointer"
                     }
                   },
                   "value": null,
@@ -4200,7 +4200,7 @@
                   "storageLocation": "default",
                   "typeDescriptions": {
                     "typeIdentifier": "t_string_memory_ptr",
-                    "typeString": "string"
+                    "typeString": "string memory"
                   },
                   "typeName": {
                     "id": 3346,
@@ -4209,7 +4209,7 @@
                     "src": "2152:6:13",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
-                      "typeString": "string"
+                      "typeString": "string storage pointer"
                     }
                   },
                   "value": null,
@@ -4394,9 +4394,9 @@
   },
   "compiler": {
     "name": "solc",
-    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+    "version": "0.4.21+commit.dfe3193c.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "2.0.1",
-  "updatedAt": "2018-06-30T14:18:55.200Z"
+  "schemaVersion": "2.0.0",
+  "updatedAt": "2019-03-15T11:22:07.113Z"
 }

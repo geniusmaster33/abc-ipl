@@ -57,14 +57,14 @@
       "type": "function"
     }
   ],
-  "bytecode": "0x608060405234801561001057600080fd5b50610301806100206000396000f30060806040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806324d7806c1461005157806370480275146100ac575b600080fd5b34801561005d57600080fd5b50610092600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610107565b604051808215151515815260200191505060405180910390f35b3480156100b857600080fd5b506100ed600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610127565b604051808215151515815260200191505060405180910390f35b60006020528060005260406000206000915054906101000a900460ff1681565b60008060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff16151561018057600080fd5b600015156000808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff1615151415156101de57600080fd5b60016000808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055507fdf593c01aa2f7c955ab35aee0623fe0744c2117efb32343667f5b9660e9d50493383604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019250505060405180910390a1600190509190505600a165627a7a723058201cbfb26a6dc0a84cc4193dc8463db6fbe4685ab236f37f35e9743d10d7d5b6f10029",
-  "deployedBytecode": "0x60806040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806324d7806c1461005157806370480275146100ac575b600080fd5b34801561005d57600080fd5b50610092600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610107565b604051808215151515815260200191505060405180910390f35b3480156100b857600080fd5b506100ed600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610127565b604051808215151515815260200191505060405180910390f35b60006020528060005260406000206000915054906101000a900460ff1681565b60008060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff16151561018057600080fd5b600015156000808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff1615151415156101de57600080fd5b60016000808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055507fdf593c01aa2f7c955ab35aee0623fe0744c2117efb32343667f5b9660e9d50493383604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019250505060405180910390a1600190509190505600a165627a7a723058201cbfb26a6dc0a84cc4193dc8463db6fbe4685ab236f37f35e9743d10d7d5b6f10029",
-  "sourceMap": "26:441:2:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;26:441:2;;;;;;;",
-  "deployedSourceMap": "26:441:2:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;54:39;;8:9:-1;5:2;;;30:1;27;20:12;5:2;54:39:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;160:223;;8:9:-1;5:2;;;30:1;27;20:12;5:2;160:223:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;54:39;;;;;;;;;;;;;;;;;;;;;;:::o;160:223::-;228:7;427;:19;435:10;427:19;;;;;;;;;;;;;;;;;;;;;;;;;419:28;;;;;;;;277:5;259:23;;:7;:14;267:5;259:14;;;;;;;;;;;;;;;;;;;;;;;;;:23;;;251:32;;;;;;;;310:4;293:7;:14;301:5;293:14;;;;;;;;;;;;;;;;:21;;;;;;;;;;;;;;;;;;325:30;337:10;349:5;325:30;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;372:4;365:11;;160:223;;;:::o",
+  "bytecode": "0x6060604052341561000f57600080fd5b6102ed8061001e6000396000f30060606040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806324d7806c1461005157806370480275146100a2575b600080fd5b341561005c57600080fd5b610088600480803573ffffffffffffffffffffffffffffffffffffffff169060200190919050506100f3565b604051808215151515815260200191505060405180910390f35b34156100ad57600080fd5b6100d9600480803573ffffffffffffffffffffffffffffffffffffffff16906020019091905050610113565b604051808215151515815260200191505060405180910390f35b60006020528060005260406000206000915054906101000a900460ff1681565b60008060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff16151561016c57600080fd5b600015156000808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff1615151415156101ca57600080fd5b60016000808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055507fdf593c01aa2f7c955ab35aee0623fe0744c2117efb32343667f5b9660e9d50493383604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019250505060405180910390a1600190509190505600a165627a7a723058209d20cb2273c1c02a828b55094e59e701a8b14e34413f214a3952785ac651274c0029",
+  "deployedBytecode": "0x60606040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806324d7806c1461005157806370480275146100a2575b600080fd5b341561005c57600080fd5b610088600480803573ffffffffffffffffffffffffffffffffffffffff169060200190919050506100f3565b604051808215151515815260200191505060405180910390f35b34156100ad57600080fd5b6100d9600480803573ffffffffffffffffffffffffffffffffffffffff16906020019091905050610113565b604051808215151515815260200191505060405180910390f35b60006020528060005260406000206000915054906101000a900460ff1681565b60008060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff16151561016c57600080fd5b600015156000808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff1615151415156101ca57600080fd5b60016000808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055507fdf593c01aa2f7c955ab35aee0623fe0744c2117efb32343667f5b9660e9d50493383604051808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019250505060405180910390a1600190509190505600a165627a7a723058209d20cb2273c1c02a828b55094e59e701a8b14e34413f214a3952785ac651274c0029",
+  "sourceMap": "26:441:2:-;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "26:441:2:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;54:39;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;160:223;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;54:39;;;;;;;;;;;;;;;;;;;;;;:::o;160:223::-;228:7;427;:19;435:10;427:19;;;;;;;;;;;;;;;;;;;;;;;;;419:28;;;;;;;;277:5;259:23;;:7;:14;267:5;259:14;;;;;;;;;;;;;;;;;;;;;;;;;:23;;;251:32;;;;;;;;310:4;293:7;:14;301:5;293:14;;;;;;;;;;;;;;;;:21;;;;;;;;;;;;;;;;;;325:30;337:10;349:5;325:30;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;372:4;365:11;;160:223;;;:::o",
   "source": "pragma solidity ^0.4.15;\n\ncontract MultiOwnable\n{\n    mapping(address => bool) public isAdmin;\n\n    event LogAddAdmin(address whoAdded, address newAdmin);\n\n    function addAdmin(address admin)\n        onlyAdmin\n        returns (bool ok)\n    {\n        require(isAdmin[admin] == false);\n        isAdmin[admin] = true;\n\n        LogAddAdmin(msg.sender, admin);\n        return true;\n    }\n\n\n    modifier onlyAdmin {\n        require(isAdmin[msg.sender]);\n        _;\n    }\n}",
-  "sourcePath": "/home/nitesh_ns19/abc-ipl/contracts/MultiOwnable.sol",
+  "sourcePath": "/Users/punyampatnaik/Code Arena/Apps/abc-app/contracts/MultiOwnable.sol",
   "ast": {
-    "absolutePath": "/home/nitesh_ns19/abc-ipl/contracts/MultiOwnable.sol",
+    "absolutePath": "/Users/punyampatnaik/Code Arena/Apps/abc-app/contracts/MultiOwnable.sol",
     "exportedSymbols": {
       "MultiOwnable": [
         472
@@ -309,11 +309,8 @@
                       "id": 437,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        490,
-                        491
-                      ],
-                      "referencedDeclaration": 490,
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 488,
                       "src": "251:7:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -428,7 +425,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 487,
+                          "referencedDeclaration": 485,
                           "src": "337:3:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -536,7 +533,7 @@
             "isDeclaredConst": false,
             "modifiers": [
               {
-                "arguments": null,
+                "arguments": [],
                 "id": 433,
                 "modifierName": {
                   "argumentTypes": null,
@@ -664,7 +661,7 @@
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 487,
+                            "referencedDeclaration": 485,
                             "src": "435:3:2",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
@@ -707,11 +704,8 @@
                       "id": 462,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        490,
-                        491
-                      ],
-                      "referencedDeclaration": 490,
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 488,
                       "src": "419:7:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -764,7 +758,7 @@
     "src": "0:467:2"
   },
   "legacyAST": {
-    "absolutePath": "/home/nitesh_ns19/abc-ipl/contracts/MultiOwnable.sol",
+    "absolutePath": "/Users/punyampatnaik/Code Arena/Apps/abc-app/contracts/MultiOwnable.sol",
     "exportedSymbols": {
       "MultiOwnable": [
         472
@@ -1009,11 +1003,8 @@
                       "id": 437,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        490,
-                        491
-                      ],
-                      "referencedDeclaration": 490,
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 488,
                       "src": "251:7:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -1128,7 +1119,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 487,
+                          "referencedDeclaration": 485,
                           "src": "337:3:2",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -1236,7 +1227,7 @@
             "isDeclaredConst": false,
             "modifiers": [
               {
-                "arguments": null,
+                "arguments": [],
                 "id": 433,
                 "modifierName": {
                   "argumentTypes": null,
@@ -1364,7 +1355,7 @@
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 487,
+                            "referencedDeclaration": 485,
                             "src": "435:3:2",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
@@ -1407,11 +1398,8 @@
                       "id": 462,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        490,
-                        491
-                      ],
-                      "referencedDeclaration": 490,
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 488,
                       "src": "419:7:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -1465,9 +1453,9 @@
   },
   "compiler": {
     "name": "solc",
-    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+    "version": "0.4.21+commit.dfe3193c.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "2.0.1",
-  "updatedAt": "2018-06-30T14:21:12.907Z"
+  "schemaVersion": "2.0.0",
+  "updatedAt": "2019-03-15T11:31:37.808Z"
 }
