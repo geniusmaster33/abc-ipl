@@ -135,10 +135,13 @@ export class LeaderBoardComponent implements OnInit {
   }
 
   createKeyToNameMap() {
-    const url = 'http://abcipl.club:4030/getuserspk';
+
+    console.log('Invoking createKeyToMap');
+    const url = 'http://abcipl.ml:4030/getuserspk';
 
     this.http.get(url).subscribe(
       (response) => {
+        console.log('Got users pk')
         let responseText = response.json();
 
         for (let user of responseText) {
@@ -149,8 +152,8 @@ export class LeaderBoardComponent implements OnInit {
         console.log("Error in getting users list : " + error);
       },
       () => {
-        //this.getLeaderBoardData();
-        this.getMatchInfo();
+        this.getLeaderBoardData();
+        //this.getMatchInfo();
       }
     )
     

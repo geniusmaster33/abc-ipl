@@ -231,7 +231,7 @@ export class HomePageComponent implements OnInit {
   }
 
   getUserName() {
-    const url = 'http://abcipl.club:4020/getName';
+    const url = 'http://abcipl.ml:4020/getName';
 
     this.http.get(url + "?pk=" + this.model.account).subscribe(
       (response) => {

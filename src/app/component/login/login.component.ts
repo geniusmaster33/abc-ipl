@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
 
   checkUserName() {
     console.log("CheckUSerName is progress ");
-    const url = 'http://abcipl.club:4020/checkusername?username=';
+    const url = 'http://abcipl.ml:4020/checkusername?username=';
     this.isError = false;
     this.http.get(url + this.model.username).subscribe(
       (data) => {
@@ -68,7 +68,7 @@ export class LoginComponent implements OnInit {
   }
 
   checkKey() {
-    const url = 'http://abcipl.club:4020/getName?pk=';
+    const url = 'http://abcipl.ml:4020/getName?pk=';
     this.http.get(url + this.model.key).subscribe(
       (data) => {
 
@@ -88,7 +88,7 @@ export class LoginComponent implements OnInit {
   }
 
   submitForm() {
-    const url = 'http://abcipl.club:4020/login';
+    const url = 'http://abcipl.ml:4020/login';
 
     console.log("About to submit");
 

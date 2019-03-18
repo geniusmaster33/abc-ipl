@@ -262,7 +262,7 @@ export class RecentPredictionsComponent implements OnInit {
 
   fetchDate() {
 
-    const fetchDateURL = 'http://abcipl.club:5000/getTime';
+    const fetchDateURL = 'http://abcipl.ml:5000/getTime';
     let currDate;
 
     this.http.get(fetchDateURL).subscribe(

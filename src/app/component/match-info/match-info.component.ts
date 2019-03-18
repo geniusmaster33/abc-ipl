@@ -24,7 +24,7 @@ export class MatchInfoComponent implements OnInit {
 
   fetchDate() {
 
-    const fetchDateURL = 'http://abcipl.club:5000/getTime';
+    const fetchDateURL = 'http://abcipl.ml:5000/getTime';
 
     this.http.get(fetchDateURL).subscribe(
       (response) => {
