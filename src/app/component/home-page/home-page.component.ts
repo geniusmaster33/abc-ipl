@@ -69,8 +69,11 @@ export class HomePageComponent implements OnInit {
       //this.refreshBalance(); 
       // TODO - Balance not getting updated
       this.isKeyRegistered();
-      this.getMatchInfo();
-      //this.fetchBalance();
+       
+      //this.getMatchInfo(); Uncomment this when you want to block predictiona after final match
+      // and comment out the follow fetchBalance method
+      this.fetchBalance();
+
       this.getUserName();
 
       this.isAccountInfoLoaded = true;
@@ -103,8 +106,10 @@ export class HomePageComponent implements OnInit {
       this.user.key = this.model.account;
       this.web3Service.setKey(this.user.key);
       this.isKeyRegistered();
-      //this.fetchBalance();
-      this.getMatchInfo();
+      //this.getMatchInfo(); Uncomment this when you want to block predictiona after final match
+      // and comment out the follow fetchBalance method
+      this.fetchBalance();
+      
       this.getUserName();
 
       this.isAccountInfoLoaded = true;
@@ -247,6 +252,9 @@ export class HomePageComponent implements OnInit {
     )
   }
 
+  /**
+   * This metjhod to be used to disable home screen after final match to build suspense
+   */
   async getMatchInfo() {
     console.log("About to check if match halted");
     //let isHalted = true;
