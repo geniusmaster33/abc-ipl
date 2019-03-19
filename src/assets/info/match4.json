@@ -2,7 +2,7 @@
     {
         "team1": "Mumbai Indians",
         "team2": "Chennai Super Kings",
-        "date": "18-Mar",
+        "date": "19-Mar",
         "time": "8 (PM)",
         "venue": "Mumbai",
         "id": 1
@@ -10,7 +10,7 @@
     {
         "team1": "Delhi Daredevils",
         "team2": "Kings XI Punjab",
-        "date": "18-Mar",
+        "date": "19-Mar",
         "time": "4 (PM)",
         "venue": "Delhi",
         "id": 2

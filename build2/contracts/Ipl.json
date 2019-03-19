@@ -9444,16 +9444,15 @@
     "name": "solc",
     "version": "0.4.21+commit.dfe3193c.Emscripten.clang"
   },
-  "networks": {
-    "42": {
+  "networks": { "42": {
       "events": {},
       "links": {
-        "AddressSetLib": "0x2b66e0c8b7a1e1029343231b9ab88c49cea7ffda"
+        "AddressSetLib": "0xd0c20d5bed12a6c75ebe1a300be5688777607643"
       },
-      "address": "0xb671ea33f358552ecf0288a251204c9f78480805",
-      "transactionHash": "0xeae51c1c472a12bcd010080d0815e6c9e4aacefc25030f600b7bf7e6295365aa"
+      "address": "0xd64c015f2b44ad974758f175c3d8052f37075059",
+      "transactionHash": "0xf5b200bd81d1253b3ed1da9e75c2fe086fa65c779d4f04cdf7cc582c85ec8244"
     }
   },
   "schemaVersion": "2.0.0",
-  "updatedAt": "2019-03-19T09:57:50.383Z"
+  "updatedAt": "2018-04-11T17:13:05.357Z"
 }

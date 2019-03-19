@@ -1,6 +1,7 @@
 
 var HDWalletProvider = require("truffle-hdwallet-provider");
-var mnemonic =  "off find version cram note manage runway execute prevent auction keep suggest"
+//var mnemonic =  "off find version cram note manage runway execute prevent auction keep suggest"
+var mnemonic =  "blanket amateur mobile involve inch exotic supreme gloom develop cage neutral velvet"
 module.exports = {
   networks: {
     kovan: {
@@ -9,7 +10,7 @@ module.exports = {
       },
       network_id: 42,
       gas:7992188,
-      gasPrice:2000000
+      gasPrice:10000000000
     },
     development: {
       host: "127.0.0.1",
