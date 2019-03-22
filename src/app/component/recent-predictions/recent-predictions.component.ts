@@ -216,17 +216,17 @@ export class RecentPredictionsComponent implements OnInit {
                         this.predictions.winningTeam.prediction = this.getTeamName(options[0].toNumber().toString());
                         this.predictions.winningTeam.assignedPoints = points[0];
 
-                        if(matchIndex < 30 ) {
-                          this.predictions.highestScorer.prediction = this.getPlayerName(options[1].toNumber());
-                          this.predictions.highestScorer.assignedPoints = points[1];
+                        // if(matchIndex < 30 ) {
+                        //   this.predictions.highestScorer.prediction = this.getPlayerName(options[1].toNumber());
+                        //   this.predictions.highestScorer.assignedPoints = points[1];
                           
-                          this.predictions.bestBowler.prediction = this.getPlayerName(options[2].toNumber());
-                          this.predictions.bestBowler.assignedPoints = points[2];
+                        //   this.predictions.bestBowler.prediction = this.getPlayerName(options[2].toNumber());
+                        //   this.predictions.bestBowler.assignedPoints = points[2];
   
-                          this.predictions.mom.prediction = this.getPlayerName(options[3].toNumber());
-                          this.predictions.mom.assignedPoints = points[3];
-                        }
-                        else {
+                        //   this.predictions.mom.prediction = this.getPlayerName(options[3].toNumber());
+                        //   this.predictions.mom.assignedPoints = points[3];
+                        // }
+                        // else {
                           this.predictions.score30Plus.prediction = this.scores30PlusMap.get(options[1].toNumber());
                           this.predictions.score30Plus.assignedPoints = points[1];
 
@@ -236,7 +236,7 @@ export class RecentPredictionsComponent implements OnInit {
                           this.predictions.wickets.prediction = this.wicketsMap.get(options[3].toNumber());
                           this.predictions.wickets.assignedPoints = points[3];
 
-                        }
+                        // }
 
                         
                         this.predictions.score.prediction = options[4].toNumber();
@@ -287,7 +287,7 @@ export class RecentPredictionsComponent implements OnInit {
 
   loadTeamIdNameMap() {
     this.teamIdNameMap.set('1', 'Chennai Super Kings');
-    this.teamIdNameMap.set('2', 'Delhi Daredevils');
+    this.teamIdNameMap.set('2', 'Delhi Capitals');
     this.teamIdNameMap.set('3', 'Kings XI Punjab');
     this.teamIdNameMap.set('4', 'Kolkata Knight Riders');
     this.teamIdNameMap.set('5', 'Mumbai Indians');
@@ -298,7 +298,7 @@ export class RecentPredictionsComponent implements OnInit {
 
   loadTeamShortNames() {
     this.teamShortNameMap.set('Chennai Super Kings', 'CSK');
-    this.teamShortNameMap.set('Delhi Daredevils', 'DD');
+    this.teamShortNameMap.set('Delhi Capitals', 'DD');
     this.teamShortNameMap.set('Kings XI Punjab', 'KXIP');
     this.teamShortNameMap.set('Kolkata Knight Riders', 'KKR');
     this.teamShortNameMap.set('Mumbai Indians', 'MI');
