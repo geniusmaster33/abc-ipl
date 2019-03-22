@@ -1,794 +1,94 @@
 (dp0
-V
+Vpsk3005
 p1
-VPramod Ingole
-p2
-sVRohan DLT
-p3
-VRohan Singh
-p4
-sVPredictors
-p5
-VRicha Minda
-p6
-sVSagar Pawar
-p7
-VSagar Pawar
-p8
-sVJEET
-p9
-VAbhijeet Shinde
-p10
-sVShekhu
-p11
-VShekhar kangale
-p12
-sVNovice
-p13
-VNoviceML
-p14
-sVJR
-p15
-VJinal Rupawat
-p16
-sVSTRICKERS007
-p17
-VHemant Khankal
-p18
-sVWhistle Podu
-p19
-VKunal Gautam
-p20
-sVRaghav
-p21
-VRaghavendra Choudhary
-p22
-sVSamreen135
-p23
-VSamreen Shaikh
-p24
-sVBS
-p25
-VBhaskar Srivastava
-p26
-sVAyu
-p27
-VAyush Singh
-p28
-sVSupriya2805
-p29
-VSupriya Rajaram Shelar
-p30
-sVHorisReboot
-p31
-VHoris Reboot
-p32
-sVTAS
-p33
-VTarique Siddiqui
-p34
-sVNovice rookies
-p35
-VNovice rookies
-p36
-sVITBackbenchers
-p37
-VNitesh Jaiswal
-p38
-sVSandeep K 
-p39
-VSandeep Kothale 
-p40
-sVThe Jolly Cricketer
-p41
-VChaitanya Shewatkar
-p42
-sVSmita J
-p43
-VSmita Jamalamadaka
-p44
-sVPravin
-p45
-VPravin Jape
-p46
-sVnitrek
-p47
-VSupport1
-p48
-sV4
-p49
-VSupport4
-p50
-sVCH7
-p51
-VKanchan Popali
-p52
-sV8
-p53
-VSupport8
-p54
-sVHarshada
-p55
-VHarshada joshi
-p56
-sVRJ
-p57
-VRuchir Jain
-p58
-sVPravinBane
-p59
-VPravinkumar Bane 
-p60
-sVnidhi
-p61
-VNidhi Singh
-p62
-sVVishwasb
-p63
-VVishwas Bajaj
-p64
-sVR\u20ac\u03c0uK@
-p65
-VRenuka Belani
-p66
-sVCV Coders
-p67
-VCV Coders
-p68
-sVSikander31
-p69
-VSubodh Jugalkishor Mundhada
-p70
-sVSamyoo7
-p71
-VPrabhat
-p72
-sVIpllover
-p73
-VPrashant Bhosale
-p74
-sVSanky
-p75
-VSanket Desai
-p76
-sVPacknik
-p77
-VNikhil PAKHALE
-p78
-sV12
-p79
-VSupport9
-p80
-sVAshish Joshi 
-p81
-VAshish Joshi
-p82
-sVKph
-p83
-VKanhaiya Honrao 
-p84
-sVAmit
-p85
-VAmit
-p86
-sVNikhil2705
-p87
-VNikhil Gawande
-p88
-sVTusharpatil
-p89
-VTushar patil
-p90
-sVRas.rohit
-p91
-VRohit Pattewar 
-p92
-sVSac
-p93
-VSachin
-p94
-sVmanas
-p95
-VManas Kagde
-p96
-sVST20
-p97
-VShirish T
-p98
-sVdev1504
-p99
-Vdev1234@
-p100
-sVDanger Danger Creeping Closer 
-p101
-VJerome
-p102
-sVamol1122
-p103
-VAmol Markande
-p104
-sVRavi
-p105
-VRavindra Rahate
-p106
-sVDivyaIPL
-p107
-VDivya Srivastava
-p108
-sVKrishna 
-p109
-VKrishna Bellary
-p110
-sVPuneriBlockChain
-p111
-VGajanan Lokhande
-p112
-sVTatarus pit
-p113
-VJerome
-p114
-sVLoneRanger
-p115
-VRahul Choudhari 
-p116
-sVPratyush
-p117
-VPratyush
-p118
-sVNavish
-p119
-VNavish Mishra
-p120
-sVAnkit
-p121
-VAnkit
-p122
-sVTodu champion
-p123
-VRAVI SHARMA
-p124
-sVThePredictors
-p125
-VThe Predictors
-p126
-sVPk
-p127
-VPankaj khairnar 
-p128
-sVViren
-p129
-VVirendrasinh Gohil
-p130
-sVArun Singh
-p131
-VArun Singh
-p132
-sVGsunny
-p133
-VSunny Goley
-p134
-sVIMHSAR
-p135
-VSarang Chauhan
-p136
-sVOmi
-p137
-VOmkar Shetye
-p138
-sVRJ_B
-p139
-VRaja Bera
-p140
-sVKunal
-p141
-VKunal Ved
-p142
-sVRaka
-p143
-VRakesh Nair
-p144
-sV3
-p145
-VSupport3
-p146
-sVpankaj
-p147
-Vpankaj
-p148
-sVSachin D
-p149
-VSachin deshpande
-p150
-sV7
-p151
-VSupport7
-p152
-sVRandom7
-p153
-VRandom7
-p154
-sVatul
-p155
-VAtul Chaudhari
-p156
-sVThe Sorcerers
-p157
-VTeam Sorcerers
-p158
-sVThe Sorcerers !
-p159
-VTeam Sorcerers - AMG
-p160
-sVjayshree
-p161
-VJayshree kakde
-p162
-sVYuvraj
-p163
-VYuvraj Bhosale
-p164
-sVTushar
-p165
-VTushar Gadhave
-p166
-sVRavindar
-p167
-VRavindar kumar
-p168
-sVAala re
-p169
-VKartik Ambulkar
-p170
-sVScavanger
-p171
-VRohit Rijhwani 
-p172
-sVRakesh
-p173
-VRakesh Choudhary
-p174
-sVSharma18
-p175
-VAtul kumar sharma
-p176
-sVPramod
-p177
-VPramod Karhadkar
-p178
-sVHemant
-p179
-VHemant Kumar
-p180
-sVDoremon
-p181
-VNeha
-p182
-sVShaktimaan
-p183
-VShaktimaan
-p184
-sVJkalalsingh
-p185
-VJyoti singg
-p186
-sVNiraj
-p187
-VNiraj S Diwan
-p188
-sVML Hunterzz
-p189
-VRohit
-p190
-sVShilpa
-p191
-VShilpa sane
-p192
-sVcvs257
-p193
-VSaketh Chitrapu
-p194
-sVAnkit Jain
-p195
-VAnkit Jain
-p196
-sVSparklers
-p197
-VPriya Bharti
-p198
-sVonlyAbhinav 
-p199
-VAbhinav Sharma
-p200
-sVThe Predictors
-p201
-VThe Predictors
-p202
-sVPIJU
-p203
-VPrajakta
-p204
-sVAnand
-p205
-VAnand Patil
-p206
-sVBhayankars
-p207
-VAnchal Nigam
-p208
-sVpsk
-p209
 VPraveen Shamlal Kithani
-p210
-sVPiyushN
-p211
-VPiyush  Narlawar
-p212
-sVStavros
-p213
-VStavros the Greek
-p214
-sVMachupiccu
-p215
-VMachupiccu
-p216
-sVNare10
-p217
-VAniket Ashok Nare
-p218
-sVLalit1548
-p219
-VLalit Mohnani
-p220
-sVOnboarding Super Kings
-p221
-VOnboarding Super Kings
-p222
-sVKavitasolanki15 
-p223
-VKavita Solanki 
-p224
-sVKhelo
-p225
-VKhelo
-p226
-sVPrerika
-p227
-VPrerika
-p228
-sVTiger
-p229
-VPraful Awari 
-p230
-sVSagar
-p231
-VSagar Deshmukh 
-p232
-sVvarun_vj
-p233
-VVarun Jain
-p234
-sVHORIS_RETURNS
-p235
-VHORIS_RETURNS
-p236
-sV6
-p237
-VSupport6
-p238
-sVGame Changer
-p239
-VPALAK BAGGA
-p240
-sVchaudhary
-p241
-VNidhi Singh
-p242
-sVScorpion
-p243
-VNeerav shah
-p244
-sVTJ
-p245
-VSunny Parekh
-p246
-sVMavericks
-p247
-VMavericks
-p248
-sVSRK
-p249
-VSarang Ramesh Kulkarni
-p250
-sVMakAarti
-p251
+p2
+sVAladdin
+p3
+VTarique Siddiqui
+p4
+sVrohit499
+p5
+VRohit Srivastava
+p6
+sV@tul
+p7
+VAtul Choudhari
+p8
+sVVinayTakawale007
+p9
+VVinay Takawale
+p10
+sVpp
+p11
+Vpp
+p12
+sVKabi.anant
+p13
+VAnanta Prasad Kabi
+p14
+sVPrecision
+p15
+VChirag kankariya
+p16
+sVAarti_M
+p17
 VAarti Makhijani
-p252
-sVSwets 
-p253
-VSwets
-p254
-sVIplchamps
-p255
-VIPL Champs
-p256
-sVChetan Sharma
-p257
+p18
+sVChetan sharma
+p19
 VChetan Sharma
-p258
-sVRoyston
-p259
-VRoyston Pereira
-p260
-sVTRaWS
-p261
-VAnimesh Pandey
-p262
-sVAshu
-p263
-VAshutosh Dekondwar
-p264
-sVWakad Whackers
-p265
-VSudhir Mahadik 
-p266
-sVCricfrenz.com
-p267
-VCricfrenz
-p268
-sVSvbipl
-p269
-VSagar Badve
-p270
-sV11
-p271
-VSupport9
-p272
-sVaad
-p273
-VAjay A Deshpande 
-p274
-sV13
-p275
-VSupport3
-p276
-sVIplpredictor
-p277
-VRohit Patidar
-p278
-sVTush_DevD
-p279
-VTushar Baban Devardekar
-p280
-sVN4Narcissist
-p281
-VNikhil
-p282
-sVDivyaIPL2
-p283
-VDivya Srivastava
-p284
-sVFrenzied 
-p285
-VShailendra Singh 
-p286
-sVRohan
-p287
-VRohan
-p288
-sVDhruv
-p289
-VJitendra solanki
-p290
-sVPinks
-p291
-VPinky Porwal
-p292
-sVAbhiKulk
-p293
-VAbhijit Kulkarni
-p294
-sVDabangHero
-p295
-VKunal Maheshwari
-p296
-sVSnehMujoo
-p297
-VSneh Mujoo
-p298
-sVArchit 
-p299
-VArchit Kapoor
-p300
-sVDJ
-p301
-VDharmendra Jaiswal
-p302
-sVsachinmang
-p303
-Vsachin mangal
-p304
-sV999999999
-p305
-Vauto_test99
-p306
-sVAflatoon
-p307
-VRashmi Shivhare
-p308
-sVravindra jain
-p309
-Vravindra jain
-p310
-sVsanjayr
-p311
-VSanajy Rokade 
-p312
-sVMSK
-p313
-VManguesh Sinai Kaisare 
-p314
-sVSnehal
-p315
-VSnehal Prasad Pingle
-p316
-sVMSG
-p317
-VAmg navigator
-p318
-sVCheetah
-p319
-VBalaji Srinivasan
-p320
-sVMonica
-p321
-VSparklers
-p322
-sVJT's Team
-p323
-VJatin Thakkar
-p324
-sVSkull
-p325
-VSkull
-p326
-sVWarrior55
-p327
-VKandarpa Raghav
-p328
-sVIpl-prophecy
-p329
-VSanjay maheshwari
-p330
-sVMaddy
-p331
-VMaddy
-p332
-sVMac
-p333
-VMac
-p334
-sV5
-p335
-VSupport5
-p336
-sVDeep Minds
-p337
-VDeep Minds
-p338
-sV9
-p339
-VSupport4
-p340
-sVDesiBoys
-p341
-VPrashant rathi 
-p342
-sV10
-p343
-VSupport4
-p344
-sVMahi
-p345
-VMahesh Vasudevan
-p346
-sVSushantm20
-p347
-VSushant Mishrikotkar 
-p348
-sVGeniusGirish
-p349
-VGirish Sarvottam Kulkarni 
-p350
-sVAK
-p351
-VAnubhav kondawar
-p352
-sVRomesh
-p353
-VRomesh Bajaj
-p354
-sVCrickbot
-p355
-VAnand Patil
-p356
-sVPooja
-p357
-VPooja Gupta
-p358
-sVPeeyush sodhia
-p359
-VPeeyush Sodhia 
-p360
-sVJCB
-p361
-VJay Bhatia
-p362
-sVSjyptr
-p363
-VSanjay patidar
-p364
-sVUrvi
-p365
-VUrvi
-p366
-sVMLYS
-p367
-VML Yuva Sena
-p368
-sV2
-p369
+p20
+sVSagar
+p21
+VSagar Deshmukh 
+p22
+sVPG
+p23
+VPrashant Gupta
+p24
+sVviren
+p25
+VVirendrasinh Gohil
+p26
+sVGajanan
+p27
+VGajanan Lokhandre
+p28
+sVVarun@ResearchIT
+p29
+VVarun samant
+p30
+sVKishi
+p31
+VSanyam Shrivastava
+p32
+sVthegodfather
+p33
+Vthe_godfather
+p34
+sVSupport3
+p35
+Vsachins
+p36
+sVSupport2
+p37
 VSupport2
-p370
-sVMyBestTeam
-p371
-VSomnath Das
-p372
-sVChet
-p373
-VChetan Madur
-p374
-sVDushant
-p375
-VDushant Bhinge
-p376
-sVRupeshK
-p377
-VRupesh Kirmirwar
-p378
-sVRS
-p379
-VRoma Saini
-p380
-sVDeep
-p381
-VDeepanjan Kanungo 
-p382
-sVArchit
-p383
-VDoctor Strange
-p384
-sVManny
-p385
-VManoj Ramchandani
-p386
-sV3EyedRaven
-p387
-VKarunesh Kumar
-p388
-sVIkillz
-p389
-VIshan
-p390
-sVShip
-p391
-VShipra Jain
-p392
-sVFantastic Warriors 33
-p393
-VSandeep jain
-p394
-sVgjain
-p395
-VGaurav Jain
-p396
+p38
+sVNikhilesh
+p39
+VNikhilesh
+p40
+sVAdminPP
+p41
+VAdmin User
+p42
+sVUdaykiran
+p43
+VKiran Kumar Pabboji
+p44
+sVnitrek1921
+p45
+Vnitesh singh
+p46
 s.
