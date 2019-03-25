@@ -141,7 +141,7 @@ export class MatchPredictComponent implements OnInit {
           "formatNumberScale": "0"
       },
       "data": []
-  }
+    }
   }
 
   findTeamNames() {

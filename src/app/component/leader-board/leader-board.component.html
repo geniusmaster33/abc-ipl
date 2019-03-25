@@ -72,7 +72,7 @@
                   <tr class="ng-star-inserted" *ngFor="let leader of leaders | filter : allSearchTerm; let i = index">
                     <!--<td class="text-center">{{i+1}}</td>-->
                     <td class="text-center">{{leader.rank}}</td>
-                    <td class="text-left">{{leader.name}}</td>
+                    <td class="text-left">{{leader.name | slice:0:23}}</td>
                     <td class="text-right">{{leader.balance}}</td>
                     <td class="text-right">
                       <div *ngIf="leader.category == 0">
