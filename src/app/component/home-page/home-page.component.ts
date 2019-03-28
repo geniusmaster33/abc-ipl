@@ -9,7 +9,7 @@ import * as ipl_artifact from '../../../../build/contracts/Ipl.json';
 import * as registration_artifact from '../../../../build/contracts/Registration.json';
 import * as match_artifact from '../../../../build/contracts/IPLMatch.json';
 
-
+declare var jQuery:any;
 
 //declare let window: any;
 
@@ -33,6 +33,13 @@ export class HomePageComponent implements OnInit {
 
   isHalted = false;
 
+  showMoadl = "true"
+
+  reregisterModel = {
+    username: '',
+    fullname: '',
+    key: ''
+  }
 
   model = {
     username: 'Welcome',
@@ -77,6 +84,9 @@ export class HomePageComponent implements OnInit {
       this.getUserName();
 
       this.isAccountInfoLoaded = true;
+
+      console.log('Invoking jQuery');
+      
     }
 
     this.watchAccount();
@@ -114,6 +124,7 @@ export class HomePageComponent implements OnInit {
 
       this.isAccountInfoLoaded = true;
       console.log("@@@@@@@@@@@@@@@@@@@@@@ " + this.isAccountInfoLoaded);
+
       return;
     });
 
@@ -238,6 +249,12 @@ export class HomePageComponent implements OnInit {
         console.log("User Name " + response.text());
         let userInfo = response.text().split(',');
         this.model.username = userInfo[0];
+
+        if(userInfo[0] === 'Welcome') {
+          console.log('Welcome is the username')
+          jQuery('#myModal').modal('show');
+        }
+
         if(userInfo.length == 2)  {
           this.isAdmin = true;
           this.web3Service.setIsAdminUser(true);
@@ -269,6 +286,30 @@ export class HomePageComponent implements OnInit {
     console.log("GetMatchInfo : isHalted ", this.isHalted);
 
     this.fetchBalance();
+  }
+
+  submitUserName() {
+    const url = 'http://abcipl.ml:4020/login';
+
+    console.log("About to submit");
+
+    this.reregisterModel.username = this.reregisterModel.fullname;
+    this.reregisterModel.key = this.user.key;
+
+    console.log('Register', this.reregisterModel);
+
+    this.http.post(url, this.reregisterModel).subscribe(
+      (data) => {
+        console.log("Account registered with login service");
+        jQuery('#myModal').modal('hide');
+        //this.registerInContract();
+        //this.router.navigate(['']);
+        this.getUserName();
+      },
+      (error) => {
+        console.log("Response code :  " + error.status);
+      }
+    )
   }
     
 
