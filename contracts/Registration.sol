@@ -9,6 +9,7 @@ contract Registration is MultiOwnable, RegistrationInterface {
   
     
     function Registration(address _tokenAddress){
+        isAdmin[msg.sender] = true;
         tokenAddress = _tokenAddress;
         token = EIP20Interface(_tokenAddress);
         startingPoints = 100;
