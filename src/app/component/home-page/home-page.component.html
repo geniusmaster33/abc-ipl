@@ -56,7 +56,6 @@
             </div>
         </div>
     </div>
-  
     <div class="container text-center" *ngIf="isAdmin">
             <a routerLink="/special">Khul ja sim sim</a>
     </div>
@@ -79,5 +78,29 @@
                 </div>
                 
     </div>
-    
 </div>
+
+
+  <div class="modal fade modal-primary" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-login">
+      <div class="modal-content">
+        <div class="card card-login card-plain">
+         
+          <div class="modal-body" data-background-color>
+              <div class="modal-body" >
+                <div class="input-group form-group-no-border input-lg">
+                  <div class="input-group-addon">
+                    <span class="input-group-text"><i class="now-ui-icons users_circle-08"></i></span>
+                  </div>
+                  <input type="text" class="form-control" placeholder="Full Name..." 
+                  name="username" id="username" [(ngModel)]="reregisterModel.fullname">
+                </div>
+              </div>
+          </div>
+          <div class="modal-footer text-center">
+            <a href="#pablo" class="btn btn-neutral btn-round btn-lg btn-block" (click)="submitUserName()">Register your Name</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
