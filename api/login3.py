@@ -60,7 +60,7 @@ def login():
 		<form action="" method="post">
 		<p><input type=text name=username>
 		<p><input type=name name=fullname>
-		<p><input type=name name=privatekey>
+		<p><input type=name name=key>
 		<p><input type=submit value=Login>
 		</form>
 		''')
