@@ -81,7 +81,7 @@ export class HomePageComponent implements OnInit {
       // and comment out the follow fetchBalance method
       this.fetchBalance();
 
-      this.getUserName();
+      // this.getUserName();
 
       this.isAccountInfoLoaded = true;
 
@@ -106,6 +106,7 @@ export class HomePageComponent implements OnInit {
     //this.infoUpdates = 'Fetching account info';
     console.log("Watching account from Web3Service ");
     this.web3Service.accountsObservable.subscribe((accounts) => {
+      // this.isRegisteredOnBlockchain = false; // Reset the flag if you find new
       this.accounts = accounts;
       this.model.account = accounts[0];
       console.log("Found fresh account ", this.accounts);
@@ -120,7 +121,7 @@ export class HomePageComponent implements OnInit {
       // and comment out the follow fetchBalance method
       this.fetchBalance();
       
-      this.getUserName();
+      // this.getUserName();
 
       this.isAccountInfoLoaded = true;
       console.log("@@@@@@@@@@@@@@@@@@@@@@ " + this.isAccountInfoLoaded);
@@ -131,66 +132,17 @@ export class HomePageComponent implements OnInit {
     //this.infoUpdates = 'Account info not found !! Might be an issue with Ethereum Client'
   }
 
-  // refreshBalance() {
-  //   console.log('Refreshing balance');
-
-  //   this.infoUpdates = 'Fetching Balance';
-  //   console.log('************************* ' + this.infoUpdates);
-
-  //   let meta;
-  //   this.Ipl.deployed()
-  //     .then((instance) => {
-  //       meta = instance;
-  //       return meta.getBalance.call(this.model.account, {
-  //         from: this.model.account
-  //       });
-  //     })
-  //     .then((value) => {
-  //       this.model.balance = value;
-  //       this.web3Service.setBalance(value);
-
-  //       console.log('Balance : ' + value);
-  //       this.infoUpdates = 'Balance retrieved';
-  //       console.log('************************* ' + this.infoUpdates);
-  //     })
-  //     .catch((e) => {
-  //       console.log(e);
-  //       this.setStatus('Error getting balance; see log.');
-  //       this.infoUpdates = 'Error in getting balance';
-  //     });
-  // }
+  
 
   /*async*/ sendCoin() {
     console.log('Sending coin');
     var meta;
     var receiver = "0xf17f52151EbEF6C7334FAD080c5704D77216b732";
-    //const deployedMetaCoin = /*await*/ this.MetaCoin.deployed();
-
-    // deployedMetaCoin.sendCoin(account_one, 10, { from: this.model.account, gas: 4699999 }).then(function (result) {
-    //   // If this callback is called, the transaction was successfully processed.
-    //   console.log("Transaction successful!");
-    //   this.refreshBalance();
-    // }).catch(function (e) {
-    //   // There was an error! Handle it.
-    //   console.log('Error ', e);
-    // })
-
-    // this.MetaCoin.deployed()
-    //   .then((instance) => {
-    //     meta = instance;
-    //     return meta.sendCoin(receiver, 10, { from: this.model.account });
-    //   })
-    //   .then(() => {
-    //     console.log('Coins sent successfully');
-    //     this.refreshBalance();
-    //   })
-    //   .catch((e) => {
-    //     console.log(e);
-    //   })
   }
 
 
   isKeyRegistered() {
+    
     this.infoUpdates = 'Checking registration status';
     console.log('************************* ' + this.infoUpdates);
 
@@ -204,7 +156,11 @@ export class HomePageComponent implements OnInit {
             if (!v) { // If not registered
               this.infoUpdates = 'Redirecting to registration page';
               console.log('************************* ' + this.infoUpdates);
+              jQuery('#myModal').modal('hide');
               this.router.navigate(['login', {key : this.model.account}]);
+            }
+            else {
+              this.getUserName(v);
             }
           });
         },
@@ -241,7 +197,7 @@ export class HomePageComponent implements OnInit {
       })
   }
 
-  getUserName() {
+  getUserName(isKeyRegisteredOnBlockchain) {
     const url = 'http://abcipl.ml:4020/getName';
 
     this.http.get(url + "?pk=" + this.model.account).subscribe(
@@ -250,8 +206,9 @@ export class HomePageComponent implements OnInit {
         let userInfo = response.text().split(',');
         this.model.username = userInfo[0];
 
-        if(userInfo[0] === 'Welcome') {
-          console.log('Welcome is the username')
+        // console.log('Registered flag ', this.isRegisteredOnBlockchain);
+        if(isKeyRegisteredOnBlockchain && userInfo[0] === 'Welcome') {
+          console.log('Registered on Blockchain but not in Python API');
           jQuery('#myModal').modal('show');
         }
 
@@ -302,9 +259,7 @@ export class HomePageComponent implements OnInit {
       (data) => {
         console.log("Account registered with login service");
         jQuery('#myModal').modal('hide');
-        //this.registerInContract();
-        //this.router.navigate(['']);
-        this.getUserName();
+        this.getUserName(true);
       },
       (error) => {
         console.log("Response code :  " + error.status);
