@@ -56,7 +56,7 @@ export class LeaderBoardComponent implements OnInit {
             let balances = this.leadersList[1];
             let categories = this.leadersList[2];
 
-            this.leaders = new Array(keys.length);
+            this.leaders = new Array<Leader>();
 
             // console.log('Inside leader board - map contents ', this.userNameMap);
 
@@ -69,7 +69,9 @@ export class LeaderBoardComponent implements OnInit {
               ldr.name = this.userNameMap.get(ldr.key.toLowerCase());
               // console.log("From map for [" + ldr.key + "]", this.userNameMap.get(ldr.key));
 
-              this.leaders[index] = ldr;
+              if(!!ldr.name) {
+                this.leaders.push(ldr);
+              }
 
             }
             this.leaders.sort(this.sortLeaderBoard);
