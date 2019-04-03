@@ -45,7 +45,7 @@ export class HomePageComponent implements OnInit {
     username: 'Welcome',
     amount: 5,
     receiver: '',
-    balance: 0,
+    balance: 'Loading...',
     account: ''
   };
 
