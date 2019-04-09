@@ -128,7 +128,7 @@ export class RecentPredictionsComponent implements OnInit {
   }
 
   loadMatchList(currentDate) {
-    const url = './../assets/info/match6.json';
+    const url = './../assets/info/match7.json';
     //currentDate = moment.now();
 
     this.http.get(url).subscribe(
@@ -194,7 +194,7 @@ export class RecentPredictionsComponent implements OnInit {
                 this.match = m;
                 this.match.at(matchAddr).then((instance1) => {
                   instance1.getPlayerBet.call(this.web3Service.getKey())
-                  //instance1.getPlayerBet.call('0xa191eeae0cb9c552eed796d35cfadeacf64fb6ff')
+                  // instance1.getPlayerBet.call('0xb8cbc5f706ca4efbd0ec52ff6a3e89d7b1dceccb')
                     .then((v) => {
                       
                       let points = v[0];
@@ -207,6 +207,8 @@ export class RecentPredictionsComponent implements OnInit {
                       for(let val of options) {
                         optionsAdd += Number(val);
                       }
+
+                      console.log('Total points ', optionsAdd);
 
                       if(optionsAdd == 0) {
                         this.notPredictedFlag = true;
@@ -227,7 +229,9 @@ export class RecentPredictionsComponent implements OnInit {
                         //   this.predictions.mom.assignedPoints = points[3];
                         // }
                         // else {
+                          console.log('30+ ', points[1].toNumber());
                           this.predictions.score30Plus.prediction = this.scores30PlusMap.get(options[1].toNumber());
+                          console.log('30+ prediction ', this.predictions.score30Plus.prediction);
                           this.predictions.score30Plus.assignedPoints = points[1];
 
                           this.predictions.sixes.prediction = this.sixesMap.get(options[2].toNumber());
