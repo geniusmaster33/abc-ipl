@@ -187,14 +187,14 @@ export class RecentPredictionsComponent implements OnInit {
         this.ipl = response;
         this.ipl.deployed().then((instance) => {
           instance.getMatchByIndex.call(matchIndex).then((matchAddr) => { //TODO 
-            console.log("Match address - ", matchAddr);
+            console.log("Match address - ", matchAddr + ' - Match Index : ', matchIndex );
             this.web3Service.artifactsToContract(match_artifact)
               .then((m) => {
                 console.log("Register preresponse ", m);
                 this.match = m;
                 this.match.at(matchAddr).then((instance1) => {
                   instance1.getPlayerBet.call(this.web3Service.getKey())
-                  // instance1.getPlayerBet.call('0xb8cbc5f706ca4efbd0ec52ff6a3e89d7b1dceccb')
+                  //  instance1.getPlayerBet.call('0x93ea5285074924ce6a1ac16036a7b6dd75f81947')
                     .then((v) => {
                       
                       let points = v[0];
@@ -324,13 +324,13 @@ export class RecentPredictionsComponent implements OnInit {
   }
 
   loadQuestionsMap() {
-    this.scores30PlusMap.set(1, 'Less than 4');
-    this.scores30PlusMap.set(2, '4');
-    this.scores30PlusMap.set(3, 'More than 4');
+    this.scores30PlusMap.set(1, 'Less than 40');
+    this.scores30PlusMap.set(2, '40 - 50');
+    this.scores30PlusMap.set(3, 'More than 50');
 
-    this.sixesMap.set(1, '0 - 10');
-    this.sixesMap.set(2, '11 - 17');
-    this.sixesMap.set(3, 'More than 17');
+    this.sixesMap.set(1, 'Less than 70');
+    this.sixesMap.set(2, '70 - 90');
+    this.sixesMap.set(3, 'More than 90');
 
     this.wicketsMap.set(1, '0 - 9');
     this.wicketsMap.set(2, '10 - 12');
@@ -394,12 +394,12 @@ export class RecentPredictionsComponent implements OnInit {
         this.incrementLoadCount();
         break;
       case 1 :
-        let scorer30 = new DataElement("30+ Scores", value, "#ADD5D7");
+        let scorer30 = new DataElement("Runs in 1st Innings Powerplay", value, "#ADD5D7");
         this.potSizeArray[1] = scorer30;
         this.incrementLoadCount();
         break;
       case 2 :
-        let sixes = new DataElement("Sixes", value, "#676766");
+        let sixes = new DataElement("Highest Individual Score", value, "#676766");
         this.potSizeArray[2] = sixes;
         this.incrementLoadCount();
         break;
