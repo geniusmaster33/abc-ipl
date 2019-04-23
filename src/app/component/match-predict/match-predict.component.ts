@@ -51,29 +51,29 @@ export class MatchPredictComponent implements OnInit {
 
   q30PlusOptions = [
     {
-      "displayTxt": "Less than 4",
+      "displayTxt": "Less than 40",
       "value": "1"
     },
     {
-      "displayTxt": "4",
+      "displayTxt": "40 - 50",
       "value": "2"
     },
     {
-      "displayTxt": "More than 4",
+      "displayTxt": "More than 50",
       "value": "3"
     }];
 
   qSixesOptions = [
     {
-      "displayTxt": "0 - 10",
+      "displayTxt": "Less than 70",
       "value": "1"
     },
     {
-      "displayTxt": "11 - 17",
+      "displayTxt": "70 - 90",
       "value": "2"
     },
     {
-      "displayTxt": "More than 17",
+      "displayTxt": "More than 90",
       "value": "3"
     }];
 
@@ -280,7 +280,7 @@ export class MatchPredictComponent implements OnInit {
                 this.match.at(matchAddr).then((instance1) => {
                   instance1.getBetLength.call()
                     .then((v) => {
-                      //console.log("Bet Length - " + v);
+                      console.log("Bet Length - " + v);
                       this.betLength = v;
                     });
                 });
