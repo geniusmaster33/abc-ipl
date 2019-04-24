@@ -31,29 +31,29 @@ export class MatchResultComponent implements OnInit {
 
   q30PlusOptions = [
     {
-      "displayTxt": "Less than 4",
+      "displayTxt": "Less than 40",
       "value": "1"
     },
     {
-      "displayTxt": "4",
+      "displayTxt": "40 - 50",
       "value": "2"
     },
     {
-      "displayTxt": "More than 4",
+      "displayTxt": "More than 50",
       "value": "3"
     }];
 
   qSixesOptions = [
     {
-      "displayTxt": "0 - 10",
+      "displayTxt": "Less than 70",
       "value": "1"
     },
     {
-      "displayTxt": "11 - 17",
+      "displayTxt": "70 - 90",
       "value": "2"
     },
     {
-      "displayTxt": "More than 17",
+      "displayTxt": "More than 90",
       "value": "3"
     }];
 
