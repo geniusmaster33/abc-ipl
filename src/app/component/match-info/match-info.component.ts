@@ -44,7 +44,7 @@ export class MatchInfoComponent implements OnInit {
   }
 
   fetchMatches(currentDate) {
-    const url = './../assets/info/match10.json';
+    const url = './../assets/info/match11.json';
 
     this.http.get(url).subscribe(
       (data) => {
