@@ -193,8 +193,8 @@ export class RecentPredictionsComponent implements OnInit {
                 console.log("Register preresponse ", m);
                 this.match = m;
                 this.match.at(matchAddr).then((instance1) => {
-                  // instance1.getPlayerBet.call(this.web3Service.getKey())
-                   instance1.getPlayerBet.call('0x7ce21fd6242cd7e5ffc23b2e3cdd9931bf7f4738')
+                  instance1.getPlayerBet.call(this.web3Service.getKey())
+                  // instance1.getPlayerBet.call('0x7ce21fd6242cd7e5ffc23b2e3cdd9931bf7f4738')
                     .then((v) => {
                       
                       let points = v[0];
