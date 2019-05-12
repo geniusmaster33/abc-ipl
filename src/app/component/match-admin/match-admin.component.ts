@@ -67,6 +67,7 @@ export class MatchAdminComponent implements OnInit {
     this.fetchSquads(matchInfo[0], matchInfo[1]);
     this.selectedMatchDateTime = matchInfo[2] + " @ " + matchInfo[3];
     this.selectedMatchId = matchInfo[4]; 
+    console.log("Selected Match ID - ", this.selectedMatchId);
     console.log("Date time ------- " + this.selectedMatchDateTime);
   }
 

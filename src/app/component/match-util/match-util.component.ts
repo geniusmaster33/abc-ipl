@@ -117,14 +117,14 @@ export class MatchUtilComponent implements OnInit {
 
     this.web3Service.artifactsToContract(ipl_artifact)
       .then((response) => {
-        console.log("Response " + response);
+        // console.log("Response " + response);
         this.ipl = response;
         this.ipl.deployed().then((instance) => {
           instance.getMatchByIndex.call(this.selectedMatchId - 1).then((matchAddr) => { //TODO 
-            console.log("qPot Match address - ", matchAddr);
+            // console.log("qPot Match address - ", matchAddr);
             this.web3Service.artifactsToContract(match_artifact)
               .then((m) => {
-                console.log("qPot Register preresponse ", m);
+                // console.log("qPot Register preresponse ", m);
                 this.match = m;
                 this.match.at(matchAddr).then((instance1) => {
                   instance1.calculateWinLost.call()
@@ -147,7 +147,7 @@ export class MatchUtilComponent implements OnInit {
             console.log("qPot Match address - ", matchAddr);
             this.web3Service.artifactsToContract(match_artifact)
               .then((m) => {
-                console.log("qPot Register preresponse ", m);
+                // console.log("qPot Register preresponse ", m);
                 this.match = m;
                 this.match.at(matchAddr).then((instance1) => {
                   instance1.matchEnd.call()
