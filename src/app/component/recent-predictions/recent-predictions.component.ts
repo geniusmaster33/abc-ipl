@@ -128,7 +128,7 @@ export class RecentPredictionsComponent implements OnInit {
   }
 
   loadMatchList(currentDate) {
-    const url = './../assets/info/match14.json';
+    const url = './../assets/info/match15.json';
     //currentDate = moment.now();
 
     this.http.get(url).subscribe(
