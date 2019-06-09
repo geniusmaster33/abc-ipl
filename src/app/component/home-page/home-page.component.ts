@@ -77,9 +77,9 @@ export class HomePageComponent implements OnInit {
       // TODO - Balance not getting updated
       this.isKeyRegistered();
        
-      //this.getMatchInfo(); Uncomment this when you want to block predictiona after final match
+      this.getMatchInfo(); //Uncomment this when you want to block predictiona after final match
       // and comment out the follow fetchBalance method
-      this.fetchBalance();
+      // this.fetchBalance();
 
       // this.getUserName();
 
@@ -117,9 +117,9 @@ export class HomePageComponent implements OnInit {
       this.user.key = this.model.account;
       this.web3Service.setKey(this.user.key);
       this.isKeyRegistered();
-      //this.getMatchInfo(); Uncomment this when you want to block predictiona after final match
+      this.getMatchInfo(); // Uncomment this when you want to block predictiona after final match
       // and comment out the follow fetchBalance method
-      this.fetchBalance();
+      // this.fetchBalance();
       
       // this.getUserName();
 
@@ -230,12 +230,12 @@ export class HomePageComponent implements OnInit {
    * This metjhod to be used to disable home screen after final match to build suspense
    */
   async getMatchInfo() {
-    console.log("About to check if match halted");
+    console.log("*******About to check if match halted");
     //let isHalted = true;
 
     const iplContract = await this.web3Service.artifactsToContract(ipl_artifact);
     const instance = await iplContract.deployed();
-    const matchAddr = await instance.getMatchByIndex.call(58);
+    const matchAddr = await instance.getMatchByIndex.call(63);
     console.log(matchAddr);
     const matchContract = await this.web3Service.artifactsToContract(match_artifact);
     const matchInstance = await matchContract.at(matchAddr);

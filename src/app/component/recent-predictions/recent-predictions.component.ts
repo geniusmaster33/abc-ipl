@@ -128,7 +128,7 @@ export class RecentPredictionsComponent implements OnInit {
   }
 
   loadMatchList(currentDate) {
-    const url = './../assets/info/match12.json';
+    const url = './../assets/info/match15.json';
     //currentDate = moment.now();
 
     this.http.get(url).subscribe(
@@ -194,7 +194,7 @@ export class RecentPredictionsComponent implements OnInit {
                 this.match = m;
                 this.match.at(matchAddr).then((instance1) => {
                   instance1.getPlayerBet.call(this.web3Service.getKey())
-                  //  instance1.getPlayerBet.call('0x93ea5285074924ce6a1ac16036a7b6dd75f81947')
+                  // instance1.getPlayerBet.call('0x7ce21fd6242cd7e5ffc23b2e3cdd9931bf7f4738')
                     .then((v) => {
                       
                       let points = v[0];

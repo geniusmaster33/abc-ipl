@@ -154,8 +154,8 @@ export class LeaderBoardComponent implements OnInit {
         console.log("Error in getting users list : " + error);
       },
       () => {
-        this.getLeaderBoardData();
-        //this.getMatchInfo();
+        // this.getLeaderBoardData();
+        this.getMatchInfo();
       }
     )
     
@@ -171,13 +171,13 @@ export class LeaderBoardComponent implements OnInit {
 
     const iplContract = await this.web3Service.artifactsToContract(ipl_artifact);
     const instance = await iplContract.deployed();
-    const matchAddr = await instance.getMatchByIndex.call(59);
+    const matchAddr = await instance.getMatchByIndex.call(63);
     const matchContract = await this.web3Service.artifactsToContract(match_artifact);
     const matchInstance = await matchContract.at(matchAddr);
     this.isHalted = await matchInstance.isHalted.call();
     console.log("GetMatchInfo : isHalted ", this.isHalted);
 
-    if(this.isHalted == true) { 
+    if(this.isHalted != true) { 
       this.getLeaderBoardData();
     }
   }

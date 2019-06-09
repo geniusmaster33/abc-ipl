@@ -35,7 +35,7 @@ export class MatchAdminComponent implements OnInit {
   }
 
   loadMatchList() {
-    const url = './../assets/info/match12.json';
+    const url = './../assets/info/match15.json';
 
     this.http.get(url).subscribe(
       (data) => {
@@ -67,6 +67,7 @@ export class MatchAdminComponent implements OnInit {
     this.fetchSquads(matchInfo[0], matchInfo[1]);
     this.selectedMatchDateTime = matchInfo[2] + " @ " + matchInfo[3];
     this.selectedMatchId = matchInfo[4]; 
+    console.log("Selected Match ID - ", this.selectedMatchId);
     console.log("Date time ------- " + this.selectedMatchDateTime);
   }
 
