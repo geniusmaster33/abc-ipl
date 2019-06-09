@@ -60,7 +60,7 @@ contract Ipl is MultiOwnable, Haltable
     // business logic
     //
 
-    function addMatch(uint _id)
+    function addMatch(uint _id, uint _range)
         onlyAdmin
         onlyNotHalted
         returns (bool ok, address questionAddr)
@@ -68,7 +68,7 @@ contract Ipl is MultiOwnable, Haltable
         require(matches.size()+1 == _id);
         
         
-        IPLMatch match1 = new IPLMatch(_id, address(register), dailyBonus, threshold, address(token));
+        IPLMatch match1 = new IPLMatch(_id, address(register), dailyBonus, threshold, address(token), _range);
         match1.setMultiplier([uint256(10),uint256(40),uint256(40),uint256(60),uint256(90),uint256(40)]);
         token.addAdminX(address(match1));
         matches.add(address(match1));

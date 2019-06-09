@@ -16,6 +16,8 @@ contract IPLMatch is Haltable, Ownable
     
     uint256 public dailyBonus;
     uint256 public threshold;
+    uint256 public answerRange;
+    uint256 public playerLeft;
     
     uint public matchId;
     uint256[6] public multiplier;
@@ -60,6 +62,10 @@ contract IPLMatch is Haltable, Ownable
     address[] public playerList;
    
     
+    uint256 public start;
+    uint256 public end;
+    uint256 public counter;
+    
     bool public matchAbandon;
     bool public matchEnd;
     bool public calculateWinLost;
@@ -73,14 +79,13 @@ contract IPLMatch is Haltable, Ownable
     event LogLoose(uint indexed matchId,address indexed playerAddress,uint256 winningAmount,uint256 loosingAmount,uint256 toalBet);
     event LogDailyBonus(uint indexed matchId,address indexed playerAddress);
     
-    function IPLMatch(uint _id, address _register, uint256 _dailyBonus, uint256 _threshold,address _tokenAddress){
+    function IPLMatch(uint _id, address _register, uint256 _dailyBonus, uint256 _threshold,address _tokenAddress, uint256 _answerRange){
         matchId = _id;
         register = RegistrationInterface(_register);
         token =  EIP20Interface (_tokenAddress);
         dailyBonus=_dailyBonus;
         threshold=_threshold;
-        
-        
+        answerRange=_answerRange;
     }
 
     function bet(uint[5] _weight, uint[5] _option)
@@ -93,6 +98,7 @@ contract IPLMatch is Haltable, Ownable
         
         if(!isBet[msg.sender]){
             playerList.push(msg.sender);
+            playerLeft++;
         }
         
         uint256 sum = 0;
@@ -142,6 +148,7 @@ contract IPLMatch is Haltable, Ownable
         require(!matchAbandon);
         require(!calculateWinLost);
         
+        uint256 range = answerRange;
         uint k;
         for(k=0;k<5;k++){
             answers[k] = options[k];
@@ -158,7 +165,7 @@ contract IPLMatch is Haltable, Ownable
                     matchResult.totalWin++;
                 }
             }
-            if ((myBet.option[4] >= (options[4]-10)) && (myBet.option[4] <= (options[4]+10)) && (myBet.option[4] != options[4])){
+            if ((myBet.option[4] >= (options[4]-range)) && (myBet.option[4] <= (options[4]+range)) && (myBet.option[4] != options[4])){
             
                 results[playerAddress].wonLost[4]=2;
                 matchResult.amtQuestionWinBet[4] += myBet.weight[4];
@@ -168,11 +175,23 @@ contract IPLMatch is Haltable, Ownable
         return true;
     }
     
-    function endMatch() onlyAdmin onlyHalted returns (bool ok){
+    function endMatch(uint256  limit) onlyAdmin onlyHalted returns (bool ok){
         require(calculateWinLost);
         require(!matchAbandon);
+        require(!matchEnd);
+        //Logic for Multiple End Match Calls
+        start = end;
+        if((end + limit) <= playerList.length){
+            end = end + limit;
+            playerLeft = playerLeft - limit;
+        }
+        else{
+            end = playerList.length;
+            playerLeft = 0;
+            matchEnd = true;
+        }
         uint j;
-        for(j=0;j<playerList.length;j++){
+        for(j=start;j<end;j++){
             address playerAddress = playerList[j];
             Bet storage myBet = bets[playerAddress];
             uint profitTokens;
@@ -199,7 +218,6 @@ contract IPLMatch is Haltable, Ownable
             token.addTokens(playerAddress,profitTokens);
         
         }
-        matchEnd = true;
     }   
     
     /*
@@ -335,6 +353,11 @@ contract IPLMatch is Haltable, Ownable
         for(i=0;i<6;i++){
             multiplier[i] = mul[i];
         }
+        return true;
+    }
+    
+    function setAnswerRange(uint256 _range) onlyAdmin returns(bool ok){
+        answerRange = _range;
         return true;
     }
     
